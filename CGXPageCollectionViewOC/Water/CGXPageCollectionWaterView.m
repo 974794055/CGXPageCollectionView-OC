@@ -43,8 +43,13 @@
     CGXPageCollectionWaterLayout *layout = [[CGXPageCollectionWaterLayout alloc] init];
     layout.dataSource = self;
     layout.isRoundEnabled = self.isRoundEnabled;
-    layout.sectionFootersPinToVisibleBounds =NO;
-    layout.sectionHeadersPinToVisibleBounds =NO;
+    if (@available(iOS 9.0, *)) {
+        layout.sectionFootersPinToVisibleBounds =NO;
+        layout.sectionHeadersPinToVisibleBounds =NO;
+    } else {
+        // Fallback on earlier versions
+    }
+
     return layout;
 }
 - (void)updateDataArray:(NSMutableArray<CGXPageCollectionBaseSectionModel *> *)array IsDownRefresh:(BOOL)isDownRefresh Page:(NSInteger)page

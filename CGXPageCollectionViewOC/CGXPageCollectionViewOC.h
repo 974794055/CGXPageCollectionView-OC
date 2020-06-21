@@ -17,13 +17,5 @@
 
 #import "CGXPageCollectionTagsView.h"
 
-#import "CGXPageCollectionBaseCell.h"
-#import "CGXPageCollectionTextCell.h"
-#import "CGXPageCollectionImageCell.h"
-
-
-
-#import "CGXPageCollectionBaseReusableImageView.h"
-#import "CGXPageCollectionBaseReusableTextView.h"
 
 #endif /* CGXPageCollectionViewOC_h */

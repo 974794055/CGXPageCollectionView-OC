@@ -24,37 +24,17 @@
   "public_header_files": "CGXPageCollectionViewOC/CGXPageCollectionViewOC.h",
   "subspecs": [
     {
-      "name": "Cell",
-      "source_files": "CGXPageCollectionViewOC/Cell/**/*.{h,m}"
-    },
-    {
-      "name": "ReusableView",
-      "source_files": "CGXPageCollectionViewOC/ReusableView/**/*.{h,m}"
-    },
-    {
       "name": "Common",
       "source_files": "CGXPageCollectionViewOC/Common/**/*.{h,m}"
     },
     {
       "name": "Base",
-      "source_files": "CGXPageCollectionViewOC/Base/**/*.{h,m}",
+      "source_files": [
+        "CGXPageCollectionViewOC/Base/**/*.{h,m}",
+        "CGXPageCollectionViewOC/Delegate/**/*.{h,m}"
+      ],
       "dependencies": {
         "CGXPageCollectionViewOC/Common": [
-
-        ],
-        "CGXPageCollectionViewOC/Cell": [
-
-        ],
-        "CGXPageCollectionViewOC/ReusableView": [
-
-        ]
-      }
-    },
-    {
-      "name": "Delegate",
-      "source_files": "CGXPageCollectionViewOC/Delegate/**/*.{h,m}",
-      "dependencies": {
-        "CGXPageCollectionViewOC/Base": [
 
         ]
       }

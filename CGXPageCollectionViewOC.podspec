@@ -19,30 +19,15 @@ s.source_files = 'CGXPageCollectionViewOC/CGXPageCollectionViewOC.h'
 s.public_header_files = 'CGXPageCollectionViewOC/CGXPageCollectionViewOC.h'
 
 
- s.subspec 'Cell' do |ss|
-    ss.source_files = 'CGXPageCollectionViewOC/Cell/**/*.{h,m}'
-  end
-
- s.subspec 'ReusableView' do |ss|
-    ss.source_files = 'CGXPageCollectionViewOC/ReusableView/**/*.{h,m}'
-  end
-
  s.subspec 'Common' do |ss|
     ss.source_files = 'CGXPageCollectionViewOC/Common/**/*.{h,m}'
   end
 
  s.subspec 'Base' do |ss|
-   ss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}'
+   ss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}','CGXPageCollectionViewOC/Delegate/**/*.{h,m}'
    ss.dependency 'CGXPageCollectionViewOC/Common'
-   ss.dependency 'CGXPageCollectionViewOC/Cell'
-   ss.dependency 'CGXPageCollectionViewOC/ReusableView'
   end
-
- s.subspec 'Delegate' do |ss|
-    ss.source_files = 'CGXPageCollectionViewOC/Delegate/**/*.{h,m}'
-    ss.dependency 'CGXPageCollectionViewOC/Base'
-  end
-
+  
  s.subspec 'Water' do |ss|
     ss.source_files = 'CGXPageCollectionViewOC/Water/**/*.{h,m}'
     ss.dependency 'CGXPageCollectionViewOC/Base'

@@ -1,27 +1,18 @@
 PODS:
   - CGXPageCollectionViewOC (0.1):
     - CGXPageCollectionViewOC/Base (= 0.1)
-    - CGXPageCollectionViewOC/Cell (= 0.1)
     - CGXPageCollectionViewOC/Common (= 0.1)
-    - CGXPageCollectionViewOC/Delegate (= 0.1)
     - CGXPageCollectionViewOC/General (= 0.1)
     - CGXPageCollectionViewOC/IrregularView (= 0.1)
-    - CGXPageCollectionViewOC/ReusableView (= 0.1)
     - CGXPageCollectionViewOC/Tags (= 0.1)
     - CGXPageCollectionViewOC/Water (= 0.1)
   - CGXPageCollectionViewOC/Base (0.1):
-    - CGXPageCollectionViewOC/Cell
     - CGXPageCollectionViewOC/Common
-    - CGXPageCollectionViewOC/ReusableView
-  - CGXPageCollectionViewOC/Cell (0.1)
   - CGXPageCollectionViewOC/Common (0.1)
-  - CGXPageCollectionViewOC/Delegate (0.1):
-    - CGXPageCollectionViewOC/Base
   - CGXPageCollectionViewOC/General (0.1):
     - CGXPageCollectionViewOC/Base
   - CGXPageCollectionViewOC/IrregularView (0.1):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/ReusableView (0.1)
   - CGXPageCollectionViewOC/Tags (0.1):
     - CGXPageCollectionViewOC/Base
   - CGXPageCollectionViewOC/Water (0.1):
@@ -35,7 +26,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CGXPageCollectionViewOC: 5f6b23b05fe1d6207d9becbf70d2e0751d2b483b
+  CGXPageCollectionViewOC: 94cb3c869bb5f3c54862111ebf469f2ffdfc58ef
 
 PODFILE CHECKSUM: d455d4091eb63c3fec398346e809839c2bffbec6
 
