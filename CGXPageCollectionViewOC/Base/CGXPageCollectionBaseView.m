@@ -385,7 +385,196 @@
 }
 
 
+/*
+获取分区数据源
+*/
+- (CGXPageCollectionBaseSectionModel *)pullSection:(NSInteger)section
+{
+    if (section>self.dataArray.count || self.dataArray.count == 0) {
+        return nil;
+    }
+    CGXPageCollectionBaseSectionModel *sectionModel = self.dataArray[section];
+    return sectionModel;
+}
+/*
+获取每个cell数据源
+*/
+- (CGXPageCollectionBaseRowModel *)pullSectionModel:(CGXPageCollectionBaseSectionModel *)sectionModel Row:(NSInteger)row
+{
+    if (row>sectionModel.rowArray.count || sectionModel.rowArray.count == 0) {
+        return nil;
+    }
+    CGXPageCollectionBaseRowModel *itemModel = sectionModel.rowArray[row];
+    return itemModel;
+}
 
+/*
+ 替换一个分区的数据源
+ */
+- (void)replaceObjectAtSection:(NSInteger)section withObject:(CGXPageCollectionBaseSectionModel *)sectionModel
+{
+    if (self.dataArray.count == 0) {
+        return;
+    }
+    if (section>self.dataArray.count-1) {
+        return;
+    }
+    if (!sectionModel) {
+        return;
+    }
+    [self.dataArray replaceObjectAtIndex:section withObject:sectionModel];
+    __weak typeof(self) viewSelf = self;
+    [UIView animateWithDuration:0 animations:^{
+        [viewSelf.collectionView performBatchUpdates:^{
+            [viewSelf.collectionView reloadSections:[NSIndexSet indexSetWithIndex:section]];
+        } completion:^(BOOL finished) {
+            [self.collectionView reloadData];
+        }];
+    }];
+    
+}
+/*
+ 替换一个cell数据源
+ */
+- (void)replaceObjectAtSection:(NSInteger)section RowIndex:(NSInteger)row withObject:(CGXPageCollectionBaseRowModel *)rowModel;
+{
+    if (section>self.dataArray.count-1) {
+        return;
+    }
+    CGXPageCollectionBaseSectionModel *sectionModel = [self pullSection:section];
+    if (!sectionModel) {
+        return;
+    }
+    if (row>sectionModel.rowArray.count-1) {
+        return;
+    }
+    [sectionModel.rowArray replaceObjectAtIndex:row withObject:rowModel];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+    __weak typeof(self) viewSelf = self;
+    [UIView animateWithDuration:0 animations:^{
+        [viewSelf.collectionView performBatchUpdates:^{
+            [viewSelf.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+        } completion:^(BOOL finished) {
+            [self.collectionView reloadData];
+        }];
+    }];
+}
+/*
+ 插入一个分区
+ */
+- (void)insertSections:(NSInteger)section withObject:(CGXPageCollectionBaseSectionModel *)sectionModel
+{
+    [self insertSections:section withObject:sectionModel Animation:NO];
+}
+- (void)insertSections:(NSInteger)section withObject:(CGXPageCollectionBaseSectionModel *)sectionModel Animation:(BOOL)animation
+{
+    if (!sectionModel) {
+        return;
+    }
+    if (section>self.dataArray.count) {
+        section = self.dataArray.count;
+    }
+    if (self.dataArray.count == 0) {
+        section = 0;
+    }
+    [self.dataArray insertObject:sectionModel atIndex:section];
+    __weak typeof(self) viewSelf = self;
+    if (animation) {
+        [self.collectionView insertSections:[NSIndexSet indexSetWithIndex:section]];
+         [self.collectionView reloadData];
+    } else{
+        [self.collectionView performBatchUpdates:^{
+         [viewSelf.collectionView insertSections:[NSIndexSet indexSetWithIndex:section]];
+        } completion:^(BOOL finished) {
+            [self.collectionView reloadData];
+        }];
+    }
+}
+
+/*
+ 插入单行
+ */
+- (void)insertSections:(NSInteger)section RowIndex:(NSInteger)row withObject:(CGXPageCollectionBaseRowModel *)rowModel
+{
+    [self insertSections:section RowIndex:row withObject:rowModel Animation:NO];
+}
+- (void)insertSections:(NSInteger)section RowIndex:(NSInteger)row withObject:(CGXPageCollectionBaseRowModel *)rowModel Animation:(BOOL)animation
+{
+    if (self.dataArray.count == 0) {
+        return;
+    }
+    if (section>self.dataArray.count) {
+        return;
+    }
+    CGXPageCollectionBaseSectionModel *sectionModel = [self pullSection:section];
+    if (row>sectionModel.rowArray.count) {
+        row = sectionModel.rowArray.count;
+    }
+    [sectionModel.rowArray insertObject:rowModel atIndex:row];
+    NSIndexPath *indexPathNew = [NSIndexPath indexPathForRow:row inSection:section];
+    __weak typeof(self) viewSelf = self;
+    if (animation) {
+        [self.collectionView insertItemsAtIndexPaths:[NSArray arrayWithObjects:indexPathNew, nil]];
+        [self.collectionView reloadData];
+    } else{
+        [self.collectionView performBatchUpdates:^{
+            [viewSelf.collectionView insertItemsAtIndexPaths:[NSArray arrayWithObjects:indexPathNew, nil]];
+        } completion:^(BOOL finished) {
+            [self.collectionView reloadData];
+        }];
+    }
+    
+}
+////删除一个分区
+- (void)deleteSections:(NSInteger)section
+{
+    if (self.dataArray.count==0) {
+        return;
+    }
+    if (section>self.dataArray.count-1) {
+        return;
+    }
+    CGXPageCollectionBaseSectionModel *sectionModel  = self.dataArray[section];
+    __weak typeof(self) viewSelf = self;
+    [self.collectionView performBatchUpdates:^{
+        [viewSelf.dataArray removeObject:sectionModel];
+        [viewSelf.collectionView deleteSections:[NSIndexSet indexSetWithIndex:section]];
+    } completion:^(BOOL finished) {
+        [self.collectionView reloadData];
+    }];
+}
+//删除单行
+- (void)deleteItemsAtSection:(NSInteger)section RowIndex:(NSInteger)row
+{
+    if (self.dataArray.count==0) {
+        return;
+    }
+    if (section>self.dataArray.count-1) {
+        return;
+    }
+    NSIndexPath *indexPathNew = [NSIndexPath indexPathForRow:row inSection:section];
+    CGXPageCollectionBaseSectionModel *sectionModel  = self.dataArray[indexPathNew.section];
+    if (sectionModel.rowArray.count==0) {
+        return;
+    }
+    if (row>sectionModel.rowArray.count-1) {
+        return;
+    }
+    CGXPageCollectionBaseRowModel *itemModel  = sectionModel.rowArray[row];
+    __weak typeof(self) viewSelf = self;
+    [self.collectionView performBatchUpdates:^{
+        if (row==0 && sectionModel.rowArray.count==1) {
+            [viewSelf.dataArray removeObject:sectionModel];
+            [viewSelf.collectionView deleteSections:[NSIndexSet indexSetWithIndex:section]];
+        } else{
+            [sectionModel.rowArray removeObject:itemModel];
+            [viewSelf.dataArray replaceObjectAtIndex:indexPathNew.section withObject:sectionModel];
+            [viewSelf.collectionView deleteItemsAtIndexPaths:[NSArray arrayWithObjects:indexPathNew, nil]];
+        }
+    } completion:^(BOOL finished) {
+        [self.collectionView reloadData];
+       }];
+}
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.

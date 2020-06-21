@@ -41,15 +41,15 @@
     self.titleArr = ({
         NSArray *arr = [NSArray arrayWithObjects:
                         @"有Header&Footer，包Header,包Footer",
-                        @"有Header&Footer，包Header,不包Footer",
-                        @"有Header&Footer，不包Header,包Footer",
-                        @"有Header&Footer，不包Header,不包Footer",
-                        @"borderLine 包Section",
-                        @"borderLine 包Section（带投影）",
-                        @"有sections底色，cell左对齐",
-                        @"有sections底色，cell居中",
-                        @"有sections底色，cell右对齐",
-                        @"cell右对齐与cell右侧开始",
+//                        @"有Header&Footer，包Header,不包Footer",
+//                        @"有Header&Footer，不包Header,包Footer",
+//                        @"有Header&Footer，不包Header,不包Footer",
+//                        @"borderLine 包Section",
+//                        @"borderLine 包Section（带投影）",
+//                        @"有sections底色，cell左对齐",
+//                        @"有sections底色，cell居中",
+//                        @"有sections底色，cell右对齐",
+//                        @"cell右对齐与cell右侧开始",
                         nil];
         arr;
     });
@@ -157,8 +157,61 @@
         [dataArray addObject:sectionModel];
     }
     [self.generalView updateDataArray:dataArray IsDownRefresh:YES Page:1];
+    
+    UIBarButtonItem *rightItem1= [[UIBarButtonItem alloc] initWithTitle:@"插入1" style:UIBarButtonItemStyleDone target:self action:@selector(insertData)];
+    UIBarButtonItem *rightItem2= [[UIBarButtonItem alloc] initWithTitle:@"替换" style:UIBarButtonItemStyleDone target:self action:@selector(replaceData)];
+    UIBarButtonItem *rightItem3= [[UIBarButtonItem alloc] initWithTitle:@"删除" style:UIBarButtonItemStyleDone target:self action:@selector(deleteIData)];
+    UIBarButtonItem *rightItem4= [[UIBarButtonItem alloc] initWithTitle:@"插入2" style:UIBarButtonItemStyleDone target:self action:@selector(insertData1)];
+    
+    self.navigationItem.rightBarButtonItems = @[rightItem1,rightItem4,rightItem2,rightItem3];
 }
-
+- (void)insertData
+{
+        CGXPageCollectionGeneralSectionModel *sectiomModel = (CGXPageCollectionGeneralSectionModel *)[self insertObjectAtSection:0];
+    [self.generalView insertSections:0 withObject:sectiomModel];
+}
+- (void)insertData1
+{
+    CGXPageCollectionGeneralSectionModel *sectiomModel = (CGXPageCollectionGeneralSectionModel *)[self insertObjectAtSection:0];
+    
+    CGXPageCollectionGeneralRowModel *itemaaa = (CGXPageCollectionGeneralRowModel *)[sectiomModel.rowArray firstObject];
+    CGXPageCollectionGeneralRowModel *item = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
+    
+    item.dataModel= @"";
+    item.cellHeight = itemaaa.cellHeight;
+    item.cellColor = RandomColor;
+    [self.generalView insertSections:0 RowIndex:0 withObject:item];
+}
+- (void)replaceData
+{
+        CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)[self.generalView pullSection:0];
+    
+        CGFloat height = arc4random() % 20+80;
+        CGFloat row = arc4random() % 2+2;
+        NSMutableArray *itemArr = [NSMutableArray array];
+        sectionModel.row = row;
+        for (int i= 0 ; i<row*2; i++) {
+            CGXPageCollectionGeneralRowModel *item = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
+    
+            item.dataModel= @"";
+            item.cellHeight = height;
+            item.cellColor = RandomColor;
+            [itemArr addObject:item];
+        }
+        sectionModel.rowArray = [NSMutableArray arrayWithArray:itemArr];
+    
+        [self.generalView replaceObjectAtSection:0 withObject:sectionModel];
+}
+- (void)deleteIData
+{
+    BOOL isss = arc4random() % 2;
+//    if (isss) {
+        [self.generalView deleteItemsAtSection:0 RowIndex:0];
+//    } else{
+//        [self.generalView deleteSections:0];
+//    }
+    
+}
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView Cell:(nonnull UICollectionViewCell *)cell cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
     
@@ -166,12 +219,44 @@
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView DidSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点击：%ld--%ld",indexPath.section,indexPath.row);
+    
+
+    
+
 }
-//- (CGSize)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath Height:(CGFloat)height
-//{
-////    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)baseView.dataArray[indexPath.section];
-////    CGXPageCollectionGeneralRowModel *item =  (CGXPageCollectionGeneralRowModel *)sectionModel.rowArray[indexPath.row];;
-//    return CGSizeMake(arc4random() % 30+50, height);
-//}
+
+
+//插入一个分区
+- (CGXPageCollectionGeneralSectionModel *)insertObjectAtSection:(NSInteger)section
+{
+    CGXPageCollectionGeneralSectionModel *sectionModel = [[CGXPageCollectionGeneralSectionModel alloc] init];
+    sectionModel.row = 2;
+    [sectionModel initWithFooterClass:[FooterReusableView class] IsXib:NO];
+    sectionModel.headerModel.headerHeight = 40;
+    
+    sectionModel.headerModel.headerModel = [NSString stringWithFormat:@"头部-%d",0];
+    sectionModel.headerModel.headerTag = 10000;
+    sectionModel.headerModel.headerBgColor = [UIColor orangeColor];
+    
+    [sectionModel initWithFooterClass:[FooterReusableView class] IsXib:NO];
+    sectionModel.footerModel.footerModel = [NSString stringWithFormat:@"脚部-%d",0];
+    sectionModel.footerModel.footerTag = 20000;
+    sectionModel.footerModel.footerHeight  = 40;
+    sectionModel.footerModel.footerBgColor = [UIColor yellowColor];
+    
+    CGFloat height = 80;
+    CGFloat row = arc4random() % 2+2;
+    NSMutableArray *itemArr = [NSMutableArray array];
+    for (int i= 0 ; i<row*2; i++) {
+        CGXPageCollectionGeneralRowModel *item = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
+        sectionModel.row = row;
+        item.dataModel= @"";
+        item.cellHeight = height;
+        item.cellColor = RandomColor;
+        [itemArr addObject:item];
+    }
+    sectionModel.rowArray = [NSMutableArray arrayWithArray:itemArr];
+    return sectionModel;
+}
 
 @end

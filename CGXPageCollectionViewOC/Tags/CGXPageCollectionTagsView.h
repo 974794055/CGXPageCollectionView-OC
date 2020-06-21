@@ -29,7 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否开始Round计算，（默认YES），当该位置为NO时，计算模块都不开启，包括设置的代理
 @property (assign, nonatomic) BOOL isRoundEnabled;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

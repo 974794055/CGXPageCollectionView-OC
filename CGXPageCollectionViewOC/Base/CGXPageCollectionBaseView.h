@@ -38,8 +38,6 @@ typedef void (^CGXPageCollectionBaseViewRefresEndBlock)(NSInteger pageInter,NSIn
 - (void)initializeViews NS_REQUIRES_SUPER;
 
 - (UICollectionViewLayout *)preferredFlowLayout NS_REQUIRES_SUPER;
-
-
 - (UICollectionReusableView *)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView NS_REQUIRES_SUPER;
 - (UICollectionReusableView *)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView NS_REQUIRES_SUPER;
 
@@ -74,6 +72,39 @@ typedef void (^CGXPageCollectionBaseViewRefresEndBlock)(NSInteger pageInter,NSIn
  maxPage:每页返回最大值 默认20
  */
 - (void)updateDataArray:(NSMutableArray<CGXPageCollectionBaseSectionModel *> *)array IsDownRefresh:(BOOL)isDownRefresh Page:(NSInteger)page MaxPage:(NSInteger)maxPage NS_REQUIRES_SUPER;
+
+
+
+/*
+ 获取分区数据源  注意判断是否超出
+ */
+- (CGXPageCollectionBaseSectionModel *)pullSection:(NSInteger)section;
+/*
+ 获取每个cell数据源。注意判断是否超出
+ */
+- (CGXPageCollectionBaseRowModel *)pullSectionModel:(CGXPageCollectionBaseSectionModel *)sectionModel Row:(NSInteger)row;
+/*
+ 替换一个分区的数据源
+ */
+- (void)replaceObjectAtSection:(NSInteger)section withObject:(CGXPageCollectionBaseSectionModel *)sectionModel;
+/*
+ 替换一个cell数据源
+ */
+- (void)replaceObjectAtSection:(NSInteger)section RowIndex:(NSInteger)row withObject:(CGXPageCollectionBaseRowModel *)rowModel;
+/*
+ 插入一个分区  当数据源数组为0时，默认设置插入到第一个
+ */
+- (void)insertSections:(NSInteger)section withObject:(CGXPageCollectionBaseSectionModel *)sectionModel;
+- (void)insertSections:(NSInteger)section withObject:(CGXPageCollectionBaseSectionModel *)sectionModel Animation:(BOOL)animation;
+/*
+ 插入单行  越界 row越界 插入到末尾处
+ */
+- (void)insertSections:(NSInteger)section RowIndex:(NSInteger)row withObject:(CGXPageCollectionBaseRowModel *)rowModel;
+- (void)insertSections:(NSInteger)section RowIndex:(NSInteger)row withObject:(CGXPageCollectionBaseRowModel *)rowModel Animation:(BOOL)animation;
+//删除一个分区
+- (void)deleteSections:(NSInteger)section;
+//删除单行
+- (void)deleteItemsAtSection:(NSInteger)section RowIndex:(NSInteger)row;
 
 @end
 
