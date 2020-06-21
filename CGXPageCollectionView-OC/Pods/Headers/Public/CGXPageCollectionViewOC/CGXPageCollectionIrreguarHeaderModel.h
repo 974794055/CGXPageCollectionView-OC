@@ -1,0 +1,1 @@
+../../../../../CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrreguarHeaderModel.h

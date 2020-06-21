@@ -1,0 +1,1 @@
+../../../../../CGXPageCollectionViewOC/Common/CGXPageCollectionRoundLayoutAttributes.h

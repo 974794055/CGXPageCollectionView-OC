@@ -1,6 +1,7 @@
 platform:ios,'8.0'
 target "CGXPageCollectionView-OC" do
   
+  pod 'CGXPageCollectionViewOC', :path => '../'
 end
 
 

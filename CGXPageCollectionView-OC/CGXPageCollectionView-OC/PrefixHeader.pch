@@ -12,11 +12,19 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-//#import "CGXPageCollectionViewOC.h"
-//#import "FooterReusableView.h"
-//#import "HeaderReusableView.h"
-//#import "FooterRoundReusableView.h"
-//#import "HeaderRoundReusableView.h"
+#import "CGXPageCollectionViewOC.h"
+#import "FooterReusableView.h"
+#import "HeaderReusableView.h"
+#import "FooterRoundReusableView.h"
+#import "HeaderRoundReusableView.h"
+
+#import "GeneralViewController.h"
+
+#import "TagsViewController.h"
+
+#import "WaterViewController.h"
+#import "IrregularViewController.h"
+
  #define random(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
 
 

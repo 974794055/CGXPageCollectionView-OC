@@ -1,3 +1,42 @@
-PODFILE CHECKSUM: 90bec2fea622b18358ee281efbc4312ff9952d3e
+PODS:
+  - CGXPageCollectionViewOC (0.1):
+    - CGXPageCollectionViewOC/Base (= 0.1)
+    - CGXPageCollectionViewOC/Cell (= 0.1)
+    - CGXPageCollectionViewOC/Common (= 0.1)
+    - CGXPageCollectionViewOC/Delegate (= 0.1)
+    - CGXPageCollectionViewOC/General (= 0.1)
+    - CGXPageCollectionViewOC/IrregularView (= 0.1)
+    - CGXPageCollectionViewOC/ReusableView (= 0.1)
+    - CGXPageCollectionViewOC/Tags (= 0.1)
+    - CGXPageCollectionViewOC/Water (= 0.1)
+  - CGXPageCollectionViewOC/Base (0.1):
+    - CGXPageCollectionViewOC/Cell
+    - CGXPageCollectionViewOC/Common
+    - CGXPageCollectionViewOC/ReusableView
+  - CGXPageCollectionViewOC/Cell (0.1)
+  - CGXPageCollectionViewOC/Common (0.1)
+  - CGXPageCollectionViewOC/Delegate (0.1):
+    - CGXPageCollectionViewOC/Base
+  - CGXPageCollectionViewOC/General (0.1):
+    - CGXPageCollectionViewOC/Base
+  - CGXPageCollectionViewOC/IrregularView (0.1):
+    - CGXPageCollectionViewOC/Base
+  - CGXPageCollectionViewOC/ReusableView (0.1)
+  - CGXPageCollectionViewOC/Tags (0.1):
+    - CGXPageCollectionViewOC/Base
+  - CGXPageCollectionViewOC/Water (0.1):
+    - CGXPageCollectionViewOC/Base
+
+DEPENDENCIES:
+  - CGXPageCollectionViewOC (from `../`)
+
+EXTERNAL SOURCES:
+  CGXPageCollectionViewOC:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CGXPageCollectionViewOC: 5f6b23b05fe1d6207d9becbf70d2e0751d2b483b
+
+PODFILE CHECKSUM: d455d4091eb63c3fec398346e809839c2bffbec6
 
 COCOAPODS: 1.9.3

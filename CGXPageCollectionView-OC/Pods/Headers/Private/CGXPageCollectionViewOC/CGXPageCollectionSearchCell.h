@@ -1,0 +1,1 @@
+../../../../../CGXPageCollectionViewOC/Cell/CGXPageCollectionSearchCell.h

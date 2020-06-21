@@ -1,0 +1,1 @@
+../../../../../CGXPageCollectionViewOC/Delegate/CGXPageCollectionUpdateFooterDelegate.h

@@ -1,0 +1,1 @@
+../../../../../CGXPageCollectionViewOC/Delegate/CGXPageCollectionUpdateViewDelegate.h

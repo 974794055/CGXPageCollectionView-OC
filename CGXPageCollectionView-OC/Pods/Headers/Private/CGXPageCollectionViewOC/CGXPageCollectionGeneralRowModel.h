@@ -1,0 +1,1 @@
+../../../../../CGXPageCollectionViewOC/General/CGXPageCollectionGeneralRowModel.h

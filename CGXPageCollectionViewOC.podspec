@@ -11,7 +11,6 @@ s.source       = { :git => "https://github.com/974794055/CGXPageCollectionView-O
 s.requires_arc = true #是否支持ARC
 s.frameworks = 'UIKit'
 
-#s.source_files = "CGXPageCollectionViewOC", "CGXPageCollectionViewOC/Classes/**/*.{h,m}" #需要托管的源代码路径
 
 #需要托管的源代码路径
 s.source_files = 'CGXPageCollectionViewOC/CGXPageCollectionViewOC.h'

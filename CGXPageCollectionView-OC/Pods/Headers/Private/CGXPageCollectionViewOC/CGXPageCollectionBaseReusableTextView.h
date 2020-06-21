@@ -1,0 +1,1 @@
+../../../../../CGXPageCollectionViewOC/ReusableView/CGXPageCollectionBaseReusableTextView.h
