@@ -41,15 +41,15 @@
     self.titleArr = ({
         NSArray *arr = [NSArray arrayWithObjects:
                         @"有Header&Footer，包Header,包Footer",
-//                        @"有Header&Footer，包Header,不包Footer",
-//                        @"有Header&Footer，不包Header,包Footer",
-//                        @"有Header&Footer，不包Header,不包Footer",
-//                        @"borderLine 包Section",
-//                        @"borderLine 包Section（带投影）",
-//                        @"有sections底色，cell左对齐",
-//                        @"有sections底色，cell居中",
-//                        @"有sections底色，cell右对齐",
-//                        @"cell右对齐与cell右侧开始",
+                        @"有Header&Footer，包Header,不包Footer",
+                        @"有Header&Footer，不包Header,包Footer",
+                        @"有Header&Footer，不包Header,不包Footer",
+                        @"borderLine 包Section",
+                        @"borderLine 包Section（带投影）",
+                        @"有sections底色，cell左对齐",
+                        @"有sections底色，cell居中",
+                        @"有sections底色，cell右对齐",
+                        @"cell右对齐与cell右侧开始",
                         nil];
         arr;
     });
@@ -205,11 +205,11 @@
 - (void)deleteIData
 {
     BOOL isss = arc4random() % 2;
-//    if (isss) {
+    if (isss) {
         [self.generalView deleteItemsAtSection:0 RowIndex:0];
-//    } else{
-//        [self.generalView deleteSections:0];
-//    }
+    } else{
+        [self.generalView deleteSections:0];
+    }
     
 }
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView Cell:(nonnull UICollectionViewCell *)cell cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
@@ -219,10 +219,6 @@
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView DidSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点击：%ld--%ld",indexPath.section,indexPath.row);
-    
-
-    
-
 }
 
 
