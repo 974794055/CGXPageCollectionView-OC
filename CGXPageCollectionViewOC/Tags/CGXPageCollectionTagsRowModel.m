@@ -9,5 +9,9 @@
 #import "CGXPageCollectionTagsRowModel.h"
 
 @implementation CGXPageCollectionTagsRowModel
-
+- (void)initializeData
+{
+    [super initializeData];
+    self.cellHeight = 100;
+}
 @end

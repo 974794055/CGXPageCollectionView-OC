@@ -10,4 +10,8 @@
 
 @implementation CGXPageCollectionGeneralRowModel
 
+- (void)initializeData
+{
+    [super initializeData];
+}
 @end

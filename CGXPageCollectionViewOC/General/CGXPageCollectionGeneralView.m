@@ -41,7 +41,6 @@
 {
     [super preferredFlowLayout];
     CGXPageCollectionGeneralFlowLayout *layout = [[CGXPageCollectionGeneralFlowLayout alloc] init];
-    layout.alignmentType = CGXPageCollectionGeneralFlowLayoutAlignmentLeft;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.isRoundEnabled = self.isRoundEnabled;
     if (@available(iOS 9.0, *)) {
@@ -96,20 +95,13 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[indexPath.section];
-    CGXPageCollectionGeneralRowModel *item =  (CGXPageCollectionGeneralRowModel *)sectionModel.rowArray[indexPath.row];;
     UIEdgeInsets  insets  = sectionModel.insets;
     UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
     CGFloat minimumInteritemSpacing = sectionModel.minimumInteritemSpacing;
     CGFloat space = insets.left+insets.right + borderEdgeInserts.left + borderEdgeInserts.right ;
     float cellWidth = (collectionView.bounds.size.width-space-(sectionModel.row -1)*minimumInteritemSpacing)/sectionModel.row;
     NSAssert(sectionModel.row > 0, @"每行至少一个item");
-    
-    CGSize sizeFor = CGSizeMake(floor(cellWidth), item.cellHeight);;
-    if (sectionModel.isCalculateOpenIrregularCell) {
-        if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:layout:sizeForItemAtIndexPath:Height:)]) {
-            return [self.viewDelegate gx_PageCollectionBaseView:self layout:collectionViewLayout sizeForItemAtIndexPath:indexPath Height:sizeFor.height];
-        }
-    }
+    CGSize sizeFor = CGSizeMake(floor(cellWidth), sectionModel.cellHeight);;
     return sizeFor;
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -133,7 +125,18 @@
     if (self.isShowDifferentColor) {
         roundModel = sectionModel.roundModel;
     } else{
-        roundModel.backgroundColor = self.collectionView.backgroundColor;
+        if (@available(iOS 13.0, *)) {
+            UIColor *dyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+                if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                    return [UIColor whiteColor];;
+                }else {
+                    return [UIColor whiteColor];;
+                }
+            }];
+            roundModel.backgroundColor = dyColor;
+        }else{
+            roundModel.backgroundColor = [UIColor whiteColor];;
+        }
     }
     return roundModel;
 }

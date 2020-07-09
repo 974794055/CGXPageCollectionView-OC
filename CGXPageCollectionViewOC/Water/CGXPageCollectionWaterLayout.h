@@ -17,6 +17,8 @@
 
 @property (nonatomic, weak) id<CGXPageCollectionWaterLayoutDataSource> dataSource;
 
+@property (nonatomic,assign) BOOL sectionHeadersPinTVisibleBounds;
+@property (nonatomic,assign) BOOL sectionFootersPinTVisibleBounds;
 @end
 
 @protocol CGXPageCollectionWaterLayoutDataSource<NSObject>
@@ -36,5 +38,13 @@
  某个分区是否是奇偶瀑布流排布
  */
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout*)layout IsParityFlowAtInSection:(NSInteger)section;
+
+@end
+
+
+@interface CGXPageCollectionWaterLayout (WaterLayoutunavailable)
+
+- (void)setSectionFootersPinTVisibleBounds:(BOOL)sectionFootersPinTVisibleBounds NS_UNAVAILABLE;
+- (void)setSectionHeadersPinTVisibleBounds:(BOOL)sectionHeadersPinTVisibleBounds NS_UNAVAILABLE;
 
 @end

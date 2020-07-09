@@ -29,6 +29,7 @@
                       @"瀑布流 分区带边框 圆角",
                       @"瀑布流 分区无带边框 圆角",
                       @"不规则 布局",
+                      @"水平滚动",
     nil];
     [self creatCollectionView];
 
@@ -181,7 +182,12 @@
         vc.title = titleStr;
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
-    }
+    } else if (indexPath.row==5){
+            HorizontalViewController *vc = [[HorizontalViewController alloc] init];
+            vc.title = titleStr;
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {

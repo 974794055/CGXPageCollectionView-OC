@@ -9,5 +9,9 @@
 #import "CGXPageCollectionIrreguarRowModel.h"
 
 @implementation CGXPageCollectionIrreguarRowModel
-
+- (void)initializeData
+{
+    [super initializeData];
+    self.cellHeight = 100;
+}
 @end

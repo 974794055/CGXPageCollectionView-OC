@@ -53,8 +53,8 @@
         } else {
             view.layer.borderColor = model.borderColor.CGColor;
         }
-        
-        
+       
+       self.backgroundColor = model.backgroundColor;
     }
 }
 

@@ -10,4 +10,13 @@
 
 @implementation CGXPageCollectionRoundLayoutAttributes
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.borderEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+        self.myConfigModel = [[CGXPageCollectionRoundModel alloc] init];
+    }
+    return self;
+}
 @end

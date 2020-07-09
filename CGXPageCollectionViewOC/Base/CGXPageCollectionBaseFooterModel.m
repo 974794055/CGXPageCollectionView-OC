@@ -21,7 +21,7 @@
         NSAssert(![footerClass isKindOfClass:[UICollectionReusableView class]], @"分区脚view必须是UICollectionReusableViewk类型");
         self.footerClass = footerClass;
         self.footerXib = isXib;
-        self.footerHeight = 10;
+        self.footerHeight = 0;
         self.footerTag = 0;
         self.footerBgColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1];
         self.isHaveFooter = YES;

@@ -24,7 +24,7 @@
 
 #import "WaterViewController.h"
 #import "IrregularViewController.h"
-
+#import "HorizontalViewController.h"
 
 
 #import "CGXPageCollectionBaseCell.h"

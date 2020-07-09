@@ -169,7 +169,7 @@
     }];
     
     // Header view hover.
-    if (self.sectionHeadersPinToVisibleBounds) {
+    if (self.sectionHeadersPinTVisibleBounds) {
         for (UICollectionViewLayoutAttributes *attriture in result) {
             if (![attriture.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) continue;
             NSInteger section = attriture.indexPath.section;
@@ -190,7 +190,7 @@
     
     
     // Header view hover.
-    if (self.sectionFootersPinToVisibleBounds) {
+    if (self.sectionFootersPinTVisibleBounds) {
         for (UICollectionViewLayoutAttributes *attriture in result) {
             if (![attriture.representedElementKind isEqualToString:UICollectionElementKindSectionFooter]) continue;
             NSInteger section = attriture.indexPath.section;

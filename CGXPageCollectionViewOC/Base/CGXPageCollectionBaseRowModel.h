@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
  初始化方法
  */
 - (instancetype)initWithCelllass:(Class)cellClass IsXib:(BOOL)isXib;
+
+- (void)initializeData NS_REQUIRES_SUPER;
 //默认不适用xib
 @property (nonatomic , assign,readonly) BOOL isXib;
 
@@ -24,8 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // cell的颜色 默认白色
 @property (nonatomic , strong) UIColor *cellColor;
-// cell的高 默认100
-@property (nonatomic , assign) CGFloat cellHeight;
+
 //cell的原始数据
 @property (nonatomic , strong) id dataModel;
 

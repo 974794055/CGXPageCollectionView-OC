@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 //间距
 @property (nonatomic, assign) UIEdgeInsets borderEdgeInsets;
 @property (nonatomic, strong) CGXPageCollectionRoundModel *myConfigModel;
-
 @end
 
 NS_ASSUME_NONNULL_END

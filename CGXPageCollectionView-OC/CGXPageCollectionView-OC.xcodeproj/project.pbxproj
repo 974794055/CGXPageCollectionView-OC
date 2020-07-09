@@ -33,6 +33,7 @@
 		9E25AF45249F65A100343226 /* CGXPageCollectionBaseReusableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3B249F65A100343226 /* CGXPageCollectionBaseReusableImageView.m */; };
 		9E25AF46249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3C249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m */; };
 		9E25AF47249F65A100343226 /* CGXPageCollectionBaseReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3E249F65A100343226 /* CGXPageCollectionBaseReusableView.m */; };
+		9E7D943724B5FA35007FB4A9 /* HorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D943624B5FA34007FB4A9 /* HorizontalViewController.m */; };
 		E4D3990FA781D228A7A8B3FF /* libPods-CGXPageCollectionView-OC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29713D7D93AD97DCE561E1A8 /* libPods-CGXPageCollectionView-OC.a */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +52,7 @@
 		04B42E4024483494006FD2F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29713D7D93AD97DCE561E1A8 /* libPods-CGXPageCollectionView-OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CGXPageCollectionView-OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E25AF0E249F5C4400343226 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../../LICENSE; sourceTree = "<group>"; };
-		9E25AF0F249F5C4400343226 /* CGXPageCollectionViewOC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CGXPageCollectionViewOC.podspec; path = ../../../CGXPageCollectionViewOC.podspec; sourceTree = "<group>"; };
+		9E25AF0F249F5C4400343226 /* CGXPageCollectionViewOC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CGXPageCollectionViewOC.podspec; path = ../../../CGXPageCollectionViewOC.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E25AF10249F5C4400343226 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
 		9E25AF14249F5C8B00343226 /* TagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
 		9E25AF15249F5C8B00343226 /* IrregularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrregularViewController.h; sourceTree = "<group>"; };
@@ -85,6 +86,8 @@
 		9E25AF3D249F65A100343226 /* CGXPageCollectionBaseReusableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseReusableImageView.h; sourceTree = "<group>"; };
 		9E25AF3E249F65A100343226 /* CGXPageCollectionBaseReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseReusableView.m; sourceTree = "<group>"; };
 		9E25AF3F249F65A100343226 /* CGXPageCollectionBaseReusableTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseReusableTextView.h; sourceTree = "<group>"; };
+		9E7D943524B5FA34007FB4A9 /* HorizontalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalViewController.h; sourceTree = "<group>"; };
+		9E7D943624B5FA34007FB4A9 /* HorizontalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalViewController.m; sourceTree = "<group>"; };
 		9EB03DA1249A5358008A415F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C1175978587F0C0AECBD77C3 /* Pods-CGXPageCollectionView-OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CGXPageCollectionView-OC.release.xcconfig"; path = "Target Support Files/Pods-CGXPageCollectionView-OC/Pods-CGXPageCollectionView-OC.release.xcconfig"; sourceTree = "<group>"; };
 		CC8A1A425DA64FFE935FFECC /* Pods-CGXPageCollectionView-OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CGXPageCollectionView-OC.debug.xcconfig"; path = "Target Support Files/Pods-CGXPageCollectionView-OC/Pods-CGXPageCollectionView-OC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,22 +133,8 @@
 				04B42E3224483492006FD2F4 /* SceneDelegate.m */,
 				04B42E3424483492006FD2F4 /* ViewController.h */,
 				04B42E3524483492006FD2F4 /* ViewController.m */,
-				9E25AF1B249F5C8C00343226 /* GeneralViewController.h */,
-				9E25AF1E249F5C8C00343226 /* GeneralViewController.m */,
-				9E25AF15249F5C8B00343226 /* IrregularViewController.h */,
-				9E25AF1A249F5C8C00343226 /* IrregularViewController.m */,
-				9E25AF19249F5C8C00343226 /* TagsViewController.h */,
-				9E25AF14249F5C8B00343226 /* TagsViewController.m */,
-				9E25AF20249F5C8D00343226 /* WaterViewController.h */,
-				9E25AF21249F5C8D00343226 /* WaterViewController.m */,
-				9E25AF16249F5C8B00343226 /* FooterReusableView.h */,
-				9E25AF1C249F5C8C00343226 /* FooterReusableView.m */,
-				9E25AF23249F5C8D00343226 /* FooterRoundReusableView.h */,
-				9E25AF1D249F5C8C00343226 /* FooterRoundReusableView.m */,
-				9E25AF1F249F5C8D00343226 /* HeaderReusableView.h */,
-				9E25AF17249F5C8C00343226 /* HeaderReusableView.m */,
-				9E25AF22249F5C8D00343226 /* HeaderRoundReusableView.h */,
-				9E25AF18249F5C8C00343226 /* HeaderRoundReusableView.m */,
+				9E2F54DE24A24C2F002B2880 /* Controller */,
+				9E2F54DD24A24BF0002B2880 /* View */,
 				9E25AF2E249F65A100343226 /* Cell */,
 				9E25AF39249F65A100343226 /* ReusableView */,
 				04B42E3724483492006FD2F4 /* Main.storyboard */,
@@ -198,13 +187,45 @@
 			isa = PBXGroup;
 			children = (
 				9E25AF3A249F65A100343226 /* CGXPageCollectionBaseReusableView.h */,
-				9E25AF3B249F65A100343226 /* CGXPageCollectionBaseReusableImageView.m */,
-				9E25AF3C249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m */,
-				9E25AF3D249F65A100343226 /* CGXPageCollectionBaseReusableImageView.h */,
 				9E25AF3E249F65A100343226 /* CGXPageCollectionBaseReusableView.m */,
+				9E25AF3D249F65A100343226 /* CGXPageCollectionBaseReusableImageView.h */,
+				9E25AF3B249F65A100343226 /* CGXPageCollectionBaseReusableImageView.m */,
 				9E25AF3F249F65A100343226 /* CGXPageCollectionBaseReusableTextView.h */,
+				9E25AF3C249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m */,
 			);
 			path = ReusableView;
+			sourceTree = "<group>";
+		};
+		9E2F54DD24A24BF0002B2880 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9E25AF16249F5C8B00343226 /* FooterReusableView.h */,
+				9E25AF1C249F5C8C00343226 /* FooterReusableView.m */,
+				9E25AF23249F5C8D00343226 /* FooterRoundReusableView.h */,
+				9E25AF1D249F5C8C00343226 /* FooterRoundReusableView.m */,
+				9E25AF1F249F5C8D00343226 /* HeaderReusableView.h */,
+				9E25AF17249F5C8C00343226 /* HeaderReusableView.m */,
+				9E25AF22249F5C8D00343226 /* HeaderRoundReusableView.h */,
+				9E25AF18249F5C8C00343226 /* HeaderRoundReusableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9E2F54DE24A24C2F002B2880 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9E25AF1B249F5C8C00343226 /* GeneralViewController.h */,
+				9E25AF1E249F5C8C00343226 /* GeneralViewController.m */,
+				9E25AF15249F5C8B00343226 /* IrregularViewController.h */,
+				9E25AF1A249F5C8C00343226 /* IrregularViewController.m */,
+				9E25AF19249F5C8C00343226 /* TagsViewController.h */,
+				9E25AF14249F5C8B00343226 /* TagsViewController.m */,
+				9E25AF20249F5C8D00343226 /* WaterViewController.h */,
+				9E25AF21249F5C8D00343226 /* WaterViewController.m */,
+				9E7D943524B5FA34007FB4A9 /* HorizontalViewController.h */,
+				9E7D943624B5FA34007FB4A9 /* HorizontalViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		A079A71871A5D68A5F1F9747 /* Frameworks */ = {
@@ -314,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E7D943724B5FA35007FB4A9 /* HorizontalViewController.m in Sources */,
 				9E25AF27249F5C8D00343226 /* IrregularViewController.m in Sources */,
 				9E25AF42249F65A100343226 /* CGXPageCollectionSearchCell.m in Sources */,
 				9E25AF47249F65A100343226 /* CGXPageCollectionBaseReusableView.m in Sources */,

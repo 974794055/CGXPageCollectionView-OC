@@ -13,13 +13,11 @@
 - (void)initializeData
 {
     [super initializeData];
+    self.cellHeight = 100;
     self.row = 1;
-
     self.isRoundWithFooterView = NO;;
     self.isRoundWithHeaerView = NO;;
     self.isRoundEnabled = NO;
-    self.isCalculateOpenIrregularCell = NO;
-//    self.alignment = CGXPageCollectionGeneralAlignmentSystem;
      self.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
 }
 

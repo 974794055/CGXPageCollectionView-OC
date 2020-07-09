@@ -30,13 +30,16 @@
     self = [super init];
     if (self) {
         self.isXib = NO;
-        self.cellColor = [UIColor whiteColor];
-        self.cellHeight = 100;
-        self.isSelectCell = NO;
         self.cellClass = cellClass;
-        self.isLine = NO;
+        [self initializeData];
     }
     return self;
+}
+- (void)initializeData
+{
+    self.cellColor = [UIColor whiteColor];
+    self.isSelectCell = NO;
+    self.isLine = NO;
 }
 @end
 

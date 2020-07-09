@@ -133,7 +133,7 @@
 - (void)initializeViews
 {
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)) collectionViewLayout:[self preferredFlowLayout]];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = self.backgroundColor;
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = NO;
     self.collectionView.dataSource = self;
@@ -422,10 +422,11 @@
     if (!sectionModel) {
         return;
     }
-    [self.dataArray replaceObjectAtIndex:section withObject:sectionModel];
+
     __weak typeof(self) viewSelf = self;
     [UIView animateWithDuration:0 animations:^{
         [viewSelf.collectionView performBatchUpdates:^{
+             [self.dataArray replaceObjectAtIndex:section withObject:sectionModel];
             [viewSelf.collectionView reloadSections:[NSIndexSet indexSetWithIndex:section]];
         } completion:^(BOOL finished) {
             [self.collectionView reloadData];
@@ -448,11 +449,11 @@
     if (row>sectionModel.rowArray.count-1) {
         return;
     }
-    [sectionModel.rowArray replaceObjectAtIndex:row withObject:rowModel];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
     __weak typeof(self) viewSelf = self;
     [UIView animateWithDuration:0 animations:^{
         [viewSelf.collectionView performBatchUpdates:^{
+            [sectionModel.rowArray replaceObjectAtIndex:row withObject:rowModel];
             [viewSelf.collectionView reloadItemsAtIndexPaths:@[indexPath]];
         } completion:^(BOOL finished) {
             [self.collectionView reloadData];
@@ -477,14 +478,16 @@
     if (self.dataArray.count == 0) {
         section = 0;
     }
-    [self.dataArray insertObject:sectionModel atIndex:section];
+    
     __weak typeof(self) viewSelf = self;
     if (animation) {
         [self.collectionView insertSections:[NSIndexSet indexSetWithIndex:section]];
-         [self.collectionView reloadData];
+        [self.dataArray insertObject:sectionModel atIndex:section];
+        [self.collectionView reloadData];
     } else{
         [self.collectionView performBatchUpdates:^{
-         [viewSelf.collectionView insertSections:[NSIndexSet indexSetWithIndex:section]];
+            [viewSelf.collectionView insertSections:[NSIndexSet indexSetWithIndex:section]];
+            [self.dataArray insertObject:sectionModel atIndex:section];
         } completion:^(BOOL finished) {
             [self.collectionView reloadData];
         }];
@@ -510,15 +513,17 @@
     if (row>sectionModel.rowArray.count) {
         row = sectionModel.rowArray.count;
     }
-    [sectionModel.rowArray insertObject:rowModel atIndex:row];
+    
     NSIndexPath *indexPathNew = [NSIndexPath indexPathForRow:row inSection:section];
     __weak typeof(self) viewSelf = self;
     if (animation) {
         [self.collectionView insertItemsAtIndexPaths:[NSArray arrayWithObjects:indexPathNew, nil]];
+        [sectionModel.rowArray insertObject:rowModel atIndex:row];
         [self.collectionView reloadData];
     } else{
         [self.collectionView performBatchUpdates:^{
             [viewSelf.collectionView insertItemsAtIndexPaths:[NSArray arrayWithObjects:indexPathNew, nil]];
+            [sectionModel.rowArray insertObject:rowModel atIndex:row];
         } completion:^(BOOL finished) {
             [self.collectionView reloadData];
         }];
@@ -563,7 +568,7 @@
     CGXPageCollectionBaseRowModel *itemModel  = sectionModel.rowArray[row];
     __weak typeof(self) viewSelf = self;
     [self.collectionView performBatchUpdates:^{
-        if (row==0 && sectionModel.rowArray.count==1) {
+        if (sectionModel.rowArray.count==1) {
             [viewSelf.dataArray removeObject:sectionModel];
             [viewSelf.collectionView deleteSections:[NSIndexSet indexSetWithIndex:section]];
         } else{

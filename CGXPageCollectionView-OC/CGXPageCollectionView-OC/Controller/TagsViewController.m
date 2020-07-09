@@ -35,6 +35,8 @@
                                             @(CGXPageCollectionTagsHorizontalAlignmentLeft),
                                             @(CGXPageCollectionTagsHorizontalAlignmentRight),
                                             @(CGXPageCollectionTagsHorizontalAlignmentFlow),
+                                            @(CGXPageCollectionTagsHorizontalAlignmentFlow),
+                                            @(CGXPageCollectionTagsHorizontalAlignmentFlow),
                                             nil];
     
     

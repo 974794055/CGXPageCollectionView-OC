@@ -39,6 +39,9 @@ QQ号：974794055
 标签流列表
 */
 #import "CGXPageCollectionTagsView.h"
-
+/*
+水平滚动列表
+*/
+#import "CGXPageCollectionHorizontalView.h"
 
 #endif /* CGXPageCollectionViewOC_h */

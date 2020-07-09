@@ -118,7 +118,18 @@
     if (self.isShowDifferentColor) {
         roundModel = sectionModel.roundModel;
     } else{
-        roundModel.backgroundColor = self.collectionView.backgroundColor;
+                if (@available(iOS 13.0, *)) {
+            UIColor *dyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+                if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                    return [UIColor whiteColor];;
+                }else {
+                    return [UIColor whiteColor];;
+                }
+            }];
+            roundModel.backgroundColor = dyColor;
+        }else{
+            roundModel.backgroundColor = [UIColor whiteColor];;
+        }
     }
     return roundModel;
 }

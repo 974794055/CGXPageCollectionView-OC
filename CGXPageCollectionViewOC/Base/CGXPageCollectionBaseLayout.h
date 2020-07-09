@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong ,readonly) NSMutableArray<UICollectionViewLayoutAttributes *> *decorationViewAttrs;
 
 - (void)initializeRoundView;
+
+
 @end
 
 
@@ -94,5 +96,32 @@ NS_ASSUME_NONNULL_BEGIN
                                                   UIEdgeInsets:(UIEdgeInsets)userCustomSectionInset;
 @end
 
+
+@interface CGXPageCollectionBaseLayout (BaseLayoutAlignment)
+
+
+/// 将相同y位置的cell集合到一个列表中(竖向)
+/// @param layoutAttributesAttrs layoutAttributesAttrs description
+- (NSArray *)groupLayoutAttributesForElementsByYLineWithLayoutAttributesAttrs:(NSArray *)layoutAttributesAttrs;
+/// 将相同x位置的cell集合到一个列表中(横向)
+/// @param layoutAttributesAttrs layoutAttributesAttrs description
+- (NSArray *)groupLayoutAttributesForElementsByXLineWithLayoutAttributesAttrs:(NSArray *)layoutAttributesAttrs;
+
+/// 计算AttributesAttrs左对齐
+/// @param layout CGXPageCollectionGeneralFlowLayout
+/// @param layoutAttributesAttrs 需计算的AttributesAttrs列表
+- (void)evaluatedCellSettingFrameByLeftWithWithCollectionLayout:(UICollectionViewFlowLayout *)layout layoutAttributesAttrs:(NSArray *)layoutAttributesAttrs;
+
+/// 计算AttributesAttrs居中对齐
+/// @param layout CGXPageCollectionGeneralFlowLayout
+/// @param layoutAttributesAttrs 需计算的AttributesAttrs列表
+- (void)evaluatedCellSettingFrameByCentertWithWithCollectionLayout:(UICollectionViewFlowLayout *)layout layoutAttributesAttrs:(NSArray *)layoutAttributesAttrs;
+
+/// 计算AttributesAttrs右对齐
+/// @param layout CGXPageCollectionGeneralFlowLayout
+/// @param layoutAttributesAttrs 需计算的AttributesAttrs列表
+- (void)evaluatedCellSettingFrameByRightWithWithCollectionLayout:(UICollectionViewFlowLayout *)layout layoutAttributesAttrs:(NSArray *)layoutAttributesAttrs;
+
+@end
 
 NS_ASSUME_NONNULL_END

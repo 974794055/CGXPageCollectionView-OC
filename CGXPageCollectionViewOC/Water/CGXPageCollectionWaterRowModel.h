@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CGXPageCollectionWaterRowModel : CGXPageCollectionBaseRowModel
 
+// cell的高 默认100
+@property (nonatomic , assign) CGFloat cellHeight;
 @end
 
 NS_ASSUME_NONNULL_END

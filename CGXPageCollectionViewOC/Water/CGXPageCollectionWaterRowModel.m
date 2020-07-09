@@ -9,5 +9,9 @@
 #import "CGXPageCollectionWaterRowModel.h"
 
 @implementation CGXPageCollectionWaterRowModel
-
+- (void)initializeData
+{
+    [super initializeData];
+    self.cellHeight = 100;
+}
 @end

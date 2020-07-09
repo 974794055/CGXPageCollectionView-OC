@@ -131,26 +131,28 @@
         } else{
             sectionModel.isRoundWithFooterView = YES;
             sectionModel.isRoundWithHeaerView = YES;
-            
-            sectionModel.isCalculateOpenIrregularCell = YES;
         }
         sectionModel.roundModel = roundModel;
         
         
         
         sectionModel.headerModel.headerBgColor = [UIColor orangeColor];
-        sectionModel.headerModel.headerHeight = 40;
+        sectionModel.headerModel.headerHeight = 40+arc4random() % 30;
         sectionModel.headerModel.headerModel = self.titleArr[i];
         sectionModel.headerModel.isHaveTap = YES;
         
         
         sectionModel.footerModel.footerBgColor = [UIColor yellowColor];;
-        sectionModel.footerModel.footerHeight = 40;
+        sectionModel.footerModel.footerHeight = 40+arc4random() % 20;;
         sectionModel.footerModel.isHaveTap = YES;
         
+          sectionModel.cellHeight = 50;
+        
+        if (i==9) {
+            sectionModel.row = arc4random() % 5 + 2;
+        }
         for (int j = 0; j<sectionModel.row * 2;j++) {
             CGXPageCollectionGeneralRowModel *rowModel = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
-            rowModel.cellHeight = 50;
             rowModel.cellColor = RandomColor;
             [sectionModel.rowArray addObject:rowModel];
         }
@@ -158,10 +160,10 @@
     }
     [self.generalView updateDataArray:dataArray IsDownRefresh:YES Page:1];
     
-    UIBarButtonItem *rightItem1= [[UIBarButtonItem alloc] initWithTitle:@"插入1" style:UIBarButtonItemStyleDone target:self action:@selector(insertData)];
+    UIBarButtonItem *rightItem1= [[UIBarButtonItem alloc] initWithTitle:@"插分区" style:UIBarButtonItemStyleDone target:self action:@selector(insertData)];
     UIBarButtonItem *rightItem2= [[UIBarButtonItem alloc] initWithTitle:@"替换" style:UIBarButtonItemStyleDone target:self action:@selector(replaceData)];
     UIBarButtonItem *rightItem3= [[UIBarButtonItem alloc] initWithTitle:@"删除" style:UIBarButtonItemStyleDone target:self action:@selector(deleteIData)];
-    UIBarButtonItem *rightItem4= [[UIBarButtonItem alloc] initWithTitle:@"插入2" style:UIBarButtonItemStyleDone target:self action:@selector(insertData1)];
+    UIBarButtonItem *rightItem4= [[UIBarButtonItem alloc] initWithTitle:@"插cell" style:UIBarButtonItemStyleDone target:self action:@selector(insertData1)];
     
     self.navigationItem.rightBarButtonItems = @[rightItem1,rightItem4,rightItem2,rightItem3];
 }
@@ -172,29 +174,25 @@
 }
 - (void)insertData1
 {
-    CGXPageCollectionGeneralSectionModel *sectiomModel = (CGXPageCollectionGeneralSectionModel *)[self insertObjectAtSection:0];
-    
-    CGXPageCollectionGeneralRowModel *itemaaa = (CGXPageCollectionGeneralRowModel *)[sectiomModel.rowArray firstObject];
     CGXPageCollectionGeneralRowModel *item = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
-    
     item.dataModel= @"";
-    item.cellHeight = itemaaa.cellHeight;
     item.cellColor = RandomColor;
     [self.generalView insertSections:0 RowIndex:0 withObject:item];
 }
 - (void)replaceData
 {
         CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)[self.generalView pullSection:0];
-    
+   
         CGFloat height = arc4random() % 20+80;
         CGFloat row = arc4random() % 2+2;
         NSMutableArray *itemArr = [NSMutableArray array];
         sectionModel.row = row;
+     sectionModel.cellHeight = height;
         for (int i= 0 ; i<row*2; i++) {
             CGXPageCollectionGeneralRowModel *item = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
     
             item.dataModel= @"";
-            item.cellHeight = height;
+            
             item.cellColor = RandomColor;
             [itemArr addObject:item];
         }
@@ -243,11 +241,12 @@
     CGFloat height = 80;
     CGFloat row = arc4random() % 2+2;
     NSMutableArray *itemArr = [NSMutableArray array];
+            sectionModel.cellHeight = height;
     for (int i= 0 ; i<row*2; i++) {
         CGXPageCollectionGeneralRowModel *item = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
         sectionModel.row = row;
         item.dataModel= @"";
-        item.cellHeight = height;
+
         item.cellColor = RandomColor;
         [itemArr addObject:item];
     }

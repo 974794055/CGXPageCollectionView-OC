@@ -20,7 +20,7 @@
         NSAssert(![headerClass isKindOfClass:[UICollectionReusableView class]], @"分区头view必须是UICollectionReusableViewk类型");
         self.headerClass = headerClass;
         self.headerXib = isXib;
-        self.headerHeight = 0.01;
+        self.headerHeight = 0;
         self.headerTag = 0;
         self.headerBgColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1];;
         self.isHaveHeader = YES;
