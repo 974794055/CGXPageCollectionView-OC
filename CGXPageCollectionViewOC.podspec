@@ -18,7 +18,6 @@ s.source_files = 'CGXPageCollectionViewOC/CGXPageCollectionViewOC.h'
 #开源库头文件
 s.public_header_files = 'CGXPageCollectionViewOC/CGXPageCollectionViewOC.h'
 
-
  s.subspec 'Common' do |ss|
     ss.source_files = 'CGXPageCollectionViewOC/Common/**/*.{h,m}'
   end

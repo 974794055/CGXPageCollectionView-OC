@@ -44,4 +44,5 @@ QQ号：974794055
 */
 #import "CGXPageCollectionHorizontalView.h"
 
+
 #endif /* CGXPageCollectionViewOC_h */

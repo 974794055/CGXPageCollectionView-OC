@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
-
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(updateColor)];
     self.titleArr =  [NSMutableArray arrayWithObjects:
                       @"普通列表",
@@ -30,9 +30,9 @@
                       @"瀑布流 分区无带边框 圆角",
                       @"不规则 布局",
                       @"水平滚动",
-    nil];
+                      nil];
     [self creatCollectionView];
-
+    
 }
 - (void)updateColor
 {
@@ -135,17 +135,17 @@
 {
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
-
+    
     CAShapeLayer *borderLayer = [CAShapeLayer layer];
     borderLayer.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
     borderLayer.lineWidth = 1.f;
     borderLayer.strokeColor = [UIColor lightGrayColor].CGColor;
     borderLayer.fillColor = [UIColor clearColor].CGColor;
-
+    
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame)) cornerRadius:8];
     maskLayer.path = bezierPath.CGPath;
     borderLayer.path = bezierPath.CGPath;
-
+    
     [cell.contentView.layer insertSublayer:borderLayer atIndex:0];
     [cell.contentView.layer setMask:maskLayer];
 }
@@ -183,11 +183,11 @@
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row==5){
-            HorizontalViewController *vc = [[HorizontalViewController alloc] init];
-            vc.title = titleStr;
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
-        }
+        HorizontalViewController *vc = [[HorizontalViewController alloc] init];
+        vc.title = titleStr;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
