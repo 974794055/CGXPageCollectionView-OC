@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "CGXPageCollectionBaseRowModel.h"
-#import "CGXPageCollectionBaseHeaderModel.h"
-#import "CGXPageCollectionBaseFooterModel.h"
+#import "CGXPageCollectionHeaderModel.h"
+#import "CGXPageCollectionFooterModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CGXPageCollectionBaseSectionModel : NSObject
@@ -19,11 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 /*
  头分区
  */
-@property (nonatomic , strong ,readonly) CGXPageCollectionBaseHeaderModel *headerModel;
+@property (nonatomic , strong) CGXPageCollectionHeaderModel *headerModel;
 /*
  脚分区
  */
-@property (nonatomic , strong ,readonly) CGXPageCollectionBaseFooterModel *footerModel;
+@property (nonatomic , strong) CGXPageCollectionFooterModel *footerModel;
 
 @property (nonatomic,strong) NSMutableArray<CGXPageCollectionBaseRowModel *> *rowArray;
 @property (nonatomic , assign) NSInteger minimumLineSpacing;//默认是10
@@ -31,14 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) UIEdgeInsets insets;//默认是10
 @property (nonatomic , strong) id dataModel;//原始数据
 
-/*
- 初始化方法  Class类型 [UICollectionReusableView class]
- */
-- (void)initWithHeaderClass:(Class)headerClass IsXib:(BOOL)isXib NS_REQUIRES_SUPER;
-/*
- 初始化方法  Class类型 [UICollectionReusableView class]
- */
-- (void)initWithFooterClass:(Class)footerClass IsXib:(BOOL)isXib NS_REQUIRES_SUPER;
 
 @end
 

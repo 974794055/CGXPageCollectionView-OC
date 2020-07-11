@@ -1,1 +1,0 @@
-../../../../../CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsFooterModel.h

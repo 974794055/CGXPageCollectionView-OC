@@ -36,7 +36,10 @@
     [self.generalView registerFooter:[FooterReusableView class] IsXib:NO];
     [self.generalView registerHeader:[HeaderReusableView class] IsXib:NO];
     
-    
+    //    self.generalView.isAdaptive = YES;
+    self.generalView.heightBlock = ^(CGXPageCollectionBaseView * _Nonnull BaseView, CGFloat height) {
+        NSLog(@"不能滚动height:%f" , height);
+    };
     self.generalView.isRoundEnabled = YES;
     self.titleArr = ({
         NSArray *arr = [NSArray arrayWithObjects:
@@ -63,8 +66,9 @@
         sectionModel.row = arc4random() % 5 + 1;
         sectionModel.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
         
-        [sectionModel initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
-        [sectionModel initWithFooterClass:[FooterRoundReusableView class] IsXib:NO];
+        CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
+        CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterRoundReusableView class] IsXib:NO];
+        
         
         CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc] init];
         roundModel.backgroundColor = RandomColor;
@@ -83,31 +87,23 @@
             if (i==0) {
                 sectionModel.isRoundWithFooterView = YES;
                 sectionModel.isRoundWithHeaerView = YES;
-                
-                [sectionModel initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
-                [sectionModel initWithFooterClass:[FooterRoundReusableView class] IsXib:NO];
-                
+                headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
+                footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterRoundReusableView class] IsXib:NO];
             } else if (i==1){
                 sectionModel.isRoundWithFooterView = NO;
                 sectionModel.isRoundWithHeaerView = YES;
-                
-                [sectionModel initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
-                [sectionModel initWithFooterClass:[FooterReusableView class] IsXib:NO];
-                
+                headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
+                footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
             } else if (i==2){
                 sectionModel.isRoundWithFooterView = YES;
                 sectionModel.isRoundWithHeaerView = NO;
-                
-                [sectionModel initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
-                [sectionModel initWithFooterClass:[FooterRoundReusableView class] IsXib:NO];
-                
+                headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
+                footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterRoundReusableView class] IsXib:NO];
             } else if (i==3){
                 sectionModel.isRoundWithFooterView = NO;
                 sectionModel.isRoundWithHeaerView = NO;
-                
-                [sectionModel initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
-                [sectionModel initWithFooterClass:[FooterReusableView class] IsXib:NO];
-                
+                headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
+                footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
             }
         } else if (i==4 || i==5){
             
@@ -136,18 +132,21 @@
         
         
         
-        sectionModel.headerModel.headerBgColor = [UIColor orangeColor];
-        sectionModel.headerModel.headerHeight = 40+arc4random() % 30;
-        sectionModel.headerModel.headerModel = self.titleArr[i];
-        sectionModel.headerModel.isHaveTap = YES;
+        headerModel.headerBgColor = [UIColor orangeColor];
+        headerModel.headerHeight = 40+arc4random() % 30;
+        headerModel.headerModel = self.titleArr[i];
+        headerModel.isHaveTap = YES;
         
         
-        sectionModel.footerModel.footerBgColor = [UIColor yellowColor];;
-        sectionModel.footerModel.footerHeight = 40+arc4random() % 20;;
-        sectionModel.footerModel.isHaveTap = YES;
+        footerModel.footerBgColor = [UIColor yellowColor];;
+        footerModel.footerHeight = 40+arc4random() % 20;;
+        footerModel.isHaveTap = YES;
         
-          sectionModel.cellHeight = 50;
         
+        sectionModel.cellHeight = 50;
+        
+        sectionModel.headerModel = headerModel;
+        sectionModel.footerModel = footerModel;
         if (i==9) {
             sectionModel.row = arc4random() % 5 + 2;
         }
@@ -166,10 +165,12 @@
     UIBarButtonItem *rightItem4= [[UIBarButtonItem alloc] initWithTitle:@"插cell" style:UIBarButtonItemStyleDone target:self action:@selector(insertData1)];
     
     self.navigationItem.rightBarButtonItems = @[rightItem1,rightItem4,rightItem2,rightItem3];
+    
+    NSLog(@"height:%@" , self.generalView);
 }
 - (void)insertData
 {
-        CGXPageCollectionGeneralSectionModel *sectiomModel = (CGXPageCollectionGeneralSectionModel *)[self insertObjectAtSection:0];
+    CGXPageCollectionGeneralSectionModel *sectiomModel = (CGXPageCollectionGeneralSectionModel *)[self insertObjectAtSection:0];
     [self.generalView insertSections:0 withObject:sectiomModel];
 }
 - (void)insertData1
@@ -181,24 +182,24 @@
 }
 - (void)replaceData
 {
-        CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)[self.generalView pullSection:0];
-   
-        CGFloat height = arc4random() % 20+80;
-        CGFloat row = arc4random() % 2+2;
-        NSMutableArray *itemArr = [NSMutableArray array];
-        sectionModel.row = row;
-     sectionModel.cellHeight = height;
-        for (int i= 0 ; i<row*2; i++) {
-            CGXPageCollectionGeneralRowModel *item = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
+    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)[self.generalView pullSection:0];
     
-            item.dataModel= @"";
-            
-            item.cellColor = RandomColor;
-            [itemArr addObject:item];
-        }
-        sectionModel.rowArray = [NSMutableArray arrayWithArray:itemArr];
+    CGFloat height = arc4random() % 20+80;
+    CGFloat row = arc4random() % 2+2;
+    NSMutableArray *itemArr = [NSMutableArray array];
+    sectionModel.row = row;
+    sectionModel.cellHeight = height;
+    for (int i= 0 ; i<row*2; i++) {
+        CGXPageCollectionGeneralRowModel *item = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
+        
+        item.dataModel= @"";
+        
+        item.cellColor = RandomColor;
+        [itemArr addObject:item];
+    }
+    sectionModel.rowArray = [NSMutableArray arrayWithArray:itemArr];
     
-        [self.generalView replaceObjectAtSection:0 withObject:sectionModel];
+    [self.generalView replaceObjectAtSection:0 withObject:sectionModel];
 }
 - (void)deleteIData
 {
@@ -225,28 +226,33 @@
 {
     CGXPageCollectionGeneralSectionModel *sectionModel = [[CGXPageCollectionGeneralSectionModel alloc] init];
     sectionModel.row = 2;
-    [sectionModel initWithFooterClass:[FooterReusableView class] IsXib:NO];
-    sectionModel.headerModel.headerHeight = 40;
     
-    sectionModel.headerModel.headerModel = [NSString stringWithFormat:@"头部-%d",0];
-    sectionModel.headerModel.headerTag = 10000;
-    sectionModel.headerModel.headerBgColor = [UIColor orangeColor];
+    CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
     
-    [sectionModel initWithFooterClass:[FooterReusableView class] IsXib:NO];
-    sectionModel.footerModel.footerModel = [NSString stringWithFormat:@"脚部-%d",0];
-    sectionModel.footerModel.footerTag = 20000;
-    sectionModel.footerModel.footerHeight  = 40;
-    sectionModel.footerModel.footerBgColor = [UIColor yellowColor];
+    
+    headerModel.headerHeight = 40;
+    
+    headerModel.headerModel = [NSString stringWithFormat:@"头部-%d",0];
+    headerModel.headerTag = 10000;
+    headerModel.headerBgColor = [UIColor orangeColor];
+    sectionModel.headerModel = headerModel;
+    CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
+    
+    footerModel.footerModel = [NSString stringWithFormat:@"脚部-%d",0];
+    footerModel.footerTag = 20000;
+    footerModel.footerHeight  = 40;
+    footerModel.footerBgColor = [UIColor yellowColor];
+    footerModel.footerModel = footerModel;
     
     CGFloat height = 80;
     CGFloat row = arc4random() % 2+2;
     NSMutableArray *itemArr = [NSMutableArray array];
-            sectionModel.cellHeight = height;
+    sectionModel.cellHeight = height;
     for (int i= 0 ; i<row*2; i++) {
         CGXPageCollectionGeneralRowModel *item = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
         sectionModel.row = row;
         item.dataModel= @"";
-
+        
         item.cellColor = RandomColor;
         [itemArr addObject:item];
     }

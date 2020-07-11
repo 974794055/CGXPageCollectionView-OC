@@ -14,7 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 
 @optional
-
+/*
+sectionModel:每个分区的数据源
+section:分区下标
+*/
 - (void)updateWithCGXCollectionViewFooterViewModel:(CGXPageCollectionBaseSectionModel *)sectionModel InSection:(NSInteger)section;
 @end
 

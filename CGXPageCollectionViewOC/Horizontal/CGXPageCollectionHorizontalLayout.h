@@ -9,16 +9,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CGXPageCollectionHorizontalLayout : CGXPageCollectionBaseLayout
-/*
- //默认每行一个
- */
-@property (nonatomic , assign) NSInteger row;
-/*
- //默认一行
- */
-@property (nonatomic , assign) NSInteger section;
+@class CGXPageCollectionIrregularLayout;
 
+@protocol CGXPageCollectionHorizontalLayouttDelegate <NSObject>
+
+@required
+
+
+@optional;
+
+- (NSInteger)collectionHorizontalView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout numberOfSection:(NSInteger)section;
+
+@end
+
+@interface CGXPageCollectionHorizontalLayout : CGXPageCollectionBaseLayout
+
+@property (nonatomic , weak) id<CGXPageCollectionHorizontalLayouttDelegate>delegate;
 
 @end
 

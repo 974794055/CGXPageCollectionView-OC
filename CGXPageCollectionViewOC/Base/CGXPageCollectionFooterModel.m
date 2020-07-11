@@ -1,18 +1,18 @@
 //
-//  CGXPageCollectionBaseFooterModel.m
+//  CGXPageCollectionFooterModel.m
 //  CGXPageCollectionView-OC
 //
 //  Created by CGX on 2020/6/06.
 //  Copyright © 2020 CGX. All rights reserved.
 //
 
-#import "CGXPageCollectionBaseFooterModel.h"
-@interface CGXPageCollectionBaseFooterModel()
+#import "CGXPageCollectionFooterModel.h"
+@interface CGXPageCollectionFooterModel()
 
 @property (nonatomic , assign,readwrite) BOOL footerXib;
 @property (nonatomic, strong,readwrite) Class footerClass;
 @end
-@implementation CGXPageCollectionBaseFooterModel
+@implementation CGXPageCollectionFooterModel
 
 - (instancetype)initWithFooterClass:(Class)footerClass IsXib:(BOOL)isXib
 {

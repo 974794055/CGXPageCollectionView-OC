@@ -44,7 +44,7 @@
 
 @interface CGXPageCollectionWaterLayout (WaterLayoutunavailable)
 
-- (void)setSectionFootersPinTVisibleBounds:(BOOL)sectionFootersPinTVisibleBounds NS_UNAVAILABLE;
-- (void)setSectionHeadersPinTVisibleBounds:(BOOL)sectionHeadersPinTVisibleBounds NS_UNAVAILABLE;
+- (void)setSectionFootersPinToVisibleBounds:(BOOL)sectionFootersPinTVisibleBounds NS_UNAVAILABLE;
+- (void)setSectionHeadersPinToVisibleBounds:(BOOL)sectionHeadersPinTVisibleBounds NS_UNAVAILABLE;
 
 @end

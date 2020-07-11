@@ -19,12 +19,4 @@
     self.bottomHeight = 100;
 }
 
-- (void)initWithFooterClass:(Class)footerClass IsXib:(BOOL)isXib
-{
-    [super initWithFooterClass:footerClass IsXib:isXib];
-}
-- (void)initWithHeaderClass:(Class)headerClass IsXib:(BOOL)isXib
-{
-    [super initWithHeaderClass:headerClass IsXib:isXib];
-}
 @end

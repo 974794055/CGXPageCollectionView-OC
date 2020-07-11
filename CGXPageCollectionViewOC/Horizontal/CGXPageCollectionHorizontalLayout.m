@@ -205,7 +205,10 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
 //根据视图的高度，计算section的 行列数
 -(NSInteger)numColumnOfIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger numOfItmes =  self.row;
+    NSInteger numOfItmes =  1;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(collectionHorizontalView:layout:numberOfSection:)]) {
+        numOfItmes = [self.delegate collectionHorizontalView:self.collectionView layout:self numberOfSection:indexPath.section];
+    }
     return numOfItmes;
 }
 -(CGFloat)sectionItemStarX:(NSUInteger)section

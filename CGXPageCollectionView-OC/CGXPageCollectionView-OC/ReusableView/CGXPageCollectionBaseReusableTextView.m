@@ -1,14 +1,14 @@
 //
-//  CGXPageCollectionBaseReusableTextView.m
+//  CGXPageCollectionReusableTextView.m
 //  CGXPageCollectionView-OC
 //
 //  Created by CGX on 2020/6/06.
 //  Copyright © 2020 CGX. All rights reserved.
 //
 
-#import "CGXPageCollectionBaseReusableTextView.h"
+#import "CGXPageCollectionReusableTextView.h"
 
-@implementation CGXPageCollectionBaseReusableTextView
+@implementation CGXPageCollectionReusableTextView
 - (void)initializeViews
 {
     [super initializeViews];

@@ -7,8 +7,6 @@
 //
 
 #import "CGXPageCollectionBaseSectionModel.h"
-#import "CGXPageCollectionTagsFooterModel.h"
-#import "CGXPageCollectionTagsHeaderModel.h"
 #import "CGXPageCollectionTagsRowModel.h"
 #import "CGXPageCollectionTagsFlowLayout.h"
 

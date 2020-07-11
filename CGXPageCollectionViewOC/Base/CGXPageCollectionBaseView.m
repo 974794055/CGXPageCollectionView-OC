@@ -25,7 +25,6 @@
 {
     
 }
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -74,6 +73,29 @@
     }else {
         [self reloadData];
     }
+    
+    if (self.isAdaptive) {
+        UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+        [layout invalidateLayout];
+        self.collectionView.frame = self.bounds;
+        if (!CGSizeEqualToSize(self.bounds.size, [self intrinsicContentSize])) {
+            [self invalidateIntrinsicContentSize];
+        }
+        CGFloat height = self.collectionView.collectionViewLayout.collectionViewContentSize.height;
+        if (height != 0 && height != self.bounds.size.height) {
+            CGRect frame = self.frame;
+            frame.size.height = height;
+            self.frame = frame;
+            self.collectionView.frame = self.bounds;
+            __weak typeof(self) weakSlef = self;
+            if (self.heightBlock) {
+                self.heightBlock(weakSlef,height);
+            }
+            if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:WithViewHeight:)]) {
+                [self.viewDelegate gx_PageCollectionBaseView:self WithViewHeight:height];
+            }
+        }
+    }
 }
 - (void)initLayoutFrame
 {
@@ -119,9 +141,8 @@
     }
     return _dataArray;;
 }
-- (void)reloadData {
-    //    [self refreshDataSource];
-    //    [self refreshState];
+- (void)reloadData
+{
     [self.collectionView.collectionViewLayout invalidateLayout];
     [self.collectionView reloadData];
 }
@@ -207,7 +228,6 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     CGXPageCollectionBaseSectionModel *sectionModel = self.dataArray[indexPath.section];
-    
     if (kind == UICollectionElementKindSectionHeader) {
         UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:sectionModel.headerModel.headerIdentifier forIndexPath:indexPath];
         if(view == nil) {
@@ -216,11 +236,11 @@
         [view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [obj removeFromSuperview];
         }];
-        UICollectionReusableView *headerview = (UICollectionReusableView *)[CGXPageCollectionTools createForClass:sectionModel.headerModel.headerIdentifier];
-        headerview.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
-        headerview.backgroundColor = sectionModel.headerModel.headerBgColor;
-        headerview.tag = sectionModel.headerModel.headerTag;
-        headerview = [self refreshHeaderSection:indexPath.section Header:headerview];
+        UICollectionReusableView *headview = (UICollectionReusableView *)[CGXPageCollectionTools createForClass:sectionModel.headerModel.headerIdentifier];
+        headview.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
+        headview.backgroundColor = sectionModel.headerModel.headerBgColor;
+        headview.tag = sectionModel.headerModel.headerTag;
+        UICollectionReusableView *headerview = [self refreshHeaderSection:indexPath.section Header:headview];
         BOOL isHave = [headerview respondsToSelector:@selector(updateWithCGXCollectionViewHeaderViewModel:InSection:)];
         if (isHave == YES && [headerview conformsToProtocol:@protocol(CGXPageCollectionUpdateHeaderDelegate)]) {
             [(UICollectionReusableView<CGXPageCollectionUpdateHeaderDelegate> *)headerview updateWithCGXCollectionViewHeaderViewModel:sectionModel  InSection:indexPath.section];
@@ -246,12 +266,12 @@
         [view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [obj removeFromSuperview];
         }];
-        UICollectionReusableView *footerview = (UICollectionReusableView *)[CGXPageCollectionTools createForClass:sectionModel.footerModel.footerIdentifier];
-        footerview.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
-        footerview.backgroundColor = sectionModel.footerModel.footerBgColor;
-        footerview.tag = sectionModel.footerModel.footerTag;
-        footerview = [self refreshFooterSection:indexPath.section Footer:footerview];
-        
+        UICollectionReusableView *footview = (UICollectionReusableView *)[CGXPageCollectionTools createForClass:sectionModel.footerModel.footerIdentifier];
+        footview.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
+        footview.backgroundColor = sectionModel.footerModel.footerBgColor;
+        footview.tag = sectionModel.footerModel.footerTag;
+        UICollectionReusableView *footerview = [self refreshFooterSection:indexPath.section Footer:footview];
+
         BOOL isHave = [footerview respondsToSelector:@selector(updateWithCGXCollectionViewFooterViewModel:InSection:)];
         if (isHave == YES && [footerview conformsToProtocol:@protocol(CGXPageCollectionUpdateFooterDelegate)]) {
             [(UICollectionReusableView<CGXPageCollectionUpdateFooterDelegate> *)footerview updateWithCGXCollectionViewFooterViewModel:sectionModel  InSection:indexPath.section];
@@ -354,6 +374,10 @@
         self.refresBlock(self.isDownRefresh, self.page);
     }
 }
+- (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
+{
+    
+}
 /*
  array：数据源
  pageCount:每次加载的个数
@@ -376,12 +400,15 @@
         [self.dataArray removeAllObjects];
     }
     for (CGXPageCollectionBaseSectionModel *sectionModel in array) {
+        [self refreshSectionModel:sectionModel];
         [self.dataArray addObject:sectionModel];
     }
     [self.collectionView reloadData];
     if (self.refresBlock) {
         self.refresBlock(array.count, maxPage);
     }
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 
@@ -424,15 +451,14 @@
     }
 
     __weak typeof(self) viewSelf = self;
-    [UIView animateWithDuration:0 animations:^{
-        [viewSelf.collectionView performBatchUpdates:^{
-             [self.dataArray replaceObjectAtIndex:section withObject:sectionModel];
-            [viewSelf.collectionView reloadSections:[NSIndexSet indexSetWithIndex:section]];
-        } completion:^(BOOL finished) {
-            [self.collectionView reloadData];
+        [UIView animateWithDuration:0 animations:^{
+            [viewSelf.collectionView performBatchUpdates:^{
+                [self.dataArray replaceObjectAtIndex:section withObject:sectionModel];
+                [viewSelf.collectionView reloadSections:[NSIndexSet indexSetWithIndex:section]];
+            } completion:^(BOOL finished) {
+                [self.collectionView reloadData];
+            }];
         }];
-    }];
-    
 }
 /*
  替换一个cell数据源
@@ -533,6 +559,10 @@
 ////删除一个分区
 - (void)deleteSections:(NSInteger)section
 {
+    [self deleteSections:section Animation:NO];
+}
+- (void)deleteSections:(NSInteger)section Animation:(BOOL)animation
+{
     if (self.dataArray.count==0) {
         return;
     }
@@ -541,15 +571,25 @@
     }
     CGXPageCollectionBaseSectionModel *sectionModel  = self.dataArray[section];
     __weak typeof(self) viewSelf = self;
-    [self.collectionView performBatchUpdates:^{
+    
+    if (animation) {
+        [self.collectionView performBatchUpdates:^{
+            [viewSelf.dataArray removeObject:sectionModel];
+            [viewSelf.collectionView deleteSections:[NSIndexSet indexSetWithIndex:section]];
+        } completion:^(BOOL finished) {
+            [self.collectionView reloadData];
+        }];
+    } else{
         [viewSelf.dataArray removeObject:sectionModel];
-        [viewSelf.collectionView deleteSections:[NSIndexSet indexSetWithIndex:section]];
-    } completion:^(BOOL finished) {
         [self.collectionView reloadData];
-    }];
+    }
 }
 //删除单行
 - (void)deleteItemsAtSection:(NSInteger)section RowIndex:(NSInteger)row
+{
+    [self deleteItemsAtSection:section RowIndex:row Animation:NO];
+}
+- (void)deleteItemsAtSection:(NSInteger)section RowIndex:(NSInteger)row Animation:(BOOL)animation
 {
     if (self.dataArray.count==0) {
         return;
@@ -567,18 +607,35 @@
     }
     CGXPageCollectionBaseRowModel *itemModel  = sectionModel.rowArray[row];
     __weak typeof(self) viewSelf = self;
-    [self.collectionView performBatchUpdates:^{
+    
+    if (animation) {
+        [self.collectionView performBatchUpdates:^{
+            if (sectionModel.rowArray.count==1) {
+                [viewSelf.dataArray removeObject:sectionModel];
+                [viewSelf.collectionView deleteSections:[NSIndexSet indexSetWithIndex:section]];
+            } else{
+                [sectionModel.rowArray removeObject:itemModel];
+                [viewSelf.dataArray replaceObjectAtIndex:indexPathNew.section withObject:sectionModel];
+                [viewSelf.collectionView deleteItemsAtIndexPaths:[NSArray arrayWithObjects:indexPathNew, nil]];
+            }
+        } completion:^(BOOL finished) {
+            [self.collectionView reloadData];
+        }];
+    } else{
         if (sectionModel.rowArray.count==1) {
             [viewSelf.dataArray removeObject:sectionModel];
-            [viewSelf.collectionView deleteSections:[NSIndexSet indexSetWithIndex:section]];
         } else{
             [sectionModel.rowArray removeObject:itemModel];
             [viewSelf.dataArray replaceObjectAtIndex:indexPathNew.section withObject:sectionModel];
-            [viewSelf.collectionView deleteItemsAtIndexPaths:[NSArray arrayWithObjects:indexPathNew, nil]];
         }
-    } completion:^(BOOL finished) {
         [self.collectionView reloadData];
-       }];
+    }
+}
+//删除所有数据源
+- (void)deleteAll
+{
+    [self.dataArray removeAllObjects];
+    [self.collectionView reloadData];
 }
 /*
  // Only override drawRect: if you perform custom drawing.

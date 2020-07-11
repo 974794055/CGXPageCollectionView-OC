@@ -17,7 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 
 @optional
-
+/*
+ cellModel:每个item的数据源
+ index:分区所在的下标
+ */
 - (void)updateWithCGXPageCollectionCellModel:(CGXPageCollectionBaseRowModel *)cellModel AtIndex:(NSInteger)index;
 
 

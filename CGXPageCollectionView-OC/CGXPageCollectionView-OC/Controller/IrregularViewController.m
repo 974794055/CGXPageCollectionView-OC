@@ -56,13 +56,17 @@
         CGXPageCollectionIrreguarSectionModel *sectionModel = [[CGXPageCollectionIrreguarSectionModel alloc] init];
         sectionModel.showType = type;
         
-        [sectionModel initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
-        sectionModel.headerModel.headerBgColor = RandomColor;;
-        sectionModel.headerModel.headerHeight = 40;
+        CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
+        headerModel.headerBgColor = RandomColor;
+        headerModel.headerHeight = 40;
+        headerModel.isHaveTap = YES;
+        sectionModel.headerModel = headerModel;
         
-        [sectionModel initWithFooterClass:[FooterReusableView class] IsXib:NO];
-        sectionModel.footerModel.footerBgColor = RandomColor;
-        sectionModel.footerModel.footerHeight = 40;
+        CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
+        footerModel.footerBgColor = RandomColor;
+        footerModel.footerHeight = 40;
+        footerModel.isHaveTap = YES;
+        sectionModel.footerModel = footerModel;
         
         
         sectionModel.bottomRow = 4;

@@ -14,16 +14,6 @@
 @property (nonatomic , assign,readwrite) BOOL isXib;
 @property(nonatomic, strong,readwrite) Class cellClass;
 
-
-/*
- 头分区
- */
-@property (nonatomic , strong ,readwrite) CGXPageCollectionBaseHeaderModel *headerModel;
-/*
- 脚分区
- */
-@property (nonatomic , strong ,readwrite) CGXPageCollectionBaseFooterModel *footerModel;
-
 @end
 
 @implementation CGXPageCollectionBaseSectionModel
@@ -41,21 +31,8 @@
     self.insets =UIEdgeInsetsMake(10, 10, 10, 10);
     self.minimumLineSpacing = 10;
     self.minimumInteritemSpacing = 10;
-    self.headerModel = [[CGXPageCollectionBaseHeaderModel alloc] initWithHeaderClass:[UICollectionReusableView class] IsXib:NO];
-    self.footerModel = [[CGXPageCollectionBaseFooterModel alloc] initWithFooterClass:[UICollectionReusableView class] IsXib:NO];
+    self.headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[UICollectionReusableView class] IsXib:NO];
+    self.footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[UICollectionReusableView class] IsXib:NO];
 }
-/*
- 初始化方法  Class类型 [UICollectionReusableView class]
- */
-- (void)initWithHeaderClass:(Class)headerClass IsXib:(BOOL)isXib
-{
-    self.headerModel = [[CGXPageCollectionBaseHeaderModel alloc] initWithHeaderClass:headerClass IsXib:isXib];
-}
-/*
- 初始化方法  Class类型 [UICollectionReusableView class]
- */
-- (void)initWithFooterClass:(Class)footerClass IsXib:(BOOL)isXib
-{
-    self.footerModel = [[CGXPageCollectionBaseFooterModel alloc] initWithFooterClass:footerClass IsXib:isXib];
-}
+
 @end

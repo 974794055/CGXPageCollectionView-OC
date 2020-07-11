@@ -1,5 +1,5 @@
 //
-//  CGXPageCollectionBaseHeaderModel.h
+//  CGXPageCollectionHeaderModel.h
 //  CGXPageCollectionView-OC
 //
 //  Created by CGX on 2020/6/06.
@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CGXPageCollectionBaseHeaderModel : NSObject
+@interface CGXPageCollectionHeaderModel : NSObject
 /*
  初始化方法  Class类型 [UICollectionReusableView class]
  */
@@ -52,6 +52,9 @@ NS_ASSUME_NONNULL_BEGIN
 是否有头分区点击
 */
 @property (nonatomic , assign) BOOL isHaveTap;
+
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 @end
 

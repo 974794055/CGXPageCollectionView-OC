@@ -50,15 +50,18 @@
         sectionModel.minimumLineSpacing = 10;
         sectionModel.minimumInteritemSpacing = 10;
 
-        [sectionModel initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
-        sectionModel.headerModel.headerBgColor = [UIColor orangeColor];
-        sectionModel.headerModel.headerHeight = 40;
-        sectionModel.headerModel.isHaveTap = YES;
         
-        [sectionModel initWithFooterClass:[FooterReusableView class] IsXib:NO];
-        sectionModel.footerModel.footerBgColor = [UIColor yellowColor];;
-        sectionModel.footerModel.footerHeight = 40;
-        sectionModel.footerModel.isHaveTap = YES;
+        CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
+        headerModel.headerBgColor = [UIColor orangeColor];
+        headerModel.headerHeight = 40;
+        headerModel.isHaveTap = YES;
+        sectionModel.headerModel = headerModel;
+        
+        CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
+        footerModel.footerBgColor = [UIColor yellowColor];;
+        footerModel.footerHeight = 40;
+        footerModel.isHaveTap = YES;
+        sectionModel.footerModel = footerModel;
 
         sectionModel.horizontalAlignment = horizontal;
         sectionModel.verticalAlignment = CGXPageCollectionTagsVerticalAlignmentTop;

@@ -8,8 +8,6 @@
 
 #import "CGXPageCollectionBaseSectionModel.h"
 #import "CGXPageCollectionIrreguarRowModel.h"
-#import "CGXPageCollectionIrreguarFooterModel.h"
-#import "CGXPageCollectionIrreguarHeaderModel.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -27,7 +25,6 @@ typedef NS_ENUM(NSInteger, CGXPageCollectionIrregularLayoutShowType) {
 };
 
 @interface CGXPageCollectionIrreguarSectionModel : CGXPageCollectionBaseSectionModel
-
 
 /*
     默认每个分区分为两部分 上部分 和 下部分 item大小相等 注意给的item宽高

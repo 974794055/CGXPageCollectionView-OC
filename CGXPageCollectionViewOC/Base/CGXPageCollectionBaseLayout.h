@@ -32,19 +32,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)initializeRoundView;
 
-
 @end
 
 
 @interface CGXPageCollectionBaseLayout (BaseLayoutAttributes)
-
+/// item水平间距
+/// @param section  分区
 - (CGFloat)gx_minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
+/// item垂直间距
+/// @param section  分区
 - (CGFloat)gx_minimumLineSpacingForSectionAtIndex:(NSInteger)section;
+/// 分区边距
+/// @param section  分区
 - (UIEdgeInsets)gx_insetForSectionAtIndex:(NSInteger)section;
-
+/// 头分区高度
+/// @param section  分区
 - (CGFloat)gx_referenceSizeForHeaderInSection:(NSInteger)section;
+/// 脚分区高度
+/// @param section  分区
 - (CGFloat)gx_referenceSizeForFooterInSection:(NSInteger)section;
-
+/// item的宽高
+/// @param indexPath  分区
 - (CGSize)gx_sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

@@ -9,11 +9,12 @@
 #import "CGXPageCollectionBaseSectionModel.h"
 #import "CGXPageCollectionWaterRowModel.h"
 #import "CGXPageCollectionRoundModel.h"
-#import "CGXPageCollectionWaterHeaderModel.h"
-#import "CGXPageCollectionWaterFooterModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CGXPageCollectionWaterSectionModel : CGXPageCollectionBaseSectionModel
+
+
 // 此方法排列方式  偶数下标在左边。奇数下标在右边。 两列情况下使用
 @property (nonatomic , assign) BOOL isParityAItem;
 

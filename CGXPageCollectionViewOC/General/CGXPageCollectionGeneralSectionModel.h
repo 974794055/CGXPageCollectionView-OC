@@ -8,8 +8,6 @@
 
 #import "CGXPageCollectionBaseSectionModel.h"
 #import "CGXPageCollectionGeneralRowModel.h"
-#import "CGXPageCollectionGeneralHeaderModel.h"
-#import "CGXPageCollectionGeneralFooterModel.h"
 #import "CGXPageCollectionRoundModel.h"
 NS_ASSUME_NONNULL_BEGIN
 

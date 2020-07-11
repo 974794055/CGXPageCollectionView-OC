@@ -43,24 +43,19 @@
     CGXPageCollectionWaterLayout *layout = [[CGXPageCollectionWaterLayout alloc] init];
     layout.dataSource = self;
     layout.isRoundEnabled = self.isRoundEnabled;
-    if (@available(iOS 9.0, *)) {
-        layout.sectionFootersPinToVisibleBounds =NO;
-        layout.sectionHeadersPinToVisibleBounds =NO;
-    } else {
-        // Fallback on earlier versions
-    }
-
     return layout;
 }
-- (void)updateDataArray:(NSMutableArray<CGXPageCollectionBaseSectionModel *> *)array IsDownRefresh:(BOOL)isDownRefresh Page:(NSInteger)page
+- (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
 {
-    [super updateDataArray:array IsDownRefresh:isDownRefresh Page:page];
-    if (array.count>0) {
-        NSAssert([[array firstObject] isKindOfClass:[CGXPageCollectionWaterSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionWaterSectionModel");
+    [super refreshSectionModel:baseSectionModel];
+    if (baseSectionModel) {
+        NSAssert([baseSectionModel isKindOfClass:[CGXPageCollectionWaterSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionWaterSectionModel");
+       
+        if (baseSectionModel.rowArray.count>0) {
+            NSAssert([[baseSectionModel.rowArray firstObject] isKindOfClass:[CGXPageCollectionWaterRowModel class]], @"数据源类型不对，必须是CGXPageCollectionWaterRowModel");
+        }
     }
-    [self.collectionView reloadData];
 }
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
     return sectionModel.rowArray.count;

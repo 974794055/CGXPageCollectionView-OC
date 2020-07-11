@@ -1,1 +1,0 @@
-../../../../../CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalHeaderModel.h

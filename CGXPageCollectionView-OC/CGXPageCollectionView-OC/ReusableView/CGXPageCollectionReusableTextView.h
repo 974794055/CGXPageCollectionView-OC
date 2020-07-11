@@ -1,5 +1,5 @@
 //
-//  CGXPageCollectionBaseReusableImageView.h
+//  CGXPageCollectionReusableTextView.h
 //  CGXPageCollectionView-OC
 //
 //  Created by CGX on 2020/6/06.
@@ -10,10 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CGXPageCollectionBaseReusableImageView : CGXPageCollectionBaseReusableView
-
-@property (strong, nonatomic) UIImageView *picImageView;
-
+@interface CGXPageCollectionReusableTextView : CGXPageCollectionBaseReusableView
+@property (strong, nonatomic) UILabel *titleLabel;
 @end
 
 NS_ASSUME_NONNULL_END

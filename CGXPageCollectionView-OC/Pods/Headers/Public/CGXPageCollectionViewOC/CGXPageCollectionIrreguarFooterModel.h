@@ -1,1 +1,0 @@
-../../../../../CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrreguarFooterModel.h

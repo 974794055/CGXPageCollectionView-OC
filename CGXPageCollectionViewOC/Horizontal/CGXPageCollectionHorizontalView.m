@@ -8,7 +8,7 @@
 #import "CGXPageCollectionHorizontalView.h"
 #import "CGXPageCollectionHorizontalLayout.h"
 
-@interface CGXPageCollectionHorizontalView ()<CGXPageCollectionUpdateRoundDelegate>
+@interface CGXPageCollectionHorizontalView ()<CGXPageCollectionUpdateRoundDelegate,CGXPageCollectionHorizontalLayouttDelegate>
 
 
 @end
@@ -17,8 +17,7 @@
 - (void)initializeData
 {
     [super initializeData];
-     self.row = 1;
-     self.section = 1;
+
     self.isShowDifferentColor = NO;
 }
 
@@ -31,9 +30,8 @@
     [super preferredFlowLayout];
     CGXPageCollectionHorizontalLayout *layout = [[CGXPageCollectionHorizontalLayout alloc] init];
     layout.scrollDirection=UICollectionViewScrollDirectionHorizontal;
-    layout.row = self.row;
-    layout.section = self.section;
     layout.isRoundEnabled = YES;
+    layout.delegate = self;
     if (@available(iOS 9.0, *)) {
         layout.sectionFootersPinToVisibleBounds =NO;
         layout.sectionHeadersPinToVisibleBounds =NO;
@@ -42,17 +40,16 @@
     }
     return layout;
 }
-- (void)updateDataArray:(NSMutableArray<CGXPageCollectionBaseSectionModel *> *)array IsDownRefresh:(BOOL)isDownRefresh Page:(NSInteger)page
+
+- (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
 {
-    [super updateDataArray:array IsDownRefresh:isDownRefresh Page:page];
-    if (array.count>0) {
-        NSAssert([[array firstObject] isKindOfClass:[CGXPageCollectionHorizontalSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionHorizontalSectionModel");
-        CGXPageCollectionHorizontalSectionModel *sectionMdel = (CGXPageCollectionHorizontalSectionModel *)[array firstObject];
-        if (sectionMdel.rowArray.count>0) {
-        NSAssert([[sectionMdel.rowArray firstObject] isKindOfClass:[CGXPageCollectionHorizontalRowModel class]], @"数据源类型不对，cell的item必须是CGXPageCollectionHorizontalRowModel");
+    [super refreshSectionModel:baseSectionModel];
+    if (baseSectionModel) {
+        NSAssert([baseSectionModel isKindOfClass:[CGXPageCollectionHorizontalSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionHorizontalSectionModel");
+        if (baseSectionModel.rowArray.count>0) {
+            NSAssert([[baseSectionModel.rowArray firstObject] isKindOfClass:[CGXPageCollectionHorizontalRowModel class]], @"数据源类型不对，必须是CGXPageCollectionHorizontalRowModel");
         }
     }
-    [self.collectionView reloadData];
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
 {
@@ -98,8 +95,8 @@
     CGFloat minimumLineSpacing = sectionModel.minimumLineSpacing;
     CGFloat space = insets.left+insets.right + borderEdgeInserts.left + borderEdgeInserts.right ;
     
-    float cellWidth = (ceil(sectionModel.sectionWidth)-space-(self.row -1)*minimumInteritemSpacing)/self.row;
-    NSAssert(self.row > 0, @"每行至少一个item");
+    float cellWidth = (ceil(sectionModel.sectionWidth)-space-(sectionModel.row -1)*minimumInteritemSpacing)/sectionModel.row;
+    NSAssert(sectionModel.row > 0, @"每行至少一个item");
     
     float cellHeight1 = 0;
     if (!sectionModel.footerModel.isHaveFooter) {
@@ -112,11 +109,15 @@
     }
     cellHeight2 = sectionModel.headerModel.headerHeight;
     
-    float cellHeight = (CGRectGetHeight(self.frame)-cellHeight1-cellHeight2-(self.section+1)*minimumLineSpacing)/self.section;
+    float cellHeight = (CGRectGetHeight(self.frame)-cellHeight1-cellHeight2-(sectionModel.section+1)*minimumLineSpacing)/sectionModel.section;
     CGSize sizeFor = CGSizeMake(floor(cellWidth), cellHeight);;
     return sizeFor;
 }
-
+- (NSInteger)collectionHorizontalView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout numberOfSection:(NSInteger)section
+{
+    CGXPageCollectionHorizontalSectionModel *sectionModel = (CGXPageCollectionHorizontalSectionModel *)self.dataArray[section];
+    return sectionModel.row;
+}
 #pragma mark - JHCollectionViewDelegateFlowLayout
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout borderEdgeInsertsForSectionAtIndex:(NSInteger)section
 {

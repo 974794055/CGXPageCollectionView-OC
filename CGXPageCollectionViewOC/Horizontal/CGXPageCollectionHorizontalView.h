@@ -12,21 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CGXPageCollectionHorizontalView : CGXPageCollectionBaseView
 
-
-/* 每个cell的大小会自动计算 设置CGXPageCollectionHorizontalRowModel中的cellHeight无效  */
-/*
- //默认每行一个
- */
-@property (nonatomic , assign) NSInteger row;
-/*
- //默认一行
- */
-@property (nonatomic , assign) NSInteger section;
-/*
- 每个分区的宽
- */
-@property (nonatomic , assign) CGFloat sectionWidth;
-
 /*
  是否不同背景色
  */

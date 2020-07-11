@@ -33,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , assign) BOOL isSelectCell;
 // 是否有下划线
 @property (nonatomic , assign) BOOL isLine;
+
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 @end
 
 NS_ASSUME_NONNULL_END

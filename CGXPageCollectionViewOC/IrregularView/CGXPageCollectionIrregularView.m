@@ -31,14 +31,15 @@
            layout.delegate = self;
     return layout;
 }
-- (void)updateDataArray:(NSMutableArray<CGXPageCollectionBaseSectionModel *> *)array IsDownRefresh:(BOOL)isDownRefresh Page:(NSInteger)page
+- (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
 {
-    [super updateDataArray:array IsDownRefresh:isDownRefresh Page:page];
-    
-    if (array.count>0) {
-        NSAssert([[array firstObject] isKindOfClass:[CGXPageCollectionIrreguarSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionIrreguarSectionModel");
+    [super refreshSectionModel:baseSectionModel];
+    if (baseSectionModel) {
+        NSAssert([baseSectionModel isKindOfClass:[CGXPageCollectionIrreguarSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionIrreguarSectionModel");
+        if (baseSectionModel.rowArray.count>0) {
+            NSAssert([[baseSectionModel.rowArray firstObject] isKindOfClass:[CGXPageCollectionIrreguarRowModel class]], @"数据源类型不对，必须是CGXPageCollectionIrreguarRowModel");
+        }
     }
-    [self.collectionView reloadData];
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionIrregularLayout *)layout itemWidth:(CGFloat)width heightForItemAtIndexPath:(NSIndexPath *)indexPath

@@ -158,7 +158,11 @@
     }
     return _decorationViewAttrs;
 }
+- (BOOL) shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{
 
+    return YES;
+
+}
 @end
 
 @implementation CGXPageCollectionBaseLayout (BaseLayoutAttributes)

@@ -1,18 +1,18 @@
 //
-//  CGXPageCollectionBaseHeaderModel.m
+//  CGXPageCollectionHeaderModel.m
 //  CGXPageCollectionView-OC
 //
 //  Created by CGX on 2020/6/06.
 //  Copyright © 2020 CGX. All rights reserved.
 //
 
-#import "CGXPageCollectionBaseHeaderModel.h"
-@interface CGXPageCollectionBaseHeaderModel()
+#import "CGXPageCollectionHeaderModel.h"
+@interface CGXPageCollectionHeaderModel()
 
 @property (nonatomic , assign,readwrite) BOOL headerXib;
 @property (nonatomic, strong,readwrite) Class headerClass;
 @end
-@implementation CGXPageCollectionBaseHeaderModel
+@implementation CGXPageCollectionHeaderModel
 - (instancetype)initWithHeaderClass:(Class)headerClass IsXib:(BOOL)isXib
 {
     self = [super init];

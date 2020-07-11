@@ -7,9 +7,7 @@
 //
 
 #import "CGXPageCollectionTagsView.h"
-static NSString *const kCellReuseIdentifier = @"kCellReuseIdentifier";
-static NSString *const kHeaderReuseIdentifier = @"kHeaderReuseIdentifier";
-static NSString *const kFooterReuseIdentifier = @"kFooterReuseIdentifier";
+
 @interface CGXPageCollectionTagsView ()<CGXPageCollectionUpdateRoundDelegate>
 
 
@@ -37,16 +35,17 @@ static NSString *const kFooterReuseIdentifier = @"kFooterReuseIdentifier";
     layout.itemsDirection = CGXPageCollectionTagsDirectionLTR;
     return layout;
 }
-- (void)updateDataArray:(NSMutableArray<CGXPageCollectionBaseSectionModel *> *)array IsDownRefresh:(BOOL)isDownRefresh Page:(NSInteger)page
-{
-    [super updateDataArray:array IsDownRefresh:isDownRefresh Page:page];
-    
-    if (array.count>0) {
-        NSAssert([[array firstObject] isKindOfClass:[CGXPageCollectionTagsSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionTagsSectionModel");
-    }
-    [self.collectionView reloadData];
-}
 
+- (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
+{
+    [super refreshSectionModel:baseSectionModel];
+    if (baseSectionModel) {
+        NSAssert([baseSectionModel isKindOfClass:[CGXPageCollectionTagsSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionTagsSectionModel");
+        if (baseSectionModel.rowArray.count>0) {
+            NSAssert([[baseSectionModel.rowArray firstObject] isKindOfClass:[CGXPageCollectionTagsRowModel class]], @"数据源类型不对，必须是CGXPageCollectionTagsRowModel");
+        }
+    }
+}
 - (CGXPageCollectionTagsHorizontalAlignment)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionTagsFlowLayout *)layout itemsHorizontalAlignmentInSection:(NSInteger)section
 {
      CGXPageCollectionTagsSectionModel *sectionModel = (CGXPageCollectionTagsSectionModel *)self.dataArray[section];

@@ -52,14 +52,17 @@
 
     return layout;
 }
-- (void)updateDataArray:(NSMutableArray<CGXPageCollectionBaseSectionModel *> *)array IsDownRefresh:(BOOL)isDownRefresh Page:(NSInteger)page
+
+- (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
 {
-    [super updateDataArray:array IsDownRefresh:isDownRefresh Page:page];
-    
-    if (array.count>0) {
-        NSAssert([[array firstObject] isKindOfClass:[CGXPageCollectionGeneralSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionGeneralSectionModel");
+    [super refreshSectionModel:baseSectionModel];
+    if (baseSectionModel) {
+        NSAssert([baseSectionModel isKindOfClass:[CGXPageCollectionGeneralSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionGeneralSectionModel");
+        
+        if (baseSectionModel.rowArray.count>0) {
+            NSAssert([[baseSectionModel.rowArray firstObject] isKindOfClass:[CGXPageCollectionGeneralRowModel class]], @"数据源类型不对，必须是CGXPageCollectionGeneralRowModel");
+        }
     }
-    [self.collectionView reloadData];
 }
 - (UICollectionReusableView *)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView
 {
@@ -73,6 +76,10 @@
         }
     } else{
         headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
+    }
+    if (sectionModel.isRoundWithHeaerView) {
+        UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
+        headerView.frame = CGRectMake(borderEdgeInserts.left, borderEdgeInserts.top, headerView.frame.size.width-borderEdgeInserts.left-borderEdgeInserts.right, headerView.frame.size.height-borderEdgeInserts.top);
     }
     return headerView;
 }
@@ -89,6 +96,10 @@
     } else{
         footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
     }
+     if (sectionModel.isRoundWithFooterView) {
+    UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
+    footerView.frame = CGRectMake(borderEdgeInserts.left, 0, footerView.frame.size.width-borderEdgeInserts.left-borderEdgeInserts.right, footerView.frame.size.height-borderEdgeInserts.bottom);
+     }
     return footerView;
 }
 

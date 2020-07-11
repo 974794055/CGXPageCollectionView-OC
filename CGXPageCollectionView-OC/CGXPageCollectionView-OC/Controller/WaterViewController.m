@@ -51,16 +51,21 @@
         sectionModel.minimumLineSpacing = 10;
         sectionModel.minimumInteritemSpacing = 10;
         
-        [sectionModel initWithFooterClass:[FooterReusableView class] IsXib:NO];
-        sectionModel.footerModel.footerModel = @"脚步";
-        sectionModel.footerModel.footerHeight = 30;
-        sectionModel.footerModel.footerBgColor = [UIColor yellowColor];
+        CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
+        headerModel.headerBgColor =  [UIColor orangeColor];;
+        headerModel.headerHeight = 40;
+        headerModel.isHaveTap = YES;
+       headerModel.headerModel = @"头部";
+        sectionModel.headerModel = headerModel;
         
-        [sectionModel initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
-        sectionModel.headerModel.headerModel = @"头部";
-        sectionModel.headerModel.headerHeight = 44;
+        CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
+        footerModel.footerBgColor = [UIColor yellowColor];;
+        footerModel.footerHeight = 30;
+        footerModel.isHaveTap = YES;
+        footerModel.footerModel = @"脚步";
+        sectionModel.footerModel = footerModel;
         
-        sectionModel.headerModel.headerBgColor = [UIColor orangeColor];
+
         sectionModel.row = 1;
         
          sectionModel.borderEdgeInserts = UIEdgeInsetsMake(0, 0, 0, 0);

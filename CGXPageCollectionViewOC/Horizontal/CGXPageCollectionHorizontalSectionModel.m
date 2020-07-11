@@ -11,17 +11,9 @@
 - (void)initializeData
 {
     [super initializeData];
-   
+   self.row = 1;
+   self.section = 1;
     self.sectionWidth = 0;
         self.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
 }
-
-//- (void)initWithFooterClass:(Class)footerClass IsXib:(BOOL)isXib
-//{
-//    [super initWithFooterClass:footerClass IsXib:isXib];
-//}
-//- (void)initWithHeaderClass:(Class)headerClass IsXib:(BOOL)isXib
-//{
-//    [super initWithHeaderClass:headerClass IsXib:isXib];
-//}
 @end
