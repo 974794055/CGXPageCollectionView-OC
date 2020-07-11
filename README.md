@@ -11,7 +11,7 @@
 -  pod名称 ：CGXPageCollectionViewOC
 - 群名称：
 - 群   号：
-- 最新版本号： 0.3
+- 最新版本号： 0.4
 - QQ号：974794055
   
 - 功能：    
@@ -34,19 +34,21 @@
 ### 库架构预览
 说明 | Gif |
 ----|------|
-LineView🌈层级架构  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main1.png" width="343" height="80"> |
+LineView🌈层级架构  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main1.png" width="343" height="350"> |
 
 ### 主列表效果预览
+说明 | Gif |
+----|------|
 LineView🌈普通列表  |  <img
-src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main2.png" width="343" height="80"> |
+src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main2.gif" width="287" height="600"> |
 LineView🌈标签列表  |  <img
-src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main3.png" width="343" height="80"> |
+src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main3.gif" width="287" height="600"> |
 LineView🌈瀑布流列表  |  <img
-src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main4.png" width="343" height="80"> |
+src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main4.gif" width="287" height="600"> |
 LineView🌈不规则列表  |  <img
-src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main5.png" width="343" height="80"> |
+src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main5.gif" width="287" height="600"> |
 LineView🌈水平滚动列表  |  <img
-src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main6.png" width="343" height="80"> |
+src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main6.gif" width="287" height="600"> |
 
 目的：
 - 参考学习如何自定义
