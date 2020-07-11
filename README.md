@@ -1,4 +1,10 @@
 # CGXPageCollectionView-OC
+
+[![platform](https://img.shields.io/badge/platform-iOS-blue.svg?style=plastic)](#)
+[![languages](https://img.shields.io/badge/language-objective--c-blue.svg)](#) 
+[![cocoapods](https://img.shields.io/badge/cocoapods-supported-4BC51D.svg?style=plastic)](https://cocoapods.org/pods/JXCategoryView)
+[![support](https://img.shields.io/badge/support-ios%208%2B-orange.svg)](#) 
+
 基于UICollectionView封装库封装列表
 
 - 下载链接：https://github.com/974794055/CGXPageCollectionView-OC.git
@@ -24,23 +30,56 @@
 - 4、不规则列表;
 - 4、水平滚动列表;
 
-## 要求
+## 效果预览
+### 库架构预览
+说明 | Gif |
+----|------|
+LineView🌈层级架构  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main1.png" width="343" height="80"> |
 
+### 主列表效果预览
+LineView🌈普通列表  |  <img
+src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main2.png" width="343" height="80"> |
+LineView🌈标签列表  |  <img
+src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main3.png" width="343" height="80"> |
+LineView🌈瀑布流列表  |  <img
+src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main4.png" width="343" height="80"> |
+LineView🌈不规则列表  |  <img
+src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main5.png" width="343" height="80"> |
+LineView🌈水平滚动列表  |  <img
+src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main6.png" width="343" height="80"> |
+
+目的：
+- 参考学习如何自定义
+- 直接修改自定义示例类以快速实现自己的需求
+
+## 要求
 - iOS 8.0+
 - Xcode 9+
 - Objective-C
 
 ## 安装
-
 ### 手动
-
 Clone代码，把CGXPageCollectionViewOC文件夹拖入项目，#import "CGXPageCollectionViewOC.h"，就可以使用了；
-
 ### CocoaPods
-
 ```ruby
 target '<Your Target Name>' do
     pod 'CGXPageCollectionViewOC'
 end
 ```
 先执行`pod repo update`，再执行`pod install`
+
+
+## 补充
+
+如果刚开始使用`CGXPageCollectionViewOC`，当开发过程中需要支持某种特性时，请务必先搜索使用文档或者源代码。确认是否已经实现支持了想要的特性。请别不要文档和源代码都没有看，就直接提问，这对于大家都是一种时间浪费。如果没有支持想要的特性，欢迎提Issue讨论，或者自己实现提一个PullRequest。
+
+该仓库保持随时更新，对于主流新的分类选择效果会第一时间支持。使用过程中，有任何建议或问题，可以通过以下方式联系我：</br>
+邮箱：974794055@qq.com </br>
+QQ群： 
+<img src="" width="300" height="411">
+
+喜欢就star❤️一下吧
+
+## License
+
+CGXPageCollectionViewOC is released under the MIT license.
