@@ -51,6 +51,7 @@ s.subspec 'Horizontal' do |ss|
    ss.dependency 'CGXPageCollectionViewOC/Base'
  end
 
+
 end
 
 
