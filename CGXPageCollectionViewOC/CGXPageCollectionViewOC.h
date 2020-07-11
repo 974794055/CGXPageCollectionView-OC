@@ -16,7 +16,6 @@ pod ：CGXPageCollectionViewOC
 群   号：
 版本： 0.4
 QQ号：974794055
-
 */
 
 /*

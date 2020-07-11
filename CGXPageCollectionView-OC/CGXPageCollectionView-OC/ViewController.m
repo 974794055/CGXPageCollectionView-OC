@@ -21,7 +21,6 @@
     // Do any additional setup after loading the view.
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(updateColor)];
     self.titleArr =  [NSMutableArray arrayWithObjects:
                       @"普通列表",
