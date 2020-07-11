@@ -39,16 +39,11 @@ LineView🌈层级架构  |  <img src="https://github.com/974794055/CGXPageColle
 ### 主列表效果预览
 说明 | Gif |
 ----|------|
-LineView🌈普通列表  |  <img
-src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main2.gif" width="287" height="600"> |
-LineView🌈标签列表  |  <img
-src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main3.gif" width="287" height="600"> |
-LineView🌈瀑布流列表  |  <img
-src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main4.gif" width="287" height="600"> |
-LineView🌈不规则列表  |  <img
-src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main5.gif" width="287" height="600"> |
-LineView🌈水平滚动列表  |  <img
-src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main6.gif" width="287" height="600"> |
+LineView🌈普通列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main2.gif" width="287" height="600"> |
+LineView🌈标签列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main3.gif" width="287" height="600"> |
+LineView🌈瀑布流列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main4.gif" width="287" height="600"> |
+LineView🌈不规则列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main5.gif" width="287" height="600"> |
+LineView🌈水平滚动列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main6.gif" width="287" height="600"> |
 
 目的：
 - 参考学习如何自定义
