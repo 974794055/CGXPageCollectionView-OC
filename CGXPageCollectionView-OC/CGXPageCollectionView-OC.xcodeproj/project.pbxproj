@@ -14,9 +14,6 @@
 		04B42E3B24483494006FD2F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B42E3A24483494006FD2F4 /* Assets.xcassets */; };
 		04B42E3E24483494006FD2F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B42E3C24483494006FD2F4 /* LaunchScreen.storyboard */; };
 		04B42E4124483494006FD2F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B42E4024483494006FD2F4 /* main.m */; };
-		9E25AF11249F5C4400343226 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9E25AF0E249F5C4400343226 /* LICENSE */; };
-		9E25AF12249F5C4400343226 /* CGXPageCollectionViewOC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9E25AF0F249F5C4400343226 /* CGXPageCollectionViewOC.podspec */; };
-		9E25AF13249F5C4400343226 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9E25AF10249F5C4400343226 /* README.md */; };
 		9E25AF24249F5C8D00343226 /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF14249F5C8B00343226 /* TagsViewController.m */; };
 		9E25AF25249F5C8D00343226 /* HeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF17249F5C8C00343226 /* HeaderReusableView.m */; };
 		9E25AF26249F5C8D00343226 /* HeaderRoundReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF18249F5C8C00343226 /* HeaderRoundReusableView.m */; };
@@ -33,6 +30,10 @@
 		9E25AF45249F65A100343226 /* CGXPageCollectionReusableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3B249F65A100343226 /* CGXPageCollectionReusableImageView.m */; };
 		9E25AF46249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3C249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m */; };
 		9E25AF47249F65A100343226 /* CGXPageCollectionBaseReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3E249F65A100343226 /* CGXPageCollectionBaseReusableView.m */; };
+		9E4B001D24BC89030016CB4D /* CGXPageCollectionViewOC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9E4B001A24BC89030016CB4D /* CGXPageCollectionViewOC.podspec */; };
+		9E4B001E24BC89030016CB4D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9E4B001B24BC89030016CB4D /* LICENSE */; };
+		9E4B001F24BC89030016CB4D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9E4B001C24BC89030016CB4D /* README.md */; };
+		9E4B002124BC90AA0016CB4D /* main0.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E4B002024BC90AA0016CB4D /* main0.png */; };
 		9E7D943724B5FA35007FB4A9 /* HorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D943624B5FA34007FB4A9 /* HorizontalViewController.m */; };
 		9E97F91424BA1372000B1C6A /* main1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E97F90E24BA1372000B1C6A /* main1.png */; };
 		9E97F91524BA1372000B1C6A /* main2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E97F90F24BA1372000B1C6A /* main2.gif */; };
@@ -57,9 +58,6 @@
 		04B42E3F24483494006FD2F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04B42E4024483494006FD2F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29713D7D93AD97DCE561E1A8 /* libPods-CGXPageCollectionView-OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CGXPageCollectionView-OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E25AF0E249F5C4400343226 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../../LICENSE; sourceTree = "<group>"; };
-		9E25AF0F249F5C4400343226 /* CGXPageCollectionViewOC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CGXPageCollectionViewOC.podspec; path = ../../../CGXPageCollectionViewOC.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E25AF10249F5C4400343226 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
 		9E25AF14249F5C8B00343226 /* TagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
 		9E25AF15249F5C8B00343226 /* IrregularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrregularViewController.h; sourceTree = "<group>"; };
 		9E25AF16249F5C8B00343226 /* FooterReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterReusableView.h; sourceTree = "<group>"; };
@@ -92,6 +90,10 @@
 		9E25AF3D249F65A100343226 /* CGXPageCollectionReusableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionReusableImageView.h; sourceTree = "<group>"; };
 		9E25AF3E249F65A100343226 /* CGXPageCollectionBaseReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseReusableView.m; sourceTree = "<group>"; };
 		9E25AF3F249F65A100343226 /* CGXPageCollectionReusableTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionReusableTextView.h; sourceTree = "<group>"; };
+		9E4B001A24BC89030016CB4D /* CGXPageCollectionViewOC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CGXPageCollectionViewOC.podspec; path = ../../../CGXPageCollectionViewOC.podspec; sourceTree = "<group>"; };
+		9E4B001B24BC89030016CB4D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../../LICENSE; sourceTree = "<group>"; };
+		9E4B001C24BC89030016CB4D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
+		9E4B002024BC90AA0016CB4D /* main0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main0.png; sourceTree = "<group>"; };
 		9E7D943524B5FA34007FB4A9 /* HorizontalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalViewController.h; sourceTree = "<group>"; };
 		9E7D943624B5FA34007FB4A9 /* HorizontalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalViewController.m; sourceTree = "<group>"; };
 		9E97F90E24BA1372000B1C6A /* main1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main1.png; sourceTree = "<group>"; };
@@ -138,7 +140,7 @@
 		04B42E2D24483492006FD2F4 /* CGXPageCollectionView-OC */ = {
 			isa = PBXGroup;
 			children = (
-				9E25AF0D249F5C2D00343226 /* Podspec Metadata */,
+				9E4B001924BC88EB0016CB4D /* Podspec Metadata */,
 				9E97F90D24BA1372000B1C6A /* CGXPageCollectionViewImageGif */,
 				04B42E2E24483492006FD2F4 /* AppDelegate.h */,
 				04B42E2F24483492006FD2F4 /* AppDelegate.m */,
@@ -167,16 +169,6 @@
 				C1175978587F0C0AECBD77C3 /* Pods-CGXPageCollectionView-OC.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		9E25AF0D249F5C2D00343226 /* Podspec Metadata */ = {
-			isa = PBXGroup;
-			children = (
-				9E25AF0F249F5C4400343226 /* CGXPageCollectionViewOC.podspec */,
-				9E25AF0E249F5C4400343226 /* LICENSE */,
-				9E25AF10249F5C4400343226 /* README.md */,
-			);
-			path = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
 		9E25AF2E249F65A100343226 /* Cell */ = {
@@ -241,9 +233,20 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		9E4B001924BC88EB0016CB4D /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				9E4B001A24BC89030016CB4D /* CGXPageCollectionViewOC.podspec */,
+				9E4B001B24BC89030016CB4D /* LICENSE */,
+				9E4B001C24BC89030016CB4D /* README.md */,
+			);
+			path = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
 		9E97F90D24BA1372000B1C6A /* CGXPageCollectionViewImageGif */ = {
 			isa = PBXGroup;
 			children = (
+				9E4B002024BC90AA0016CB4D /* main0.png */,
 				9E97F90E24BA1372000B1C6A /* main1.png */,
 				9E97F90F24BA1372000B1C6A /* main2.gif */,
 				9E97F91024BA1372000B1C6A /* main3.gif */,
@@ -322,17 +325,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E97F91924BA1372000B1C6A /* main6.gif in Resources */,
+				9E4B001D24BC89030016CB4D /* CGXPageCollectionViewOC.podspec in Resources */,
 				9E97F91624BA1372000B1C6A /* main3.gif in Resources */,
 				9E97F91424BA1372000B1C6A /* main1.png in Resources */,
-				9E25AF13249F5C4400343226 /* README.md in Resources */,
 				04B42E3E24483494006FD2F4 /* LaunchScreen.storyboard in Resources */,
+				9E4B001E24BC89030016CB4D /* LICENSE in Resources */,
+				9E4B001F24BC89030016CB4D /* README.md in Resources */,
 				9E97F91724BA1372000B1C6A /* main4.gif in Resources */,
-				9E25AF12249F5C4400343226 /* CGXPageCollectionViewOC.podspec in Resources */,
 				9E97F91524BA1372000B1C6A /* main2.gif in Resources */,
 				04B42E3B24483494006FD2F4 /* Assets.xcassets in Resources */,
 				9E97F91824BA1372000B1C6A /* main5.gif in Resources */,
-				9E25AF11249F5C4400343226 /* LICENSE in Resources */,
 				04B42E3924483492006FD2F4 /* Main.storyboard in Resources */,
+				9E4B002124BC90AA0016CB4D /* main0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -516,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

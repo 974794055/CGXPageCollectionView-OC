@@ -2,7 +2,7 @@
 
 [![platform](https://img.shields.io/badge/platform-iOS-blue.svg?style=plastic)](#)
 [![languages](https://img.shields.io/badge/language-objective--c-blue.svg)](#) 
-[![cocoapods](https://img.shields.io/badge/cocoapods-supported-4BC51D.svg?style=plastic)](https://cocoapods.org/pods/JXCategoryView)
+[![cocoapods](https://img.shields.io/badge/cocoapods-supported-4BC51D.svg?style=plastic)](https://cocoapods.org/pods/CGXPageCollectionViewOC)
 [![support](https://img.shields.io/badge/support-ios%208%2B-orange.svg)](#) 
 
 基于UICollectionView封装库封装列表
@@ -39,11 +39,11 @@ LineView🌈层级架构  |  <img src="https://github.com/974794055/CGXPageColle
 ### 主列表效果预览
 说明 | Gif |
 ----|------|
-LineView🌈普通列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main2.gif" width="287" height="600"> |
-LineView🌈标签列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main3.gif" width="287" height="600"> |
-LineView🌈瀑布流列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main4.gif" width="287" height="600"> |
-LineView🌈不规则列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main5.gif" width="287" height="600"> |
-LineView🌈水平滚动列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main6.gif" width="287" height="600"> |
+效果🌈普通列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main2.gif" width="287" height="600"> |
+效果🌈标签列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main3.gif" width="287" height="600"> |
+效果🌈瀑布流列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main4.gif" width="287" height="600"> |
+效果🌈不规则列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main5.gif" width="287" height="600"> |
+效果🌈水平滚动列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main6.gif" width="287" height="600"> |
 
 目的：
 - 参考学习如何自定义
@@ -64,6 +64,90 @@ target '<Your Target Name>' do
 end
 ```
 先执行`pod repo update`，再执行`pod install`
+
+## 结构图
+<img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main0..png" width="933" height="482">
+
+## 使用
+
+### CGXPageCollectionGeneralView普通布局使用示例
+
+1.初始化CGXPageCollectionGeneralView
+```Objective-C
+self.generalView = [[CGXPageCollectionGeneralView alloc]  init];
+self.generalView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-88-34);
+self.generalView.viewDelegate = self;
+self.generalView.isShowDifferentColor = YES;
+self.generalView.backgroundColor = [UIColor whiteColor];
+[self.view addSubview:self.generalView];
+[self.generalView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
+[self.generalView registerFooter:[FooterRoundReusableView class] IsXib:NO];
+[self.generalView registerHeader:[HeaderRoundReusableView class] IsXib:NO];
+[self.generalView registerFooter:[FooterReusableView class] IsXib:NO];
+[self.generalView registerHeader:[HeaderReusableView class] IsXib:NO];
+```
+
+2.加载CGXPageCollectionGeneralView数据源
+```Objective-C
+self.titleArr = ({
+    NSArray *arr = [NSArray arrayWithObjects:
+                    @"有Header&Footer，包Header,包Footer",
+                    @"有Header&Footer，包Header,不包Footer",
+                    @"有Header&Footer，不包Header,包Footer",
+                    @"有Header&Footer，不包Header,不包Footer",
+                    @"borderLine 包Section",
+                    @"borderLine 包Section（带投影）",
+                    @"有sections底色，cell左对齐",
+                    @"有sections底色，cell居中",
+                    @"有sections底色，cell右对齐",
+                    @"cell右对齐与cell右侧开始",
+                    nil];
+    arr;
+});
+NSMutableArray *dataArray = [NSMutableArray array];
+for (int i = 0; i<self.titleArr.count; i++) {
+    CGXPageCollectionGeneralSectionModel *sectionModel = [[CGXPageCollectionGeneralSectionModel alloc] init];
+    sectionModel.insets = UIEdgeInsetsMake(10, 10, 10, 10);
+    sectionModel.minimumLineSpacing = 10;
+    sectionModel.minimumInteritemSpacing = 10;
+    sectionModel.row = arc4random() % 5 + 1;
+    sectionModel.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
+    sectionModel.cellHeight = 50;
+    
+    CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
+    CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterRoundReusableView class] IsXib:NO];
+    
+    headerModel.headerBgColor = [UIColor orangeColor];
+    headerModel.headerHeight = 40+arc4random() % 30;
+    headerModel.headerModel = self.titleArr[i];
+    headerModel.isHaveTap = YES;
+    
+    footerModel.footerBgColor = [UIColor yellowColor];;
+    footerModel.footerHeight = 40+arc4random() % 20;;
+    footerModel.isHaveTap = YES;
+
+    sectionModel.headerModel = headerModel;
+    sectionModel.footerModel = footerModel;
+
+    for (int j = 0; j<sectionModel.row * 2;j++) {
+        CGXPageCollectionGeneralRowModel *rowModel = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
+        rowModel.cellColor = RandomColor;
+        [sectionModel.rowArray addObject:rowModel];
+    }
+    [dataArray addObject:sectionModel];
+}
+[self.generalView updateDataArray:dataArray IsDownRefresh:YES Page:1];
+```
+3.可选实现`CGXPageCollectionUpdateViewDelegate`代理
+
+```Objective-C
+/* 展示cell 处理数据 */
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView Cell:(UICollectionViewCell *)cell cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+/*点击cell*/
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView DidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+```
+
+## 更新记录
 
 
 ## 补充
