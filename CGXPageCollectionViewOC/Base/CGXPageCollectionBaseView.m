@@ -21,9 +21,13 @@
 @end
 
 @implementation CGXPageCollectionBaseView
+
 - (void)dealloc
 {
-    
+    if (self.collectionView) {
+        [self.collectionView removeObserver:self forKeyPath:@"contentOffset"];
+    }
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -170,6 +174,9 @@
         self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     [self addSubview:self.collectionView];
+    
+    // 监听滚动
+     [self.collectionView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (UICollectionViewLayout *)preferredFlowLayout
@@ -315,7 +322,27 @@
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    
+    if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:scrollViewDidScroll:)]) {
+         [self.viewDelegate gx_PageCollectionBaseView:self scrollViewDidScroll:scrollView];
+     };
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"contentOffset"]) {
+        CGPoint contentOffset = [change[NSKeyValueChangeNewKey] CGPointValue];
+        if ((self.collectionView.isTracking || self.collectionView.isDecelerating)) {
+            //只处理用户滚动的情况
+            if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:DropUpDownDidChanged:)]) {
+                [self.viewDelegate gx_PageCollectionBaseView:self DropUpDownDidChanged:contentOffset];
+            }
+        }
+    }
+}
+- (void)hidekeyboard
+{
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
 }
 
 - (void)registerCell:(Class)classCell IsXib:(BOOL)isXib

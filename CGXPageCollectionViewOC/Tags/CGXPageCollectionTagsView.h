@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 
-- (CGSize)tagsView:(CGXPageCollectionTagsView *)tagsView sizeForItemHeightAtIndexPath:(NSIndexPath *)indexPath ItemSize:(CGSize)itemSize;
+- (CGSize)gx_PageCollectionTagsView:(CGXPageCollectionTagsView *)tagsView sizeForItemHeightAtIndexPath:(NSIndexPath *)indexPath ItemSize:(CGSize)itemSize;
 
 @end
 

@@ -28,7 +28,7 @@
 		9E25AF43249F65A100343226 /* CGXPageCollectionImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF37249F65A100343226 /* CGXPageCollectionImageCell.m */; };
 		9E25AF44249F65A100343226 /* CGXPageCollectionCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF38249F65A100343226 /* CGXPageCollectionCategoryCell.m */; };
 		9E25AF45249F65A100343226 /* CGXPageCollectionReusableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3B249F65A100343226 /* CGXPageCollectionReusableImageView.m */; };
-		9E25AF46249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3C249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m */; };
+		9E25AF46249F65A100343226 /* CGXPageCollectionReusableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3C249F65A100343226 /* CGXPageCollectionReusableTextView.m */; };
 		9E25AF47249F65A100343226 /* CGXPageCollectionBaseReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3E249F65A100343226 /* CGXPageCollectionBaseReusableView.m */; };
 		9E4B001D24BC89030016CB4D /* CGXPageCollectionViewOC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9E4B001A24BC89030016CB4D /* CGXPageCollectionViewOC.podspec */; };
 		9E4B001E24BC89030016CB4D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9E4B001B24BC89030016CB4D /* LICENSE */; };
@@ -87,7 +87,7 @@
 		9E25AF38249F65A100343226 /* CGXPageCollectionCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionCategoryCell.m; sourceTree = "<group>"; };
 		9E25AF3A249F65A100343226 /* CGXPageCollectionBaseReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseReusableView.h; sourceTree = "<group>"; };
 		9E25AF3B249F65A100343226 /* CGXPageCollectionReusableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionReusableImageView.m; sourceTree = "<group>"; };
-		9E25AF3C249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseReusableTextView.m; sourceTree = "<group>"; };
+		9E25AF3C249F65A100343226 /* CGXPageCollectionReusableTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionReusableTextView.m; sourceTree = "<group>"; };
 		9E25AF3D249F65A100343226 /* CGXPageCollectionReusableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionReusableImageView.h; sourceTree = "<group>"; };
 		9E25AF3E249F65A100343226 /* CGXPageCollectionBaseReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseReusableView.m; sourceTree = "<group>"; };
 		9E25AF3F249F65A100343226 /* CGXPageCollectionReusableTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionReusableTextView.h; sourceTree = "<group>"; };
@@ -197,8 +197,8 @@
 				9E25AF3E249F65A100343226 /* CGXPageCollectionBaseReusableView.m */,
 				9E25AF3D249F65A100343226 /* CGXPageCollectionReusableImageView.h */,
 				9E25AF3B249F65A100343226 /* CGXPageCollectionReusableImageView.m */,
+				9E25AF3C249F65A100343226 /* CGXPageCollectionReusableTextView.m */,
 				9E25AF3F249F65A100343226 /* CGXPageCollectionReusableTextView.h */,
-				9E25AF3C249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -384,7 +384,7 @@
 				9E25AF40249F65A100343226 /* CGXPageCollectionBaseCell.m in Sources */,
 				9E25AF41249F65A100343226 /* CGXPageCollectionTextCell.m in Sources */,
 				9E25AF29249F5C8D00343226 /* FooterRoundReusableView.m in Sources */,
-				9E25AF46249F65A100343226 /* CGXPageCollectionBaseReusableTextView.m in Sources */,
+				9E25AF46249F65A100343226 /* CGXPageCollectionReusableTextView.m in Sources */,
 				9E25AF44249F65A100343226 /* CGXPageCollectionCategoryCell.m in Sources */,
 				9E25AF43249F65A100343226 /* CGXPageCollectionImageCell.m in Sources */,
 				9E25AF25249F5C8D00343226 /* HeaderReusableView.m in Sources */,

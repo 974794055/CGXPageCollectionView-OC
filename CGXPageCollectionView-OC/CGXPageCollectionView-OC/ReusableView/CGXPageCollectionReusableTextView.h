@@ -6,7 +6,7 @@
 //  Copyright © 2020 CGX. All rights reserved.
 //
 
-#import "CGXPageCollectionBaseReusableView.h"
+#import "CGXPageCollectionReusableTextView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

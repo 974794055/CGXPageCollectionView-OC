@@ -9,11 +9,8 @@
 
 - 下载链接：https://github.com/974794055/CGXPageCollectionView-OC.git
 -  pod名称 ：CGXPageCollectionViewOC
-- 群名称：
-- 群   号：
-- 最新版本号： 0.4
-- QQ号：974794055
-  
+- 最新版本号： 0.5
+
 - 功能：    
 - UICollectionView封装的库，分区圆角边框，瀑布流、标签流、不规则布局等主流APP分页列表滚动视图的库封装
  
@@ -34,7 +31,7 @@
 ### 库架构预览
 说明 | Gif |
 ----|------|
-LineView🌈层级架构  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main1.png" width="343" height="350"> |
+架构🌈层级架构  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main1.png" width="343" height="350"> |
 
 ### 主列表效果预览
 说明 | Gif |
@@ -155,9 +152,12 @@ for (int i = 0; i<self.titleArr.count; i++) {
 如果刚开始使用`CGXPageCollectionViewOC`，当开发过程中需要支持某种特性时，请务必先搜索使用文档或者源代码。确认是否已经实现支持了想要的特性。请别不要文档和源代码都没有看，就直接提问，这对于大家都是一种时间浪费。如果没有支持想要的特性，欢迎提Issue讨论，或者自己实现提一个PullRequest。
 
 该仓库保持随时更新，对于主流新的列表效果会第一时间支持。使用过程中，有任何建议或问题，可以通过以下方式联系我：</br>
-邮箱：974794055@qq.com 
-QQ群： 
-</br><img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/authorQQ.png" width="300" height="411">
+邮    箱：974794055@qq.com </br>
+群名称：</br>
+QQ  群：</br>
+QQ  号：974794055</br>
+
+<img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/authorQQ.png" width="300" height="411">
 
 喜欢就star❤️一下吧
 

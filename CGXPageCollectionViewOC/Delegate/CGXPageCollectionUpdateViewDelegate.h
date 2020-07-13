@@ -22,8 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView Cell:(UICollectionViewCell *)cell cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 /*点击cell*/
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView DidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
-/*处理指定cell的大*/
-- (CGSize)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath Height:(CGFloat)height;
 /*显示头分区*/
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView AtIndexPath:(NSIndexPath *)indexPath SectionHeaderView:(UICollectionReusableView *)headerView;
 /*显示脚分区 */

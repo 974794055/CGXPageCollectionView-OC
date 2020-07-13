@@ -13,8 +13,8 @@
 pod ：CGXPageCollectionViewOC
  下载链接：https://github.com/974794055/CGXPageCollectionView-OC.git
 群名称：
-群   号：
-版本： 0.4
+群号：
+版本号： 0.5
 QQ号：974794055
 */
 

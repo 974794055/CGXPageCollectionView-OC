@@ -43,6 +43,8 @@
     CGXPageCollectionWaterLayout *layout = [[CGXPageCollectionWaterLayout alloc] init];
     layout.dataSource = self;
     layout.isRoundEnabled = self.isRoundEnabled;
+    layout.sectionHeadersPinTVisibleBounds = NO;
+     layout.sectionFootersPinTVisibleBounds = NO;
     return layout;
 }
 - (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
@@ -72,6 +74,10 @@
     CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[indexPath.section];;
     CGXPageCollectionWaterRowModel *item =  (CGXPageCollectionWaterRowModel *)sectionModel.rowArray[indexPath.row];;
     myHeight = item.cellHeight;
+    
+    if (self.dataDelegate && [self.dataDelegate respondsToSelector:@selector(gx_PageCollectionWaterView:sizeForItemHeightAtIndexPath:ItemSize:)]) {
+        myHeight = [self.dataDelegate gx_PageCollectionWaterView:self sizeForItemHeightAtIndexPath:indexPath ItemSize:CGSizeMake(width, myHeight)];
+    }
     return CGSizeMake(width, myHeight);
 }
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout *)layout IsParityAItemAtIndexPath:(NSIndexPath *)indexPath

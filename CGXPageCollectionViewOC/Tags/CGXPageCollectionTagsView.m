@@ -88,8 +88,8 @@
     NSAssert(sectionModel.row > 0, @"每行至少一个item");
     CGSize sizeFor = CGSizeMake(floor(cellWidth), item.cellHeight);;
     
-    if (self.titleDelegate && [self.titleDelegate respondsToSelector:@selector(tagsView:sizeForItemHeightAtIndexPath:ItemSize:)]) {
-        return [self.titleDelegate tagsView:self sizeForItemHeightAtIndexPath:indexPath ItemSize:sizeFor];
+    if (self.titleDelegate && [self.titleDelegate respondsToSelector:@selector(gx_PageCollectionTagsView:sizeForItemHeightAtIndexPath:ItemSize:)]) {
+        return [self.titleDelegate gx_PageCollectionTagsView:self sizeForItemHeightAtIndexPath:indexPath ItemSize:sizeFor];
     }
     return CGSizeMake(sizeFor.width, sizeFor.height);
 }
