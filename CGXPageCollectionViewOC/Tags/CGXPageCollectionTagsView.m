@@ -86,10 +86,12 @@
     CGFloat space = insets.left+insets.right;
     float cellWidth = (collectionView.bounds.size.width-space-(sectionModel.row -1)*minimumInteritemSpacing)/sectionModel.row;
     NSAssert(sectionModel.row > 0, @"每行至少一个item");
-    CGSize sizeFor = CGSizeMake(floor(cellWidth), item.cellHeight);;
     
-    if (self.titleDelegate && [self.titleDelegate respondsToSelector:@selector(gx_PageCollectionTagsView:sizeForItemHeightAtIndexPath:ItemSize:)]) {
-        return [self.titleDelegate gx_PageCollectionTagsView:self sizeForItemHeightAtIndexPath:indexPath ItemSize:sizeFor];
+    CGSize sizeFor = CGSizeMake(floor(cellWidth), item.cellHeight);;
+    if (sectionModel.isAdaptive) {
+        if (self.titleDelegate && [self.titleDelegate respondsToSelector:@selector(gx_PageCollectionTagsView:sizeForItemHeightAtIndexPath:ItemSize:)]) {
+            sizeFor = [self.titleDelegate gx_PageCollectionTagsView:self sizeForItemHeightAtIndexPath:indexPath ItemSize:sizeFor];
+        }
     }
     return CGSizeMake(sizeFor.width, sizeFor.height);
 }

@@ -28,6 +28,7 @@
 - (void)initializeData
 {
     [super initializeData];
+    self.isCalculateOpenIrregularCell = YES;
     
 }
 - (void)prepareLayout {
@@ -168,11 +169,20 @@
         }
     }];
     
+    
     // Header view hover.
-    if (self.sectionHeadersPinTVisibleBounds) {
-        for (UICollectionViewLayoutAttributes *attriture in result) {
-            if (![attriture.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) continue;
-            NSInteger section = attriture.indexPath.section;
+    //    if (self.sectionHeadersPinTVisibleBounds) {
+    for (UICollectionViewLayoutAttributes *attriture in result) {
+        if (![attriture.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) continue;
+        NSInteger section = attriture.indexPath.section;
+        /*
+         某个分区是否悬浮
+         */
+        BOOL isSectionHeadersPinTVisibleBounds = NO;
+        if (self.dataSource && [self.dataSource respondsToSelector:@selector(collectionView:layout:SectionHeadersPinTVisibleBoundsInSection:)]) {
+            isSectionHeadersPinTVisibleBounds = [self.dataSource collectionView:self.collectionView layout:self SectionHeadersPinTVisibleBoundsInSection:section];
+        }
+        if (isSectionHeadersPinTVisibleBounds) {
             UIEdgeInsets contentInsetOfSection = [self gx_insetForSectionAtIndex:section];
             NSIndexPath *firstIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
             UICollectionViewLayoutAttributes *itemAttribute = [self layoutAttributesForItemAtIndexPath:firstIndexPath];
@@ -186,6 +196,7 @@
             attriture.zIndex = (NSIntegerMax/2)+section;
         }
     }
+    //    }
     
     
     

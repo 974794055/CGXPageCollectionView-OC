@@ -96,10 +96,10 @@
     } else{
         footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
     }
-     if (sectionModel.isRoundWithFooterView) {
-    UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
-    footerView.frame = CGRectMake(borderEdgeInserts.left, 0, footerView.frame.size.width-borderEdgeInserts.left-borderEdgeInserts.right, footerView.frame.size.height-borderEdgeInserts.bottom);
-     }
+    if (sectionModel.isRoundWithFooterView) {
+        UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
+        footerView.frame = CGRectMake(borderEdgeInserts.left, 0, footerView.frame.size.width-borderEdgeInserts.left-borderEdgeInserts.right, footerView.frame.size.height-borderEdgeInserts.bottom);
+    }
     return footerView;
 }
 

@@ -1,0 +1,1 @@
+../../../../../CGXPageCollectionViewOC/Common/UIColor+CGXPageCollection.h

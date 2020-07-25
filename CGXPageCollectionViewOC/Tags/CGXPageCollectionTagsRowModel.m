@@ -13,5 +13,6 @@
 {
     [super initializeData];
     self.cellHeight = 100;
+     self.cellWidth = 50;
 }
 @end

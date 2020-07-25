@@ -126,6 +126,8 @@ typedef void (^CGXPageCollectionBaseViewHeightBlock)(CGXPageCollectionBaseView *
 //刷新所有数据源
 - (void)reloadData;
 
+
+
 #pragma mark - Subclass Override 子类调用
 - (void)initializeData NS_REQUIRES_SUPER;
 

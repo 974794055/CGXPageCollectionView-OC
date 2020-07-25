@@ -14,13 +14,11 @@
 - (void)initializeData
 {
     [super initializeData];
-    
     self.row = 1;
     self.isParityFlow = NO;
     self.isParityAItem = NO;
-    
     self.isRoundEnabled = NO;
-//    self.isCalculateOpenIrregularCell = NO;
     self.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.sectionHeadersPinTVisibleBounds = NO;
 }
 @end

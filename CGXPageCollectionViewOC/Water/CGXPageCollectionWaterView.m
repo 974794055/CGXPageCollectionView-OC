@@ -43,7 +43,6 @@
     CGXPageCollectionWaterLayout *layout = [[CGXPageCollectionWaterLayout alloc] init];
     layout.dataSource = self;
     layout.isRoundEnabled = self.isRoundEnabled;
-    layout.sectionHeadersPinTVisibleBounds = NO;
      layout.sectionFootersPinTVisibleBounds = NO;
     return layout;
 }
@@ -97,7 +96,14 @@
     CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];;
     return sectionModel.isParityFlow;
 }
-
+/*
+ 某个分区是否悬浮
+ */
+- (BOOL)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout*)layout SectionHeadersPinTVisibleBoundsInSection:(NSInteger)section
+{
+    CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
+     return sectionModel.sectionHeadersPinTVisibleBounds;
+}
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
    CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];

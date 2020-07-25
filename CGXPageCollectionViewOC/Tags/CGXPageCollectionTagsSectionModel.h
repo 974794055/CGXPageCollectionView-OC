@@ -23,6 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic , assign) NSInteger row;
 
+/*
+是否自适应标签 YES时 row无效
+*/
+@property (nonatomic,assign) BOOL isAdaptive;
+
 @end
 
 NS_ASSUME_NONNULL_END

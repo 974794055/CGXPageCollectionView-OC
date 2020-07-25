@@ -13,7 +13,7 @@
 {
     [super initializeData];
     self.row = 4;
-
+    self.isAdaptive = YES;
 }
 
 @end

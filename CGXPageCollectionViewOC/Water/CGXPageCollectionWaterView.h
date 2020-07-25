@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 // 返回高度
-- (CGFloat)gx_PageCollectionWaterView:(CGXPageCollectionWaterView *)tagsView sizeForItemHeightAtIndexPath:(NSIndexPath *)indexPath ItemSize:(CGSize)itemSize;
+- (CGFloat)gx_PageCollectionWaterView:(CGXPageCollectionWaterView *)waterView sizeForItemHeightAtIndexPath:(NSIndexPath *)indexPath ItemSize:(CGSize)itemSize;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import "CGXPageCollectionBaseView.h"
 #import <objc/runtime.h>
-#import "UIView+CGXPageCollectionBaseViewTap.h"
+#import "UIView+CGXPageCollectionTap.h"
 #import "CGXPageCollectionBaseLayout.h"
 #import "CGXPageCollectionTools.h"
 @interface CGXPageCollectionBaseView()

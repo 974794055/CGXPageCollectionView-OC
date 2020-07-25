@@ -7,8 +7,41 @@
 //
 
 #import "CGXPageCollectionRoundReusableView.h"
+@interface CGXPageCollectionRoundReusableView()
+
+@property (nonatomic,strong) UIImageView *bgImageView;
+
+@end
 
 @implementation CGXPageCollectionRoundReusableView
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+
+        [self initializeViews];
+    }
+    return self;
+}
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+         [self initializeViews];
+    }
+    return self;
+}
+- (void)initializeViews
+{
+    self.bgImageView = [[UIImageView alloc] init];
+    [self addSubview:self.bgImageView];
+}
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.bgImageView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+}
 
 - (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
     [super applyLayoutAttributes:layoutAttributes];
@@ -16,7 +49,6 @@
     _myCacheAttr = attr;
     [self toChangeCollectionReusableViewRoundInfoWithLayoutAttributes:attr];
 }
-
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection{
     [super traitCollectionDidChange:previousTraitCollection];
     [self toChangeCollectionReusableViewRoundInfoWithLayoutAttributes:_myCacheAttr];
@@ -24,7 +56,7 @@
 
 -(void)toChangeCollectionReusableViewRoundInfoWithLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
 {
-    
+    NSLog(@"self.bgImageView:%@" , self.bgImageView);
     CGXPageCollectionRoundLayoutAttributes *attr = (CGXPageCollectionRoundLayoutAttributes *)layoutAttributes;
     if (attr.myConfigModel) {
         CGXPageCollectionRoundModel *model = attr.myConfigModel;

@@ -57,7 +57,7 @@
                                        toItem:self
                                     attribute:NSLayoutAttributeLeft
                                    multiplier:1.0
-                                     constant:10],
+                                     constant:0],
 
        [NSLayoutConstraint constraintWithItem:_myLabel
                                     attribute:NSLayoutAttributeBottom
@@ -65,7 +65,7 @@
                                        toItem:self
                                     attribute:NSLayoutAttributeBottom
                                    multiplier:1.0
-                                     constant:-20],
+                                     constant:0],
 
        [NSLayoutConstraint constraintWithItem:_myLabel
                                     attribute:NSLayoutAttributeRight
@@ -73,7 +73,7 @@
                                        toItem:self
                                     attribute:NSLayoutAttributeRight
                                    multiplier:1
-                                     constant:-10],
+                                     constant:0],
 
     ]];
 }
