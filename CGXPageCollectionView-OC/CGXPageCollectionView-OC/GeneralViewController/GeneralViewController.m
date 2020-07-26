@@ -74,9 +74,11 @@
         sectionModel.roundModel = roundModel;
         
         if (i==0) {
+            roundModel.bgImage = [UIImage imageNamed:@"bg"];
             sectionModel.isRoundWithFooterView = YES;
             sectionModel.isRoundWithHeaerView = YES;
         } else if (i==1){
+            roundModel.bgImage = [UIImage imageNamed:@"bg2"];
             sectionModel.isRoundWithFooterView = NO;
             sectionModel.isRoundWithHeaerView = YES;
         } else if (i==2){

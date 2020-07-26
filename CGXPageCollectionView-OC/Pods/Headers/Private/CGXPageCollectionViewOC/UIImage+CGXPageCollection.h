@@ -1,0 +1,1 @@
+../../../../../CGXPageCollectionViewOC/Common/UIImage+CGXPageCollection.h
