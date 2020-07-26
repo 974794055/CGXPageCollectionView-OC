@@ -143,7 +143,6 @@ for (int i = 0; i<self.titleArr.count; i++) {
 /*点击cell*/
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView DidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 ```
-
 ## 更新记录
 
 ## 补充
