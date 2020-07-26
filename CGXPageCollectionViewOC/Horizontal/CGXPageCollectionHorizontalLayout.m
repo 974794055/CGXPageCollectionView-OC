@@ -18,10 +18,10 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
 
 - (NSMutableArray<UICollectionViewLayoutAttributes *> *)decorationViewArr
 {
-       if (!_decorationViewArr) {
-         _decorationViewArr = [NSMutableArray array];
-     }
-     return _decorationViewArr;
+    if (!_decorationViewArr) {
+        _decorationViewArr = [NSMutableArray array];
+    }
+    return _decorationViewArr;
 }
 
 - (void)initializeData
@@ -35,14 +35,11 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
 {
     [super prepareLayout];
     
-     [self.decorationViewArr removeAllObjects];
+    [self.decorationViewArr removeAllObjects];
     
     NSInteger numberOfSections = [self.collectionView numberOfSections];
     id delegate = self.collectionView.delegate;
-//    id <CGXPageCollectionUpdateRoundDelegate> delegate  = (id <CGXPageCollectionUpdateRoundDelegate>)self.collectionView.delegate;
-//    //检测是否实现了背景样式模块代理
     if (![delegate respondsToSelector:@selector(collectionView:layout:configModelForSectionAtIndex:)]) {
-//    if (!numberOfSections || ![delegate conformsToProtocol:@protocol(CGXPageCollectionHorizontalLayoutDelegate)]) {
         return;
     }
     
@@ -62,6 +59,7 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
         sectionFrame.origin.y -= sectionInset.top;
         sectionFrame.size.width += sectionInset.left + sectionInset.right;
         sectionFrame.size.height = sectionFrame.size.height+sectionInset.top+sectionInset.bottom;
+        
         // 2、定义
         CGXPageCollectionRoundLayoutAttributes *attr = [CGXPageCollectionRoundLayoutAttributes layoutAttributesForDecorationViewOfKind:CGXPageCollectionHorizontalLayoutSectionBackground withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         attr.frame = sectionFrame;
@@ -93,11 +91,13 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     CGSize size = [super collectionViewContentSize];
     CGFloat width=0;
     for (NSInteger i=0;i<numOfSection ;i++) {
-      width+=  [self sectionWidthIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]];
-        if (i==numOfSection-1) {
-            UIEdgeInsets sectionInset = [self gx_insetForSectionAtIndex:i];
-            width+=sectionInset.right;
+        width+=  [self sectionWidthIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]];
+        UIEdgeInsets userCustomSectionInset = [self userCustomSectionInset:i];
+        UIEdgeInsets sectionInset = [self gx_insetForSectionAtIndex:i];
+        if (i==0) {
+            width+=userCustomSectionInset.left+sectionInset.left;
         }
+        width+=userCustomSectionInset.right;
     }
     size.width= ceil(width);
     return size;
@@ -107,29 +107,29 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     NSLog(@"___________%@",NSStringFromCGRect(rect));
     //获取对应rect中的展示indexpath ，生成attribu，笔者这里的需求不会存在大量数据，就偷懒了。
     NSMutableArray *attributeArray = [NSMutableArray new];
-
+    
     for (int section=0; section<[self.collectionView numberOfSections]; section++) {
         UICollectionViewLayoutAttributes* attHeader = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         [attributeArray addObject:attHeader];
     }
-
+    
     for (int section=0; section<self.collectionView.numberOfSections; section++) {
         for (NSInteger item=0; item<[self.collectionView numberOfItemsInSection:section]; item++) {
-           UICollectionViewLayoutAttributes *att= [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:item inSection:section]];
+            UICollectionViewLayoutAttributes *att= [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:item inSection:section]];
             [attributeArray addObject:att];
         }
     }
-
+    
     for (int section=0; section<[self.collectionView numberOfSections]; section++) {
         UICollectionViewLayoutAttributes* attHeader = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         [attributeArray addObject:attHeader];
     }
     
     for (UICollectionViewLayoutAttributes *attr in self.decorationViewArr) {
-           if (CGRectIntersectsRect(rect, attr.frame)) {
-               [attributeArray addObject:attr];
-           }
-       }
+        if (CGRectIntersectsRect(rect, attr.frame)) {
+            [attributeArray addObject:attr];
+        }
+    }
     return attributeArray;
 }
 
@@ -149,16 +149,21 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     CGSize itemSize = [self gx_sizeForItemAtIndexPath:indexPath];
     CGFloat minimumInteritemSpacing = [self gx_minimumInteritemSpacingForSectionAtIndex:indexPath.section];
     CGFloat minimumLineSpacing = [self gx_minimumLineSpacingForSectionAtIndex:indexPath.section];
-    CGFloat headerHeight = [self gx_referenceSizeForHeaderInSection:indexPath.section];
-    CGFloat footerHeight = [self gx_referenceSizeForFooterInSection:indexPath.section];
-    
-    tempFrame.origin.x=column*itemSize.width +[self sectionItemStarX:indexPath.section] + minimumInteritemSpacing*(column+1);
-    
-    if ([attributes.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) {
-        tempFrame.origin.y=line*itemSize.height  + footerHeight + minimumLineSpacing *(line+1);
-    }else{
-        tempFrame.origin.y=line*itemSize.height  + headerHeight + minimumLineSpacing *(line+1);;
+    CGFloat headerHeight = [self gx_referenceSizeForHeaderInSection:indexPath.section].height;
+    if (indexPath.section) {
+        
+        
+        NSLog(@"%ld--%ld",column,indexPath.section);
     }
+    UIEdgeInsets sectionInset = [self gx_insetForSectionAtIndex:indexPath.section];
+    UIEdgeInsets userCustomSectionInset = [self userCustomSectionInset:indexPath.section];
+    
+    tempFrame.origin.x=sectionInset.left+column*(itemSize.width+minimumInteritemSpacing) +[self sectionItemStarX:indexPath.section];
+    
+    tempFrame.origin.y=line*itemSize.height  + headerHeight + minimumLineSpacing *(line+1);;
+    
+    tempFrame.origin.y += userCustomSectionInset.top;
+    
     attributes.frame=tempFrame;
     return attributes;
 }
@@ -168,7 +173,7 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     UICollectionViewLayoutAttributes *orgAttributes=  [super layoutAttributesForSupplementaryViewOfKind:elementKind atIndexPath:indexPath];
     if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {
         
-        CGFloat headerHeight = [self gx_referenceSizeForHeaderInSection:indexPath.section];
+        CGFloat headerHeight = [self gx_referenceSizeForHeaderInSection:indexPath.section].height;
         CGRect tempFrame=orgAttributes.frame;
         NSInteger section=orgAttributes.indexPath.section;
         CGFloat perx= [self sectionItemStarX:section];
@@ -178,7 +183,7 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
         orgAttributes.frame=tempFrame;
     }
     if ([elementKind isEqualToString:UICollectionElementKindSectionFooter]) {
-         CGFloat footerHeight = [self gx_referenceSizeForFooterInSection:indexPath.section];
+        CGFloat footerHeight = [self gx_referenceSizeForFooterInSection:indexPath.section].height;
         CGRect tempFrame=orgAttributes.frame;
         NSInteger section=orgAttributes.indexPath.section;
         CGFloat perx= [self sectionItemStarX:section];
@@ -199,7 +204,7 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     UIEdgeInsets sectionInset = [self gx_insetForSectionAtIndex:indexPath.section];
     CGFloat minimumLineSpacing = [self gx_minimumLineSpacingForSectionAtIndex:indexPath.section];
     NSInteger column=  [self numColumnOfIndexPath:indexPath];
-   CGFloat re=sectionInset.left+sectionInset.right+column*(itemSize.width+minimumLineSpacing);
+    CGFloat re=sectionInset.left+sectionInset.right+column*(itemSize.width+minimumLineSpacing);
     return re;
 }
 //根据视图的高度，计算section的 行列数
@@ -213,12 +218,26 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
 }
 -(CGFloat)sectionItemStarX:(NSUInteger)section
 {
-     UIEdgeInsets sectionInset = [self gx_insetForSectionAtIndex:section];
+    UIEdgeInsets sectionInset = [self gx_insetForSectionAtIndex:section];
     CGFloat x=sectionInset.left;//计算每个head.x
+    UIEdgeInsets userCustomSectionInset = [self userCustomSectionInset:section];
+    x+=userCustomSectionInset.left*(section+1);
     for (NSInteger i=1;i<=section ;i++) {
         x+=  [self sectionWidthIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]];
     }
     return x;
 }
+
+-(UIEdgeInsets)userCustomSectionInset:(NSUInteger)section
+{
+    UIEdgeInsets userCustomSectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    id delegate = self.collectionView.delegate;
+    if ([delegate respondsToSelector:@selector(collectionView:layout:borderEdgeInsertsForSectionAtIndex:)]) {
+        //检测是否实现了该方法，进行赋值
+        userCustomSectionInset = [delegate collectionView:self.collectionView layout:self borderEdgeInsertsForSectionAtIndex:section];
+    }
+    return userCustomSectionInset;
+}
+
 #pragma mark property
 @end

@@ -13,9 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CGXPageCollectionHorizontalView : CGXPageCollectionBaseView
 
 /*
- 是否不同背景色
+ 是否不同背景色 NO：白色
  */
 @property (assign, nonatomic) BOOL isShowDifferentColor;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

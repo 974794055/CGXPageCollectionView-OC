@@ -157,7 +157,7 @@
 
 - (void)initializeViews
 {
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)) collectionViewLayout:[self preferredFlowLayout]];
+    self.collectionView = [[CGXPageCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)) collectionViewLayout:[self preferredFlowLayout]];
     self.collectionView.backgroundColor = self.backgroundColor;
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = NO;

@@ -17,14 +17,15 @@
 - (void)initializeData
 {
     [super initializeData];
-
     self.isShowDifferentColor = NO;
 }
 
 - (void)initializeViews
 {
     [super initializeViews];
+    self.collectionView.pagingEnabled = NO;
 }
+
 - (UICollectionViewLayout *)preferredFlowLayout
 {
     [super preferredFlowLayout];
@@ -57,19 +58,19 @@
     UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
     CGFloat space = borderEdgeInserts.left + borderEdgeInserts.right ;
     if (!sectionModel.footerModel.isHaveFooter) {
-        return CGSizeMake(ceil(sectionModel.sectionWidth)-space, 0);
+        return CGSizeMake(ceil(sectionModel.sectionWidth-space), 0);
     }
-    return CGSizeMake(ceil(sectionModel.sectionWidth)-space, sectionModel.footerModel.footerHeight);;
+    return CGSizeMake(ceil(sectionModel.sectionWidth-space), sectionModel.footerModel.footerHeight);;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     CGXPageCollectionHorizontalSectionModel *sectionModel = (CGXPageCollectionHorizontalSectionModel *)self.dataArray[section];
-    UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
+    UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;;
     CGFloat space = borderEdgeInserts.left + borderEdgeInserts.right ;
     if (!sectionModel.headerModel.isHaveHeader) {
-         return CGSizeMake(ceil(sectionModel.sectionWidth)-space, 0);
+         return CGSizeMake(ceil(sectionModel.sectionWidth-space), 0);
     }
-    return CGSizeMake(ceil(sectionModel.sectionWidth)-space, sectionModel.headerModel.headerHeight);
+    return CGSizeMake(ceil(sectionModel.sectionWidth-space), sectionModel.headerModel.headerHeight);
 }
 - (UICollectionReusableView *)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView
 {
@@ -90,26 +91,28 @@
 {
     CGXPageCollectionHorizontalSectionModel *sectionModel = (CGXPageCollectionHorizontalSectionModel *)self.dataArray[indexPath.section];
     UIEdgeInsets  insets  = sectionModel.insets;
-    UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
+    UIEdgeInsets borderEdgeInserts =sectionModel.borderEdgeInserts;;
     CGFloat minimumInteritemSpacing = sectionModel.minimumInteritemSpacing;
     CGFloat minimumLineSpacing = sectionModel.minimumLineSpacing;
     CGFloat space = insets.left+insets.right + borderEdgeInserts.left + borderEdgeInserts.right ;
-    
+    CGFloat spaceT = insets.top+insets.bottom+borderEdgeInserts.top + borderEdgeInserts.bottom;
     float cellWidth = (ceil(sectionModel.sectionWidth)-space-(sectionModel.row -1)*minimumInteritemSpacing)/sectionModel.row;
     NSAssert(sectionModel.row > 0, @"每行至少一个item");
     
     float cellHeight1 = 0;
     if (!sectionModel.footerModel.isHaveFooter) {
         cellHeight1 = 0;
+    }else{
+        cellHeight1 = sectionModel.footerModel.footerHeight;
     }
-    cellHeight1 = sectionModel.footerModel.footerHeight;
     float cellHeight2 = 0;
     if (!sectionModel.headerModel.isHaveHeader) {
         cellHeight2 = 0;
+    }else{
+        cellHeight2 = sectionModel.headerModel.headerHeight;
     }
-    cellHeight2 = sectionModel.headerModel.headerHeight;
     
-    float cellHeight = (CGRectGetHeight(self.frame)-cellHeight1-cellHeight2-(sectionModel.section+1)*minimumLineSpacing)/sectionModel.section;
+    float cellHeight = (CGRectGetHeight(self.frame)-cellHeight1-cellHeight2-spaceT-(sectionModel.section-1)*minimumLineSpacing)/sectionModel.section;
     CGSize sizeFor = CGSizeMake(floor(cellWidth), cellHeight);;
     return sizeFor;
 }
@@ -122,7 +125,7 @@
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout borderEdgeInsertsForSectionAtIndex:(NSInteger)section
 {
     CGXPageCollectionHorizontalSectionModel *sectionModel = (CGXPageCollectionHorizontalSectionModel *)self.dataArray[section];
-    return sectionModel.borderEdgeInserts;
+    return sectionModel.borderEdgeInserts;;
 }
 - (CGXPageCollectionRoundModel *)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout configModelForSectionAtIndex:(NSInteger)section
 {

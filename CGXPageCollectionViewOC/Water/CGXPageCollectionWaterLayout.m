@@ -64,7 +64,7 @@
         
         // Per section header
         CGFloat headerHeight = 0.0;
-        headerHeight = [self gx_referenceSizeForHeaderInSection:section];
+        headerHeight = [self gx_referenceSizeForHeaderInSection:section].height;
         UICollectionViewLayoutAttributes *headerLayoutAttribute = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         headerLayoutAttribute.frame = CGRectMake(0.0, _contentHeight, contentWidth, headerHeight);
         [_headerLayoutAttributes addObject:headerLayoutAttribute];
@@ -124,7 +124,7 @@
         
         // Per section footer
         CGFloat footerHeader = 0.0;
-        footerHeader = [self gx_referenceSizeForFooterInSection:section];
+        footerHeader = [self gx_referenceSizeForFooterInSection:section].height;
         UICollectionViewLayoutAttributes *footerLayoutAttribute = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         footerLayoutAttribute.frame = CGRectMake(0.0, _contentHeight+maxOffsetValue, contentWidth, footerHeader);
         [_footerLayoutAttributes addObject:footerLayoutAttribute];

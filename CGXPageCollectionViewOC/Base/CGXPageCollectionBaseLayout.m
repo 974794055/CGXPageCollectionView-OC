@@ -185,27 +185,27 @@
         return self.minimumLineSpacing;
     }
 }
-- (CGFloat)gx_referenceSizeForHeaderInSection:(NSInteger)section
+- (CGSize)gx_referenceSizeForHeaderInSection:(NSInteger)section
 {
-    CGFloat height = 0;
+    CGSize size = CGSizeMake(0, 0);
     if (self.collectionView.delegate && [self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:referenceSizeForHeaderInSection:)]) {
         id<UICollectionViewDelegateFlowLayout> delegate = (id<UICollectionViewDelegateFlowLayout>) self.collectionView.delegate;
-        height = [delegate collectionView:self.collectionView layout:self referenceSizeForHeaderInSection:section].height;
+        size = [delegate collectionView:self.collectionView layout:self referenceSizeForHeaderInSection:section];
     } else{
-        height = self.headerReferenceSize.height;
+        size = self.headerReferenceSize;
     }
-    return height;
+    return size;
 }
-- (CGFloat)gx_referenceSizeForFooterInSection:(NSInteger)section
+- (CGSize)gx_referenceSizeForFooterInSection:(NSInteger)section
 {
-    CGFloat height = 0;
+    CGSize size = CGSizeMake(0, 0);
     if (self.collectionView.delegate && [self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:referenceSizeForFooterInSection:)]) {
         id<UICollectionViewDelegateFlowLayout> delegate = (id<UICollectionViewDelegateFlowLayout>) self.collectionView.delegate;
-        height = [delegate collectionView:self.collectionView layout:self referenceSizeForFooterInSection:section].height;
+        size = [delegate collectionView:self.collectionView layout:self referenceSizeForFooterInSection:section];
     } else{
-        height = self.footerReferenceSize.height;
+        size = self.footerReferenceSize;
     }
-    return height;
+    return size;
 }
 - (UIEdgeInsets)gx_insetForSectionAtIndex:(NSInteger)section
 {

@@ -47,10 +47,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIEdgeInsets)gx_insetForSectionAtIndex:(NSInteger)section;
 /// 头分区高度
 /// @param section  分区
-- (CGFloat)gx_referenceSizeForHeaderInSection:(NSInteger)section;
+- (CGSize)gx_referenceSizeForHeaderInSection:(NSInteger)section;
 /// 脚分区高度
 /// @param section  分区
-- (CGFloat)gx_referenceSizeForFooterInSection:(NSInteger)section;
+- (CGSize)gx_referenceSizeForFooterInSection:(NSInteger)section;
 /// item的宽高
 /// @param indexPath  分区
 - (CGSize)gx_sizeForItemAtIndexPath:(NSIndexPath *)indexPath;

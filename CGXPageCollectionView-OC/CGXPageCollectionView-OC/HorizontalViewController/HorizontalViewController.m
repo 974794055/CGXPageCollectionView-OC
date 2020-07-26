@@ -50,11 +50,11 @@
         sectionModel.insets = UIEdgeInsetsMake(10, 10, 10, 10);
         sectionModel.minimumLineSpacing = 10;
         sectionModel.minimumInteritemSpacing = 10;
-        
+        sectionModel.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
         
         CGFloat sectionWidth = [[UIScreen mainScreen]bounds].size.width*0.56;
         sectionModel.sectionWidth = ceil(sectionWidth);
-        sectionModel.roundModel = sectionModel.roundModel = [self sectionRoundModel];;
+        sectionModel.roundModel = [self sectionRoundModel];;
         
         CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
         headerModel.headerBgColor =  [UIColor orangeColor];;
@@ -72,7 +72,7 @@
         
         
         sectionModel.section = 2;
-        sectionModel.row = 2;
+        sectionModel.row = 3;
         for (int j = 0; j< sectionModel.row*sectionModel.section;j++) {
             CGXPageCollectionHorizontalRowModel *rowModel = [[CGXPageCollectionHorizontalRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
             rowModel.cellColor = RandomColor;

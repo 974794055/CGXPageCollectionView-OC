@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CGXPageCollectionView.h"
 #import "CGXPageCollectionBaseSectionModel.h"
 
 #import "CGXPageCollectionUpdateFooterDelegate.h"
@@ -37,7 +37,7 @@ typedef void (^CGXPageCollectionBaseViewHeightBlock)(CGXPageCollectionBaseView *
 
 @interface CGXPageCollectionBaseView : UIView<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic , strong) UICollectionView *collectionView;
+@property (nonatomic , strong) CGXPageCollectionView *collectionView;
 /*
 是否自适应高度
 */

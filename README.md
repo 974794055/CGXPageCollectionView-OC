@@ -9,7 +9,7 @@
 
 - 下载链接：https://github.com/974794055/CGXPageCollectionView-OC.git
 -  pod名称 ：CGXPageCollectionViewOC
-- 最新版本号： 0.5
+- 最新版本号： 0.6
 
 - 功能：    
 - UICollectionView封装的库，分区圆角边框，瀑布流、标签流、不规则布局等主流APP分页列表滚动视图的库封装

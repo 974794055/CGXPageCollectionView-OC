@@ -43,9 +43,9 @@
     UICollectionViewLayoutAttributes *layoutAttrs = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:elementKind withIndexPath:indexPath];
     CGFloat height = 0;
     if (elementKind == UICollectionElementKindSectionHeader) {
-        height = [self gx_referenceSizeForHeaderInSection:indexPath.section];
+        height = [self gx_referenceSizeForHeaderInSection:indexPath.section].height;
     } else {
-        height = [self gx_referenceSizeForFooterInSection:indexPath.section];
+        height = [self gx_referenceSizeForFooterInSection:indexPath.section].height;
     }
     layoutAttrs.frame = CGRectMake(0, self.totalHeight, self.collectionView.bounds.size.width, height);
     self.totalHeight += height;
@@ -118,7 +118,7 @@
     CGFloat spaceH = [self gx_minimumInteritemSpacingForSectionAtIndex:indexPath.section];
     CGFloat spaceW = [self gx_minimumLineSpacingForSectionAtIndex:indexPath.section];
      UIEdgeInsets inset= [self gx_insetForSectionAtIndex:indexPath.section];
-       CGFloat width = (self.collectionView.frame.size.width-inset.left-inset.right-spaceW) / 2;
+    CGFloat width = (self.collectionView.frame.size.width-inset.left-inset.right-spaceW) / 2;
     CGFloat itemHeight = [self.delegate collectionView:self.collectionView layout:self itemWidth:width heightForItemAtIndexPath:indexPath];
     CGFloat y = self.totalHeight;
     if (indexPath.item <3) {

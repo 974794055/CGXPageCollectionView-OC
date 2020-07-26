@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
  //默认一行
  */
 @property (nonatomic , assign) NSInteger section;
-
 /*
  每个分区的宽
  */
@@ -33,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , strong) CGXPageCollectionRoundModel *roundModel;
 
 @property (nonatomic) UIEdgeInsets borderEdgeInserts;//默认是UIEdgeInsetsMake(10, 10, 10, 10);
+
 @end
 
 NS_ASSUME_NONNULL_END

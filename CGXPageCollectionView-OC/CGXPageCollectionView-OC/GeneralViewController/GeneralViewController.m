@@ -103,9 +103,10 @@
         if (i==9) {
             sectionModel.row = arc4random() % 5 + 2;
         }
+        UIColor *cellColor = RandomColor;
         for (int j = 0; j<sectionModel.row * 2;j++) {
             CGXPageCollectionGeneralRowModel *rowModel = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
-            rowModel.cellColor = RandomColor;
+            rowModel.cellColor = cellColor;
             [sectionModel.rowArray addObject:rowModel];
         }
         [dataArray addObject:sectionModel];
