@@ -22,6 +22,7 @@
     [super initializeData];
     self.isRoundEnabled = YES;
       self.isShowDifferentColor = YES;;
+    self.sectionHeadersPinTVisibleBounds = NO;;
 }
 - (void)initializeViews
 {
@@ -43,7 +44,8 @@
     CGXPageCollectionWaterLayout *layout = [[CGXPageCollectionWaterLayout alloc] init];
     layout.dataSource = self;
     layout.isRoundEnabled = self.isRoundEnabled;
-     layout.sectionFootersPinTVisibleBounds = NO;
+    layout.sectionFootersPinTVisibleBounds = NO;
+    layout.sectionHeadersPinTVisibleBounds = self.sectionHeadersPinTVisibleBounds;
     return layout;
 }
 - (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
@@ -95,14 +97,6 @@
 {
     CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];;
     return sectionModel.isParityFlow;
-}
-/*
- 某个分区是否悬浮
- */
-- (BOOL)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout*)layout SectionHeadersPinTVisibleBoundsInSection:(NSInteger)section
-{
-    CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
-     return sectionModel.sectionHeadersPinTVisibleBounds;
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {

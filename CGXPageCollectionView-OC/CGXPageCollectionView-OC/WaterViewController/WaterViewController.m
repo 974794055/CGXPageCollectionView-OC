@@ -21,23 +21,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
     self.view.backgroundColor = [UIColor whiteColor];
-     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.generalView = [[CGXPageCollectionWaterView alloc]  init];
     self.generalView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-88-34);
     self.generalView.viewDelegate = self;
     self.generalView.isShowDifferentColor = YES;
     self.generalView.isRoundEnabled = self.isRoundEnabled;
-     [self.generalView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
+    self.generalView.sectionHeadersPinTVisibleBounds = NO;
+    [self.generalView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
     [self.generalView registerFooter:[FooterReusableView class] IsXib:NO];
     [self.generalView registerHeader:[HeaderReusableView class] IsXib:NO];
     [self.view addSubview:self.generalView];
-       NSMutableArray *dataArray = [NSMutableArray array];
-       
+    NSMutableArray *dataArray = [NSMutableArray array];
+    
     
     dataArray = [NSMutableArray arrayWithArray:[self loadDealWithList]];
-       [self.generalView updateDataArray:dataArray IsDownRefresh:YES Page:1];
+    [self.generalView updateDataArray:dataArray IsDownRefresh:YES Page:1];
 }
 //处理数据源
 - (NSMutableArray<CGXPageCollectionWaterSectionModel *> *)loadDealWithList
@@ -47,7 +48,12 @@
     for (int i = 0; i<x; i++) {
         CGXPageCollectionWaterSectionModel *sectionModel = [[CGXPageCollectionWaterSectionModel alloc] init];
         
-        sectionModel.insets = UIEdgeInsetsMake(10, 10, 10, 10);
+        if (i % 2 == 0) {
+            sectionModel.insets = UIEdgeInsetsMake(10, 10, 10, 10);
+        } else{
+            sectionModel.insets = UIEdgeInsetsMake(20, 20, 20, 20);
+        }
+       
         sectionModel.minimumLineSpacing = 10;
         sectionModel.minimumInteritemSpacing = 10;
         
@@ -55,7 +61,7 @@
         headerModel.headerBgColor =  [UIColor orangeColor];;
         headerModel.headerHeight = 40;
         headerModel.isHaveTap = YES;
-       headerModel.headerModel = @"头部";
+        headerModel.headerModel = @"头部";
         sectionModel.headerModel = headerModel;
         
         CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
@@ -65,20 +71,21 @@
         footerModel.footerModel = @"脚步";
         sectionModel.footerModel = footerModel;
         
-        if (i==0) {
-            sectionModel.sectionHeadersPinTVisibleBounds = YES;
-        }
-        
-        
         sectionModel.row = 1;
         
-         sectionModel.borderEdgeInserts = UIEdgeInsetsMake(0, 0, 0, 0);
+        sectionModel.borderEdgeInserts = UIEdgeInsetsMake(0, 0, 0, 0);
         if (self.isRoundEnabled) {
-             sectionModel.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
-   
-        CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc] init];
+            
+            
+            if (i % 2 == 0) {
+                sectionModel.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
+            } else{
+                sectionModel.borderEdgeInserts = UIEdgeInsetsMake(20, 20, 20, 20);
+            }
+            
+            CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc] init];
             roundModel.backgroundColor = RandomColor;
-        if (i<4) {
+            if (i<4) {
                 sectionModel.row = 2;
                 roundModel.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
                 
@@ -105,15 +112,15 @@
                 }
             } else{
             }
-        sectionModel.roundModel = roundModel;
+            sectionModel.roundModel = roundModel;
         }
         
         NSMutableArray *itemArr = [NSMutableArray array];
         
         NSInteger aRedValue =arc4random() %255;
-         NSInteger aGreenValue =arc4random() %255;
-         NSInteger aBlueValue =arc4random() %255;
-         UIColor*randColor = [UIColor colorWithRed:aRedValue /255.0f green:aGreenValue /255.0f blue:aBlueValue /255.0f alpha:1.0f];
+        NSInteger aGreenValue =arc4random() %255;
+        NSInteger aBlueValue =arc4random() %255;
+        UIColor*randColor = [UIColor colorWithRed:aRedValue /255.0f green:aGreenValue /255.0f blue:aBlueValue /255.0f alpha:1.0f];
         
         if (i == 0) {
             sectionModel.row = 5;
@@ -232,13 +239,13 @@
     return dateAry;
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

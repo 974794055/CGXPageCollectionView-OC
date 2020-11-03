@@ -34,11 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) UIEdgeInsets borderEdgeInserts;//默认是UIEdgeInsetsMake(10, 10, 10, 10);
 
-/*
-头分区是否悬浮 默认NO
-*/
-@property (nonatomic,assign) BOOL sectionHeadersPinTVisibleBounds;
-
 @end
 
 NS_ASSUME_NONNULL_END

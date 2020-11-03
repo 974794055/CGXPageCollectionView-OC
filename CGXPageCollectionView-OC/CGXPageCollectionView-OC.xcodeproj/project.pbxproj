@@ -204,8 +204,8 @@
 				9E25AF3E249F65A100343226 /* CGXPageCollectionBaseReusableView.m */,
 				9E25AF3D249F65A100343226 /* CGXPageCollectionReusableImageView.h */,
 				9E25AF3B249F65A100343226 /* CGXPageCollectionReusableImageView.m */,
-				9E25AF3C249F65A100343226 /* CGXPageCollectionReusableTextView.m */,
 				9E25AF3F249F65A100343226 /* CGXPageCollectionReusableTextView.h */,
+				9E25AF3C249F65A100343226 /* CGXPageCollectionReusableTextView.m */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";

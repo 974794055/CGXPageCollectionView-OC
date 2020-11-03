@@ -1,9 +1,9 @@
 //
 //  UIColor+CGXPageCollection.m
-//  LayerTest
+//  CGXPageCollectionView-OC
 //
-//  Created by Lonelyflow on 19/04/2019.
-//  Copyright © 2019 Lonely traveller. All rights reserved.
+//  Created by CGX on 2020/6/06.
+//  Copyright © 2020 CGX. All rights reserved.
 //
 
 #import "UIColor+CGXPageCollection.h"

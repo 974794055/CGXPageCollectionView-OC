@@ -19,6 +19,5 @@
     self.isParityAItem = NO;
     self.isRoundEnabled = NO;
     self.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
-    self.sectionHeadersPinTVisibleBounds = NO;
 }
 @end

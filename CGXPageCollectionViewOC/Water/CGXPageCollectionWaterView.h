@@ -34,6 +34,10 @@ NS_ASSUME_NONNULL_BEGIN
 // 是否不同背景色
 // */
 @property (assign, nonatomic) BOOL isShowDifferentColor;
+
+// 是否悬浮
+@property (nonatomic,assign) BOOL sectionHeadersPinTVisibleBounds;
+
 @end
 
 NS_ASSUME_NONNULL_END

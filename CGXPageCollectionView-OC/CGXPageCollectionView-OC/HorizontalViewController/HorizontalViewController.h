@@ -2,7 +2,7 @@
 //  HorizontalViewController.h
 //  CGXPageCollectionView-OC
 //
-//  Created by MacMini-1 on 2020/7/8.
+//  Created by CGX on 2020/6/06.
 //  Copyright © 2020 CGX. All rights reserved.
 //
 
