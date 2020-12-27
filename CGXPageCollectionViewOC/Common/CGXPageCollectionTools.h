@@ -14,14 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIViewController*)viewController:(UIView *)view;
 
-/** 绘画圆角 解决卡顿*/
-+(UIView *)drawConnerView:(CGFloat)cornerRadius rect:(CGRect)frame backgroudColor:(UIColor *)backgroud_color borderColor:(UIColor *)borderColor;
-
 + (id)createForClass:(NSString *)name;
 /**
  计算整体尺寸
  */
-+ (CGSize)calculateStringViewSizeWithShowSize:(CGSize)showSize fontSize:(UIFont *)fontSize string:(NSString *)string;
++ (CGSize)gx_pageStringSizeWithShowSize:(CGSize)showSize fontSize:(UIFont *)fontSize string:(NSString *)string;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -37,7 +37,7 @@
 }
 + (CGXPageCollectionHeaderModel *)headerModel
 {
-    CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
+    CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
     headerModel.headerBgColor = [UIColor orangeColor];
     headerModel.headerHeight = 40+arc4random() % 30;;
     headerModel.isHaveTap = YES;
@@ -45,7 +45,7 @@
 }
 + (CGXPageCollectionFooterModel *)footerModel
 {
-    CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterRoundReusableView class] IsXib:NO];
+    CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
     footerModel.footerBgColor = [UIColor yellowColor];;
     footerModel.footerHeight = 40+arc4random() % 20;;
     footerModel.isHaveTap = YES;
@@ -58,7 +58,7 @@
     CGXPageCollectionGeneralSectionModel *sectionModel = [[CGXPageCollectionGeneralSectionModel alloc] init];
     sectionModel.row = 2;
     
-    CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
+    CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
     
     
     headerModel.headerHeight = 40;
@@ -67,7 +67,7 @@
     headerModel.headerTag = 10000;
     headerModel.headerBgColor = [UIColor orangeColor];
     sectionModel.headerModel = headerModel;
-    CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
+    CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
     
     footerModel.footerModel = [NSString stringWithFormat:@"脚部-%d",0];
     footerModel.footerTag = 20000;

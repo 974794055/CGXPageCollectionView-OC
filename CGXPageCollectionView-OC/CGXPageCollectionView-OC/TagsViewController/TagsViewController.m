@@ -22,20 +22,18 @@
     self.view.backgroundColor = [UIColor whiteColor];
      self.edgesForExtendedLayout = UIRectEdgeNone;
     self.generalView = [[CGXPageCollectionTagsView alloc]  init];
-      self.generalView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-88-34);
+    self.generalView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-kTopHeight-kSafeHeight);
       self.generalView.backgroundColor = [UIColor whiteColor];
     self.generalView.titleDelegate = self;
       [self.view addSubview:self.generalView];
       [self.generalView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
-    [self.generalView registerFooter:[FooterReusableView class] IsXib:NO];
-    [self.generalView registerHeader:[HeaderReusableView class] IsXib:NO];
+    [self.generalView registerFooter:[CGXPageCollectionSectionTextView class] IsXib:NO];
+    [self.generalView registerHeader:[CGXPageCollectionSectionTextView class] IsXib:NO];
     
     NSMutableArray *horizontalAlignments = [NSMutableArray arrayWithObjects:
                                             @(CGXPageCollectionTagsHorizontalAlignmentCenter),
                                             @(CGXPageCollectionTagsHorizontalAlignmentLeft),
                                             @(CGXPageCollectionTagsHorizontalAlignmentRight),
-                                            @(CGXPageCollectionTagsHorizontalAlignmentFlow),
-                                            @(CGXPageCollectionTagsHorizontalAlignmentFlow),
                                             @(CGXPageCollectionTagsHorizontalAlignmentFlow),
                                             nil];
     
@@ -51,13 +49,13 @@
         sectionModel.minimumInteritemSpacing = 10;
 
         
-        CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
+        CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
         headerModel.headerBgColor = [UIColor orangeColor];
         headerModel.headerHeight = 40;
         headerModel.isHaveTap = YES;
         sectionModel.headerModel = headerModel;
         
-        CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
+        CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
         footerModel.footerBgColor = [UIColor yellowColor];;
         footerModel.footerHeight = 40;
         footerModel.isHaveTap = YES;
@@ -67,7 +65,7 @@
         sectionModel.verticalAlignment = CGXPageCollectionTagsVerticalAlignmentTop;
         sectionModel.direction = CGXPageCollectionTagsDirectionLTR;
         
-        for (int j = 0; j<10;j++) {
+        for (int j = 0; j<30;j++) {
             CGXPageCollectionTagsRowModel *rowModel = [[CGXPageCollectionTagsRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
             rowModel.cellHeight = 40;
             rowModel.cellWidth = arc4random() % 30+40;

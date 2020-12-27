@@ -1,16 +1,16 @@
 //
-//  CGXPageCollectionReusableTextView.h
+//  CGXPageCollectionSectionTextView.h
 //  CGXPageCollectionView-OC
 //
 //  Created by CGX on 2020/6/06.
 //  Copyright © 2020 CGX. All rights reserved.
 //
 
-#import "CGXPageCollectionReusableTextView.h"
+#import "CGXPageCollectionSectionBaseView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CGXPageCollectionReusableTextView : CGXPageCollectionBaseReusableView
+@interface CGXPageCollectionSectionTextView : CGXPageCollectionSectionBaseView
 @property (strong, nonatomic) UILabel *titleLabel;
 @end
 

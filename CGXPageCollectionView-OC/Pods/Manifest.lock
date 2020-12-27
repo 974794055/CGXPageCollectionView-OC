@@ -1,24 +1,24 @@
 PODS:
-  - CGXPageCollectionViewOC (0.6.5):
-    - CGXPageCollectionViewOC/Base (= 0.6.5)
-    - CGXPageCollectionViewOC/Common (= 0.6.5)
-    - CGXPageCollectionViewOC/General (= 0.6.5)
-    - CGXPageCollectionViewOC/Horizontal (= 0.6.5)
-    - CGXPageCollectionViewOC/IrregularView (= 0.6.5)
-    - CGXPageCollectionViewOC/Tags (= 0.6.5)
-    - CGXPageCollectionViewOC/Water (= 0.6.5)
-  - CGXPageCollectionViewOC/Base (0.6.5):
+  - CGXPageCollectionViewOC (0.7):
+    - CGXPageCollectionViewOC/Base (= 0.7)
+    - CGXPageCollectionViewOC/Common (= 0.7)
+    - CGXPageCollectionViewOC/General (= 0.7)
+    - CGXPageCollectionViewOC/Horizontal (= 0.7)
+    - CGXPageCollectionViewOC/IrregularView (= 0.7)
+    - CGXPageCollectionViewOC/Tags (= 0.7)
+    - CGXPageCollectionViewOC/Water (= 0.7)
+  - CGXPageCollectionViewOC/Base (0.7):
     - CGXPageCollectionViewOC/Common
-  - CGXPageCollectionViewOC/Common (0.6.5)
-  - CGXPageCollectionViewOC/General (0.6.5):
+  - CGXPageCollectionViewOC/Common (0.7)
+  - CGXPageCollectionViewOC/General (0.7):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Horizontal (0.6.5):
+  - CGXPageCollectionViewOC/Horizontal (0.7):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/IrregularView (0.6.5):
+  - CGXPageCollectionViewOC/IrregularView (0.7):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Tags (0.6.5):
+  - CGXPageCollectionViewOC/Tags (0.7):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Water (0.6.5):
+  - CGXPageCollectionViewOC/Water (0.7):
     - CGXPageCollectionViewOC/Base
 
 DEPENDENCIES:
@@ -29,8 +29,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CGXPageCollectionViewOC: 4eeeab832374fe9e401f0a6be70c5bd0a2739f9a
+  CGXPageCollectionViewOC: 379d8aadd78d2251f4bc2f19a7caf0cfafadb737
 
 PODFILE CHECKSUM: d455d4091eb63c3fec398346e809839c2bffbec6
 
-COCOAPODS: 1.10.0.beta.1
+COCOAPODS: 1.9.3

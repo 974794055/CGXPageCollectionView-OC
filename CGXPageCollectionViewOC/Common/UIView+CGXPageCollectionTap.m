@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 @implementation UIView (CGXPageCollectionTap)
 
-- (void)addCGXPageCollectionTapGestureRecognizerWithDelegate:(id)tapGestureDelegate Block:(void (^)(NSInteger))block
+- (void)gx_pageTapGestureRecognizerWithDelegate:(id)tapGestureDelegate Block:(void (^)(NSInteger))block
 {
     self.block = block;
     UITapGestureRecognizer *tag = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tagClick)];

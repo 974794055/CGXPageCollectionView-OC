@@ -127,6 +127,10 @@ typedef void (^CGXPageCollectionBaseViewHeightBlock)(CGXPageCollectionBaseView *
 - (void)reloadData;
 
 
+@end
+
+
+@interface CGXPageCollectionBaseView (CGXPageCollectionInitialize)
 
 #pragma mark - Subclass Override 子类调用
 - (void)initializeData NS_REQUIRES_SUPER;
@@ -150,7 +154,6 @@ typedef void (^CGXPageCollectionBaseViewHeightBlock)(CGXPageCollectionBaseView *
 - (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel NS_REQUIRES_SUPER;
 
 @end
-
 
 
 

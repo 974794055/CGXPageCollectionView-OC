@@ -151,11 +151,7 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     CGFloat minimumInteritemSpacing = [self gx_minimumInteritemSpacingForSectionAtIndex:indexPath.section];
     CGFloat minimumLineSpacing = [self gx_minimumLineSpacingForSectionAtIndex:indexPath.section];
     CGFloat headerHeight = [self gx_referenceSizeForHeaderInSection:indexPath.section].height;
-    if (indexPath.section) {
-        
-        
-        NSLog(@"%ld--%ld",column,indexPath.section);
-    }
+
     UIEdgeInsets sectionInset = [self gx_insetForSectionAtIndex:indexPath.section];
     UIEdgeInsets userCustomSectionInset = [self userCustomSectionInset:indexPath.section];
     
@@ -195,6 +191,7 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     }
     return orgAttributes;
 }
+
 
 #pragma mrak tool method
 //每个section宽
@@ -239,6 +236,15 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     }
     return userCustomSectionInset;
 }
+/**
+ * 当collectionView的显示范围发生改变的时候，是否需要重新刷新布局
+ * 一旦重新刷新布局，就会重新调用下面的方法：
+ * 1.prepareLayout
+ * 2.layoutAttributesForElementsInRect:方法
+ */
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
+{
+    return YES;
+}
 
-#pragma mark property
 @end

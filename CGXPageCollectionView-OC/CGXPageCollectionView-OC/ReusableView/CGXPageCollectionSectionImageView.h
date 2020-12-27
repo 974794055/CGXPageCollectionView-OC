@@ -1,16 +1,16 @@
 //
-//  CGXPageCollectionReusableImageView.h
+//  CGXPageCollectionSectionImageView.h
 //  CGXPageCollectionView-OC
 //
 //  Created by CGX on 2020/6/06.
 //  Copyright © 2020 CGX. All rights reserved.
 //
 
-#import "CGXPageCollectionBaseReusableView.h"
+#import "CGXPageCollectionSectionBaseView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CGXPageCollectionReusableImageView : CGXPageCollectionBaseReusableView
+@interface CGXPageCollectionSectionImageView : CGXPageCollectionSectionBaseView
 
 @property (strong, nonatomic) UIImageView *picImageView;
 

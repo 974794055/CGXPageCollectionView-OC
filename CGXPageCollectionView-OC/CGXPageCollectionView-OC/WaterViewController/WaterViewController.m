@@ -25,14 +25,18 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.generalView = [[CGXPageCollectionWaterView alloc]  init];
-    self.generalView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-88-34);
+    self.generalView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-kTopHeight-kSafeHeight);
     self.generalView.viewDelegate = self;
     self.generalView.isShowDifferentColor = YES;
     self.generalView.isRoundEnabled = self.isRoundEnabled;
     self.generalView.sectionHeadersPinTVisibleBounds = NO;
     [self.generalView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
-    [self.generalView registerFooter:[FooterReusableView class] IsXib:NO];
-    [self.generalView registerHeader:[HeaderReusableView class] IsXib:NO];
+    [self.generalView registerCell:[CGXPageCollectionCategoryCell class] IsXib:NO];
+    [self.generalView registerCell:[CGXPageCollectionImageCell class] IsXib:NO];
+    [self.generalView registerCell:[CGXPageCollectionSearchCell class] IsXib:NO];
+    [self.generalView registerCell:[CGXPageCollectionBaseCell class] IsXib:NO];
+    [self.generalView registerFooter:[CGXPageCollectionSectionTextView class] IsXib:NO];
+    [self.generalView registerHeader:[CGXPageCollectionSectionTextView class] IsXib:NO];
     [self.view addSubview:self.generalView];
     NSMutableArray *dataArray = [NSMutableArray array];
     
@@ -57,14 +61,14 @@
         sectionModel.minimumLineSpacing = 10;
         sectionModel.minimumInteritemSpacing = 10;
         
-        CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
+        CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
         headerModel.headerBgColor =  [UIColor orangeColor];;
         headerModel.headerHeight = 40;
         headerModel.isHaveTap = YES;
         headerModel.headerModel = @"头部";
         sectionModel.headerModel = headerModel;
         
-        CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
+        CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
         footerModel.footerBgColor = [UIColor yellowColor];;
         footerModel.footerHeight = 30;
         footerModel.isHaveTap = YES;

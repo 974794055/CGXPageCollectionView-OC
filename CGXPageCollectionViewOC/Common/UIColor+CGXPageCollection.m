@@ -10,16 +10,16 @@
 
 @implementation UIColor (CGXPageCollection)
 // 透明度固定为1，以0x开头的十六进制转换成的颜色
-+ (UIColor *)colorWithHexVal:(long)hexVal
++ (UIColor *)gx_pageColorWithHexVal:(long)hexVal
 {
     NSInteger r = (((hexVal & 0xFF0000) >> 16));
     NSInteger g = (((hexVal & 0xFF00) >> 8));
     NSInteger b = ((hexVal & 0xFF));
     CGFloat a = 1;
-    return [self colorWithR:r g:g b:b a:a];
+    return [self gx_pageColorWithR:r g:g b:b a:a];
 }
 // 颜色转换三：iOS中十六进制的颜色（以#开头）转换为UIColor
-+ (UIColor *) colorWithHexTxt: (NSString *)hexTxt
++ (UIColor *)gx_pageColorWithHexTxt: (NSString *)hexTxt
 {
     NSString *colorTxt = [hexTxt uppercaseString];
     // 去掉#
@@ -67,14 +67,14 @@
     [[NSScanner scannerWithString:gTxt] scanHexInt:&g];
     [[NSScanner scannerWithString:bTxt] scanHexInt:&b];
     [[NSScanner scannerWithString:aTxt] scanHexInt:&a];
-    return [self colorWithR:r g:g b:b a:a/255.0];
+    return [self gx_pageColorWithR:r g:g b:b a:a/255.0];
 }
 // 0-255的rgb数据
-+ (UIColor *) colorWithR:(NSInteger)r g:(NSInteger)g b:(NSInteger)b
++ (UIColor *)gx_pageColorWithR:(NSInteger)r g:(NSInteger)g b:(NSInteger)b
 {
-    return [self colorWithR:r g:g b:b a:1];
+    return [self gx_pageColorWithR:r g:g b:b a:1];
 }
-+ (UIColor *)colorWithR:(NSInteger)r g:(NSInteger)g b:(NSInteger)b a:(CGFloat)a
++ (UIColor *)gx_pageColorWithR:(NSInteger)r g:(NSInteger)g b:(NSInteger)b a:(CGFloat)a
 {
     float red = r/255.0;
     float green = g/255.0;
@@ -82,11 +82,11 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:a];
 }
 // 随机颜色
-+ (UIColor *)randomColor
++ (UIColor *)gx_pageRandomColor
 {
     CGFloat r = arc4random_uniform(256);
     CGFloat g = arc4random_uniform(256);
     CGFloat b = arc4random_uniform(256);
-    return [UIColor colorWithR:r g:g b:b a:1];
+    return [UIColor gx_pageColorWithR:r g:g b:b a:1];
 }
 @end

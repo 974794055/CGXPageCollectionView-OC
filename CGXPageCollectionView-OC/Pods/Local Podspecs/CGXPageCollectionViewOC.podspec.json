@@ -1,6 +1,6 @@
 {
   "name": "CGXPageCollectionViewOC",
-  "version": "0.6.5",
+  "version": "0.7",
   "summary": "CGXPageCollectionView-OC是基于UICollectionView封装的库，分区圆角边框，瀑布流、标签流等主流APP分页列表滚动视图的库)",
   "description": "(UICollectionView封装的库，分区圆角边框，瀑布流、标签流、不规则布局等主流APP分页列表滚动视图的库封装",
   "homepage": "https://github.com/974794055/CGXPageCollectionView-OC",
@@ -16,10 +16,19 @@
   },
   "source": {
     "git": "https://github.com/974794055/CGXPageCollectionView-OC.git",
-    "tag": "0.6.5"
+    "tag": "0.7"
   },
   "requires_arc": true,
-  "frameworks": "UIKit",
+  "frameworks": [
+    "UIKit",
+    "QuartzCore"
+  ],
+  "pod_target_xcconfig": {
+    "OTHER_LDFLAGS": [
+      "-lObjC",
+      "-all_load"
+    ]
+  },
   "source_files": "CGXPageCollectionViewOC/CGXPageCollectionViewOC.h",
   "public_header_files": "CGXPageCollectionViewOC/CGXPageCollectionViewOC.h",
   "subspecs": [

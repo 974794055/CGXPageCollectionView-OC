@@ -27,7 +27,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param blur 模糊度，可以先设置个20试试
  @return 带有阴影的图片
  */
-- (UIImage *)imageWithShadowColor:(UIColor *)color offset:(CGSize)offset blur:(CGFloat)blur;
+- (UIImage *)gx_pageImageWithShadowColor:(UIColor *)color offset:(CGSize)offset blur:(CGFloat)blur;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

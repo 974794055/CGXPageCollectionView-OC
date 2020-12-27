@@ -28,7 +28,7 @@
     
     return image;
 }
-- (UIImage *)imageWithShadowColor:(UIColor *)color offset:(CGSize)offset blur:(CGFloat)blur
+- (UIImage *)gx_pageImageWithShadowColor:(UIColor *)color offset:(CGSize)offset blur:(CGFloat)blur
 {
     CGSize border = CGSizeMake(fabs(offset.width) + blur, fabs(offset.height) + blur);
     
@@ -46,4 +46,5 @@
     
     return image;
 }
+
 @end

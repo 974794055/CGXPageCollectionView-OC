@@ -24,12 +24,16 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.irregulaView = [[CGXPageCollectionIrregularView alloc] init];
-    self.irregulaView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-88-34);
+    self.irregulaView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-kTopHeight-kSafeHeight);
     [self.view addSubview:self.irregulaView];
     [self.irregulaView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
-    [self.irregulaView registerFooter:[FooterReusableView class] IsXib:NO];
-    [self.irregulaView registerHeader:[HeaderReusableView class] IsXib:NO];
-    
+    [self.irregulaView registerFooter:[CGXPageCollectionSectionTextView class] IsXib:NO];
+    [self.irregulaView registerHeader:[CGXPageCollectionSectionTextView class] IsXib:NO];
+    [self.irregulaView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
+    [self.irregulaView registerCell:[CGXPageCollectionCategoryCell class] IsXib:NO];
+    [self.irregulaView registerCell:[CGXPageCollectionImageCell class] IsXib:NO];
+    [self.irregulaView registerCell:[CGXPageCollectionSearchCell class] IsXib:NO];
+    [self.irregulaView registerCell:[CGXPageCollectionBaseCell class] IsXib:NO];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(updateColor)];
     [self updateColor];
@@ -56,13 +60,13 @@
         CGXPageCollectionIrreguarSectionModel *sectionModel = [[CGXPageCollectionIrreguarSectionModel alloc] init];
         sectionModel.showType = type;
         
-        CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderReusableView class] IsXib:NO];
+        CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
         headerModel.headerBgColor = RandomColor;
         headerModel.headerHeight = 40;
         headerModel.isHaveTap = YES;
         sectionModel.headerModel = headerModel;
         
-        CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterReusableView class] IsXib:NO];
+        CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
         footerModel.footerBgColor = RandomColor;
         footerModel.footerHeight = 40;
         footerModel.isHaveTap = YES;

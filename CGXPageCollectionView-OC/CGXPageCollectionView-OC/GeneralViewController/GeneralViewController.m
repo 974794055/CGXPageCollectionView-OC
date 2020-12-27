@@ -8,6 +8,7 @@
 
 #import "GeneralViewController.h"
 #import "GeneralViewTool.h"
+
 @interface GeneralViewController ()<CGXPageCollectionUpdateViewDelegate>
 
 @property (nonatomic , strong) CGXPageCollectionGeneralView *generalView;
@@ -25,18 +26,22 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.generalView = [[CGXPageCollectionGeneralView alloc]  init];
-    self.generalView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-88-34);
+    self.generalView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-kTopHeight-kSafeHeight);
     self.generalView.viewDelegate = self;
     self.generalView.isShowDifferentColor = YES;
     self.generalView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.generalView];
     [self.generalView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
-    [self.generalView registerFooter:[FooterRoundReusableView class] IsXib:NO];
-    [self.generalView registerHeader:[HeaderRoundReusableView class] IsXib:NO];
-    [self.generalView registerFooter:[FooterReusableView class] IsXib:NO];
-    [self.generalView registerHeader:[HeaderReusableView class] IsXib:NO];
+    [self.generalView registerCell:[CGXPageCollectionCategoryCell class] IsXib:NO];
+    [self.generalView registerCell:[CGXPageCollectionImageCell class] IsXib:NO];
+    [self.generalView registerCell:[CGXPageCollectionSearchCell class] IsXib:NO];
+    [self.generalView registerCell:[CGXPageCollectionBaseCell class] IsXib:NO];
+
+    [self.generalView registerFooter:[CGXPageCollectionSectionTextView class] IsXib:NO];
+    [self.generalView registerFooter:[CGXPageCollectionSectionImageView class] IsXib:NO];
+    [self.generalView registerHeader:[CGXPageCollectionSectionTextView class] IsXib:NO];
+    [self.generalView registerHeader:[CGXPageCollectionSectionImageView class] IsXib:NO];
     
-    //    self.generalView.isAdaptive = YES;
     self.generalView.heightBlock = ^(CGXPageCollectionBaseView * _Nonnull BaseView, CGFloat height) {
         NSLog(@"不能滚动height:%f" , height);
     };
@@ -49,10 +54,6 @@
                         @"有Header&Footer，不包Header,不包Footer",
                         @"borderLine 包Section",
                         @"borderLine 包Section（带投影）",
-                        @"有sections底色，cell左对齐",
-                        @"有sections底色，cell居中",
-                        @"有sections底色，cell右对齐",
-                        @"cell右对齐与cell右侧开始",
                         nil];
         arr;
     });
@@ -63,13 +64,16 @@
         CGXPageCollectionRoundModel *roundModel = [GeneralViewTool roundModel];
         if (i<4) {
             sectionModel.row = 2;
-        } else if (i==4 || i==5){
-            roundModel.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
-            roundModel.shadowOffset = CGSizeMake(1,1);
-            roundModel.shadowOpacity = 1;
-            roundModel.shadowRadius = 4;
+        } else if (i==4){
             roundModel.borderColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
             roundModel.borderWidth = 1.0;
+        } else if (i==5){
+            roundModel.shadowColor = [UIColor blackColor];
+            roundModel.shadowOffset = CGSizeMake(2,2);
+            roundModel.shadowOpacity = 2;
+            roundModel.shadowRadius = 4;
+            roundModel.borderColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
+            roundModel.borderWidth = 2.0;
         }
         sectionModel.roundModel = roundModel;
         
@@ -101,7 +105,7 @@
         
         
         sectionModel.row = arc4random() % 5 + 1;
-        sectionModel.cellHeight = 50;
+        sectionModel.cellHeight = 80;
         if (i==9) {
             sectionModel.row = arc4random() % 5 + 2;
         }
@@ -169,7 +173,11 @@
 }
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView Cell:(nonnull UICollectionViewCell *)cell cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    
+    if ([cell isKindOfClass:[CGXPageCollectionCategoryCell class]]) {
+        CGXPageCollectionCategoryCell *newcell = (CGXPageCollectionCategoryCell *)cell;
+        newcell.titleLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+        newcell.picImageView.backgroundColor = [UIColor blackColor];
+    }
 }
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView DidSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {

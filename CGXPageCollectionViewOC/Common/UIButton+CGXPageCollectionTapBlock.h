@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic ,copy)void(^block)(UIButton*);
 
--(void)addCGXPageCollectionTapBlock:(void(^)(UIButton*btn))block;
+-(void)gx_pageTapBlock:(void(^)(UIButton*btn))block;
 
 @end
 

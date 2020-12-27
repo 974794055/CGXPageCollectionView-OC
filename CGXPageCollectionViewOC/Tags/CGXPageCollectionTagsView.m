@@ -19,13 +19,12 @@
 {
     [super initializeData];
     self.isRoundEnabled = YES;
-}
 
+}
 - (void)initializeViews
 {
     [super initializeViews];
 }
-
 - (UICollectionViewLayout *)preferredFlowLayout
 {
     [super preferredFlowLayout];

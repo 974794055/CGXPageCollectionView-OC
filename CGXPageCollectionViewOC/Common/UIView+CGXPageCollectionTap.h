@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,assign) void(^block)(NSInteger tag);
 
-- (void)addCGXPageCollectionTapGestureRecognizerWithDelegate:(id)tapGestureDelegate Block:(void(^)(NSInteger tag))block;
+- (void)gx_pageTapGestureRecognizerWithDelegate:(id)tapGestureDelegate Block:(void(^)(NSInteger tag))block;
 @end
 
 NS_ASSUME_NONNULL_END

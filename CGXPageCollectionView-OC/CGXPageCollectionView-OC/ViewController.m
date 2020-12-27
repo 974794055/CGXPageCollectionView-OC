@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ListCollectionViewCell.h"
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic , strong) UICollectionView *collectionView;
@@ -49,7 +49,7 @@
         mCollectionView.showsVerticalScrollIndicator = YES;
         mCollectionView.dataSource = self;
         mCollectionView.delegate = self;
-        [mCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
+        [mCollectionView registerClass:[ListCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([ListCollectionViewCell class])];
         mCollectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         //给collectionView注册头分区的Id
         [mCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([UICollectionReusableView class])];
@@ -115,18 +115,8 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class]) forIndexPath:indexPath];
-    cell.contentView.backgroundColor = RandomColor;
-    
-    [cell.contentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj removeFromSuperview];
-    }];
-    UILabel *label = [[UILabel alloc]init];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.translatesAutoresizingMaskIntoConstraints = NO;
-    [cell.contentView addSubview:label];
-    label.frame = CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height);
-    label.text = self.titleArr[indexPath.row];
+    ListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ListCollectionViewCell class]) forIndexPath:indexPath];
+    cell.titleLabel.text = self.titleArr[indexPath.row];
     return cell;
     
 }

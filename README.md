@@ -5,11 +5,11 @@
 [![cocoapods](https://img.shields.io/badge/cocoapods-supported-4BC51D.svg?style=plastic)](https://cocoapods.org/pods/CGXPageCollectionViewOC)
 [![support](https://img.shields.io/badge/support-ios%208%2B-orange.svg)](#) 
 
-基于UICollectionView封装库封装列表
+## 基于UICollectionView封装库封装列表
 
 - 下载链接：https://github.com/974794055/CGXPageCollectionView-OC.git
 -  pod名称 ：CGXPageCollectionViewOC
-- 最新版本号： 0.7
+- 最新版本号： 0.8
 
 - 功能：    
 - UICollectionView封装的库，分区圆角边框，瀑布流、标签流、不规则布局等主流APP分页列表滚动视图的库封装
@@ -42,7 +42,7 @@
 效果🌈不规则列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main5.gif" width="287" height="600"> |
 效果🌈水平滚动列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main6.gif" width="287" height="600"> |
 
-目的：
+### 目的：
 - 参考学习如何自定义
 - 直接修改自定义示例类以快速实现自己的需求
 

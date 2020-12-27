@@ -174,7 +174,6 @@
         self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     [self addSubview:self.collectionView];
-    
     // 监听滚动
      [self.collectionView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
 }
@@ -257,7 +256,7 @@
         }
         if (sectionModel.headerModel.isHaveTap) {
             __weak typeof(self) headerviewSelf = self;
-            [headerview addCGXPageCollectionTapGestureRecognizerWithDelegate:self Block:^(NSInteger tag) {
+            [headerview gx_pageTapGestureRecognizerWithDelegate:self Block:^(NSInteger tag) {
                 if (headerviewSelf.viewDelegate && [headerviewSelf.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:TapHeaderViewAtIndex:)]) {
                     [headerviewSelf.viewDelegate gx_PageCollectionBaseView:headerviewSelf TapHeaderViewAtIndex:indexPath.section];
                 }
@@ -288,7 +287,7 @@
         }
         if (sectionModel.footerModel.isHaveTap) {
             __weak typeof(self) footerviewSelf = self;
-            [footerview addCGXPageCollectionTapGestureRecognizerWithDelegate:self Block:^(NSInteger tag) {
+            [footerview gx_pageTapGestureRecognizerWithDelegate:self Block:^(NSInteger tag) {
                 if (footerviewSelf.viewDelegate && [footerviewSelf.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:TapFooterViewAtIndex:)]) {
                     [footerviewSelf.viewDelegate gx_PageCollectionBaseView:footerviewSelf TapFooterViewAtIndex:indexPath.section];
                 }
@@ -302,7 +301,13 @@
 {
     CGXPageCollectionBaseSectionModel *sectionModel = self.dataArray[indexPath.section];
     CGXPageCollectionBaseRowModel *itemModel = sectionModel.rowArray[indexPath.row];
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:itemModel.cellIdentifier forIndexPath:indexPath];
+    return [collectionView dequeueReusableCellWithReuseIdentifier:itemModel.cellIdentifier forIndexPath:indexPath];;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGXPageCollectionBaseSectionModel *sectionModel = self.dataArray[indexPath.section];
+    CGXPageCollectionBaseRowModel *itemModel = sectionModel.rowArray[indexPath.row];
     cell.contentView.backgroundColor = itemModel.cellColor;
     BOOL isHave = [cell respondsToSelector:@selector(updateWithCGXPageCollectionCellModel:AtIndex:)];
     if (isHave == YES && [cell conformsToProtocol:@protocol(CGXPageCollectionUpdateCellDelegate)]) {
@@ -311,7 +316,6 @@
     if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:Cell:cellForItemAtIndexPath:)]) {
         [self.viewDelegate gx_PageCollectionBaseView:self Cell:cell cellForItemAtIndexPath:indexPath];
     };
-    return cell;
 }
 #pragma mark - cell的点击事件
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -434,8 +438,8 @@
     if (self.refresBlock) {
         self.refresBlock(array.count, maxPage);
     }
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
+//    [self setNeedsLayout];
+//    [self layoutIfNeeded];
 }
 
 

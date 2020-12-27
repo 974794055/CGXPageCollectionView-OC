@@ -8,6 +8,12 @@
 
 #import "CGXPageCollectionBaseCell.h"
 
+
+@interface CGXPageCollectionBaseCell ()
+
+
+@end
+
 @implementation CGXPageCollectionBaseCell
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -37,7 +43,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
+    [self.contentView setNeedsLayout];
+    [self.contentView layoutIfNeeded];
 
 }
 - (void)updateWithCGXPageCollectionCellModel:(CGXPageCollectionBaseRowModel *)cellModel AtIndex:(NSInteger)index

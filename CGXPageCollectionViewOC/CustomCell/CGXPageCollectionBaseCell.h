@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic , assign) NSInteger index;
 
-
 - (void)initializeViews NS_REQUIRES_SUPER;
 
 @end

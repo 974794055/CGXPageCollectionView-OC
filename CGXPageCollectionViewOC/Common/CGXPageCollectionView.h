@@ -16,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)gx_PageCollectionView:(CGXPageCollectionView *)collectionView gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer;
 @end
 @interface CGXPageCollectionView : UICollectionView
+
 @property (nonatomic, weak) id<CGXPageCollectionViewGestureDelegate> gestureDelegate;
+
 @end
 
 NS_ASSUME_NONNULL_END

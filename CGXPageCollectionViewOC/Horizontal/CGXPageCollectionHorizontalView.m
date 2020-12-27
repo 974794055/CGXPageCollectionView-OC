@@ -13,6 +13,7 @@
 
 
 @end
+
 @implementation CGXPageCollectionHorizontalView
 
 - (void)initializeData
@@ -24,7 +25,7 @@
 - (void)initializeViews
 {
     [super initializeViews];
-    self.collectionView.pagingEnabled = NO;
+
 }
 
 - (UICollectionViewLayout *)preferredFlowLayout
@@ -166,6 +167,7 @@
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateFooterViewIndex:(NSInteger)section{
         return NO;
 }
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

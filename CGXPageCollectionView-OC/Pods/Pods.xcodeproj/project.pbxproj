@@ -7,90 +7,90 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0819B3F85E5E84DF9570DB1CE8F1EDA4 /* CGXPageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0675ED137D34FF09C65EF814FAB8046C /* CGXPageCollectionView.m */; };
-		0A8FFF8C370F20324C027DD34AB13326 /* CGXPageCollectionTagsRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE2A35DC0AF884183D51135E1524A95 /* CGXPageCollectionTagsRowModel.m */; };
-		124643F9023BAD25D9C4008DEE031F79 /* CGXPageCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B25E8E3F2EEB549904DB10BC3206B73 /* CGXPageCollectionView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		00B94FA13380CB3519F21EEDFC01EC2F /* CGXPageCollectionViewOC.h in Headers */ = {isa = PBXBuildFile; fileRef = DE07BE16595093C908DCAF2BE074DAA0 /* CGXPageCollectionViewOC.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0A8E95EBD73CA68079EFBB3E670A88F2 /* CGXPageCollectionHorizontalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBBB04A27F6813678450FB96A7C9009 /* CGXPageCollectionHorizontalView.m */; };
+		0B363E8A42DF7414FE02091555089E69 /* CGXPageCollectionIrreguarRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B475C94B51FFA6D102CA32DB7F8A0921 /* CGXPageCollectionIrreguarRowModel.m */; };
+		0FE937FDEA99957923A5271880C764A8 /* UIView+CGXPageCollectionTap.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD3C2B33E40C022C46666FDED6B7C25 /* UIView+CGXPageCollectionTap.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		12CC12A87CA01C4054DA5D4E9D402DE1 /* CGXPageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16045A38679C4206079177CBD0FB117C /* CGXPageCollectionView.m */; };
+		13D8CAEE1D555A2BD9563B37E9048679 /* CGXPageCollectionUpdateCellDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FD1A1F8D4FACA97A785C2B9D3332D14 /* CGXPageCollectionUpdateCellDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		14B807354F2FB03898C2BB2A01C4DBAF /* CGXPageCollectionWaterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A82684B5A554952D70A3FD12109796DB /* CGXPageCollectionWaterLayout.m */; };
 		15C03D5E098C9632DEC6D24A23FD79B7 /* Pods-CGXPageCollectionView-OC-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E862E78A0F7D77A94161A05C65AD764 /* Pods-CGXPageCollectionView-OC-dummy.m */; };
-		1B209846C436C84304EB20333919554F /* CGXPageCollectionTagsSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F9E7DE73228EDA7D9829462BAD703F2 /* CGXPageCollectionTagsSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		20047E88481BAF0ED5C375FE0DBF9841 /* CGXPageCollectionRoundLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E77F4C828EF192021930C8DBECCC0F /* CGXPageCollectionRoundLayoutAttributes.m */; };
-		20328AD31E9D7003165E1AC37CC57C96 /* CGXPageCollectionTagsSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D3D19B5EFD8193C9B0DA1548431E00 /* CGXPageCollectionTagsSectionModel.m */; };
-		20B314B4B3B0C0DB7DD9CFDCE5D7AE44 /* CGXPageCollectionHorizontalView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF79739F474AA5392F93500CB9AB86E8 /* CGXPageCollectionHorizontalView.m */; };
-		20BA75B5335F497FE355270B7B0493E6 /* CGXPageCollectionRoundModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FE3554D3A121F9EB2E2A043515ED7B02 /* CGXPageCollectionRoundModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		30473911D51FF23D5269005CA0DBFD38 /* CGXPageCollectionIrreguarRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E0533585354DB8B218EDCAA910A6ECA8 /* CGXPageCollectionIrreguarRowModel.m */; };
-		33626F0AE329C5BF99A023220DC915F0 /* CGXPageCollectionHorizontalSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FB51C5D1826961C791F2954A514EB7BA /* CGXPageCollectionHorizontalSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		386A443EF6D0550D65C281D7020AEF64 /* CGXPageCollectionUpdateViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 21687B880088DC7C66EE533C053CEBD4 /* CGXPageCollectionUpdateViewDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		38AB976613ADB91D58434F9F82393E20 /* CGXPageCollectionWaterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DD1D0734B2ABE796F108C911171C10 /* CGXPageCollectionWaterLayout.m */; };
-		3A9DA3B09CC3C720F35BD8D526315258 /* CGXPageCollectionHorizontalView.h in Headers */ = {isa = PBXBuildFile; fileRef = CBE45B1AE25DDD3E51B7DBBEDCDEA58E /* CGXPageCollectionHorizontalView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3CA7BA8DEDC2B12D326F9B2644948D9F /* CGXPageCollectionRoundReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B7D3B1F26E0E47C8DFF2ADEC42DE0F4 /* CGXPageCollectionRoundReusableView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		43AC7E95692F59FF3E40DFCCA7FF303B /* CGXPageCollectionWaterSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BE12859BC727BF7D989C8497FFB45D0 /* CGXPageCollectionWaterSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4DC27EDD75EB6DF03FEA924EB8A1E29F /* UIImage+CGXPageCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = ABF9C73E6FE40ECA2852D6358BFCBF4B /* UIImage+CGXPageCollection.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		50BC5F9817A12A096DE4D95F1359380A /* UIColor+CGXPageCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 754D8A99FB58AFCB1C2647D42A4060FA /* UIColor+CGXPageCollection.m */; };
-		5628C5BB7E93C4AEE05EA88BC1D2A4BD /* CGXPageCollectionGeneralSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C5EF87E1E096C36DA095973BB76E4B4D /* CGXPageCollectionGeneralSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		576B0970B403F1360EAFEDF277B908B0 /* CGXPageCollectionHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA9B01E4BCF73B33B83461985A7B67F /* CGXPageCollectionHorizontalLayout.m */; };
-		59EDCCF5D9CCF92878621A8320B4DE19 /* CGXPageCollectionBaseLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D472E3B4A1F7491A72386A352FD85C95 /* CGXPageCollectionBaseLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5B8AED37B6B0F5783E55A764F9EBFB9E /* UIButton+CGXPageCollectionTapBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 41250CE2231ABC9ACFE4C2B73C6F938F /* UIButton+CGXPageCollectionTapBlock.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5CC8E1C12C2D747B1CB64EAC1A421165 /* CGXPageCollectionFlowLayoutUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A610A146C1E6C1470D345107FCA6AF2 /* CGXPageCollectionFlowLayoutUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5D720A43D0D1F468084E789DD4685055 /* CGXPageCollectionBaseRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 713185F967879ECD248A4D5C7B8398B1 /* CGXPageCollectionBaseRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5F8361282CC22DB982C336E3CAE737B1 /* CGXPageCollectionTagsFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 29735A26DCF2C1386A6BD1653B1E0A06 /* CGXPageCollectionTagsFlowLayout.m */; };
-		5FC62D86744C1DC815FE08114A8DF9FB /* CGXPageCollectionViewOC-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B51F714E287A2C8E1275F8FB148EF738 /* CGXPageCollectionViewOC-dummy.m */; };
-		63AACCDB563AE3A8CD95DF849A248CAA /* UIView+CGXPageCollectionTap.h in Headers */ = {isa = PBXBuildFile; fileRef = 39969A0E67796D85C7413E2F4FE931BF /* UIView+CGXPageCollectionTap.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		66A3340326F7CD5D93C679EE6C8882C4 /* UIButton+CGXPageCollectionTapBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A16DF4D12CC4F778C12F04B2B115CA1 /* UIButton+CGXPageCollectionTapBlock.m */; };
-		66C41D35A23466F06D4C8F015492C26D /* CGXPageCollectionIrregularView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A9B32EA1C25AD14205A2D5CBF616AEC /* CGXPageCollectionIrregularView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6778F7D3E7CFCB62F7AF2C960C7F854D /* CGXPageCollectionRoundReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E2359DFAB82955B7FA09B678E85BD3 /* CGXPageCollectionRoundReusableView.m */; };
-		6C68CE8C8B0BD969C62508554156DCE3 /* CGXPageCollectionUpdateHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E4BE70425B709FF35C2C0E6149661483 /* CGXPageCollectionUpdateHeaderDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6ECBB752D55ADD6A6346DAA733552809 /* CGXPageCollectionIrreguarRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D7BDEF36F86D20B7952CF34313013492 /* CGXPageCollectionIrreguarRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6F93071A7311D098C93D1893C35D652F /* CGXPageCollectionGeneralRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 74BD2D25B72B0F15D3B0637E2426F260 /* CGXPageCollectionGeneralRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7238A97A2DF18A0638BC9D6A7025BAAE /* CGXPageCollectionHorizontalLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D811AB6E333ACF25F6D81610E4562552 /* CGXPageCollectionHorizontalLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		748176AA7ED0EC94D1C0119B20A65399 /* CGXPageCollectionWaterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F7978C539D391D114DE4B616F543F /* CGXPageCollectionWaterView.m */; };
-		770D093ADBD8F5317655F7930117AC06 /* UIColor+CGXPageCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = E0A625A969A7D20C2E810AF58C062A2F /* UIColor+CGXPageCollection.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7F0E47D7C42C1594191E2A8FC9E00769 /* CGXPageCollectionWaterView.h in Headers */ = {isa = PBXBuildFile; fileRef = 19777C3BB3AD899EFF4C182EFDDB23FD /* CGXPageCollectionWaterView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		824ACEEAE00C39E04BADCD1D9F7A91EB /* CGXPageCollectionHorizontalRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7293EA73D697E2890F3D8D2FDF2176 /* CGXPageCollectionHorizontalRowModel.m */; };
-		82962A9DF77A70AFCDD5F6CD2F8B9719 /* CGXPageCollectionBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 062B56C091797D440119497FA479C9D5 /* CGXPageCollectionBaseLayout.m */; };
-		8632A6E006613D36A27C86891DB83D38 /* CGXPageCollectionIrreguarSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 764F382B4548291BAFF600F4608D14CC /* CGXPageCollectionIrreguarSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8FB87F51665807DE9E667A65D734D1FE /* CGXPageCollectionHorizontalRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 64A332431AA5144EB0A51999E36FEA73 /* CGXPageCollectionHorizontalRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		921E3E57F66DB19FE759FB9FF831B456 /* CGXPageCollectionRoundLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = E25853D4809B1356A8167319A2E23764 /* CGXPageCollectionRoundLayoutAttributes.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		938CB119969BF512D921FCAACE8DF344 /* CGXPageCollectionBaseRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00691AE44DAF2B792E23C15CFD746CDA /* CGXPageCollectionBaseRowModel.m */; };
-		94E824934524DB7694CE77799BFCFFFB /* CGXPageCollectionHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B1EB8F031EB6C5B5B9C06806B77D12 /* CGXPageCollectionHeaderModel.m */; };
-		9AF2B0F509B37B48450AAF6877A662AD /* CGXPageCollectionRoundModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D291BA9B10A8CC05CF9CF967974BAC2 /* CGXPageCollectionRoundModel.m */; };
-		9D2CF729CBA03C6EC061587846F7D8E3 /* CGXPageCollectionTagsRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA8610491D4BEB3C57B718138D6C38 /* CGXPageCollectionTagsRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9D7E15F82EBF0C74DF2224762B4933CD /* CGXPageCollectionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D838DD56ABC31E1D1388B9CE3D1FEB /* CGXPageCollectionTools.m */; };
-		A38DE1D8AAEF9D3BEB515C3CB82AB557 /* CGXPageCollectionHeaderModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ADBE55F30B0890CE2281311A4AC8E78 /* CGXPageCollectionHeaderModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A8A298339252FE71A949F8CDCD635297 /* CGXPageCollectionBaseSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A866BF48A51CDAB23C925D65BBE912 /* CGXPageCollectionBaseSectionModel.m */; };
-		A8BBE3792983F9A65884E064079E8F30 /* UIView+CGXPageCollectionTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE68BCE430BFDDDA583934CF12C0350 /* UIView+CGXPageCollectionTap.m */; };
-		A9A5F3F515FDD633FB8FCAEFD0C4BC8E /* CGXPageCollectionWaterRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9AB093E24C26277ED4155F375A6112 /* CGXPageCollectionWaterRowModel.m */; };
-		AA026F245FB0D8E08472F95A53702B6B /* CGXPageCollectionViewOC.h in Headers */ = {isa = PBXBuildFile; fileRef = FCAB0471DCB481DD4AA5E7720B3E9696 /* CGXPageCollectionViewOC.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AA78EFD4E4892A3347534AE47ABDAFFF /* CGXPageCollectionGeneralFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F507F32CF389184E32AED32A203509 /* CGXPageCollectionGeneralFlowLayout.m */; };
-		ACDF75C8E9169429C8935134D7E3705C /* CGXPageCollectionGeneralView.h in Headers */ = {isa = PBXBuildFile; fileRef = D6B1D71882775CC74CB2C8BF69526468 /* CGXPageCollectionGeneralView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AEE2FB0C424643504EB851EFC9DB1B36 /* CGXPageCollectionWaterRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C6CC7CB3E83D87031211A3A336C288C /* CGXPageCollectionWaterRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AFC25A7BE49208B26041B4D5BC6C6662 /* CGXPageCollectionTagsFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D77574F8343C8D051C5532CB87B20B6 /* CGXPageCollectionTagsFlowLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AFD6ACFACB176CAA409914C8F5A80E73 /* CGXPageCollectionUpdateCellDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53889C17732087D180A13BA5711C2406 /* CGXPageCollectionUpdateCellDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B0AB84CC61DDC90568F8B820645AC29F /* UIImage+CGXPageCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 768B6906B939E20FDD80F5C85A90357F /* UIImage+CGXPageCollection.m */; };
-		B7D803052DE8D9764E927635178E3B97 /* CGXPageCollectionUpdateFooterDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8E7CD8EE10A602F948A6B42680E7D7 /* CGXPageCollectionUpdateFooterDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B953491BA2DAADF35EA731015361DF22 /* CGXPageCollectionFlowLayoutUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA51C339627E0AF8D0C2E12D75196BE /* CGXPageCollectionFlowLayoutUtils.m */; };
-		B976C4E4314F9DF3B83B14B282623CD6 /* CGXPageCollectionGeneralRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8E35D084CA32F15C7AE7D585555F4 /* CGXPageCollectionGeneralRowModel.m */; };
-		BB27A38726BF583E269954515411099D /* CGXPageCollectionBaseSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 69DBBEF06DF6DF387C983D0D589698FA /* CGXPageCollectionBaseSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C8EB752205E2FB1A0ED18A758A1D438D /* CGXPageCollectionTagsView.h in Headers */ = {isa = PBXBuildFile; fileRef = B53B3FF661166FE489507750E02B128C /* CGXPageCollectionTagsView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CA966D0332B3A83D3131F515D77AE26F /* CGXPageCollectionBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB518C229606B2760B93A4470AB971A /* CGXPageCollectionBaseView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CAE831CF0C239F3E3C78850C52DA1804 /* CGXPageCollectionHorizontalSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C823ACEF5B4B61EAB9E6059F91286280 /* CGXPageCollectionHorizontalSectionModel.m */; };
-		D1D5F398B9F2CED8A07B1B15DE53AAA6 /* CGXPageCollectionGeneralView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCB458785C6C3AF2FA2661B74C77B1 /* CGXPageCollectionGeneralView.m */; };
-		D95691C6808C8B071ED3E4B195D3BDC7 /* CGXPageCollectionUpdateRoundDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F989365643C21C86D00A4A510C179A0F /* CGXPageCollectionUpdateRoundDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DA5B8E3D44FF2975CC3DB9BCBE34B063 /* CGXPageCollectionIrregularLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 622564812691DF88B5BB0CD5A87F10D5 /* CGXPageCollectionIrregularLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DBB268CE34169A8C437A1B39B3885FDF /* CGXPageCollectionIrregularView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC66E0980ABE735E3E88A8736E622F1 /* CGXPageCollectionIrregularView.m */; };
-		E2DD165D01724932ECF784F56CE10789 /* CGXPageCollectionIrregularLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAF91D4AF10AA00418FC68A33BEBE44 /* CGXPageCollectionIrregularLayout.m */; };
-		E732AECA796EE2ED2A33B5F591F7B99B /* CGXPageCollectionGeneralSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE5B0961033910A32A97C4B94E0A44D /* CGXPageCollectionGeneralSectionModel.m */; };
-		E85DC841BC6E8ED720ABF797AB67088B /* CGXPageCollectionFooterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D3A137AAD58721FE88A4530F80CA96 /* CGXPageCollectionFooterModel.m */; };
-		E8D2FDE49E9D7C7C50A9AEDF3E20BD70 /* CGXPageCollectionTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 241C8C79B1C50A4B342910085788DEAD /* CGXPageCollectionTools.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EB2F67489A00816BB36B7C870F83F285 /* CGXPageCollectionWaterLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 72E5BF4893229455A6F236000C2E004A /* CGXPageCollectionWaterLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F092798FACC1566222152B7118A3DF94 /* CGXPageCollectionTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B03CD3F1CD0521A0F2519B1F48ED2BE0 /* CGXPageCollectionTagsView.m */; };
-		F188AEFFABC7BF3A6E4E9327F9924D31 /* CGXPageCollectionGeneralFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 796686BE7308ED81F844C43E081DB6AA /* CGXPageCollectionGeneralFlowLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F93C78B13ED27D9331E74C685F931AA3 /* CGXPageCollectionBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 273FDC9B2361880EED8A66DD17B488C5 /* CGXPageCollectionBaseView.m */; };
-		FA8F000533E87897FE284A916E2B2E8F /* CGXPageCollectionFooterModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DFDF7D4307210EA07FF5C6DEAB66DBA /* CGXPageCollectionFooterModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FB62D1B77F1B30CF2017B4813D7F5FD7 /* CGXPageCollectionWaterSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95278FF58284E2ED7160EA726B659501 /* CGXPageCollectionWaterSectionModel.m */; };
-		FF125B90036BF27E366CCDEB3D05FD89 /* CGXPageCollectionIrreguarSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8246989A15E59E0F1DFBD27224E5D920 /* CGXPageCollectionIrreguarSectionModel.m */; };
+		1736790E8F60191326F198361A0C0D28 /* UIImage+CGXPageCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = AB8FAF9A44997FBBB16D9A822A6D1357 /* UIImage+CGXPageCollection.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1BDE3809A2777AE37562828F6D21A65C /* CGXPageCollectionWaterRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B39C89FF4E8F354C2803D38BFCECB224 /* CGXPageCollectionWaterRowModel.m */; };
+		1EEB8B8B15971673F0F32AEAE06DE932 /* CGXPageCollectionTagsRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A9C5BA73E26E5536B8B7E56777B5C9 /* CGXPageCollectionTagsRowModel.m */; };
+		1FD05CBEB0BBDC2AE60F5B5F1ABCCD80 /* CGXPageCollectionHorizontalSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 41550A392F47BE0773197B41A38A4789 /* CGXPageCollectionHorizontalSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		210FA1018314AA79624A8D6935AB7261 /* CGXPageCollectionHorizontalView.h in Headers */ = {isa = PBXBuildFile; fileRef = A42F24A3BE1F2F8CBBD6CD2017C25D1A /* CGXPageCollectionHorizontalView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2437BC7CD419EF07E5266741C9F5DAD4 /* CGXPageCollectionWaterLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E67717BCF075B07C70567A5C608E5B9 /* CGXPageCollectionWaterLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2562D3B27AD8F8218790E95D3F24DA3E /* CGXPageCollectionHorizontalRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 20704E829EC597A2D877E828A097CE3C /* CGXPageCollectionHorizontalRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		260E4A0A75C8E3B3054F636B3B9B2855 /* CGXPageCollectionHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D600EA0D5D6A53474E89115A5DBDB0 /* CGXPageCollectionHeaderModel.m */; };
+		2768F76E274F3D08EBA598D98B655FF5 /* CGXPageCollectionWaterView.h in Headers */ = {isa = PBXBuildFile; fileRef = 517F7C241E2D1D2699B1426258CB65DC /* CGXPageCollectionWaterView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2CF320480D947CD5F3909C150BABD570 /* CGXPageCollectionUpdateFooterDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = FC201E4AB962AA8940EDCA7E98047D1D /* CGXPageCollectionUpdateFooterDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		391145882DE4D1D879000BAC930FE565 /* UIButton+CGXPageCollectionTapBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D72279C156BD7DC8B3F92544368D5DB /* UIButton+CGXPageCollectionTapBlock.m */; };
+		3EB3EA8E3633F4ACCB5CA5BE48512C9A /* CGXPageCollectionIrreguarRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 61AF93E80419FDAB7A01AFFE9B4E7C17 /* CGXPageCollectionIrreguarRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3F113DBC0827F560A1C97D930ADA76AF /* CGXPageCollectionBaseLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 77623B2A2A58BE14905DA14019835CEB /* CGXPageCollectionBaseLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		41E897A7D07CCAC4E16B5F47EE84007C /* CGXPageCollectionIrregularLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 324DA7861B30C7B32939F5C0EEFEB30D /* CGXPageCollectionIrregularLayout.m */; };
+		46C3456FC11224711C8B3C440B6153FA /* CGXPageCollectionHorizontalLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = FED841BE065FF5FDBBEB9E200A313EAE /* CGXPageCollectionHorizontalLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		46C384D0B31FD4E6E075019F071A6641 /* CGXPageCollectionIrregularView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFBFEE723C760D151557B7BB4D9297 /* CGXPageCollectionIrregularView.m */; };
+		4817C57CE8353F7A9578411513391528 /* CGXPageCollectionGeneralFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E8D17C3328BBD72AA904EA097CF86C /* CGXPageCollectionGeneralFlowLayout.m */; };
+		4BBB7CA0E473CFD2061C7294A4C8B464 /* CGXPageCollectionBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = 55658A134307188E24D18B5CD0135386 /* CGXPageCollectionBaseView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4DD51F4ACCCC1081AE7470C9260A0B39 /* CGXPageCollectionWaterSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A47CD12FC16E1A92312E52212619DC3 /* CGXPageCollectionWaterSectionModel.m */; };
+		504D56BEF6790FA63E6ED6F2CEFC9BAB /* CGXPageCollectionTagsView.h in Headers */ = {isa = PBXBuildFile; fileRef = C9638C8C18B626B1463F10B00803F4DD /* CGXPageCollectionTagsView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		543FC7BDC98F6CCD4D687F21DAA28BBD /* CGXPageCollectionFlowLayoutUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291F9EB13DB1C82C099B8382E2101E1 /* CGXPageCollectionFlowLayoutUtils.m */; };
+		5524F6D74307FCB42CCCB4C624035F19 /* CGXPageCollectionRoundLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = FF44FDBCEDE6D8C7A15E1AF56DC1E127 /* CGXPageCollectionRoundLayoutAttributes.m */; };
+		571C772C3E628D03D810FE27AB7502EE /* CGXPageCollectionWaterRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D9A856AD7B5B6D0A7EF8EE4C1DC0FF16 /* CGXPageCollectionWaterRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5782D1EED6DFBEB7D5B64659174F77F9 /* CGXPageCollectionTagsSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BBA85C8571A44E68F3E7F956CFA6CEE4 /* CGXPageCollectionTagsSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		58AD940FA4004F71000413E55A4569EF /* CGXPageCollectionGeneralRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6A0637CAC6E058D77AA31CAE169F83 /* CGXPageCollectionGeneralRowModel.m */; };
+		5EB9F4A8875F4023FF621D871B16476E /* CGXPageCollectionRoundModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1284EB04C376BB75BA99AC1213B9B0BA /* CGXPageCollectionRoundModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6159BFEFA45C25B98FCD6E5EA2291CF6 /* CGXPageCollectionWaterSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D4CC5BC7461A368E47FEAA6C56C7CD /* CGXPageCollectionWaterSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6DCCE463FC21D2F0615A12507970FAEB /* CGXPageCollectionTagsRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 47476B1BB2DD4906204431D528B3E1B7 /* CGXPageCollectionTagsRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7011346277DEDA8EE106439BE171F696 /* CGXPageCollectionFooterModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 15EA0AA2AFBED1C5516A2A6843B4D328 /* CGXPageCollectionFooterModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		709D5A040CAB6608AE7C240A49B8196E /* CGXPageCollectionGeneralSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F34988EDE224A733FCF5D785D25F836E /* CGXPageCollectionGeneralSectionModel.m */; };
+		737B00236746351AC483736501851C6A /* CGXPageCollectionBaseRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0236C53DC2B204CB900EF75AF0E69085 /* CGXPageCollectionBaseRowModel.m */; };
+		7D5F4224426B7981BFFF9C13AB0BCC8B /* CGXPageCollectionFlowLayoutUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E7CD2EE8E0BFBB8DBA15BC82A88F09A /* CGXPageCollectionFlowLayoutUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7F020E7880A877D47E437DAF38FA2C8D /* CGXPageCollectionBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E7ED909BFF8EABF3631391D2A861BF /* CGXPageCollectionBaseView.m */; };
+		81E430217C049C3336488D4805128016 /* CGXPageCollectionGeneralRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F9D8A236B00E0E1923102A6711501AB /* CGXPageCollectionGeneralRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		83735FCCFE9032B03B2C7F5CFDC0B93F /* UIView+CGXPageCollectionTap.m in Sources */ = {isa = PBXBuildFile; fileRef = A1560F3D6DEECB3AA42DF56492F9127A /* UIView+CGXPageCollectionTap.m */; };
+		8B915AE343D127EFCD7D246736FC3D19 /* CGXPageCollectionRoundReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A0A39E3ED8F25CEEF15F6BA8039ED1 /* CGXPageCollectionRoundReusableView.m */; };
+		8BE375618DBB31990D2245ACDA130A11 /* UIColor+CGXPageCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 73583E7918D8F1064C6C3BA4C590FBAD /* UIColor+CGXPageCollection.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8CBD76FF80D335DF4B81D7A062717CF1 /* UIButton+CGXPageCollectionTapBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 1801A1F9144A8ABE1694B119F14611A4 /* UIButton+CGXPageCollectionTapBlock.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8D058533022447187721120C5C1BAB30 /* CGXPageCollectionBaseSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC8C34FBBC021B0D1F1A528046AF81 /* CGXPageCollectionBaseSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8D38F7A5D1313338A2419791ED2CB609 /* CGXPageCollectionTagsFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B456E0D10B8F9DB942A49A5ACE6C2F62 /* CGXPageCollectionTagsFlowLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		980E2283A48969FB21DAE110900515D6 /* CGXPageCollectionUpdateHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AA9C1612C3609702002CCDCA2A0F1F58 /* CGXPageCollectionUpdateHeaderDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		995666DAA4B239A5DB11BC57C4E92D3C /* CGXPageCollectionBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D98C1D3FA782FB564F06B1F8ED7ABF /* CGXPageCollectionBaseLayout.m */; };
+		99679B0E4B771E570AE9C7F9983F97F7 /* CGXPageCollectionIrreguarSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8AD351C678242124881FBE42BFBBB /* CGXPageCollectionIrreguarSectionModel.m */; };
+		9EC429FABB8FBC954A480798542A6FC7 /* CGXPageCollectionWaterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43093683764E66E6C34D7B5CFE5CB180 /* CGXPageCollectionWaterView.m */; };
+		9F07E029C4FD3F65044D8ED975ADD5AE /* CGXPageCollectionGeneralFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = ABE41339CDA20DF90F5F227673061CE6 /* CGXPageCollectionGeneralFlowLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A53D28B5BE6DDCE52B422A71A322AE0B /* CGXPageCollectionTools.h in Headers */ = {isa = PBXBuildFile; fileRef = A110FED2E182E78D1B1C9DE880213EF9 /* CGXPageCollectionTools.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A69FE80C61DBBB755168A4B0F42866B6 /* CGXPageCollectionIrreguarSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F7EF4E4CA5B84AD79ED6C5B565C795C /* CGXPageCollectionIrreguarSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A838A8AF05EB23B04875F60970767EA9 /* CGXPageCollectionHeaderModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E61C71851078A4DEC981C6FCD8572A /* CGXPageCollectionHeaderModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AD508E9F82AF987407BC532505B2EEB8 /* CGXPageCollectionTagsFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 67415D6C13731ADA1F6C4841820590BD /* CGXPageCollectionTagsFlowLayout.m */; };
+		AE72EE6613A73125B026FA687E635A2E /* CGXPageCollectionUpdateViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = D3DCF5565B92CB4CCC9D1728DA4598C8 /* CGXPageCollectionUpdateViewDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B1344A4DA7063A4F6AD024B9D323D3A3 /* CGXPageCollectionRoundReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0779339D00572FD55D241599FFC2D4 /* CGXPageCollectionRoundReusableView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B3541C27177441E3863F8BAAEADCD60F /* CGXPageCollectionRoundModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2891624296D7A407E7698D195002B188 /* CGXPageCollectionRoundModel.m */; };
+		B39613005E928D51D7AE04C0D5AEC0C4 /* CGXPageCollectionRoundLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = ADF560FCDE757ADD6ADEFB71407C3775 /* CGXPageCollectionRoundLayoutAttributes.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B5675D2B65B1A539E8804C42BFBF0D36 /* CGXPageCollectionHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 35420396C304CB6A0B8FD33EB5F9ABD4 /* CGXPageCollectionHorizontalLayout.m */; };
+		B5A89CD0427A755EE90554B96077BC1E /* CGXPageCollectionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6664B90D23B13D3DE2070107B660C1 /* CGXPageCollectionTools.m */; };
+		B9F96B3DF2D6ECD1E4FC4C3BF6589670 /* CGXPageCollectionTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC29F67CC746CF26FD02A24763E0A08 /* CGXPageCollectionTagsView.m */; };
+		BD62C15C807DC3AFFC0351DC6CE8F55D /* CGXPageCollectionIrregularLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = FE1DA7A7BA124968EE567CEAE3ED6D42 /* CGXPageCollectionIrregularLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BE21BD09F99C15D34446656FAF715651 /* CGXPageCollectionViewOC-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36ADC0C4DD329D513A6906D52B3A35A1 /* CGXPageCollectionViewOC-dummy.m */; };
+		BF7E63C5255AF579CE3F9DCA2FC1B2A2 /* CGXPageCollectionUpdateRoundDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F85A15C6E3784B729A6F0796BE02CF31 /* CGXPageCollectionUpdateRoundDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C050A1FC65BC98C73A4B36A3A730B001 /* UIColor+CGXPageCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AA3D21C5F45EF1DD1FF67EFB9F624D /* UIColor+CGXPageCollection.m */; };
+		C3E9C942EECE814F4821BF98E8C93F70 /* CGXPageCollectionHorizontalSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBAB0DCE7B871BD9D7807EE48621296 /* CGXPageCollectionHorizontalSectionModel.m */; };
+		CC57F10D1191B6C36153C909BD7488A2 /* CGXPageCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CBAC83263F20C7E97A2AB15E1579F7C /* CGXPageCollectionView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CED446FF4E9BEF7BCD4DB6F475587D29 /* CGXPageCollectionFooterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE4013A89268A8E31B1796A99EBC3F /* CGXPageCollectionFooterModel.m */; };
+		D097BF5694FF2242EE91EBE12FF18E3A /* CGXPageCollectionHorizontalRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D108BFD93BC58B48BC4E36B0232FA /* CGXPageCollectionHorizontalRowModel.m */; };
+		D44455395256AA1A908A4F33CA143F1A /* CGXPageCollectionTagsSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 640AFA4324A0E1AB3C87E619AAEE41BE /* CGXPageCollectionTagsSectionModel.m */; };
+		D667816F824DDB42614545E7D952094E /* CGXPageCollectionGeneralView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39C69BDD9C0D7EEF5DD048CA09AC /* CGXPageCollectionGeneralView.m */; };
+		E023225276B75EB3A6335E9130BC7CA4 /* CGXPageCollectionGeneralSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 739BC68AB0BBAE54A99E11ED6B5FFB8F /* CGXPageCollectionGeneralSectionModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E396434C413018B28E06B4B25DBE88F2 /* CGXPageCollectionIrregularView.h in Headers */ = {isa = PBXBuildFile; fileRef = 05873937FFD7AB549B0DB34A3592EE5C /* CGXPageCollectionIrregularView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E6DAD611C640B836DCFD14A0B8B347F3 /* CGXPageCollectionGeneralView.h in Headers */ = {isa = PBXBuildFile; fileRef = A0BAFA3029FC878D40F21E009A1CB00E /* CGXPageCollectionGeneralView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EAA6240E3C0B6B105242E848581D0173 /* UIImage+CGXPageCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CDF54B271E53CBB1DAF58540031A8D /* UIImage+CGXPageCollection.m */; };
+		EC54FF7CADE7D05D9EC04E863589C283 /* CGXPageCollectionBaseSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A75899EE39637E1B8385031E4CAAC1 /* CGXPageCollectionBaseSectionModel.m */; };
+		F7FF396387840C32E0FA569A354656BC /* CGXPageCollectionBaseRowModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 94C0315C45A7EBCD41665D661F3C922E /* CGXPageCollectionBaseRowModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FDA7DEC1A7FDEE72479B5270B182B660 /* PBXContainerItemProxy */ = {
+		5BE2CEEE4B5BE6A4801DB26FF56F5A62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -100,103 +100,103 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00691AE44DAF2B792E23C15CFD746CDA /* CGXPageCollectionBaseRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseRowModel.m; sourceTree = "<group>"; };
-		062B56C091797D440119497FA479C9D5 /* CGXPageCollectionBaseLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseLayout.m; sourceTree = "<group>"; };
-		0675ED137D34FF09C65EF814FAB8046C /* CGXPageCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionView.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionView.m; sourceTree = "<group>"; };
-		0A9F7978C539D391D114DE4B616F543F /* CGXPageCollectionWaterView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionWaterView.m; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterView.m; sourceTree = "<group>"; };
-		0ADBE55F30B0890CE2281311A4AC8E78 /* CGXPageCollectionHeaderModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionHeaderModel.h; sourceTree = "<group>"; };
-		13184FF7D3C0F0C2A140082B2311AE1C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		19777C3BB3AD899EFF4C182EFDDB23FD /* CGXPageCollectionWaterView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionWaterView.h; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterView.h; sourceTree = "<group>"; };
-		1A610A146C1E6C1470D345107FCA6AF2 /* CGXPageCollectionFlowLayoutUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionFlowLayoutUtils.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionFlowLayoutUtils.h; sourceTree = "<group>"; };
-		1CE5B0961033910A32A97C4B94E0A44D /* CGXPageCollectionGeneralSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionGeneralSectionModel.m; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralSectionModel.m; sourceTree = "<group>"; };
-		1E8E7CD8EE10A602F948A6B42680E7D7 /* CGXPageCollectionUpdateFooterDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionUpdateFooterDelegate.h; sourceTree = "<group>"; };
-		21687B880088DC7C66EE533C053CEBD4 /* CGXPageCollectionUpdateViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionUpdateViewDelegate.h; sourceTree = "<group>"; };
-		2296E278B44D92C992309B8ED29BA401 /* CGXPageCollectionViewOC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = CGXPageCollectionViewOC.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		23F4C7CBD4C7E1C799EA8874512FD62A /* CGXPageCollectionViewOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CGXPageCollectionViewOC.debug.xcconfig; sourceTree = "<group>"; };
-		241C8C79B1C50A4B342910085788DEAD /* CGXPageCollectionTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionTools.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionTools.h; sourceTree = "<group>"; };
-		273FDC9B2361880EED8A66DD17B488C5 /* CGXPageCollectionBaseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseView.m; sourceTree = "<group>"; };
-		280DF5EF5A37C864B0C0162025525D29 /* CGXPageCollectionViewOC-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CGXPageCollectionViewOC-prefix.pch"; sourceTree = "<group>"; };
-		29735A26DCF2C1386A6BD1653B1E0A06 /* CGXPageCollectionTagsFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTagsFlowLayout.m; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsFlowLayout.m; sourceTree = "<group>"; };
-		2B25E8E3F2EEB549904DB10BC3206B73 /* CGXPageCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionView.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionView.h; sourceTree = "<group>"; };
-		2DE2A35DC0AF884183D51135E1524A95 /* CGXPageCollectionTagsRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTagsRowModel.m; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsRowModel.m; sourceTree = "<group>"; };
-		39969A0E67796D85C7413E2F4FE931BF /* UIView+CGXPageCollectionTap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CGXPageCollectionTap.h"; path = "CGXPageCollectionViewOC/Common/UIView+CGXPageCollectionTap.h"; sourceTree = "<group>"; };
-		3B7293EA73D697E2890F3D8D2FDF2176 /* CGXPageCollectionHorizontalRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionHorizontalRowModel.m; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalRowModel.m; sourceTree = "<group>"; };
-		3B7D3B1F26E0E47C8DFF2ADEC42DE0F4 /* CGXPageCollectionRoundReusableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionRoundReusableView.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundReusableView.h; sourceTree = "<group>"; };
-		3BE12859BC727BF7D989C8497FFB45D0 /* CGXPageCollectionWaterSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionWaterSectionModel.h; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterSectionModel.h; sourceTree = "<group>"; };
-		3F9E7DE73228EDA7D9829462BAD703F2 /* CGXPageCollectionTagsSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionTagsSectionModel.h; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsSectionModel.h; sourceTree = "<group>"; };
-		3FBCB458785C6C3AF2FA2661B74C77B1 /* CGXPageCollectionGeneralView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionGeneralView.m; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralView.m; sourceTree = "<group>"; };
+		002D23ADC4E4FC7A82A371035A3AA3BA /* CGXPageCollectionViewOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CGXPageCollectionViewOC.debug.xcconfig; sourceTree = "<group>"; };
+		0236C53DC2B204CB900EF75AF0E69085 /* CGXPageCollectionBaseRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseRowModel.m; sourceTree = "<group>"; };
+		05873937FFD7AB549B0DB34A3592EE5C /* CGXPageCollectionIrregularView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionIrregularView.h; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrregularView.h; sourceTree = "<group>"; };
+		09A0A39E3ED8F25CEEF15F6BA8039ED1 /* CGXPageCollectionRoundReusableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionRoundReusableView.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundReusableView.m; sourceTree = "<group>"; };
+		0FC29F67CC746CF26FD02A24763E0A08 /* CGXPageCollectionTagsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTagsView.m; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsView.m; sourceTree = "<group>"; };
+		0FD1A1F8D4FACA97A785C2B9D3332D14 /* CGXPageCollectionUpdateCellDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionUpdateCellDelegate.h; sourceTree = "<group>"; };
+		1284EB04C376BB75BA99AC1213B9B0BA /* CGXPageCollectionRoundModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionRoundModel.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundModel.h; sourceTree = "<group>"; };
+		15EA0AA2AFBED1C5516A2A6843B4D328 /* CGXPageCollectionFooterModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionFooterModel.h; sourceTree = "<group>"; };
+		16045A38679C4206079177CBD0FB117C /* CGXPageCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionView.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionView.m; sourceTree = "<group>"; };
+		1801A1F9144A8ABE1694B119F14611A4 /* UIButton+CGXPageCollectionTapBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+CGXPageCollectionTapBlock.h"; path = "CGXPageCollectionViewOC/Common/UIButton+CGXPageCollectionTapBlock.h"; sourceTree = "<group>"; };
+		1CBBB04A27F6813678450FB96A7C9009 /* CGXPageCollectionHorizontalView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionHorizontalView.m; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalView.m; sourceTree = "<group>"; };
+		1D72279C156BD7DC8B3F92544368D5DB /* UIButton+CGXPageCollectionTapBlock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+CGXPageCollectionTapBlock.m"; path = "CGXPageCollectionViewOC/Common/UIButton+CGXPageCollectionTapBlock.m"; sourceTree = "<group>"; };
+		20704E829EC597A2D877E828A097CE3C /* CGXPageCollectionHorizontalRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionHorizontalRowModel.h; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalRowModel.h; sourceTree = "<group>"; };
+		240822BE238AAD7B995EEFAF626FBF2F /* CGXPageCollectionViewOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CGXPageCollectionViewOC.release.xcconfig; sourceTree = "<group>"; };
+		2891624296D7A407E7698D195002B188 /* CGXPageCollectionRoundModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionRoundModel.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundModel.m; sourceTree = "<group>"; };
+		2E8D108BFD93BC58B48BC4E36B0232FA /* CGXPageCollectionHorizontalRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionHorizontalRowModel.m; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalRowModel.m; sourceTree = "<group>"; };
+		2F7EF4E4CA5B84AD79ED6C5B565C795C /* CGXPageCollectionIrreguarSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionIrreguarSectionModel.h; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrreguarSectionModel.h; sourceTree = "<group>"; };
+		324DA7861B30C7B32939F5C0EEFEB30D /* CGXPageCollectionIrregularLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionIrregularLayout.m; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrregularLayout.m; sourceTree = "<group>"; };
+		35420396C304CB6A0B8FD33EB5F9ABD4 /* CGXPageCollectionHorizontalLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionHorizontalLayout.m; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalLayout.m; sourceTree = "<group>"; };
+		36ADC0C4DD329D513A6906D52B3A35A1 /* CGXPageCollectionViewOC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CGXPageCollectionViewOC-dummy.m"; sourceTree = "<group>"; };
+		3CBAB0DCE7B871BD9D7807EE48621296 /* CGXPageCollectionHorizontalSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionHorizontalSectionModel.m; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalSectionModel.m; sourceTree = "<group>"; };
+		3CBAC83263F20C7E97A2AB15E1579F7C /* CGXPageCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionView.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionView.h; sourceTree = "<group>"; };
 		403968591FE2F2719536CCBF55ABA0AB /* Pods-CGXPageCollectionView-OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CGXPageCollectionView-OC.release.xcconfig"; sourceTree = "<group>"; };
-		41250CE2231ABC9ACFE4C2B73C6F938F /* UIButton+CGXPageCollectionTapBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+CGXPageCollectionTapBlock.h"; path = "CGXPageCollectionViewOC/Common/UIButton+CGXPageCollectionTapBlock.h"; sourceTree = "<group>"; };
-		42C493A407A1BA90424E9D272EE47908 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		4A9AB093E24C26277ED4155F375A6112 /* CGXPageCollectionWaterRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionWaterRowModel.m; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterRowModel.m; sourceTree = "<group>"; };
-		4D77574F8343C8D051C5532CB87B20B6 /* CGXPageCollectionTagsFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionTagsFlowLayout.h; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsFlowLayout.h; sourceTree = "<group>"; };
-		53889C17732087D180A13BA5711C2406 /* CGXPageCollectionUpdateCellDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionUpdateCellDelegate.h; sourceTree = "<group>"; };
-		55D3A137AAD58721FE88A4530F80CA96 /* CGXPageCollectionFooterModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionFooterModel.m; sourceTree = "<group>"; };
+		41550A392F47BE0773197B41A38A4789 /* CGXPageCollectionHorizontalSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionHorizontalSectionModel.h; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalSectionModel.h; sourceTree = "<group>"; };
+		42E61C71851078A4DEC981C6FCD8572A /* CGXPageCollectionHeaderModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionHeaderModel.h; sourceTree = "<group>"; };
+		43093683764E66E6C34D7B5CFE5CB180 /* CGXPageCollectionWaterView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionWaterView.m; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterView.m; sourceTree = "<group>"; };
+		47476B1BB2DD4906204431D528B3E1B7 /* CGXPageCollectionTagsRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionTagsRowModel.h; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsRowModel.h; sourceTree = "<group>"; };
+		4BD3C2B33E40C022C46666FDED6B7C25 /* UIView+CGXPageCollectionTap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CGXPageCollectionTap.h"; path = "CGXPageCollectionViewOC/Common/UIView+CGXPageCollectionTap.h"; sourceTree = "<group>"; };
+		4E67717BCF075B07C70567A5C608E5B9 /* CGXPageCollectionWaterLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionWaterLayout.h; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterLayout.h; sourceTree = "<group>"; };
+		4E6A0637CAC6E058D77AA31CAE169F83 /* CGXPageCollectionGeneralRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionGeneralRowModel.m; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralRowModel.m; sourceTree = "<group>"; };
+		517F7C241E2D1D2699B1426258CB65DC /* CGXPageCollectionWaterView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionWaterView.h; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterView.h; sourceTree = "<group>"; };
+		53D4CC5BC7461A368E47FEAA6C56C7CD /* CGXPageCollectionWaterSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionWaterSectionModel.h; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterSectionModel.h; sourceTree = "<group>"; };
+		55658A134307188E24D18B5CD0135386 /* CGXPageCollectionBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseView.h; sourceTree = "<group>"; };
 		5711F9AB925EE3B7718213FC7EE6C91C /* Pods-CGXPageCollectionView-OC-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CGXPageCollectionView-OC-acknowledgements.plist"; sourceTree = "<group>"; };
-		5CE68BCE430BFDDDA583934CF12C0350 /* UIView+CGXPageCollectionTap.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CGXPageCollectionTap.m"; path = "CGXPageCollectionViewOC/Common/UIView+CGXPageCollectionTap.m"; sourceTree = "<group>"; };
-		622564812691DF88B5BB0CD5A87F10D5 /* CGXPageCollectionIrregularLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionIrregularLayout.h; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrregularLayout.h; sourceTree = "<group>"; };
-		64A332431AA5144EB0A51999E36FEA73 /* CGXPageCollectionHorizontalRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionHorizontalRowModel.h; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalRowModel.h; sourceTree = "<group>"; };
-		64D838DD56ABC31E1D1388B9CE3D1FEB /* CGXPageCollectionTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTools.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionTools.m; sourceTree = "<group>"; };
+		5F9D8A236B00E0E1923102A6711501AB /* CGXPageCollectionGeneralRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionGeneralRowModel.h; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralRowModel.h; sourceTree = "<group>"; };
+		61AF93E80419FDAB7A01AFFE9B4E7C17 /* CGXPageCollectionIrreguarRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionIrreguarRowModel.h; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrreguarRowModel.h; sourceTree = "<group>"; };
+		640AFA4324A0E1AB3C87E619AAEE41BE /* CGXPageCollectionTagsSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTagsSectionModel.m; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsSectionModel.m; sourceTree = "<group>"; };
 		66B529FB0F523D694F2F125D7775CA29 /* Pods-CGXPageCollectionView-OC-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CGXPageCollectionView-OC-acknowledgements.markdown"; sourceTree = "<group>"; };
-		69DBBEF06DF6DF387C983D0D589698FA /* CGXPageCollectionBaseSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseSectionModel.h; sourceTree = "<group>"; };
-		69DD1D0734B2ABE796F108C911171C10 /* CGXPageCollectionWaterLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionWaterLayout.m; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterLayout.m; sourceTree = "<group>"; };
-		713185F967879ECD248A4D5C7B8398B1 /* CGXPageCollectionBaseRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseRowModel.h; sourceTree = "<group>"; };
-		72E5BF4893229455A6F236000C2E004A /* CGXPageCollectionWaterLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionWaterLayout.h; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterLayout.h; sourceTree = "<group>"; };
-		74BD2D25B72B0F15D3B0637E2426F260 /* CGXPageCollectionGeneralRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionGeneralRowModel.h; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralRowModel.h; sourceTree = "<group>"; };
-		754D8A99FB58AFCB1C2647D42A4060FA /* UIColor+CGXPageCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CGXPageCollection.m"; path = "CGXPageCollectionViewOC/Common/UIColor+CGXPageCollection.m"; sourceTree = "<group>"; };
-		764F382B4548291BAFF600F4608D14CC /* CGXPageCollectionIrreguarSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionIrreguarSectionModel.h; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrreguarSectionModel.h; sourceTree = "<group>"; };
-		768B6906B939E20FDD80F5C85A90357F /* UIImage+CGXPageCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CGXPageCollection.m"; path = "CGXPageCollectionViewOC/Common/UIImage+CGXPageCollection.m"; sourceTree = "<group>"; };
-		796686BE7308ED81F844C43E081DB6AA /* CGXPageCollectionGeneralFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionGeneralFlowLayout.h; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralFlowLayout.h; sourceTree = "<group>"; };
-		7A9B32EA1C25AD14205A2D5CBF616AEC /* CGXPageCollectionIrregularView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionIrregularView.h; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrregularView.h; sourceTree = "<group>"; };
+		67415D6C13731ADA1F6C4841820590BD /* CGXPageCollectionTagsFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTagsFlowLayout.m; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsFlowLayout.m; sourceTree = "<group>"; };
+		6E7CD2EE8E0BFBB8DBA15BC82A88F09A /* CGXPageCollectionFlowLayoutUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionFlowLayoutUtils.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionFlowLayoutUtils.h; sourceTree = "<group>"; };
+		73583E7918D8F1064C6C3BA4C590FBAD /* UIColor+CGXPageCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+CGXPageCollection.h"; path = "CGXPageCollectionViewOC/Common/UIColor+CGXPageCollection.h"; sourceTree = "<group>"; };
+		739BC68AB0BBAE54A99E11ED6B5FFB8F /* CGXPageCollectionGeneralSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionGeneralSectionModel.h; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralSectionModel.h; sourceTree = "<group>"; };
+		77623B2A2A58BE14905DA14019835CEB /* CGXPageCollectionBaseLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseLayout.h; sourceTree = "<group>"; };
+		7A47CD12FC16E1A92312E52212619DC3 /* CGXPageCollectionWaterSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionWaterSectionModel.m; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterSectionModel.m; sourceTree = "<group>"; };
+		7ACFBFEE723C760D151557B7BB4D9297 /* CGXPageCollectionIrregularView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionIrregularView.m; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrregularView.m; sourceTree = "<group>"; };
 		7E862E78A0F7D77A94161A05C65AD764 /* Pods-CGXPageCollectionView-OC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CGXPageCollectionView-OC-dummy.m"; sourceTree = "<group>"; };
-		8246989A15E59E0F1DFBD27224E5D920 /* CGXPageCollectionIrreguarSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionIrreguarSectionModel.m; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrreguarSectionModel.m; sourceTree = "<group>"; };
-		863332AD9D61F37ECC715CC055675EA0 /* libCGXPageCollectionViewOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCGXPageCollectionViewOC.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D291BA9B10A8CC05CF9CF967974BAC2 /* CGXPageCollectionRoundModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionRoundModel.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundModel.m; sourceTree = "<group>"; };
-		8DFDF7D4307210EA07FF5C6DEAB66DBA /* CGXPageCollectionFooterModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionFooterModel.h; sourceTree = "<group>"; };
-		93E77F4C828EF192021930C8DBECCC0F /* CGXPageCollectionRoundLayoutAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionRoundLayoutAttributes.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundLayoutAttributes.m; sourceTree = "<group>"; };
-		95278FF58284E2ED7160EA726B659501 /* CGXPageCollectionWaterSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionWaterSectionModel.m; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterSectionModel.m; sourceTree = "<group>"; };
-		99D3D19B5EFD8193C9B0DA1548431E00 /* CGXPageCollectionTagsSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTagsSectionModel.m; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsSectionModel.m; sourceTree = "<group>"; };
-		9A16DF4D12CC4F778C12F04B2B115CA1 /* UIButton+CGXPageCollectionTapBlock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+CGXPageCollectionTapBlock.m"; path = "CGXPageCollectionViewOC/Common/UIButton+CGXPageCollectionTapBlock.m"; sourceTree = "<group>"; };
-		9C6CC7CB3E83D87031211A3A336C288C /* CGXPageCollectionWaterRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionWaterRowModel.h; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterRowModel.h; sourceTree = "<group>"; };
-		9CFA8610491D4BEB3C57B718138D6C38 /* CGXPageCollectionTagsRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionTagsRowModel.h; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsRowModel.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9FB518C229606B2760B93A4470AB971A /* CGXPageCollectionBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseView.h; sourceTree = "<group>"; };
-		9FF8E35D084CA32F15C7AE7D585555F4 /* CGXPageCollectionGeneralRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionGeneralRowModel.m; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralRowModel.m; sourceTree = "<group>"; };
-		A5F507F32CF389184E32AED32A203509 /* CGXPageCollectionGeneralFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionGeneralFlowLayout.m; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralFlowLayout.m; sourceTree = "<group>"; };
-		ABF9C73E6FE40ECA2852D6358BFCBF4B /* UIImage+CGXPageCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+CGXPageCollection.h"; path = "CGXPageCollectionViewOC/Common/UIImage+CGXPageCollection.h"; sourceTree = "<group>"; };
-		B03CD3F1CD0521A0F2519B1F48ED2BE0 /* CGXPageCollectionTagsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTagsView.m; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsView.m; sourceTree = "<group>"; };
-		B51F714E287A2C8E1275F8FB148EF738 /* CGXPageCollectionViewOC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CGXPageCollectionViewOC-dummy.m"; sourceTree = "<group>"; };
-		B53B3FF661166FE489507750E02B128C /* CGXPageCollectionTagsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionTagsView.h; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsView.h; sourceTree = "<group>"; };
+		8291F9EB13DB1C82C099B8382E2101E1 /* CGXPageCollectionFlowLayoutUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionFlowLayoutUtils.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionFlowLayoutUtils.m; sourceTree = "<group>"; };
+		863332AD9D61F37ECC715CC055675EA0 /* libCGXPageCollectionViewOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCGXPageCollectionViewOC.a; path = libCGXPageCollectionViewOC.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		90D600EA0D5D6A53474E89115A5DBDB0 /* CGXPageCollectionHeaderModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionHeaderModel.m; sourceTree = "<group>"; };
+		91CDF54B271E53CBB1DAF58540031A8D /* UIImage+CGXPageCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CGXPageCollection.m"; path = "CGXPageCollectionViewOC/Common/UIImage+CGXPageCollection.m"; sourceTree = "<group>"; };
+		94C0315C45A7EBCD41665D661F3C922E /* CGXPageCollectionBaseRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseRowModel.h; sourceTree = "<group>"; };
+		99E7ED909BFF8EABF3631391D2A861BF /* CGXPageCollectionBaseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseView.m; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0BAFA3029FC878D40F21E009A1CB00E /* CGXPageCollectionGeneralView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionGeneralView.h; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralView.h; sourceTree = "<group>"; };
+		A110FED2E182E78D1B1C9DE880213EF9 /* CGXPageCollectionTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionTools.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionTools.h; sourceTree = "<group>"; };
+		A1560F3D6DEECB3AA42DF56492F9127A /* UIView+CGXPageCollectionTap.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CGXPageCollectionTap.m"; path = "CGXPageCollectionViewOC/Common/UIView+CGXPageCollectionTap.m"; sourceTree = "<group>"; };
+		A2A75899EE39637E1B8385031E4CAAC1 /* CGXPageCollectionBaseSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseSectionModel.m; sourceTree = "<group>"; };
+		A42F24A3BE1F2F8CBBD6CD2017C25D1A /* CGXPageCollectionHorizontalView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionHorizontalView.h; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalView.h; sourceTree = "<group>"; };
+		A7E8D17C3328BBD72AA904EA097CF86C /* CGXPageCollectionGeneralFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionGeneralFlowLayout.m; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralFlowLayout.m; sourceTree = "<group>"; };
+		A82684B5A554952D70A3FD12109796DB /* CGXPageCollectionWaterLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionWaterLayout.m; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterLayout.m; sourceTree = "<group>"; };
+		AA9C1612C3609702002CCDCA2A0F1F58 /* CGXPageCollectionUpdateHeaderDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionUpdateHeaderDelegate.h; sourceTree = "<group>"; };
+		AB8FAF9A44997FBBB16D9A822A6D1357 /* UIImage+CGXPageCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+CGXPageCollection.h"; path = "CGXPageCollectionViewOC/Common/UIImage+CGXPageCollection.h"; sourceTree = "<group>"; };
+		ABE41339CDA20DF90F5F227673061CE6 /* CGXPageCollectionGeneralFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionGeneralFlowLayout.h; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralFlowLayout.h; sourceTree = "<group>"; };
+		ADF560FCDE757ADD6ADEFB71407C3775 /* CGXPageCollectionRoundLayoutAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionRoundLayoutAttributes.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundLayoutAttributes.h; sourceTree = "<group>"; };
+		AFDE4013A89268A8E31B1796A99EBC3F /* CGXPageCollectionFooterModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionFooterModel.m; sourceTree = "<group>"; };
+		B0A9C5BA73E26E5536B8B7E56777B5C9 /* CGXPageCollectionTagsRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTagsRowModel.m; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsRowModel.m; sourceTree = "<group>"; };
+		B1D98C1D3FA782FB564F06B1F8ED7ABF /* CGXPageCollectionBaseLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseLayout.m; sourceTree = "<group>"; };
+		B39C89FF4E8F354C2803D38BFCECB224 /* CGXPageCollectionWaterRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionWaterRowModel.m; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterRowModel.m; sourceTree = "<group>"; };
+		B456E0D10B8F9DB942A49A5ACE6C2F62 /* CGXPageCollectionTagsFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionTagsFlowLayout.h; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsFlowLayout.h; sourceTree = "<group>"; };
+		B475C94B51FFA6D102CA32DB7F8A0921 /* CGXPageCollectionIrreguarRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionIrreguarRowModel.m; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrreguarRowModel.m; sourceTree = "<group>"; };
 		B5A3217C57882D4F7E8CD2895D6C5731 /* Pods-CGXPageCollectionView-OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CGXPageCollectionView-OC.debug.xcconfig"; sourceTree = "<group>"; };
-		B8E2359DFAB82955B7FA09B678E85BD3 /* CGXPageCollectionRoundReusableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionRoundReusableView.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundReusableView.m; sourceTree = "<group>"; };
-		BCA51C339627E0AF8D0C2E12D75196BE /* CGXPageCollectionFlowLayoutUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionFlowLayoutUtils.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionFlowLayoutUtils.m; sourceTree = "<group>"; };
-		BDC66E0980ABE735E3E88A8736E622F1 /* CGXPageCollectionIrregularView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionIrregularView.m; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrregularView.m; sourceTree = "<group>"; };
-		C1B00CEDFA7DBE5928E5AB61C60BC726 /* libPods-CGXPageCollectionView-OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CGXPageCollectionView-OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5EF87E1E096C36DA095973BB76E4B4D /* CGXPageCollectionGeneralSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionGeneralSectionModel.h; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralSectionModel.h; sourceTree = "<group>"; };
-		C823ACEF5B4B61EAB9E6059F91286280 /* CGXPageCollectionHorizontalSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionHorizontalSectionModel.m; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalSectionModel.m; sourceTree = "<group>"; };
-		C9A866BF48A51CDAB23C925D65BBE912 /* CGXPageCollectionBaseSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionBaseSectionModel.m; sourceTree = "<group>"; };
-		CBE45B1AE25DDD3E51B7DBBEDCDEA58E /* CGXPageCollectionHorizontalView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionHorizontalView.h; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalView.h; sourceTree = "<group>"; };
-		CF79739F474AA5392F93500CB9AB86E8 /* CGXPageCollectionHorizontalView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionHorizontalView.m; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalView.m; sourceTree = "<group>"; };
-		CF89EFC406AAA29144561EDF83A2CE2A /* CGXPageCollectionViewOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CGXPageCollectionViewOC.release.xcconfig; sourceTree = "<group>"; };
-		CFAF91D4AF10AA00418FC68A33BEBE44 /* CGXPageCollectionIrregularLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionIrregularLayout.m; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrregularLayout.m; sourceTree = "<group>"; };
-		D0B1EB8F031EB6C5B5B9C06806B77D12 /* CGXPageCollectionHeaderModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionHeaderModel.m; sourceTree = "<group>"; };
-		D472E3B4A1F7491A72386A352FD85C95 /* CGXPageCollectionBaseLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseLayout.h; sourceTree = "<group>"; };
-		D6B1D71882775CC74CB2C8BF69526468 /* CGXPageCollectionGeneralView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionGeneralView.h; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralView.h; sourceTree = "<group>"; };
-		D7BDEF36F86D20B7952CF34313013492 /* CGXPageCollectionIrreguarRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionIrreguarRowModel.h; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrreguarRowModel.h; sourceTree = "<group>"; };
-		D811AB6E333ACF25F6D81610E4562552 /* CGXPageCollectionHorizontalLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionHorizontalLayout.h; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalLayout.h; sourceTree = "<group>"; };
-		DFA9B01E4BCF73B33B83461985A7B67F /* CGXPageCollectionHorizontalLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionHorizontalLayout.m; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalLayout.m; sourceTree = "<group>"; };
-		E0533585354DB8B218EDCAA910A6ECA8 /* CGXPageCollectionIrreguarRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionIrreguarRowModel.m; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrreguarRowModel.m; sourceTree = "<group>"; };
-		E0A625A969A7D20C2E810AF58C062A2F /* UIColor+CGXPageCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+CGXPageCollection.h"; path = "CGXPageCollectionViewOC/Common/UIColor+CGXPageCollection.h"; sourceTree = "<group>"; };
-		E25853D4809B1356A8167319A2E23764 /* CGXPageCollectionRoundLayoutAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionRoundLayoutAttributes.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundLayoutAttributes.h; sourceTree = "<group>"; };
-		E4BE70425B709FF35C2C0E6149661483 /* CGXPageCollectionUpdateHeaderDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionUpdateHeaderDelegate.h; sourceTree = "<group>"; };
-		F989365643C21C86D00A4A510C179A0F /* CGXPageCollectionUpdateRoundDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionUpdateRoundDelegate.h; sourceTree = "<group>"; };
-		FB51C5D1826961C791F2954A514EB7BA /* CGXPageCollectionHorizontalSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionHorizontalSectionModel.h; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalSectionModel.h; sourceTree = "<group>"; };
-		FCAB0471DCB481DD4AA5E7720B3E9696 /* CGXPageCollectionViewOC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionViewOC.h; path = CGXPageCollectionViewOC/CGXPageCollectionViewOC.h; sourceTree = "<group>"; };
-		FE3554D3A121F9EB2E2A043515ED7B02 /* CGXPageCollectionRoundModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionRoundModel.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundModel.h; sourceTree = "<group>"; };
+		BBA85C8571A44E68F3E7F956CFA6CEE4 /* CGXPageCollectionTagsSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionTagsSectionModel.h; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsSectionModel.h; sourceTree = "<group>"; };
+		BC21C8BE2FD112E27D54EBCF8419690E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		BE6664B90D23B13D3DE2070107B660C1 /* CGXPageCollectionTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTools.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionTools.m; sourceTree = "<group>"; };
+		C1B00CEDFA7DBE5928E5AB61C60BC726 /* libPods-CGXPageCollectionView-OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CGXPageCollectionView-OC.a"; path = "libPods-CGXPageCollectionView-OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4CC8C34FBBC021B0D1F1A528046AF81 /* CGXPageCollectionBaseSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionBaseSectionModel.h; sourceTree = "<group>"; };
+		C4F8AD351C678242124881FBE42BFBBB /* CGXPageCollectionIrreguarSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionIrreguarSectionModel.m; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrreguarSectionModel.m; sourceTree = "<group>"; };
+		C8AA3D21C5F45EF1DD1FF67EFB9F624D /* UIColor+CGXPageCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CGXPageCollection.m"; path = "CGXPageCollectionViewOC/Common/UIColor+CGXPageCollection.m"; sourceTree = "<group>"; };
+		C9638C8C18B626B1463F10B00803F4DD /* CGXPageCollectionTagsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionTagsView.h; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsView.h; sourceTree = "<group>"; };
+		D3DCF5565B92CB4CCC9D1728DA4598C8 /* CGXPageCollectionUpdateViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionUpdateViewDelegate.h; sourceTree = "<group>"; };
+		D5D7B243E351FF69B69055C99B31B5BF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		D9A856AD7B5B6D0A7EF8EE4C1DC0FF16 /* CGXPageCollectionWaterRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionWaterRowModel.h; path = CGXPageCollectionViewOC/Water/CGXPageCollectionWaterRowModel.h; sourceTree = "<group>"; };
+		DC0779339D00572FD55D241599FFC2D4 /* CGXPageCollectionRoundReusableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionRoundReusableView.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundReusableView.h; sourceTree = "<group>"; };
+		DE07BE16595093C908DCAF2BE074DAA0 /* CGXPageCollectionViewOC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionViewOC.h; path = CGXPageCollectionViewOC/CGXPageCollectionViewOC.h; sourceTree = "<group>"; };
+		E056F83224B56C42A8AB48E0A98439A9 /* CGXPageCollectionViewOC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CGXPageCollectionViewOC.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F34988EDE224A733FCF5D785D25F836E /* CGXPageCollectionGeneralSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionGeneralSectionModel.m; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralSectionModel.m; sourceTree = "<group>"; };
+		F4CD39C69BDD9C0D7EEF5DD048CA09AC /* CGXPageCollectionGeneralView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionGeneralView.m; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralView.m; sourceTree = "<group>"; };
+		F85A15C6E3784B729A6F0796BE02CF31 /* CGXPageCollectionUpdateRoundDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionUpdateRoundDelegate.h; sourceTree = "<group>"; };
+		FC201E4AB962AA8940EDCA7E98047D1D /* CGXPageCollectionUpdateFooterDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionUpdateFooterDelegate.h; sourceTree = "<group>"; };
+		FC9D3E7499A59EB9DE43F08AD77344CA /* CGXPageCollectionViewOC-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CGXPageCollectionViewOC-prefix.pch"; sourceTree = "<group>"; };
+		FE1DA7A7BA124968EE567CEAE3ED6D42 /* CGXPageCollectionIrregularLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionIrregularLayout.h; path = CGXPageCollectionViewOC/IrregularView/CGXPageCollectionIrregularLayout.h; sourceTree = "<group>"; };
+		FED841BE065FF5FDBBEB9E200A313EAE /* CGXPageCollectionHorizontalLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionHorizontalLayout.h; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalLayout.h; sourceTree = "<group>"; };
+		FF44FDBCEDE6D8C7A15E1AF56DC1E127 /* CGXPageCollectionRoundLayoutAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionRoundLayoutAttributes.m; path = CGXPageCollectionViewOC/Common/CGXPageCollectionRoundLayoutAttributes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2D62B98AB5F9460B621B611D346E77C5 /* Frameworks */ = {
+		50C9B52F3F8C66C08BEB7B0ECDC0DD2A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,31 +213,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01D46D234060B924BD6EE6D0B8A98496 /* General */ = {
+		19B6B5B06EEB6166591DFED077E52F00 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				796686BE7308ED81F844C43E081DB6AA /* CGXPageCollectionGeneralFlowLayout.h */,
-				A5F507F32CF389184E32AED32A203509 /* CGXPageCollectionGeneralFlowLayout.m */,
-				74BD2D25B72B0F15D3B0637E2426F260 /* CGXPageCollectionGeneralRowModel.h */,
-				9FF8E35D084CA32F15C7AE7D585555F4 /* CGXPageCollectionGeneralRowModel.m */,
-				C5EF87E1E096C36DA095973BB76E4B4D /* CGXPageCollectionGeneralSectionModel.h */,
-				1CE5B0961033910A32A97C4B94E0A44D /* CGXPageCollectionGeneralSectionModel.m */,
-				D6B1D71882775CC74CB2C8BF69526468 /* CGXPageCollectionGeneralView.h */,
-				3FBCB458785C6C3AF2FA2661B74C77B1 /* CGXPageCollectionGeneralView.m */,
-			);
-			name = General;
-			sourceTree = "<group>";
-		};
-		0B86D632C87362833B0A32B55F5C56C8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B51F714E287A2C8E1275F8FB148EF738 /* CGXPageCollectionViewOC-dummy.m */,
-				280DF5EF5A37C864B0C0162025525D29 /* CGXPageCollectionViewOC-prefix.pch */,
-				23F4C7CBD4C7E1C799EA8874512FD62A /* CGXPageCollectionViewOC.debug.xcconfig */,
-				CF89EFC406AAA29144561EDF83A2CE2A /* CGXPageCollectionViewOC.release.xcconfig */,
+				36ADC0C4DD329D513A6906D52B3A35A1 /* CGXPageCollectionViewOC-dummy.m */,
+				FC9D3E7499A59EB9DE43F08AD77344CA /* CGXPageCollectionViewOC-prefix.pch */,
+				002D23ADC4E4FC7A82A371035A3AA3BA /* CGXPageCollectionViewOC.debug.xcconfig */,
+				240822BE238AAD7B995EEFAF626FBF2F /* CGXPageCollectionViewOC.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "CGXPageCollectionView-OC/Pods/Target Support Files/CGXPageCollectionViewOC";
+			sourceTree = "<group>";
+		};
+		1A12358873C86CDBDF8B726B75B32463 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				0FD1A1F8D4FACA97A785C2B9D3332D14 /* CGXPageCollectionUpdateCellDelegate.h */,
+				FC201E4AB962AA8940EDCA7E98047D1D /* CGXPageCollectionUpdateFooterDelegate.h */,
+				AA9C1612C3609702002CCDCA2A0F1F58 /* CGXPageCollectionUpdateHeaderDelegate.h */,
+				F85A15C6E3784B729A6F0796BE02CF31 /* CGXPageCollectionUpdateRoundDelegate.h */,
+				D3DCF5565B92CB4CCC9D1728DA4598C8 /* CGXPageCollectionUpdateViewDelegate.h */,
+			);
+			name = Delegate;
+			path = CGXPageCollectionViewOC/Delegate;
 			sourceTree = "<group>";
 		};
 		314C587B69942C7D48B40264FA616EA8 /* Targets Support Files */ = {
@@ -248,70 +246,99 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		35A2B59962BE8A59F6C5C1EB79AC4BB9 /* Base */ = {
+		4E42F2886381233D13984AAE90A77875 /* CGXPageCollectionViewOC */ = {
 			isa = PBXGroup;
 			children = (
-				D417D24771A9885766A5005097B0AD36 /* Base */,
-				B202AB8F1BB32FA6E45B8D17FFB050EE /* Delegate */,
+				DE07BE16595093C908DCAF2BE074DAA0 /* CGXPageCollectionViewOC.h */,
+				9A65B5EC993D4A82437F0FD56E4A4BEB /* Base */,
+				6F7CD9191965247F5C82582A473BCEA8 /* Common */,
+				D0CB64149776B8FC671F82F609225ECD /* General */,
+				8B3093283A24A8C87071181AED97C405 /* Horizontal */,
+				D0544742675C8F0EF7BCB008D5656508 /* IrregularView */,
+				A7C5C140C5001072BE631DEA2AD58935 /* Pod */,
+				19B6B5B06EEB6166591DFED077E52F00 /* Support Files */,
+				54E4D067B10E32CC45DF3D0233BB9D4C /* Tags */,
+				E181349C4422E5DA3B9926E516E9331C /* Water */,
 			);
-			name = Base;
+			name = CGXPageCollectionViewOC;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		4E8396F762C380407EB0BC158733E90A /* Tags */ = {
+		54E4D067B10E32CC45DF3D0233BB9D4C /* Tags */ = {
 			isa = PBXGroup;
 			children = (
-				4D77574F8343C8D051C5532CB87B20B6 /* CGXPageCollectionTagsFlowLayout.h */,
-				29735A26DCF2C1386A6BD1653B1E0A06 /* CGXPageCollectionTagsFlowLayout.m */,
-				9CFA8610491D4BEB3C57B718138D6C38 /* CGXPageCollectionTagsRowModel.h */,
-				2DE2A35DC0AF884183D51135E1524A95 /* CGXPageCollectionTagsRowModel.m */,
-				3F9E7DE73228EDA7D9829462BAD703F2 /* CGXPageCollectionTagsSectionModel.h */,
-				99D3D19B5EFD8193C9B0DA1548431E00 /* CGXPageCollectionTagsSectionModel.m */,
-				B53B3FF661166FE489507750E02B128C /* CGXPageCollectionTagsView.h */,
-				B03CD3F1CD0521A0F2519B1F48ED2BE0 /* CGXPageCollectionTagsView.m */,
+				B456E0D10B8F9DB942A49A5ACE6C2F62 /* CGXPageCollectionTagsFlowLayout.h */,
+				67415D6C13731ADA1F6C4841820590BD /* CGXPageCollectionTagsFlowLayout.m */,
+				47476B1BB2DD4906204431D528B3E1B7 /* CGXPageCollectionTagsRowModel.h */,
+				B0A9C5BA73E26E5536B8B7E56777B5C9 /* CGXPageCollectionTagsRowModel.m */,
+				BBA85C8571A44E68F3E7F956CFA6CEE4 /* CGXPageCollectionTagsSectionModel.h */,
+				640AFA4324A0E1AB3C87E619AAEE41BE /* CGXPageCollectionTagsSectionModel.m */,
+				C9638C8C18B626B1463F10B00803F4DD /* CGXPageCollectionTagsView.h */,
+				0FC29F67CC746CF26FD02A24763E0A08 /* CGXPageCollectionTagsView.m */,
 			);
 			name = Tags;
 			sourceTree = "<group>";
 		};
-		7663CB6753DE791C74531CE4CC0A2C79 /* Horizontal */ = {
+		6A34F19B882DD5B84D977D84A2FC2A84 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				D811AB6E333ACF25F6D81610E4562552 /* CGXPageCollectionHorizontalLayout.h */,
-				DFA9B01E4BCF73B33B83461985A7B67F /* CGXPageCollectionHorizontalLayout.m */,
-				64A332431AA5144EB0A51999E36FEA73 /* CGXPageCollectionHorizontalRowModel.h */,
-				3B7293EA73D697E2890F3D8D2FDF2176 /* CGXPageCollectionHorizontalRowModel.m */,
-				FB51C5D1826961C791F2954A514EB7BA /* CGXPageCollectionHorizontalSectionModel.h */,
-				C823ACEF5B4B61EAB9E6059F91286280 /* CGXPageCollectionHorizontalSectionModel.m */,
-				CBE45B1AE25DDD3E51B7DBBEDCDEA58E /* CGXPageCollectionHorizontalView.h */,
-				CF79739F474AA5392F93500CB9AB86E8 /* CGXPageCollectionHorizontalView.m */,
+				77623B2A2A58BE14905DA14019835CEB /* CGXPageCollectionBaseLayout.h */,
+				B1D98C1D3FA782FB564F06B1F8ED7ABF /* CGXPageCollectionBaseLayout.m */,
+				94C0315C45A7EBCD41665D661F3C922E /* CGXPageCollectionBaseRowModel.h */,
+				0236C53DC2B204CB900EF75AF0E69085 /* CGXPageCollectionBaseRowModel.m */,
+				C4CC8C34FBBC021B0D1F1A528046AF81 /* CGXPageCollectionBaseSectionModel.h */,
+				A2A75899EE39637E1B8385031E4CAAC1 /* CGXPageCollectionBaseSectionModel.m */,
+				55658A134307188E24D18B5CD0135386 /* CGXPageCollectionBaseView.h */,
+				99E7ED909BFF8EABF3631391D2A861BF /* CGXPageCollectionBaseView.m */,
+				15EA0AA2AFBED1C5516A2A6843B4D328 /* CGXPageCollectionFooterModel.h */,
+				AFDE4013A89268A8E31B1796A99EBC3F /* CGXPageCollectionFooterModel.m */,
+				42E61C71851078A4DEC981C6FCD8572A /* CGXPageCollectionHeaderModel.h */,
+				90D600EA0D5D6A53474E89115A5DBDB0 /* CGXPageCollectionHeaderModel.m */,
 			);
-			name = Horizontal;
+			name = Base;
+			path = CGXPageCollectionViewOC/Base;
 			sourceTree = "<group>";
 		};
-		947037802F780B717BC38E77CB0F7C2E /* Common */ = {
+		6F7CD9191965247F5C82582A473BCEA8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1A610A146C1E6C1470D345107FCA6AF2 /* CGXPageCollectionFlowLayoutUtils.h */,
-				BCA51C339627E0AF8D0C2E12D75196BE /* CGXPageCollectionFlowLayoutUtils.m */,
-				E25853D4809B1356A8167319A2E23764 /* CGXPageCollectionRoundLayoutAttributes.h */,
-				93E77F4C828EF192021930C8DBECCC0F /* CGXPageCollectionRoundLayoutAttributes.m */,
-				FE3554D3A121F9EB2E2A043515ED7B02 /* CGXPageCollectionRoundModel.h */,
-				8D291BA9B10A8CC05CF9CF967974BAC2 /* CGXPageCollectionRoundModel.m */,
-				3B7D3B1F26E0E47C8DFF2ADEC42DE0F4 /* CGXPageCollectionRoundReusableView.h */,
-				B8E2359DFAB82955B7FA09B678E85BD3 /* CGXPageCollectionRoundReusableView.m */,
-				241C8C79B1C50A4B342910085788DEAD /* CGXPageCollectionTools.h */,
-				64D838DD56ABC31E1D1388B9CE3D1FEB /* CGXPageCollectionTools.m */,
-				2B25E8E3F2EEB549904DB10BC3206B73 /* CGXPageCollectionView.h */,
-				0675ED137D34FF09C65EF814FAB8046C /* CGXPageCollectionView.m */,
-				41250CE2231ABC9ACFE4C2B73C6F938F /* UIButton+CGXPageCollectionTapBlock.h */,
-				9A16DF4D12CC4F778C12F04B2B115CA1 /* UIButton+CGXPageCollectionTapBlock.m */,
-				E0A625A969A7D20C2E810AF58C062A2F /* UIColor+CGXPageCollection.h */,
-				754D8A99FB58AFCB1C2647D42A4060FA /* UIColor+CGXPageCollection.m */,
-				ABF9C73E6FE40ECA2852D6358BFCBF4B /* UIImage+CGXPageCollection.h */,
-				768B6906B939E20FDD80F5C85A90357F /* UIImage+CGXPageCollection.m */,
-				39969A0E67796D85C7413E2F4FE931BF /* UIView+CGXPageCollectionTap.h */,
-				5CE68BCE430BFDDDA583934CF12C0350 /* UIView+CGXPageCollectionTap.m */,
+				6E7CD2EE8E0BFBB8DBA15BC82A88F09A /* CGXPageCollectionFlowLayoutUtils.h */,
+				8291F9EB13DB1C82C099B8382E2101E1 /* CGXPageCollectionFlowLayoutUtils.m */,
+				ADF560FCDE757ADD6ADEFB71407C3775 /* CGXPageCollectionRoundLayoutAttributes.h */,
+				FF44FDBCEDE6D8C7A15E1AF56DC1E127 /* CGXPageCollectionRoundLayoutAttributes.m */,
+				1284EB04C376BB75BA99AC1213B9B0BA /* CGXPageCollectionRoundModel.h */,
+				2891624296D7A407E7698D195002B188 /* CGXPageCollectionRoundModel.m */,
+				DC0779339D00572FD55D241599FFC2D4 /* CGXPageCollectionRoundReusableView.h */,
+				09A0A39E3ED8F25CEEF15F6BA8039ED1 /* CGXPageCollectionRoundReusableView.m */,
+				A110FED2E182E78D1B1C9DE880213EF9 /* CGXPageCollectionTools.h */,
+				BE6664B90D23B13D3DE2070107B660C1 /* CGXPageCollectionTools.m */,
+				3CBAC83263F20C7E97A2AB15E1579F7C /* CGXPageCollectionView.h */,
+				16045A38679C4206079177CBD0FB117C /* CGXPageCollectionView.m */,
+				1801A1F9144A8ABE1694B119F14611A4 /* UIButton+CGXPageCollectionTapBlock.h */,
+				1D72279C156BD7DC8B3F92544368D5DB /* UIButton+CGXPageCollectionTapBlock.m */,
+				73583E7918D8F1064C6C3BA4C590FBAD /* UIColor+CGXPageCollection.h */,
+				C8AA3D21C5F45EF1DD1FF67EFB9F624D /* UIColor+CGXPageCollection.m */,
+				AB8FAF9A44997FBBB16D9A822A6D1357 /* UIImage+CGXPageCollection.h */,
+				91CDF54B271E53CBB1DAF58540031A8D /* UIImage+CGXPageCollection.m */,
+				4BD3C2B33E40C022C46666FDED6B7C25 /* UIView+CGXPageCollectionTap.h */,
+				A1560F3D6DEECB3AA42DF56492F9127A /* UIView+CGXPageCollectionTap.m */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		8B3093283A24A8C87071181AED97C405 /* Horizontal */ = {
+			isa = PBXGroup;
+			children = (
+				FED841BE065FF5FDBBEB9E200A313EAE /* CGXPageCollectionHorizontalLayout.h */,
+				35420396C304CB6A0B8FD33EB5F9ABD4 /* CGXPageCollectionHorizontalLayout.m */,
+				20704E829EC597A2D877E828A097CE3C /* CGXPageCollectionHorizontalRowModel.h */,
+				2E8D108BFD93BC58B48BC4E36B0232FA /* CGXPageCollectionHorizontalRowModel.m */,
+				41550A392F47BE0773197B41A38A4789 /* CGXPageCollectionHorizontalSectionModel.h */,
+				3CBAB0DCE7B871BD9D7807EE48621296 /* CGXPageCollectionHorizontalSectionModel.m */,
+				A42F24A3BE1F2F8CBBD6CD2017C25D1A /* CGXPageCollectionHorizontalView.h */,
+				1CBBB04A27F6813678450FB96A7C9009 /* CGXPageCollectionHorizontalView.m */,
+			);
+			name = Horizontal;
 			sourceTree = "<group>";
 		};
 		9A58F917946EBCAEC4C9037454DF0B66 /* Products */ = {
@@ -323,27 +350,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9D9A2870B448C66F6C83876C58F52829 /* IrregularView */ = {
+		9A65B5EC993D4A82437F0FD56E4A4BEB /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				D7BDEF36F86D20B7952CF34313013492 /* CGXPageCollectionIrreguarRowModel.h */,
-				E0533585354DB8B218EDCAA910A6ECA8 /* CGXPageCollectionIrreguarRowModel.m */,
-				764F382B4548291BAFF600F4608D14CC /* CGXPageCollectionIrreguarSectionModel.h */,
-				8246989A15E59E0F1DFBD27224E5D920 /* CGXPageCollectionIrreguarSectionModel.m */,
-				622564812691DF88B5BB0CD5A87F10D5 /* CGXPageCollectionIrregularLayout.h */,
-				CFAF91D4AF10AA00418FC68A33BEBE44 /* CGXPageCollectionIrregularLayout.m */,
-				7A9B32EA1C25AD14205A2D5CBF616AEC /* CGXPageCollectionIrregularView.h */,
-				BDC66E0980ABE735E3E88A8736E622F1 /* CGXPageCollectionIrregularView.m */,
+				6A34F19B882DD5B84D977D84A2FC2A84 /* Base */,
+				1A12358873C86CDBDF8B726B75B32463 /* Delegate */,
 			);
-			name = IrregularView;
+			name = Base;
 			sourceTree = "<group>";
 		};
-		A374E117FFD82E61699BDE73CA071A98 /* Pod */ = {
+		A7C5C140C5001072BE631DEA2AD58935 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				2296E278B44D92C992309B8ED29BA401 /* CGXPageCollectionViewOC.podspec */,
-				42C493A407A1BA90424E9D272EE47908 /* LICENSE */,
-				13184FF7D3C0F0C2A140082B2311AE1C /* README.md */,
+				E056F83224B56C42A8AB48E0A98439A9 /* CGXPageCollectionViewOC.podspec */,
+				BC21C8BE2FD112E27D54EBCF8419690E /* LICENSE */,
+				D5D7B243E351FF69B69055C99B31B5BF /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -361,34 +382,6 @@
 			path = "Target Support Files/Pods-CGXPageCollectionView-OC";
 			sourceTree = "<group>";
 		};
-		B202AB8F1BB32FA6E45B8D17FFB050EE /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				53889C17732087D180A13BA5711C2406 /* CGXPageCollectionUpdateCellDelegate.h */,
-				1E8E7CD8EE10A602F948A6B42680E7D7 /* CGXPageCollectionUpdateFooterDelegate.h */,
-				E4BE70425B709FF35C2C0E6149661483 /* CGXPageCollectionUpdateHeaderDelegate.h */,
-				F989365643C21C86D00A4A510C179A0F /* CGXPageCollectionUpdateRoundDelegate.h */,
-				21687B880088DC7C66EE533C053CEBD4 /* CGXPageCollectionUpdateViewDelegate.h */,
-			);
-			name = Delegate;
-			path = CGXPageCollectionViewOC/Delegate;
-			sourceTree = "<group>";
-		};
-		BC0637CFF82652BBEEE6D76F0DB7525B /* Water */ = {
-			isa = PBXGroup;
-			children = (
-				72E5BF4893229455A6F236000C2E004A /* CGXPageCollectionWaterLayout.h */,
-				69DD1D0734B2ABE796F108C911171C10 /* CGXPageCollectionWaterLayout.m */,
-				9C6CC7CB3E83D87031211A3A336C288C /* CGXPageCollectionWaterRowModel.h */,
-				4A9AB093E24C26277ED4155F375A6112 /* CGXPageCollectionWaterRowModel.m */,
-				3BE12859BC727BF7D989C8497FFB45D0 /* CGXPageCollectionWaterSectionModel.h */,
-				95278FF58284E2ED7160EA726B659501 /* CGXPageCollectionWaterSectionModel.m */,
-				19777C3BB3AD899EFF4C182EFDDB23FD /* CGXPageCollectionWaterView.h */,
-				0A9F7978C539D391D114DE4B616F543F /* CGXPageCollectionWaterView.m */,
-			);
-			name = Water;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -400,48 +393,40 @@
 			);
 			sourceTree = "<group>";
 		};
-		D417D24771A9885766A5005097B0AD36 /* Base */ = {
+		D0544742675C8F0EF7BCB008D5656508 /* IrregularView */ = {
 			isa = PBXGroup;
 			children = (
-				D472E3B4A1F7491A72386A352FD85C95 /* CGXPageCollectionBaseLayout.h */,
-				062B56C091797D440119497FA479C9D5 /* CGXPageCollectionBaseLayout.m */,
-				713185F967879ECD248A4D5C7B8398B1 /* CGXPageCollectionBaseRowModel.h */,
-				00691AE44DAF2B792E23C15CFD746CDA /* CGXPageCollectionBaseRowModel.m */,
-				69DBBEF06DF6DF387C983D0D589698FA /* CGXPageCollectionBaseSectionModel.h */,
-				C9A866BF48A51CDAB23C925D65BBE912 /* CGXPageCollectionBaseSectionModel.m */,
-				9FB518C229606B2760B93A4470AB971A /* CGXPageCollectionBaseView.h */,
-				273FDC9B2361880EED8A66DD17B488C5 /* CGXPageCollectionBaseView.m */,
-				8DFDF7D4307210EA07FF5C6DEAB66DBA /* CGXPageCollectionFooterModel.h */,
-				55D3A137AAD58721FE88A4530F80CA96 /* CGXPageCollectionFooterModel.m */,
-				0ADBE55F30B0890CE2281311A4AC8E78 /* CGXPageCollectionHeaderModel.h */,
-				D0B1EB8F031EB6C5B5B9C06806B77D12 /* CGXPageCollectionHeaderModel.m */,
+				61AF93E80419FDAB7A01AFFE9B4E7C17 /* CGXPageCollectionIrreguarRowModel.h */,
+				B475C94B51FFA6D102CA32DB7F8A0921 /* CGXPageCollectionIrreguarRowModel.m */,
+				2F7EF4E4CA5B84AD79ED6C5B565C795C /* CGXPageCollectionIrreguarSectionModel.h */,
+				C4F8AD351C678242124881FBE42BFBBB /* CGXPageCollectionIrreguarSectionModel.m */,
+				FE1DA7A7BA124968EE567CEAE3ED6D42 /* CGXPageCollectionIrregularLayout.h */,
+				324DA7861B30C7B32939F5C0EEFEB30D /* CGXPageCollectionIrregularLayout.m */,
+				05873937FFD7AB549B0DB34A3592EE5C /* CGXPageCollectionIrregularView.h */,
+				7ACFBFEE723C760D151557B7BB4D9297 /* CGXPageCollectionIrregularView.m */,
 			);
-			name = Base;
-			path = CGXPageCollectionViewOC/Base;
+			name = IrregularView;
 			sourceTree = "<group>";
 		};
-		D59C2BB5E78844632F0C096C5C5819CB /* CGXPageCollectionViewOC */ = {
+		D0CB64149776B8FC671F82F609225ECD /* General */ = {
 			isa = PBXGroup;
 			children = (
-				FCAB0471DCB481DD4AA5E7720B3E9696 /* CGXPageCollectionViewOC.h */,
-				35A2B59962BE8A59F6C5C1EB79AC4BB9 /* Base */,
-				947037802F780B717BC38E77CB0F7C2E /* Common */,
-				01D46D234060B924BD6EE6D0B8A98496 /* General */,
-				7663CB6753DE791C74531CE4CC0A2C79 /* Horizontal */,
-				9D9A2870B448C66F6C83876C58F52829 /* IrregularView */,
-				A374E117FFD82E61699BDE73CA071A98 /* Pod */,
-				0B86D632C87362833B0A32B55F5C56C8 /* Support Files */,
-				4E8396F762C380407EB0BC158733E90A /* Tags */,
-				BC0637CFF82652BBEEE6D76F0DB7525B /* Water */,
+				ABE41339CDA20DF90F5F227673061CE6 /* CGXPageCollectionGeneralFlowLayout.h */,
+				A7E8D17C3328BBD72AA904EA097CF86C /* CGXPageCollectionGeneralFlowLayout.m */,
+				5F9D8A236B00E0E1923102A6711501AB /* CGXPageCollectionGeneralRowModel.h */,
+				4E6A0637CAC6E058D77AA31CAE169F83 /* CGXPageCollectionGeneralRowModel.m */,
+				739BC68AB0BBAE54A99E11ED6B5FFB8F /* CGXPageCollectionGeneralSectionModel.h */,
+				F34988EDE224A733FCF5D785D25F836E /* CGXPageCollectionGeneralSectionModel.m */,
+				A0BAFA3029FC878D40F21E009A1CB00E /* CGXPageCollectionGeneralView.h */,
+				F4CD39C69BDD9C0D7EEF5DD048CA09AC /* CGXPageCollectionGeneralView.m */,
 			);
-			name = CGXPageCollectionViewOC;
-			path = ../..;
+			name = General;
 			sourceTree = "<group>";
 		};
 		D7B169F15F63B30DCDCF96A6F45322AF /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D59C2BB5E78844632F0C096C5C5819CB /* CGXPageCollectionViewOC */,
+				4E42F2886381233D13984AAE90A77875 /* CGXPageCollectionViewOC */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -453,62 +438,77 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E181349C4422E5DA3B9926E516E9331C /* Water */ = {
+			isa = PBXGroup;
+			children = (
+				4E67717BCF075B07C70567A5C608E5B9 /* CGXPageCollectionWaterLayout.h */,
+				A82684B5A554952D70A3FD12109796DB /* CGXPageCollectionWaterLayout.m */,
+				D9A856AD7B5B6D0A7EF8EE4C1DC0FF16 /* CGXPageCollectionWaterRowModel.h */,
+				B39C89FF4E8F354C2803D38BFCECB224 /* CGXPageCollectionWaterRowModel.m */,
+				53D4CC5BC7461A368E47FEAA6C56C7CD /* CGXPageCollectionWaterSectionModel.h */,
+				7A47CD12FC16E1A92312E52212619DC3 /* CGXPageCollectionWaterSectionModel.m */,
+				517F7C241E2D1D2699B1426258CB65DC /* CGXPageCollectionWaterView.h */,
+				43093683764E66E6C34D7B5CFE5CB180 /* CGXPageCollectionWaterView.m */,
+			);
+			name = Water;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0C428C382BD2B92ADA2A17A826150B24 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F113DBC0827F560A1C97D930ADA76AF /* CGXPageCollectionBaseLayout.h in Headers */,
+				F7FF396387840C32E0FA569A354656BC /* CGXPageCollectionBaseRowModel.h in Headers */,
+				8D058533022447187721120C5C1BAB30 /* CGXPageCollectionBaseSectionModel.h in Headers */,
+				4BBB7CA0E473CFD2061C7294A4C8B464 /* CGXPageCollectionBaseView.h in Headers */,
+				7D5F4224426B7981BFFF9C13AB0BCC8B /* CGXPageCollectionFlowLayoutUtils.h in Headers */,
+				7011346277DEDA8EE106439BE171F696 /* CGXPageCollectionFooterModel.h in Headers */,
+				9F07E029C4FD3F65044D8ED975ADD5AE /* CGXPageCollectionGeneralFlowLayout.h in Headers */,
+				81E430217C049C3336488D4805128016 /* CGXPageCollectionGeneralRowModel.h in Headers */,
+				E023225276B75EB3A6335E9130BC7CA4 /* CGXPageCollectionGeneralSectionModel.h in Headers */,
+				E6DAD611C640B836DCFD14A0B8B347F3 /* CGXPageCollectionGeneralView.h in Headers */,
+				A838A8AF05EB23B04875F60970767EA9 /* CGXPageCollectionHeaderModel.h in Headers */,
+				46C3456FC11224711C8B3C440B6153FA /* CGXPageCollectionHorizontalLayout.h in Headers */,
+				2562D3B27AD8F8218790E95D3F24DA3E /* CGXPageCollectionHorizontalRowModel.h in Headers */,
+				1FD05CBEB0BBDC2AE60F5B5F1ABCCD80 /* CGXPageCollectionHorizontalSectionModel.h in Headers */,
+				210FA1018314AA79624A8D6935AB7261 /* CGXPageCollectionHorizontalView.h in Headers */,
+				3EB3EA8E3633F4ACCB5CA5BE48512C9A /* CGXPageCollectionIrreguarRowModel.h in Headers */,
+				A69FE80C61DBBB755168A4B0F42866B6 /* CGXPageCollectionIrreguarSectionModel.h in Headers */,
+				BD62C15C807DC3AFFC0351DC6CE8F55D /* CGXPageCollectionIrregularLayout.h in Headers */,
+				E396434C413018B28E06B4B25DBE88F2 /* CGXPageCollectionIrregularView.h in Headers */,
+				B39613005E928D51D7AE04C0D5AEC0C4 /* CGXPageCollectionRoundLayoutAttributes.h in Headers */,
+				5EB9F4A8875F4023FF621D871B16476E /* CGXPageCollectionRoundModel.h in Headers */,
+				B1344A4DA7063A4F6AD024B9D323D3A3 /* CGXPageCollectionRoundReusableView.h in Headers */,
+				8D38F7A5D1313338A2419791ED2CB609 /* CGXPageCollectionTagsFlowLayout.h in Headers */,
+				6DCCE463FC21D2F0615A12507970FAEB /* CGXPageCollectionTagsRowModel.h in Headers */,
+				5782D1EED6DFBEB7D5B64659174F77F9 /* CGXPageCollectionTagsSectionModel.h in Headers */,
+				504D56BEF6790FA63E6ED6F2CEFC9BAB /* CGXPageCollectionTagsView.h in Headers */,
+				A53D28B5BE6DDCE52B422A71A322AE0B /* CGXPageCollectionTools.h in Headers */,
+				13D8CAEE1D555A2BD9563B37E9048679 /* CGXPageCollectionUpdateCellDelegate.h in Headers */,
+				2CF320480D947CD5F3909C150BABD570 /* CGXPageCollectionUpdateFooterDelegate.h in Headers */,
+				980E2283A48969FB21DAE110900515D6 /* CGXPageCollectionUpdateHeaderDelegate.h in Headers */,
+				BF7E63C5255AF579CE3F9DCA2FC1B2A2 /* CGXPageCollectionUpdateRoundDelegate.h in Headers */,
+				AE72EE6613A73125B026FA687E635A2E /* CGXPageCollectionUpdateViewDelegate.h in Headers */,
+				CC57F10D1191B6C36153C909BD7488A2 /* CGXPageCollectionView.h in Headers */,
+				00B94FA13380CB3519F21EEDFC01EC2F /* CGXPageCollectionViewOC.h in Headers */,
+				2437BC7CD419EF07E5266741C9F5DAD4 /* CGXPageCollectionWaterLayout.h in Headers */,
+				571C772C3E628D03D810FE27AB7502EE /* CGXPageCollectionWaterRowModel.h in Headers */,
+				6159BFEFA45C25B98FCD6E5EA2291CF6 /* CGXPageCollectionWaterSectionModel.h in Headers */,
+				2768F76E274F3D08EBA598D98B655FF5 /* CGXPageCollectionWaterView.h in Headers */,
+				8CBD76FF80D335DF4B81D7A062717CF1 /* UIButton+CGXPageCollectionTapBlock.h in Headers */,
+				8BE375618DBB31990D2245ACDA130A11 /* UIColor+CGXPageCollection.h in Headers */,
+				1736790E8F60191326F198361A0C0D28 /* UIImage+CGXPageCollection.h in Headers */,
+				0FE937FDEA99957923A5271880C764A8 /* UIView+CGXPageCollectionTap.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54042E06AE739D21BBAD7808956E0DA8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65922DD0DCFB94EB1C03F890F1FD8B99 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59EDCCF5D9CCF92878621A8320B4DE19 /* CGXPageCollectionBaseLayout.h in Headers */,
-				5D720A43D0D1F468084E789DD4685055 /* CGXPageCollectionBaseRowModel.h in Headers */,
-				BB27A38726BF583E269954515411099D /* CGXPageCollectionBaseSectionModel.h in Headers */,
-				CA966D0332B3A83D3131F515D77AE26F /* CGXPageCollectionBaseView.h in Headers */,
-				5CC8E1C12C2D747B1CB64EAC1A421165 /* CGXPageCollectionFlowLayoutUtils.h in Headers */,
-				FA8F000533E87897FE284A916E2B2E8F /* CGXPageCollectionFooterModel.h in Headers */,
-				F188AEFFABC7BF3A6E4E9327F9924D31 /* CGXPageCollectionGeneralFlowLayout.h in Headers */,
-				6F93071A7311D098C93D1893C35D652F /* CGXPageCollectionGeneralRowModel.h in Headers */,
-				5628C5BB7E93C4AEE05EA88BC1D2A4BD /* CGXPageCollectionGeneralSectionModel.h in Headers */,
-				ACDF75C8E9169429C8935134D7E3705C /* CGXPageCollectionGeneralView.h in Headers */,
-				A38DE1D8AAEF9D3BEB515C3CB82AB557 /* CGXPageCollectionHeaderModel.h in Headers */,
-				7238A97A2DF18A0638BC9D6A7025BAAE /* CGXPageCollectionHorizontalLayout.h in Headers */,
-				8FB87F51665807DE9E667A65D734D1FE /* CGXPageCollectionHorizontalRowModel.h in Headers */,
-				33626F0AE329C5BF99A023220DC915F0 /* CGXPageCollectionHorizontalSectionModel.h in Headers */,
-				3A9DA3B09CC3C720F35BD8D526315258 /* CGXPageCollectionHorizontalView.h in Headers */,
-				6ECBB752D55ADD6A6346DAA733552809 /* CGXPageCollectionIrreguarRowModel.h in Headers */,
-				8632A6E006613D36A27C86891DB83D38 /* CGXPageCollectionIrreguarSectionModel.h in Headers */,
-				DA5B8E3D44FF2975CC3DB9BCBE34B063 /* CGXPageCollectionIrregularLayout.h in Headers */,
-				66C41D35A23466F06D4C8F015492C26D /* CGXPageCollectionIrregularView.h in Headers */,
-				921E3E57F66DB19FE759FB9FF831B456 /* CGXPageCollectionRoundLayoutAttributes.h in Headers */,
-				20BA75B5335F497FE355270B7B0493E6 /* CGXPageCollectionRoundModel.h in Headers */,
-				3CA7BA8DEDC2B12D326F9B2644948D9F /* CGXPageCollectionRoundReusableView.h in Headers */,
-				AFC25A7BE49208B26041B4D5BC6C6662 /* CGXPageCollectionTagsFlowLayout.h in Headers */,
-				9D2CF729CBA03C6EC061587846F7D8E3 /* CGXPageCollectionTagsRowModel.h in Headers */,
-				1B209846C436C84304EB20333919554F /* CGXPageCollectionTagsSectionModel.h in Headers */,
-				C8EB752205E2FB1A0ED18A758A1D438D /* CGXPageCollectionTagsView.h in Headers */,
-				E8D2FDE49E9D7C7C50A9AEDF3E20BD70 /* CGXPageCollectionTools.h in Headers */,
-				AFD6ACFACB176CAA409914C8F5A80E73 /* CGXPageCollectionUpdateCellDelegate.h in Headers */,
-				B7D803052DE8D9764E927635178E3B97 /* CGXPageCollectionUpdateFooterDelegate.h in Headers */,
-				6C68CE8C8B0BD969C62508554156DCE3 /* CGXPageCollectionUpdateHeaderDelegate.h in Headers */,
-				D95691C6808C8B071ED3E4B195D3BDC7 /* CGXPageCollectionUpdateRoundDelegate.h in Headers */,
-				386A443EF6D0550D65C281D7020AEF64 /* CGXPageCollectionUpdateViewDelegate.h in Headers */,
-				124643F9023BAD25D9C4008DEE031F79 /* CGXPageCollectionView.h in Headers */,
-				AA026F245FB0D8E08472F95A53702B6B /* CGXPageCollectionViewOC.h in Headers */,
-				EB2F67489A00816BB36B7C870F83F285 /* CGXPageCollectionWaterLayout.h in Headers */,
-				AEE2FB0C424643504EB851EFC9DB1B36 /* CGXPageCollectionWaterRowModel.h in Headers */,
-				43AC7E95692F59FF3E40DFCCA7FF303B /* CGXPageCollectionWaterSectionModel.h in Headers */,
-				7F0E47D7C42C1594191E2A8FC9E00769 /* CGXPageCollectionWaterView.h in Headers */,
-				5B8AED37B6B0F5783E55A764F9EBFB9E /* UIButton+CGXPageCollectionTapBlock.h in Headers */,
-				770D093ADBD8F5317655F7930117AC06 /* UIColor+CGXPageCollection.h in Headers */,
-				4DC27EDD75EB6DF03FEA924EB8A1E29F /* UIImage+CGXPageCollection.h in Headers */,
-				63AACCDB563AE3A8CD95DF849A248CAA /* UIView+CGXPageCollectionTap.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,11 +517,11 @@
 /* Begin PBXNativeTarget section */
 		C0A3378C5A810E233EF17BA46A11DFF7 /* CGXPageCollectionViewOC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D35ACB0BC92B4CB947334778AF54E07 /* Build configuration list for PBXNativeTarget "CGXPageCollectionViewOC" */;
+			buildConfigurationList = 6A0A0154226E2F0107B6FB5E8B6B70BE /* Build configuration list for PBXNativeTarget "CGXPageCollectionViewOC" */;
 			buildPhases = (
-				65922DD0DCFB94EB1C03F890F1FD8B99 /* Headers */,
-				8F63B3591AFF74759CB2B04D25FE219E /* Sources */,
-				2D62B98AB5F9460B621B611D346E77C5 /* Frameworks */,
+				0C428C382BD2B92ADA2A17A826150B24 /* Headers */,
+				C921EE165614969BBF75EDAC5459AC9C /* Sources */,
+				50C9B52F3F8C66C08BEB7B0ECDC0DD2A /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -543,7 +543,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				57C0DCF0C4A8489CD1992593BA8DD127 /* PBXTargetDependency */,
+				D91AEC58EA0DC954A0BDFB8242B0CB4F /* PBXTargetDependency */,
 			);
 			name = "Pods-CGXPageCollectionView-OC";
 			productName = "Pods-CGXPageCollectionView-OC";
@@ -579,50 +579,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8F63B3591AFF74759CB2B04D25FE219E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82962A9DF77A70AFCDD5F6CD2F8B9719 /* CGXPageCollectionBaseLayout.m in Sources */,
-				938CB119969BF512D921FCAACE8DF344 /* CGXPageCollectionBaseRowModel.m in Sources */,
-				A8A298339252FE71A949F8CDCD635297 /* CGXPageCollectionBaseSectionModel.m in Sources */,
-				F93C78B13ED27D9331E74C685F931AA3 /* CGXPageCollectionBaseView.m in Sources */,
-				B953491BA2DAADF35EA731015361DF22 /* CGXPageCollectionFlowLayoutUtils.m in Sources */,
-				E85DC841BC6E8ED720ABF797AB67088B /* CGXPageCollectionFooterModel.m in Sources */,
-				AA78EFD4E4892A3347534AE47ABDAFFF /* CGXPageCollectionGeneralFlowLayout.m in Sources */,
-				B976C4E4314F9DF3B83B14B282623CD6 /* CGXPageCollectionGeneralRowModel.m in Sources */,
-				E732AECA796EE2ED2A33B5F591F7B99B /* CGXPageCollectionGeneralSectionModel.m in Sources */,
-				D1D5F398B9F2CED8A07B1B15DE53AAA6 /* CGXPageCollectionGeneralView.m in Sources */,
-				94E824934524DB7694CE77799BFCFFFB /* CGXPageCollectionHeaderModel.m in Sources */,
-				576B0970B403F1360EAFEDF277B908B0 /* CGXPageCollectionHorizontalLayout.m in Sources */,
-				824ACEEAE00C39E04BADCD1D9F7A91EB /* CGXPageCollectionHorizontalRowModel.m in Sources */,
-				CAE831CF0C239F3E3C78850C52DA1804 /* CGXPageCollectionHorizontalSectionModel.m in Sources */,
-				20B314B4B3B0C0DB7DD9CFDCE5D7AE44 /* CGXPageCollectionHorizontalView.m in Sources */,
-				30473911D51FF23D5269005CA0DBFD38 /* CGXPageCollectionIrreguarRowModel.m in Sources */,
-				FF125B90036BF27E366CCDEB3D05FD89 /* CGXPageCollectionIrreguarSectionModel.m in Sources */,
-				E2DD165D01724932ECF784F56CE10789 /* CGXPageCollectionIrregularLayout.m in Sources */,
-				DBB268CE34169A8C437A1B39B3885FDF /* CGXPageCollectionIrregularView.m in Sources */,
-				20047E88481BAF0ED5C375FE0DBF9841 /* CGXPageCollectionRoundLayoutAttributes.m in Sources */,
-				9AF2B0F509B37B48450AAF6877A662AD /* CGXPageCollectionRoundModel.m in Sources */,
-				6778F7D3E7CFCB62F7AF2C960C7F854D /* CGXPageCollectionRoundReusableView.m in Sources */,
-				5F8361282CC22DB982C336E3CAE737B1 /* CGXPageCollectionTagsFlowLayout.m in Sources */,
-				0A8FFF8C370F20324C027DD34AB13326 /* CGXPageCollectionTagsRowModel.m in Sources */,
-				20328AD31E9D7003165E1AC37CC57C96 /* CGXPageCollectionTagsSectionModel.m in Sources */,
-				F092798FACC1566222152B7118A3DF94 /* CGXPageCollectionTagsView.m in Sources */,
-				9D7E15F82EBF0C74DF2224762B4933CD /* CGXPageCollectionTools.m in Sources */,
-				0819B3F85E5E84DF9570DB1CE8F1EDA4 /* CGXPageCollectionView.m in Sources */,
-				5FC62D86744C1DC815FE08114A8DF9FB /* CGXPageCollectionViewOC-dummy.m in Sources */,
-				38AB976613ADB91D58434F9F82393E20 /* CGXPageCollectionWaterLayout.m in Sources */,
-				A9A5F3F515FDD633FB8FCAEFD0C4BC8E /* CGXPageCollectionWaterRowModel.m in Sources */,
-				FB62D1B77F1B30CF2017B4813D7F5FD7 /* CGXPageCollectionWaterSectionModel.m in Sources */,
-				748176AA7ED0EC94D1C0119B20A65399 /* CGXPageCollectionWaterView.m in Sources */,
-				66A3340326F7CD5D93C679EE6C8882C4 /* UIButton+CGXPageCollectionTapBlock.m in Sources */,
-				50BC5F9817A12A096DE4D95F1359380A /* UIColor+CGXPageCollection.m in Sources */,
-				B0AB84CC61DDC90568F8B820645AC29F /* UIImage+CGXPageCollection.m in Sources */,
-				A8BBE3792983F9A65884E064079E8F30 /* UIView+CGXPageCollectionTap.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A8518C81BFCBFD10DADF8DA0271E4406 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,21 +587,65 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C921EE165614969BBF75EDAC5459AC9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				995666DAA4B239A5DB11BC57C4E92D3C /* CGXPageCollectionBaseLayout.m in Sources */,
+				737B00236746351AC483736501851C6A /* CGXPageCollectionBaseRowModel.m in Sources */,
+				EC54FF7CADE7D05D9EC04E863589C283 /* CGXPageCollectionBaseSectionModel.m in Sources */,
+				7F020E7880A877D47E437DAF38FA2C8D /* CGXPageCollectionBaseView.m in Sources */,
+				543FC7BDC98F6CCD4D687F21DAA28BBD /* CGXPageCollectionFlowLayoutUtils.m in Sources */,
+				CED446FF4E9BEF7BCD4DB6F475587D29 /* CGXPageCollectionFooterModel.m in Sources */,
+				4817C57CE8353F7A9578411513391528 /* CGXPageCollectionGeneralFlowLayout.m in Sources */,
+				58AD940FA4004F71000413E55A4569EF /* CGXPageCollectionGeneralRowModel.m in Sources */,
+				709D5A040CAB6608AE7C240A49B8196E /* CGXPageCollectionGeneralSectionModel.m in Sources */,
+				D667816F824DDB42614545E7D952094E /* CGXPageCollectionGeneralView.m in Sources */,
+				260E4A0A75C8E3B3054F636B3B9B2855 /* CGXPageCollectionHeaderModel.m in Sources */,
+				B5675D2B65B1A539E8804C42BFBF0D36 /* CGXPageCollectionHorizontalLayout.m in Sources */,
+				D097BF5694FF2242EE91EBE12FF18E3A /* CGXPageCollectionHorizontalRowModel.m in Sources */,
+				C3E9C942EECE814F4821BF98E8C93F70 /* CGXPageCollectionHorizontalSectionModel.m in Sources */,
+				0A8E95EBD73CA68079EFBB3E670A88F2 /* CGXPageCollectionHorizontalView.m in Sources */,
+				0B363E8A42DF7414FE02091555089E69 /* CGXPageCollectionIrreguarRowModel.m in Sources */,
+				99679B0E4B771E570AE9C7F9983F97F7 /* CGXPageCollectionIrreguarSectionModel.m in Sources */,
+				41E897A7D07CCAC4E16B5F47EE84007C /* CGXPageCollectionIrregularLayout.m in Sources */,
+				46C384D0B31FD4E6E075019F071A6641 /* CGXPageCollectionIrregularView.m in Sources */,
+				5524F6D74307FCB42CCCB4C624035F19 /* CGXPageCollectionRoundLayoutAttributes.m in Sources */,
+				B3541C27177441E3863F8BAAEADCD60F /* CGXPageCollectionRoundModel.m in Sources */,
+				8B915AE343D127EFCD7D246736FC3D19 /* CGXPageCollectionRoundReusableView.m in Sources */,
+				AD508E9F82AF987407BC532505B2EEB8 /* CGXPageCollectionTagsFlowLayout.m in Sources */,
+				1EEB8B8B15971673F0F32AEAE06DE932 /* CGXPageCollectionTagsRowModel.m in Sources */,
+				D44455395256AA1A908A4F33CA143F1A /* CGXPageCollectionTagsSectionModel.m in Sources */,
+				B9F96B3DF2D6ECD1E4FC4C3BF6589670 /* CGXPageCollectionTagsView.m in Sources */,
+				B5A89CD0427A755EE90554B96077BC1E /* CGXPageCollectionTools.m in Sources */,
+				12CC12A87CA01C4054DA5D4E9D402DE1 /* CGXPageCollectionView.m in Sources */,
+				BE21BD09F99C15D34446656FAF715651 /* CGXPageCollectionViewOC-dummy.m in Sources */,
+				14B807354F2FB03898C2BB2A01C4DBAF /* CGXPageCollectionWaterLayout.m in Sources */,
+				1BDE3809A2777AE37562828F6D21A65C /* CGXPageCollectionWaterRowModel.m in Sources */,
+				4DD51F4ACCCC1081AE7470C9260A0B39 /* CGXPageCollectionWaterSectionModel.m in Sources */,
+				9EC429FABB8FBC954A480798542A6FC7 /* CGXPageCollectionWaterView.m in Sources */,
+				391145882DE4D1D879000BAC930FE565 /* UIButton+CGXPageCollectionTapBlock.m in Sources */,
+				C050A1FC65BC98C73A4B36A3A730B001 /* UIColor+CGXPageCollection.m in Sources */,
+				EAA6240E3C0B6B105242E848581D0173 /* UIImage+CGXPageCollection.m in Sources */,
+				83735FCCFE9032B03B2C7F5CFDC0B93F /* UIView+CGXPageCollectionTap.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		57C0DCF0C4A8489CD1992593BA8DD127 /* PBXTargetDependency */ = {
+		D91AEC58EA0DC954A0BDFB8242B0CB4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CGXPageCollectionViewOC;
 			target = C0A3378C5A810E233EF17BA46A11DFF7 /* CGXPageCollectionViewOC */;
-			targetProxy = FDA7DEC1A7FDEE72479B5270B182B660 /* PBXContainerItemProxy */;
+			targetProxy = 5BE2CEEE4B5BE6A4801DB26FF56F5A62 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		26E3919AEB107C128B0CAC614D081670 /* Debug */ = {
+		03CFA35A9E936D19BE842419C39B81F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23F4C7CBD4C7E1C799EA8874512FD62A /* CGXPageCollectionViewOC.debug.xcconfig */;
+			baseConfigurationReference = 240822BE238AAD7B995EEFAF626FBF2F /* CGXPageCollectionViewOC.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -653,7 +653,29 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/CGXPageCollectionViewOC/CGXPageCollectionViewOC-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = CGXPageCollectionViewOC;
+				PRODUCT_NAME = CGXPageCollectionViewOC;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B2B9CCEE4D5B03CDDDD120D132A8E95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 002D23ADC4E4FC7A82A371035A3AA3BA /* CGXPageCollectionViewOC.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/CGXPageCollectionViewOC/CGXPageCollectionViewOC-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_MODULE_NAME = CGXPageCollectionViewOC;
@@ -688,11 +710,70 @@
 			};
 			name = Release;
 		};
-		8DF792B5675818867C95F03EE9A5D3C6 /* Debug */ = {
+		4BE66A09A74FD25164AAB3C2645B9B93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -774,108 +855,14 @@
 			};
 			name = Debug;
 		};
-		CE55861AB8BDFB3786DDE452F83A4836 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		FA5F26536A0F42E3C90E9DC395ED4BBB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF89EFC406AAA29144561EDF83A2CE2A /* CGXPageCollectionViewOC.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/CGXPageCollectionViewOC/CGXPageCollectionViewOC-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = CGXPageCollectionViewOC;
-				PRODUCT_NAME = CGXPageCollectionViewOC;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0D35ACB0BC92B4CB947334778AF54E07 /* Build configuration list for PBXNativeTarget "CGXPageCollectionViewOC" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				26E3919AEB107C128B0CAC614D081670 /* Debug */,
-				FA5F26536A0F42E3C90E9DC395ED4BBB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8DF792B5675818867C95F03EE9A5D3C6 /* Debug */,
-				CE55861AB8BDFB3786DDE452F83A4836 /* Release */,
+				7EF7227D9B20A1D549000096ACCB23D7 /* Debug */,
+				4BE66A09A74FD25164AAB3C2645B9B93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -885,6 +872,15 @@
 			buildConfigurations = (
 				C903EDB6B566F59DE47F75EBFBEAD970 /* Debug */,
 				36CF23D5BC2E05039B95A33E84A6E203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0A0154226E2F0107B6FB5E8B6B70BE /* Build configuration list for PBXNativeTarget "CGXPageCollectionViewOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B2B9CCEE4D5B03CDDDD120D132A8E95 /* Debug */,
+				03CFA35A9E936D19BE842419C39B81F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

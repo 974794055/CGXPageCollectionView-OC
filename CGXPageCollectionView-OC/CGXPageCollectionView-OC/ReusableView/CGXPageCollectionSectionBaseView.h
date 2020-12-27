@@ -1,5 +1,5 @@
 //
-//  CGXPageCollectionBaseReusableView.h
+//  CGXPageCollectionSectionBaseView.h
 //  CGXPageCollectionView-OC
 //
 //  Created by CGX on 2020/6/06.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CGXPageCollectionBaseReusableView : UICollectionReusableView
+@interface CGXPageCollectionSectionBaseView : UICollectionReusableView<CGXPageCollectionUpdateFooterDelegate,CGXPageCollectionUpdateHeaderDelegate>
 
 @property (nonatomic , strong) CGXPageCollectionBaseSectionModel *sectionModel;
 

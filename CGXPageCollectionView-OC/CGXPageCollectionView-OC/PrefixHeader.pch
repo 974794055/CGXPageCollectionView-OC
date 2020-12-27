@@ -13,10 +13,7 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import "CGXPageCollectionViewOC.h"
-#import "FooterReusableView.h"
-#import "HeaderReusableView.h"
-#import "FooterRoundReusableView.h"
-#import "HeaderRoundReusableView.h"
+
 
 #import "GeneralViewController.h"
 
@@ -30,15 +27,34 @@
 #import "CGXPageCollectionBaseCell.h"
 #import "CGXPageCollectionTextCell.h"
 #import "CGXPageCollectionImageCell.h"
+#import "CGXPageCollectionSearchCell.h"
+#import "CGXPageCollectionCategoryCell.h"
 
+#import "CGXPageCollectionSectionTextView.h"
+#import "CGXPageCollectionSectionImageView.h"
 
+#import "CGXPageCollectionSectionImageView.h"
+#import "CGXPageCollectionSectionTextView.h"
 
-#import "CGXPageCollectionReusableImageView.h"
-#import "CGXPageCollectionReusableTextView.h"
+ #define RGB(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
+#define RandomColor RGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
- #define random(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
+//屏幕宽
+#define ScreenWidth   [UIScreen mainScreen].bounds.size.width
+//屏幕高
+#define ScreenHeight  [UIScreen mainScreen].bounds.size.height
+///NavBar高度
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+#define kNavBarHeight 44.0f
+///导航栏高度
+#define kTopHeight  (kStatusBarHeight + kNavBarHeight)
+///tab安全区域
+#define kSafeHeight    ((kStatusBarHeight>20) ? 34.0f : 0.0f)
+///导航栏安全区域
+#define kNavBarSafetyZone         ((kStatusBarHeight>20) ? 44.0f : 0.0f)
+#define kTabBarHeight  ((kStatusBarHeight>20) ? (49.0f+34.0f) : 49.0f)
+#define kVCHeight (ScreenHeight-kTopHeight-kTabBarHeight)
+#define kSafeVCHeight (kStatusBarHeight>20?(ScreenHeight-kTopHeight-34):(ScreenHeight-kTopHeight))
 
-
-#define RandomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
 #endif /* PrefixHeader_pch */

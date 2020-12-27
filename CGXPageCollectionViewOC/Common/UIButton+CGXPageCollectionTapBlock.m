@@ -19,7 +19,7 @@
     return objc_getAssociatedObject(self,@selector(block));
     
 }
--(void)addCGXPageCollectionTapBlock:(void(^)(UIButton*))block{
+-(void)gx_pageTapBlock:(void(^)(UIButton*))block{
     self.block= block;
     [self addTarget:self action:@selector(click:)forControlEvents:UIControlEventTouchUpInside];
     
