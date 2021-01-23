@@ -29,7 +29,6 @@
     self.generalView.viewDelegate = self;
     self.generalView.isShowDifferentColor = YES;
     self.generalView.isRoundEnabled = self.isRoundEnabled;
-    self.generalView.sectionHeadersPinTVisibleBounds = NO;
     [self.generalView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
     [self.generalView registerCell:[CGXPageCollectionCategoryCell class] IsXib:NO];
     [self.generalView registerCell:[CGXPageCollectionImageCell class] IsXib:NO];
@@ -51,7 +50,8 @@
     int x = 9;
     for (int i = 0; i<x; i++) {
         CGXPageCollectionWaterSectionModel *sectionModel = [[CGXPageCollectionWaterSectionModel alloc] init];
-        
+        sectionModel.sectionHeadersHovering = i == 1 ?YES:NO;
+        sectionModel.sectionHeadersHoveringTopEdging = 0;
         if (i % 2 == 0) {
             sectionModel.insets = UIEdgeInsetsMake(10, 10, 10, 10);
         } else{
@@ -241,6 +241,10 @@
         [dateAry addObject:sectionModel];
     }
     return dateAry;
+}
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView DidSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"点击：%ld--%ld",indexPath.section,indexPath.row);
 }
 /*
  #pragma mark - Navigation

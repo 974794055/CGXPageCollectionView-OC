@@ -9,7 +9,7 @@
 #import "GeneralViewController.h"
 #import "GeneralViewTool.h"
 
-@interface GeneralViewController ()<CGXPageCollectionUpdateViewDelegate>
+@interface GeneralViewController ()<CGXPageCollectionUpdateViewDelegate,CGXPageCollectionGeneralViewDataDelegate>
 
 @property (nonatomic , strong) CGXPageCollectionGeneralView *generalView;
 
@@ -28,6 +28,7 @@
     self.generalView = [[CGXPageCollectionGeneralView alloc]  init];
     self.generalView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-kTopHeight-kSafeHeight);
     self.generalView.viewDelegate = self;
+    self.generalView.dataDelegate = self;
     self.generalView.isShowDifferentColor = YES;
     self.generalView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.generalView];
@@ -184,5 +185,8 @@
     NSLog(@"点击：%ld--%ld",indexPath.section,indexPath.row);
 }
 
-
+- (CGSize)gx_PageCollectionGeneralView:(CGXPageCollectionGeneralView *)tagsView sizeForItemHeightAtIndexPath:(NSIndexPath *)indexPath ItemSize:(CGSize)itemSize
+{
+    return CGSizeMake(itemSize.width, itemSize.height+30);
+}
 @end

@@ -19,5 +19,7 @@
     self.isParityAItem = NO;
     self.isRoundEnabled = NO;
     self.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.sectionHeadersHovering = NO;
+    self.sectionHeadersHoveringTopEdging = 0;
 }
 @end

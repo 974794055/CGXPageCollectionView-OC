@@ -18,6 +18,8 @@
     sectionModel.minimumInteritemSpacing = 10;
     sectionModel.row = 1;
     sectionModel.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
+    sectionModel.sectionHeadersHovering = NO;
+    sectionModel.sectionHeadersHoveringTopEdging = 0;
     return sectionModel;
 }
 + (CGXPageCollectionRoundModel *)roundModel

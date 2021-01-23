@@ -20,8 +20,7 @@
 {
     [super initializeData];
     self.isRoundEnabled = YES;
-      self.isShowDifferentColor = YES;;
-    self.sectionHeadersPinTVisibleBounds = NO;;
+      self.isShowDifferentColor = YES;
 }
 - (void)initializeViews
 {
@@ -44,7 +43,6 @@
     layout.dataSource = self;
     layout.isRoundEnabled = self.isRoundEnabled;
     layout.sectionFootersPinTVisibleBounds = NO;
-    layout.sectionHeadersPinTVisibleBounds = self.sectionHeadersPinTVisibleBounds;
     return layout;
 }
 - (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
@@ -147,6 +145,22 @@
 /// @param section section description
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateFooterViewIndex:(NSInteger)section{
     return NO;
+}
+/*
+ 是否头悬停
+ */
+- (BOOL)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout *)collectionViewLayout sectionHeadersPinAtSection:(NSInteger)section
+{
+    CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
+    return sectionModel.sectionHeadersHovering;
+}
+/*
+ 头悬停上部距离
+ */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout *)collectionViewLayout sectionHeadersPinTopSpaceAtSection:(NSInteger)section
+{
+    CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
+    return sectionModel.sectionHeadersHoveringTopEdging;
 }
 /*
  // Only override drawRect: if you perform custom drawing.

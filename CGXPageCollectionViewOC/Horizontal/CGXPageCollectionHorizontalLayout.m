@@ -105,7 +105,7 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
 }
 //3  返回目标区域对应的Attributes 数组
 - (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
-    NSLog(@"___________%@",NSStringFromCGRect(rect));
+//    NSLog(@"___________%@",NSStringFromCGRect(rect));
     //获取对应rect中的展示indexpath ，生成attribu，笔者这里的需求不会存在大量数据，就偷懒了。
     NSMutableArray *attributeArray = [NSMutableArray new];
     
@@ -191,6 +191,8 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     }
     return orgAttributes;
 }
+
+
 
 
 #pragma mrak tool method

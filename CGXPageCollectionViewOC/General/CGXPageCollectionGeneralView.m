@@ -9,7 +9,7 @@
 #import "CGXPageCollectionGeneralView.h"
 #import "CGXPageCollectionGeneralFlowLayout.h"
 
-@interface CGXPageCollectionGeneralView ()<CGXPageCollectionUpdateRoundDelegate>
+@interface CGXPageCollectionGeneralView ()<CGXPageCollectionUpdateRoundDelegate,CGXPageCollectionGeneralFlowLayoutDataDelegate>
 
 
 @end
@@ -20,7 +20,7 @@
 {
     [super initializeData];
     self.isRoundEnabled = YES;
-        self.isShowDifferentColor = NO;;
+    self.isShowDifferentColor = NO;;
 }
 
 - (void)initializeViews
@@ -49,7 +49,7 @@
     } else {
         // Fallback on earlier versions
     }
-
+    layout.dataSource = self;
     return layout;
 }
 
@@ -112,12 +112,15 @@
     CGFloat space = insets.left+insets.right + borderEdgeInserts.left + borderEdgeInserts.right ;
     float cellWidth = (collectionView.bounds.size.width-space-(sectionModel.row -1)*minimumInteritemSpacing)/sectionModel.row;
     NSAssert(sectionModel.row > 0, @"每行至少一个item");
-    CGSize sizeFor = CGSizeMake(floor(cellWidth), sectionModel.cellHeight);;
+    CGSize sizeFor = CGSizeMake(floor(cellWidth), sectionModel.cellHeight);
+    if (self.dataDelegate && [self.dataDelegate respondsToSelector:@selector(gx_PageCollectionGeneralView:sizeForItemHeightAtIndexPath:ItemSize:)]) {
+        sizeFor = [self.dataDelegate gx_PageCollectionGeneralView:self sizeForItemHeightAtIndexPath:indexPath ItemSize:sizeFor];
+    }
     return sizeFor;
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-   CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
+    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
     UIEdgeInsets insets = sectionModel.insets;
     UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
     return UIEdgeInsetsMake(insets.top+borderEdgeInserts.top, insets.left+borderEdgeInserts.left, insets.bottom+borderEdgeInserts.bottom, insets.right+borderEdgeInserts.right);
@@ -177,13 +180,22 @@
         return NO;
     }
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (BOOL)generalCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout sectionHeadersPinAtSection:(NSInteger)section
+{
+    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
+    return sectionModel.sectionHeadersHovering;
 }
-*/
+- (CGFloat)generalCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout sectionHeadersPinTopSpaceAtSection:(NSInteger)section
+{
+    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
+    return sectionModel.sectionHeadersHoveringTopEdging;
+}
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

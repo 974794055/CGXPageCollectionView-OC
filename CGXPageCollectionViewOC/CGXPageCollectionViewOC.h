@@ -12,10 +12,10 @@
 /*
 pod ：CGXPageCollectionViewOC
  下载链接：https://github.com/974794055/CGXPageCollectionView-OC.git
-群名称：
-群号：
-版本号： 0.8
-QQ号：974794055
+群名称：潮流App-iOS交流
+群 号：227219165
+QQ 号：974794055
+版本号： 0.9
 */
 
 /*
@@ -43,5 +43,11 @@ QQ号：974794055
 */
 #import "CGXPageCollectionHorizontalView.h"
 
+/*
+特殊view
+*/
+#import "CGXPageCollectionSpecialCell.h"
+#import "CGXPageCollectionSpecialModel.h"
+#import "CGXPageCollectionSpecialView.h"
 
 #endif /* CGXPageCollectionViewOC_h */

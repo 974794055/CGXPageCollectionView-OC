@@ -34,6 +34,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) UIEdgeInsets borderEdgeInserts;//默认是UIEdgeInsetsMake(10, 10, 10, 10);
 
+/*
+ 是否悬停 默认NO
+ */
+@property (assign, nonatomic) BOOL sectionHeadersHovering;
+/*
+ 悬停距离 默认 0
+ */
+@property (assign, nonatomic) CGFloat sectionHeadersHoveringTopEdging;
+
 @end
 
 NS_ASSUME_NONNULL_END

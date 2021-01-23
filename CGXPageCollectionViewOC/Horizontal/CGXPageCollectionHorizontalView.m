@@ -20,12 +20,20 @@
 {
     [super initializeData];
     self.isShowDifferentColor = NO;
+    self.isScrollPage = NO;
 }
 
 - (void)initializeViews
 {
     [super initializeViews];
-
+    self.collectionView.pagingEnabled = NO;
+    /**
+     * decelerationRate系统给出了2个值：
+     * 1. UIScrollViewDecelerationRateFast（速率快）
+     * 2. UIScrollViewDecelerationRateNormal（速率慢）
+     * 此处设置滚动加速度率为fast，这样在移动cell后就会出现明显的吸附效果
+     */
+    self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
 }
 
 - (UICollectionViewLayout *)preferredFlowLayout
@@ -165,9 +173,27 @@
 /// @param collectionViewLayout collectionViewLayout description
 /// @param section section description
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateFooterViewIndex:(NSInteger)section{
-        return NO;
+    return NO;
 }
 
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (self.isScrollPage) {
+        CGPoint targetOffset = [self nearestTargetOffsetForOffset:*targetContentOffset];
+        targetContentOffset->x = targetOffset.x;
+        targetContentOffset->y = targetOffset.y;
+        [scrollView setContentOffset:CGPointMake(targetOffset.x, targetOffset.y) animated:YES];
+    }
+}
+- (CGPoint)nearestTargetOffsetForOffset:(CGPoint)offset
+{
+    CGXPageCollectionHorizontalSectionModel *sectionModel = (CGXPageCollectionHorizontalSectionModel *)self.dataArray[0];
+    CGFloat pageSize = ceil(sectionModel.sectionWidth+sectionModel.insets.left-sectionModel.borderEdgeInserts.right);
+    NSInteger page = roundf(offset.x / pageSize);
+    CGFloat targetX = pageSize * page;
+    return CGPointMake(targetX, offset.y);
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

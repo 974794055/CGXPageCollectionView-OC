@@ -82,6 +82,10 @@
 {
     return CGSizeMake(arc4random() % 60+40, itemSize.height);
 }
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView DidSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"点击：%ld--%ld",indexPath.section,indexPath.row);
+}
 
 /*
 #pragma mark - Navigation

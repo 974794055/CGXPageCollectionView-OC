@@ -18,7 +18,6 @@
 @property (nonatomic, weak) id<CGXPageCollectionWaterLayoutDataSource> dataSource;
 
 @property (nonatomic,assign) BOOL sectionFootersPinTVisibleBounds;
-@property (nonatomic,assign) BOOL sectionHeadersPinTVisibleBounds;
 
 - (void)setSectionFootersPinToVisibleBounds:(BOOL)sectionFootersPinTVisibleBounds NS_UNAVAILABLE;
 - (void)setSectionHeadersPinToVisibleBounds:(BOOL)sectionHeadersPinTVisibleBounds NS_UNAVAILABLE;
@@ -45,12 +44,14 @@
  */
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout*)layout IsParityFlowAtInSection:(NSInteger)section;
 
+/*
+ 是否头悬停
+ */
+- (BOOL)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout *)collectionViewLayout sectionHeadersPinAtSection:(NSInteger)section;
+/*
+ 头悬停上部距离
+ */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout *)collectionViewLayout sectionHeadersPinTopSpaceAtSection:(NSInteger)section;
+
 @end
 
-
-//@interface CGXPageCollectionWaterLayout (WaterLayoutunavailable)
-//
-//- (void)setSectionFootersPinToVisibleBounds:(BOOL)sectionFootersPinTVisibleBounds NS_UNAVAILABLE;
-//- (void)setSectionHeadersPinToVisibleBounds:(BOOL)sectionHeadersPinTVisibleBounds NS_UNAVAILABLE;
-//
-//@end

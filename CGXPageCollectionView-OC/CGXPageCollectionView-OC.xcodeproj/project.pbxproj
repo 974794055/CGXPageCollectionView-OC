@@ -33,6 +33,10 @@
 		9E97F91724BA1372000B1C6A /* main4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E97F91124BA1372000B1C6A /* main4.gif */; };
 		9E97F91824BA1372000B1C6A /* main5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E97F91224BA1372000B1C6A /* main5.gif */; };
 		9E97F91924BA1372000B1C6A /* main6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E97F91324BA1372000B1C6A /* main6.gif */; };
+		B52763E825BC57BA00DBF307 /* SpecialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B52763E425BC57BA00DBF307 /* SpecialViewController.m */; };
+		B52763E925BC57BA00DBF307 /* SpecialViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B52763E725BC57BA00DBF307 /* SpecialViewControllerCell.m */; };
+		B52763F925BC677000DBF307 /* authorGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = B52763F825BC677000DBF307 /* authorGroup.png */; };
+		B52763FC25BC67F900DBF307 /* main7.gif in Resources */ = {isa = PBXBuildFile; fileRef = B52763FB25BC67F900DBF307 /* main7.gif */; };
 		B54D27342593928D0020FBFC /* CGXPageCollectionSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54D272C2593928D0020FBFC /* CGXPageCollectionSearchCell.m */; };
 		B54D27352593928D0020FBFC /* CGXPageCollectionImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54D272D2593928D0020FBFC /* CGXPageCollectionImageCell.m */; };
 		B54D27362593928D0020FBFC /* CGXPageCollectionCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54D272F2593928D0020FBFC /* CGXPageCollectionCategoryCell.m */; };
@@ -84,6 +88,12 @@
 		9E97F91224BA1372000B1C6A /* main5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = main5.gif; sourceTree = "<group>"; };
 		9E97F91324BA1372000B1C6A /* main6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = main6.gif; sourceTree = "<group>"; };
 		9EB03DA1249A5358008A415F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		B52763E425BC57BA00DBF307 /* SpecialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialViewController.m; sourceTree = "<group>"; };
+		B52763E525BC57BA00DBF307 /* SpecialViewControllerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialViewControllerCell.h; sourceTree = "<group>"; };
+		B52763E625BC57BA00DBF307 /* SpecialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialViewController.h; sourceTree = "<group>"; };
+		B52763E725BC57BA00DBF307 /* SpecialViewControllerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialViewControllerCell.m; sourceTree = "<group>"; };
+		B52763F825BC677000DBF307 /* authorGroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = authorGroup.png; sourceTree = "<group>"; };
+		B52763FB25BC67F900DBF307 /* main7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = main7.gif; sourceTree = "<group>"; };
 		B54D272A2593928D0020FBFC /* CGXPageCollectionCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionCategoryCell.h; sourceTree = "<group>"; };
 		B54D272B2593928D0020FBFC /* CGXPageCollectionTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionTextCell.h; sourceTree = "<group>"; };
 		B54D272C2593928D0020FBFC /* CGXPageCollectionSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionSearchCell.m; sourceTree = "<group>"; };
@@ -141,6 +151,7 @@
 				04B42E3524483492006FD2F4 /* ViewController.m */,
 				B563370F259775F10032C6C0 /* ListCollectionViewCell.h */,
 				B5633710259775F10032C6C0 /* ListCollectionViewCell.m */,
+				B52763E325BC57A000DBF307 /* SpecialViewController */,
 				9E819FC524CB334700AE4E76 /* WaterViewController */,
 				9E819FC424CB333300AE4E76 /* TagsViewController */,
 				9E819FC324CB332600AE4E76 /* IrregularViewController */,
@@ -241,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				9E4B002224BC94A70016CB4D /* authorQQ.png */,
+				B52763F825BC677000DBF307 /* authorGroup.png */,
 				9E4B002024BC90AA0016CB4D /* main0.png */,
 				9E97F90E24BA1372000B1C6A /* main1.png */,
 				9E97F90F24BA1372000B1C6A /* main2.gif */,
@@ -248,6 +260,7 @@
 				9E97F91124BA1372000B1C6A /* main4.gif */,
 				9E97F91224BA1372000B1C6A /* main5.gif */,
 				9E97F91324BA1372000B1C6A /* main6.gif */,
+				B52763FB25BC67F900DBF307 /* main7.gif */,
 			);
 			name = CGXPageCollectionViewImageGif;
 			path = ../../CGXPageCollectionViewImageGif;
@@ -261,6 +274,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B52763E325BC57A000DBF307 /* SpecialViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B52763E525BC57BA00DBF307 /* SpecialViewControllerCell.h */,
+				B52763E725BC57BA00DBF307 /* SpecialViewControllerCell.m */,
+				B52763E625BC57BA00DBF307 /* SpecialViewController.h */,
+				B52763E425BC57BA00DBF307 /* SpecialViewController.m */,
+			);
+			path = SpecialViewController;
+			sourceTree = "<group>";
+		};
 		B54D27292593928D0020FBFC /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,8 +294,8 @@
 				B54D27312593928D0020FBFC /* CGXPageCollectionTextCell.m */,
 				B54D272E2593928D0020FBFC /* CGXPageCollectionBaseCell.h */,
 				B54D27322593928D0020FBFC /* CGXPageCollectionBaseCell.m */,
-				B54D272D2593928D0020FBFC /* CGXPageCollectionImageCell.m */,
 				B54D27332593928D0020FBFC /* CGXPageCollectionImageCell.h */,
+				B54D272D2593928D0020FBFC /* CGXPageCollectionImageCell.m */,
 				B54D272A2593928D0020FBFC /* CGXPageCollectionCategoryCell.h */,
 				B54D272F2593928D0020FBFC /* CGXPageCollectionCategoryCell.m */,
 			);
@@ -340,10 +364,12 @@
 				9E97F91624BA1372000B1C6A /* main3.gif in Resources */,
 				9E97F91424BA1372000B1C6A /* main1.png in Resources */,
 				04B42E3E24483494006FD2F4 /* LaunchScreen.storyboard in Resources */,
+				B52763F925BC677000DBF307 /* authorGroup.png in Resources */,
 				9E4B002324BC94A70016CB4D /* authorQQ.png in Resources */,
 				9E97F91724BA1372000B1C6A /* main4.gif in Resources */,
 				9E819FCB24CB33B600AE4E76 /* README.md in Resources */,
 				9E97F91524BA1372000B1C6A /* main2.gif in Resources */,
+				B52763FC25BC67F900DBF307 /* main7.gif in Resources */,
 				04B42E3B24483494006FD2F4 /* Assets.xcassets in Resources */,
 				9E819FCC24CB33B600AE4E76 /* CGXPageCollectionViewOC.podspec in Resources */,
 				9E819FCD24CB33B600AE4E76 /* LICENSE in Resources */,
@@ -387,12 +413,14 @@
 			files = (
 				9E7D943724B5FA35007FB4A9 /* HorizontalViewController.m in Sources */,
 				9E25AF27249F5C8D00343226 /* IrregularViewController.m in Sources */,
+				B52763E925BC57BA00DBF307 /* SpecialViewControllerCell.m in Sources */,
 				9E25AF47249F65A100343226 /* CGXPageCollectionSectionBaseView.m in Sources */,
 				B54D27352593928D0020FBFC /* CGXPageCollectionImageCell.m in Sources */,
 				9E25AF45249F65A100343226 /* CGXPageCollectionSectionImageView.m in Sources */,
 				B54D27362593928D0020FBFC /* CGXPageCollectionCategoryCell.m in Sources */,
 				9E25AF46249F65A100343226 /* CGXPageCollectionSectionTextView.m in Sources */,
 				9E6F693624CBDCEB00EAE61B /* GeneralViewTool.m in Sources */,
+				B52763E825BC57BA00DBF307 /* SpecialViewController.m in Sources */,
 				B54D27372593928D0020FBFC /* CGXPageCollectionTextCell.m in Sources */,
 				B5633711259775F10032C6C0 /* ListCollectionViewCell.m in Sources */,
 				04B42E3624483492006FD2F4 /* ViewController.m in Sources */,

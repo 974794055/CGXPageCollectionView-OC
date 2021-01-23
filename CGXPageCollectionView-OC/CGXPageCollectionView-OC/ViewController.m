@@ -30,6 +30,7 @@
                       @"瀑布流 分区无带边框 圆角",
                       @"不规则 布局",
                       @"水平滚动",
+                      @"特殊布局，用于嵌套",// 需要给定高度，然后去计算高度
                       nil];
     [self creatCollectionView];
     
@@ -177,7 +178,13 @@
         vc.title = titleStr;
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row==6){
+        SpecialViewController *vc = [[SpecialViewController alloc] init];
+        vc.title = titleStr;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
+    
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {

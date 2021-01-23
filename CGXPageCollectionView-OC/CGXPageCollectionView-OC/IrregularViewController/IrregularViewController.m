@@ -141,6 +141,10 @@
     }
     [self.irregulaView updateDataArray:dataArrayaaaa IsDownRefresh:YES Page:1];
 }
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView DidSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"点击：%ld--%ld",indexPath.section,indexPath.row);
+}
 /*
  #pragma mark - Navigation
  

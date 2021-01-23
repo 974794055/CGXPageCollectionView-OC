@@ -16,10 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 // cell的高 默认100
 @property (nonatomic , assign) CGFloat cellHeight;
 /*
- //默认每行一个
+ 默认每行一个
  */
 @property (nonatomic , assign) NSInteger row;
-
 /*
  是否包含头分区圆角
  */
@@ -30,7 +29,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL isRoundWithFooterView;
 /// 是否开始Round计算，（默认YES），当该位置为NO时，计算模块都不开启，包括设置的代理
 @property (assign, nonatomic) BOOL isRoundEnabled;
-
+/*
+ 是否悬停 默认NO
+ */
+@property (assign, nonatomic) BOOL sectionHeadersHovering;
+/*
+ 悬停距离 默认 0
+ */
+@property (assign, nonatomic) CGFloat sectionHeadersHoveringTopEdging;
 /*
  insets 与borderEdgeInserts 一样是时，边框边界无距离 自己设置体验
  */

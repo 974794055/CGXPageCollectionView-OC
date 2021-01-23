@@ -18,6 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (assign, nonatomic) BOOL isShowDifferentColor;
 
+/*
+ 是否分页停留 默认NO
+ */
+@property (assign, nonatomic) BOOL isScrollPage;
+
 
 @end
 

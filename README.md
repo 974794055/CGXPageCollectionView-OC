@@ -9,7 +9,7 @@
 
 - 下载链接：https://github.com/974794055/CGXPageCollectionView-OC.git
 -  pod名称 ：CGXPageCollectionViewOC
-- 最新版本号： 0.8
+- 最新版本号： 0.9
 
 - 功能：    
 - UICollectionView封装的库，分区圆角边框，瀑布流、标签流、不规则布局等主流APP分页列表滚动视图的库封装
@@ -26,6 +26,7 @@
 - 3、标签流列表;
 - 4、不规则列表;
 - 4、水平滚动列表;
+- 5、嵌套固定列表;
 
 ## 效果预览
 ### 库架构预览
@@ -41,6 +42,7 @@
 效果🌈瀑布流列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main4.gif" width="287" height="600"> |
 效果🌈不规则列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main5.gif" width="287" height="600"> |
 效果🌈水平滚动列表  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main6.gif" width="287" height="600"> |
+效果🌈特殊嵌套  |  <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main7.gif" width="287" height="600"> |
 
 ### 目的：
 - 参考学习如何自定义
@@ -151,11 +153,14 @@ for (int i = 0; i<self.titleArr.count; i++) {
 
 该仓库保持随时更新，对于主流新的列表效果会第一时间支持。使用过程中，有任何建议或问题，可以通过以下方式联系我：</br>
 邮    箱：974794055@qq.com </br>
-群名称：</br>
-QQ  群：</br>
+群名称：潮流App-iOS交流</br>
+QQ  群：227219165</br>
 QQ  号：974794055</br>
 
 <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/authorQQ.png" width="300" height="411">
+
+<img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/authorGroup.png" width="300" height="411">
+
 
 喜欢就star❤️一下吧
 
