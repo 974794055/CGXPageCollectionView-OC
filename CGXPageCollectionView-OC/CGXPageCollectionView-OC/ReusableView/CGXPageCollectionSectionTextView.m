@@ -26,45 +26,45 @@
         label;
     });
     self.top =  [NSLayoutConstraint constraintWithItem:_titleLabel
-                                  attribute:NSLayoutAttributeTop
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:self
-                                  attribute:NSLayoutAttributeTop
-                                 multiplier:1.0
+                                             attribute:NSLayoutAttributeTop
+                                             relatedBy:NSLayoutRelationEqual
+                                                toItem:self
+                                             attribute:NSLayoutAttributeTop
+                                            multiplier:1.0
                                               constant:0];
-
-     self.left = [NSLayoutConstraint constraintWithItem:_titleLabel
-                                  attribute:NSLayoutAttributeLeft
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:self
-                                  attribute:NSLayoutAttributeLeft
-                                 multiplier:1.0
+    
+    self.left = [NSLayoutConstraint constraintWithItem:_titleLabel
+                                             attribute:NSLayoutAttributeLeft
+                                             relatedBy:NSLayoutRelationEqual
+                                                toItem:self
+                                             attribute:NSLayoutAttributeLeft
+                                            multiplier:1.0
                                               constant:0];
-
-     self.bottom = [NSLayoutConstraint constraintWithItem:_titleLabel
-                                  attribute:NSLayoutAttributeBottom
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:self
-                                  attribute:NSLayoutAttributeBottom
-                                 multiplier:1.0
-                                   constant:0];
-
-     self.right = [NSLayoutConstraint constraintWithItem:_titleLabel
-                                  attribute:NSLayoutAttributeRight
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:self
-                                  attribute:NSLayoutAttributeRight
-                                 multiplier:1
-                                   constant:0];
-     [self addConstraint:self.top];
-     [self addConstraint:self.bottom];
-     [self addConstraint:self.left];
-     [self addConstraint:self.right];
+    
+    self.bottom = [NSLayoutConstraint constraintWithItem:_titleLabel
+                                               attribute:NSLayoutAttributeBottom
+                                               relatedBy:NSLayoutRelationEqual
+                                                  toItem:self
+                                               attribute:NSLayoutAttributeBottom
+                                              multiplier:1.0
+                                                constant:0];
+    
+    self.right = [NSLayoutConstraint constraintWithItem:_titleLabel
+                                              attribute:NSLayoutAttributeRight
+                                              relatedBy:NSLayoutRelationEqual
+                                                 toItem:self
+                                              attribute:NSLayoutAttributeRight
+                                             multiplier:1
+                                               constant:0];
+    [self addConstraint:self.top];
+    [self addConstraint:self.bottom];
+    [self addConstraint:self.left];
+    [self addConstraint:self.right];
 }
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-  ;
+    ;
 }
 
 - (void)updateWithCGXCollectionViewFooterViewModel:(CGXPageCollectionBaseSectionModel *)sectionModel InSection:(NSInteger)section
@@ -76,10 +76,22 @@
     self.top.constant = 0;
     self.bottom.constant = 0;
     
+    if ([sectionModel isKindOfClass:[CGXPageCollectionGeneralSectionModel class]]) {
+        CGXPageCollectionGeneralSectionModel *sectionM = (CGXPageCollectionGeneralSectionModel *)sectionModel;
+        if (sectionM.isRoundWithHeaderView) {
+            UIEdgeInsets borderEdgeInserts = sectionM.borderEdgeInserts;
+            self.bottom.constant = -borderEdgeInserts.bottom;
+            self.right.constant = -borderEdgeInserts.right;;
+            self.left.constant = borderEdgeInserts.left;;
+        }
+    }
+
+    
+    
     if ([self.sectionModel.headerModel.headerModel isKindOfClass:[NSString class]]) {
-            self.titleLabel.text = [NSString stringWithFormat:@"头分区%ld：%@",section,self.sectionModel.headerModel.headerModel];
+        self.titleLabel.text = [NSString stringWithFormat:@"头分区%ld：%@",section,self.sectionModel.headerModel.headerModel];
     } else{
-            self.titleLabel.text = [NSString stringWithFormat:@"头分区--：%ld",section];
+        self.titleLabel.text = [NSString stringWithFormat:@"头分区--：%ld",section];
     }
 }
 
@@ -92,10 +104,20 @@
     self.top.constant = 0;
     self.bottom.constant = 0;
     
+    if ([sectionModel isKindOfClass:[CGXPageCollectionGeneralSectionModel class]]) {
+        CGXPageCollectionGeneralSectionModel *sectionM = (CGXPageCollectionGeneralSectionModel *)sectionModel;
+        if (sectionM.isRoundWithHeaderView) {
+            UIEdgeInsets borderEdgeInserts = sectionM.borderEdgeInserts;
+            self.top.constant = borderEdgeInserts.top;
+            self.right.constant = -borderEdgeInserts.right;;
+            self.left.constant = borderEdgeInserts.left;;
+        }
+    }
+    
     if ([self.sectionModel.headerModel.headerModel isKindOfClass:[NSString class]]) {
-            self.titleLabel.text = [NSString stringWithFormat:@"头分区%ld：%@",section,self.sectionModel.headerModel.headerModel];
+        self.titleLabel.text = [NSString stringWithFormat:@"头分区%ld：%@",section,self.sectionModel.headerModel.headerModel];
     } else{
-            self.titleLabel.text = [NSString stringWithFormat:@"头分区--：%ld",section];
+        self.titleLabel.text = [NSString stringWithFormat:@"头分区--：%ld",section];
     }
 }
 @end

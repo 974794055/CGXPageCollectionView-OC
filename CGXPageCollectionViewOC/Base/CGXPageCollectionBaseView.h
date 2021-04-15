@@ -37,7 +37,7 @@ typedef void (^CGXPageCollectionBaseViewHeightBlock)(CGXPageCollectionBaseView *
 
 @interface CGXPageCollectionBaseView : UIView<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic , strong) CGXPageCollectionView *collectionView;
+@property (nonatomic , strong,readonly) CGXPageCollectionView *collectionView;
 /*
 是否自适应高度
 */
@@ -143,11 +143,11 @@ typedef void (^CGXPageCollectionBaseViewHeightBlock)(CGXPageCollectionBaseView *
 /*
 自定义header设置
 */
-- (UICollectionReusableView *)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView NS_REQUIRES_SUPER;
+- (void)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView NS_REQUIRES_SUPER;
 /*
 自定义footer设置
 */
-- (UICollectionReusableView *)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView NS_REQUIRES_SUPER;
+- (void)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView NS_REQUIRES_SUPER;
 /**
  @param baseSectionModel 用于判断子类数据类型
  */

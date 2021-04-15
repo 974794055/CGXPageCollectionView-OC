@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "CGXPageCollectionViewOC"    #存储库名称
-    s.version      = "0.9"      #版本号，与tag值一致
+    s.version      = "1.0.0"      #版本号，与tag值一致
     s.summary      = "CGXPageCollectionView-OC是基于UICollectionView封装的库，分区圆角边框，瀑布流、标签流等主流APP分页列表滚动视图的库)"  #简介
     s.description  = "(UICollectionView封装的库，分区圆角边框，瀑布流、标签流、不规则布局等主流APP分页列表滚动视图的库封装"  #描述
     s.homepage     = "https://github.com/974794055/CGXPageCollectionView-OC"      #项目主页，不是git地址
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
     end
     
     s.subspec 'Base' do |ss|
-        ss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}','CGXPageCollectionViewOC/Delegate/**/*.{h,m}'
+        ss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}','CGXPageCollectionViewOC/Delegate/**/*.{h,m}','CGXPageCollectionViewOC/RoundLayout/**/*.{h,m}'
         ss.dependency 'CGXPageCollectionViewOC/Common'
     end
     

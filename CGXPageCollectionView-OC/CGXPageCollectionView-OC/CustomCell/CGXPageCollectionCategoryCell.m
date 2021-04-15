@@ -117,6 +117,7 @@
 
 - (void)updateWithCGXPageCollectionCellModel:(CGXPageCollectionBaseRowModel *)cellModel AtIndex:(NSInteger)index
 {
+    [super updateWithCGXPageCollectionCellModel:cellModel AtIndex:index];
     self.titleLabel.text = [NSString stringWithFormat:@"%ld",index];
     self.picImageView.backgroundColor = [UIColor blackColor];
     

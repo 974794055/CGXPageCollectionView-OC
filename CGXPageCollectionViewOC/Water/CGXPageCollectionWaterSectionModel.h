@@ -24,9 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
  //默认每行一个
  */
 @property (nonatomic , assign) NSInteger row;
-/// 是否开始Round计算，（默认YES），当该位置为NO时，计算模块都不开启，包括设置的代理
-@property (assign, nonatomic) BOOL isRoundEnabled;
-
 /*
  insets 与borderEdgeInserts 一样是时，边框边界无距离 自己设置体验  不包含分区头、脚
  */

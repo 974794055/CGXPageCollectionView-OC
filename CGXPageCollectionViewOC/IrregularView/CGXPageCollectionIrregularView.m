@@ -24,6 +24,8 @@
 - (void)initializeViews
 {
     [super initializeViews];
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.showsVerticalScrollIndicator = YES;
 }
 - (UICollectionViewLayout *)preferredFlowLayout
 {

@@ -27,6 +27,8 @@
 {
     [super initializeViews];
     self.collectionView.pagingEnabled = NO;
+    self.collectionView.showsHorizontalScrollIndicator = YES;
+    self.collectionView.showsVerticalScrollIndicator = NO;
     /**
      * decelerationRate系统给出了2个值：
      * 1. UIScrollViewDecelerationRateFast（速率快）
@@ -35,7 +37,11 @@
      */
     self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
 }
-
+- (void)setIsShowDifferentColor:(BOOL)isShowDifferentColor
+{
+    _isShowDifferentColor = isShowDifferentColor;
+    [self.collectionView reloadData];
+}
 - (UICollectionViewLayout *)preferredFlowLayout
 {
     [super preferredFlowLayout];
@@ -82,19 +88,17 @@
     }
     return CGSizeMake(ceil(sectionModel.sectionWidth-space), sectionModel.headerModel.headerHeight);
 }
-- (UICollectionReusableView *)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView
+- (void)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView
 {
     [super refreshHeaderSection:section Header:headerView];
     CGXPageCollectionHorizontalSectionModel *sectionModel = (CGXPageCollectionHorizontalSectionModel *)self.dataArray[section];
     headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
-    return headerView;
 }
-- (UICollectionReusableView *)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView
+- (void)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView
 {
     [super refreshFooterSection:section Footer:footerView];
     CGXPageCollectionHorizontalSectionModel *sectionModel = (CGXPageCollectionHorizontalSectionModel *)self.dataArray[section];
     footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
-    return footerView;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -148,14 +152,14 @@
         if (@available(iOS 13.0, *)) {
             UIColor *dyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
                 if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
-                    return [UIColor whiteColor];;
+                    return self.collectionView.backgroundColor;
                 }else {
-                    return [UIColor whiteColor];;
+                    return self.collectionView.backgroundColor;;
                 }
             }];
             roundModel.backgroundColor = dyColor;
         }else{
-            roundModel.backgroundColor = [UIColor whiteColor];;
+            roundModel.backgroundColor = self.collectionView.backgroundColor;;
         }
     }
     return roundModel;

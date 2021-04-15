@@ -106,10 +106,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (void)updateWithDataArray:(NSMutableArray<CGXPageCollectionSpecialModel *> *)dataArray;
-
-
 - (void)updateWithModel:(CGXPageCollectionSpecialModel  *)model AtIndex:(NSInteger)index;
-
 /*
  注册cell
  */

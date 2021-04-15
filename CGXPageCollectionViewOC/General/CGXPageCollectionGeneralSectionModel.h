@@ -22,13 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 /*
  是否包含头分区圆角
  */
-@property (assign, nonatomic) BOOL isRoundWithHeaerView;
+@property (assign, nonatomic) BOOL isRoundWithHeaderView;
 /*
  是否包含脚分区圆角
  */
 @property (assign, nonatomic) BOOL isRoundWithFooterView;
-/// 是否开始Round计算，（默认YES），当该位置为NO时，计算模块都不开启，包括设置的代理
-@property (assign, nonatomic) BOOL isRoundEnabled;
+
 /*
  是否悬停 默认NO
  */

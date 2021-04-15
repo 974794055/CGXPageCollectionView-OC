@@ -1,39 +1,48 @@
 PODS:
-  - CGXPageCollectionViewOC (0.9):
-    - CGXPageCollectionViewOC/Base (= 0.9)
-    - CGXPageCollectionViewOC/Common (= 0.9)
-    - CGXPageCollectionViewOC/General (= 0.9)
-    - CGXPageCollectionViewOC/Horizontal (= 0.9)
-    - CGXPageCollectionViewOC/IrregularView (= 0.9)
-    - CGXPageCollectionViewOC/SpecialView (= 0.9)
-    - CGXPageCollectionViewOC/Tags (= 0.9)
-    - CGXPageCollectionViewOC/Water (= 0.9)
-  - CGXPageCollectionViewOC/Base (0.9):
+  - CGXPageCollectionViewOC (1.0.0):
+    - CGXPageCollectionViewOC/Base (= 1.0.0)
+    - CGXPageCollectionViewOC/Common (= 1.0.0)
+    - CGXPageCollectionViewOC/General (= 1.0.0)
+    - CGXPageCollectionViewOC/Horizontal (= 1.0.0)
+    - CGXPageCollectionViewOC/IrregularView (= 1.0.0)
+    - CGXPageCollectionViewOC/SpecialView (= 1.0.0)
+    - CGXPageCollectionViewOC/Tags (= 1.0.0)
+    - CGXPageCollectionViewOC/Water (= 1.0.0)
+  - CGXPageCollectionViewOC/Base (1.0.0):
     - CGXPageCollectionViewOC/Common
-  - CGXPageCollectionViewOC/Common (0.9)
-  - CGXPageCollectionViewOC/General (0.9):
+  - CGXPageCollectionViewOC/Common (1.0.0)
+  - CGXPageCollectionViewOC/General (1.0.0):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Horizontal (0.9):
+  - CGXPageCollectionViewOC/Horizontal (1.0.0):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/IrregularView (0.9):
+  - CGXPageCollectionViewOC/IrregularView (1.0.0):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/SpecialView (0.9):
+  - CGXPageCollectionViewOC/SpecialView (1.0.0):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Tags (0.9):
+  - CGXPageCollectionViewOC/Tags (1.0.0):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Water (0.9):
+  - CGXPageCollectionViewOC/Water (1.0.0):
     - CGXPageCollectionViewOC/Base
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
 
 DEPENDENCIES:
   - CGXPageCollectionViewOC (from `../`)
+  - SDWebImage
+
+SPEC REPOS:
+  https://cdn.cocoapods.org/:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   CGXPageCollectionViewOC:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CGXPageCollectionViewOC: 6fd6574b0058539681e8602245e0305017f4224f
+  CGXPageCollectionViewOC: 8b9f7ab77dc6531243c6bcce27466929a5efd943
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 
-PODFILE CHECKSUM: d455d4091eb63c3fec398346e809839c2bffbec6
+PODFILE CHECKSUM: dab22f477b9aa651c4d23a3176f7c8a72519810d
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

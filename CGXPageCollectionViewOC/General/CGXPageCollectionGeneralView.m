@@ -26,6 +26,8 @@
 - (void)initializeViews
 {
     [super initializeViews];
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.showsVerticalScrollIndicator = YES;
 }
 - (void)setIsRoundEnabled:(BOOL)isRoundEnabled
 {
@@ -64,12 +66,12 @@
         }
     }
 }
-- (UICollectionReusableView *)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView
+- (void)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView
 {
     [super refreshHeaderSection:section Header:headerView];
     CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
     if (self.isShowDifferentColor) {
-        if (sectionModel.isRoundWithHeaerView) {
+        if (sectionModel.isRoundWithHeaderView) {
             headerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
         }else{
             headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
@@ -77,13 +79,12 @@
     } else{
         headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
     }
-    if (sectionModel.isRoundWithHeaerView) {
-        UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
-        headerView.frame = CGRectMake(borderEdgeInserts.left, borderEdgeInserts.top, headerView.frame.size.width-borderEdgeInserts.left-borderEdgeInserts.right, headerView.frame.size.height-borderEdgeInserts.top);
-    }
-    return headerView;
+//    if (sectionModel.isRoundWithHeaderView) {
+//        UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
+//        headerView.frame = CGRectMake(borderEdgeInserts.left, borderEdgeInserts.top, headerView.frame.size.width-borderEdgeInserts.left-borderEdgeInserts.right, headerView.frame.size.height-borderEdgeInserts.top);
+//    }
 }
-- (UICollectionReusableView *)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView
+- (void)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView
 {
     [super refreshFooterSection:section Footer:footerView];
     CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
@@ -96,11 +97,10 @@
     } else{
         footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
     }
-    if (sectionModel.isRoundWithFooterView) {
-        UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
-        footerView.frame = CGRectMake(borderEdgeInserts.left, 0, footerView.frame.size.width-borderEdgeInserts.left-borderEdgeInserts.right, footerView.frame.size.height-borderEdgeInserts.bottom);
-    }
-    return footerView;
+//    if (sectionModel.isRoundWithFooterView) {
+//        UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
+//        footerView.frame = CGRectMake(borderEdgeInserts.left, 0, footerView.frame.size.width-borderEdgeInserts.left-borderEdgeInserts.right, footerView.frame.size.height-borderEdgeInserts.bottom);
+//    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -142,14 +142,14 @@
         if (@available(iOS 13.0, *)) {
             UIColor *dyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
                 if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
-                    return [UIColor whiteColor];;
+                    return self.backgroundColor;
                 }else {
-                    return [UIColor whiteColor];;
+                    return self.backgroundColor;
                 }
             }];
             roundModel.backgroundColor = dyColor;
         }else{
-            roundModel.backgroundColor = [UIColor whiteColor];;
+            roundModel.backgroundColor = self.backgroundColor;
         }
     }
     return roundModel;
@@ -162,7 +162,7 @@
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateHeaderViewIndex:(NSInteger)section{
     if (self.isRoundEnabled) {
         CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
-        return sectionModel.isRoundWithHeaerView;
+        return sectionModel.isRoundWithHeaderView;
     }else{
         return NO;
     }
@@ -178,6 +178,15 @@
         return sectionModel.isRoundWithFooterView;
     }else{
         return NO;
+    }
+}
+/// 背景图点击事件
+/// @param collectionView collectionView description
+/// @param indexPath 点击背景图的indexPath
+- (void)collectionView:(UICollectionView *)collectionView didSelectDecorationViewAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:didSelectDecorationViewAtIndexPath:)]) {
+        [self.viewDelegate gx_PageCollectionBaseView:self didSelectDecorationViewAtIndexPath:indexPath];
     }
 }
 - (BOOL)generalCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout sectionHeadersPinAtSection:(NSInteger)section

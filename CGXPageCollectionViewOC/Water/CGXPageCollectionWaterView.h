@@ -20,7 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 // 返回高度
-- (CGFloat)gx_PageCollectionWaterView:(CGXPageCollectionWaterView *)waterView sizeForItemHeightAtIndexPath:(NSIndexPath *)indexPath ItemSize:(CGSize)itemSize;
+- (CGFloat)gx_PageCollectionWaterView:(CGXPageCollectionWaterView *)waterView
+         sizeForItemHeightAtIndexPath:(NSIndexPath *)indexPath
+                             ItemSize:(CGSize)itemSize;
 
 @end
 
@@ -34,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 是否不同背景色
 // */
 @property (assign, nonatomic) BOOL isShowDifferentColor;
+
 
 @end
 

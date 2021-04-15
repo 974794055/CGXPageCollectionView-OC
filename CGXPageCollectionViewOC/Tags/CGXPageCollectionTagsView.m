@@ -24,6 +24,8 @@
 - (void)initializeViews
 {
     [super initializeViews];
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.showsVerticalScrollIndicator = YES;
 }
 - (UICollectionViewLayout *)preferredFlowLayout
 {
@@ -61,19 +63,18 @@
     return sectionModel.direction;
 }
 
-- (UICollectionReusableView *)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView
+- (void)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView
 {
     [super refreshHeaderSection:section Header:headerView];
     CGXPageCollectionTagsSectionModel *sectionModel = (CGXPageCollectionTagsSectionModel *)self.dataArray[section];
-        headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
-    return headerView;
+    headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
+    
 }
-- (UICollectionReusableView *)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView
+- (void)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView
 {
     [super refreshFooterSection:section Footer:footerView];
     CGXPageCollectionTagsSectionModel *sectionModel = (CGXPageCollectionTagsSectionModel *)self.dataArray[section];
-        footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
-    return footerView;
+    footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {

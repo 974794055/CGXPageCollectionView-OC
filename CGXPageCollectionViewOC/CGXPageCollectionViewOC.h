@@ -15,7 +15,7 @@ pod ：CGXPageCollectionViewOC
 群名称：潮流App-iOS交流
 群 号：227219165
 QQ 号：974794055
-版本号： 0.9
+版本号： 1.0.0
 */
 
 /*

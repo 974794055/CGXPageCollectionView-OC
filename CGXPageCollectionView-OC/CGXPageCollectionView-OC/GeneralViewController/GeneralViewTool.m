@@ -31,7 +31,7 @@
     roundModel.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0];
     roundModel.shadowOffset = CGSizeMake(0,0);
     roundModel.shadowOpacity = 0;
-    roundModel.shadowRadius = 0;
+    roundModel.shadowRadius = 10;
     
     roundModel.borderColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
     roundModel.borderWidth = 0;

@@ -33,7 +33,6 @@
         id <CGXPageCollectionUpdateRoundDelegate> delegate  = (id <CGXPageCollectionUpdateRoundDelegate>)self.collectionView.delegate;
         //检测是否实现了背景样式模块代理
         if ([delegate respondsToSelector:@selector(collectionView:layout:configModelForSectionAtIndex:)]) {
-            
             //1.初始化
             [self registerClass:[CGXPageCollectionRoundReusableView class] forDecorationViewOfKind:NSStringFromClass([CGXPageCollectionRoundReusableView class])];
             [self.decorationViewAttrs removeAllObjects];
@@ -41,10 +40,6 @@
             for (NSInteger section = 0; section < sections; section++) {
                 NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:section];
                 if (numberOfItems > 0) {
-                    //判断是否计算headerview
-                    BOOL isCalculateHeaderView = [self isCalculateHeaderViewSection:section];
-                    //判断是否计算footerView
-                    BOOL isCalculateFooterView = [self isCalculateFooterViewSection:section];
                     // 第一个item
                     UICollectionViewLayoutAttributes *firstAttr = [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
                     CGRect firstFrame = firstAttr.frame;
@@ -55,6 +50,16 @@
                     UICollectionViewLayoutAttributes *headerAttr = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
                     //footerView
                     UICollectionViewLayoutAttributes *footerAttr = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+                
+                    BOOL isHeaderAttr = (headerAttr &&
+                                                  (headerAttr.frame.size.width != 0  && headerAttr.frame.size.height != 0));
+                    BOOL isFooterAttr = (footerAttr &&
+                                                  (footerAttr.frame.size.width != 0  && footerAttr.frame.size.height != 0));
+                    
+                    //判断是否计算headerview
+                    BOOL isCalculateHeaderView = [self isCalculateHeaderViewSection:section] && isHeaderAttr;
+                    //判断是否计算footerView
+                    BOOL isCalculateFooterView = [self isCalculateFooterViewSection:section] && isFooterAttr;
                     
                     firstFrame = [self calculateDefaultFrameWithFirstHeader:isCalculateHeaderView Section:section NumberOfItems:numberOfItems IsOpen:self.isCalculateOpenIrregularCell];
                     lastFrame = [self calculateDefaultFrameWithFirstFooter:isCalculateFooterView Section:section NumberOfItems:numberOfItems IsOpen:self.isCalculateOpenIrregularCell];
@@ -69,8 +74,7 @@
                     }else{
                         if (isCalculateHeaderView && !isCalculateFooterView) {
                             //判断是否有headerview
-                            if (headerAttr &&
-                                (headerAttr.frame.size.width != 0 || headerAttr.frame.size.height != 0)) {
+                            if (isHeaderAttr) {
                                 if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
                                     //判断包含headerview, left位置已经计算在内，不需要补偏移
                                     sectionFrame.size.width += sectionInset.right;
@@ -89,8 +93,7 @@
                                 sectionFrame = [self calculateDefaultFrameWithSectionFrame:sectionFrame sectionInset:sectionInset];
                             }
                         }else if (!isCalculateHeaderView && isCalculateFooterView) {
-                            if (footerAttr &&
-                                (footerAttr.frame.size.width != 0 || footerAttr.frame.size.height != 0)) {
+                            if (isFooterAttr) {
                                 if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
                                     //判断包含footerView, right位置已经计算在内，不需要补偏移
                                     //(需要补充x偏移)
@@ -114,10 +117,7 @@
                                 sectionFrame = [self calculateDefaultFrameWithSectionFrame:sectionFrame sectionInset:sectionInset];
                             }
                         }else{
-                            if (headerAttr &&
-                                footerAttr &&
-                                (headerAttr.frame.size.width != 0 || headerAttr.frame.size.height != 0) &&
-                                (footerAttr.frame.size.width != 0 || footerAttr.frame.size.height != 0)) {
+                            if (isHeaderAttr && isFooterAttr) {
                                 //都有headerview和footerview就不用计算了
                             }else{
                                 sectionFrame = [self calculateDefaultFrameWithSectionFrame:sectionFrame sectionInset:sectionInset];

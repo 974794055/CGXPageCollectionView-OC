@@ -16,13 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)initializeData NS_REQUIRES_SUPER;
 
-/*
- 头分区
- */
+/*头分区*/
 @property (nonatomic , strong) CGXPageCollectionHeaderModel *headerModel;
-/*
- 脚分区
- */
+/*脚分区*/
 @property (nonatomic , strong) CGXPageCollectionFooterModel *footerModel;
 
 @property (nonatomic,strong) NSMutableArray<CGXPageCollectionBaseRowModel *> *rowArray;

@@ -36,34 +36,14 @@
     for (UICollectionViewLayoutAttributes *attr in self.decorationViewAttrs) {
         [attrsArr addObject:attr];
     }
-    
-    //    BOOL sectionHeaderViewHovering = NO;
-    //    if (self.dataSource && [self.dataSource respondsToSelector:@selector(generalCollectionView:layout:sectionHeadersPinAtSection:)]) {
-    //        sectionHeaderViewHovering = [self.dataSource generalCollectionView:self.collectionView layout:self sectionHeadersPinAtSection:0];
-    //    }
-    //    if (!_sectionHeaderViewHovering) {
-    //        return [super layoutAttributesForElementsInRect:rect];
-    //    }
-    //    NSMutableArray *attributes = [NSMutableArray arrayWithArray:[super layoutAttributesForElementsInRect:rect]];
-    //    for (UICollectionViewLayoutAttributes *attribute in attrsArr)
-    //    {
-    //        if (!CGRectIntersectsRect(rect, attribute.frame))
-    //            continue;
-    //        [attributes addObject:attribute];
-    //    }
-//    if (_sectionHeaderViewHovering) {
-        [self layoutHeaderFooterAttributesForElementsInRect:rect attributes:attrsArr];
-//    }
+    [self layoutHeaderFooterAttributesForElementsInRect:rect attributes:attrsArr];
     return attrsArr;
 }
-
-
 //return YES;表示一旦滑动就实时调用上面这个layoutAttributesForElementsInRect:方法
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBound
 {
     return YES;
 }
-// 引用了XLPlainFlowLayout
 - (void)layoutHeaderFooterAttributesForElementsInRect:(CGRect)rect attributes:(NSMutableArray *)superAttributes
 {
     NSMutableIndexSet *noneHeaderSections = [NSMutableIndexSet indexSet];
@@ -92,7 +72,7 @@
     for (UICollectionViewLayoutAttributes *attributes in superAttributes) {
         BOOL sectionHeaderViewHovering = NO;
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(generalCollectionView:layout:sectionHeadersPinAtSection:)]) {
-            sectionHeaderViewHovering = [self.dataSource generalCollectionView:self.collectionView layout:self sectionHeadersPinAtSection:0];
+            sectionHeaderViewHovering = [self.dataSource generalCollectionView:self.collectionView layout:self sectionHeadersPinAtSection:attributes.indexPath.section];
         }
         CGFloat sectionHeaderViewHoveringTopEdging = 0;
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(generalCollectionView:layout:sectionHeadersPinTopSpaceAtSection:)]) {

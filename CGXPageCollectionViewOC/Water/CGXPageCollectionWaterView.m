@@ -25,6 +25,8 @@
 - (void)initializeViews
 {
     [super initializeViews];
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.showsVerticalScrollIndicator = YES;
 }
 - (void)setIsRoundEnabled:(BOOL)isRoundEnabled
 {
@@ -116,17 +118,17 @@
     if (self.isShowDifferentColor) {
         roundModel = sectionModel.roundModel;
     } else{
-                if (@available(iOS 13.0, *)) {
+        if (@available(iOS 13.0, *)) {
             UIColor *dyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
                 if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
-                    return [UIColor whiteColor];;
+                    return self.backgroundColor;
                 }else {
-                    return [UIColor whiteColor];;
+                    return self.backgroundColor;
                 }
             }];
             roundModel.backgroundColor = dyColor;
         }else{
-            roundModel.backgroundColor = [UIColor whiteColor];;
+            roundModel.backgroundColor = self.backgroundColor;
         }
     }
     return roundModel;
@@ -145,6 +147,15 @@
 /// @param section section description
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateFooterViewIndex:(NSInteger)section{
     return NO;
+}
+/// 背景图点击事件
+/// @param collectionView collectionView description
+/// @param indexPath 点击背景图的indexPath
+- (void)collectionView:(UICollectionView *)collectionView didSelectDecorationViewAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:didSelectDecorationViewAtIndexPath:)]) {
+        [self.viewDelegate gx_PageCollectionBaseView:self didSelectDecorationViewAtIndexPath:indexPath];
+    }
 }
 /*
  是否头悬停

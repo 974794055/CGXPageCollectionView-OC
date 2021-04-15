@@ -49,7 +49,6 @@
         [generalView registerFooter:[CGXPageCollectionSectionTextView class] IsXib:NO];
         [generalView registerHeader:[CGXPageCollectionSectionTextView class] IsXib:NO];
         
-        generalView.backgroundColor = [UIColor lightGrayColor];
         generalView.isScrollPage = YES;
         
         generalView.frame = CGRectMake(0, y, [UIScreen mainScreen].bounds.size.width, height);

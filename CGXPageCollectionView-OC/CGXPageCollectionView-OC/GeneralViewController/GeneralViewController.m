@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) NSArray *titleArr;
 
+@property (nonatomic,assign) NSInteger VerticalListPinSectionIndex;
+
 @end
 
 @implementation GeneralViewController
@@ -22,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.VerticalListPinSectionIndex = 0;
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.generalView = [[CGXPageCollectionGeneralView alloc]  init];
@@ -79,28 +81,33 @@
         sectionModel.roundModel = roundModel;
         
         if (i==0) {
-            roundModel.bgImage = [UIImage imageNamed:@"bg"];
+            roundModel.hotStr = @"bg";
             sectionModel.isRoundWithFooterView = YES;
-            sectionModel.isRoundWithHeaerView = YES;
+            sectionModel.isRoundWithHeaderView = YES;
         } else if (i==1){
-            roundModel.bgImage = [UIImage imageNamed:@"bg2"];
+            roundModel.hotStr = @"bg2";
             sectionModel.isRoundWithFooterView = NO;
-            sectionModel.isRoundWithHeaerView = YES;
+            sectionModel.isRoundWithHeaderView = YES;
         } else if (i==2){
+            roundModel.hotStr = @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2216726832,2803715051&fm=26&gp=0.jpg";;
+            roundModel.page_ImageCallback = ^(UIImageView * _Nonnull hotImageView, NSURL * _Nonnull hotURL) {
+                [hotImageView sd_setImageWithURL:hotURL];
+            };
             sectionModel.isRoundWithFooterView = YES;
-            sectionModel.isRoundWithHeaerView = NO;
+            sectionModel.isRoundWithHeaderView = NO;
         } else if (i==3){
             sectionModel.isRoundWithFooterView = NO;
-            sectionModel.isRoundWithHeaerView = NO;
+            sectionModel.isRoundWithHeaderView = NO;
         } else{
             sectionModel.isRoundWithFooterView = YES;
-            sectionModel.isRoundWithHeaerView = YES;
+            sectionModel.isRoundWithHeaderView = YES;
         }
         
         CGXPageCollectionHeaderModel *headerModel = [GeneralViewTool headerModel];
         headerModel.headerModel = self.titleArr[i];
-        
+        headerModel.headerBgColor = [UIColor blueColor];
         CGXPageCollectionFooterModel *footerModel = [GeneralViewTool footerModel];
+        footerModel.footerHeight = 0;
         sectionModel.headerModel = headerModel;
         sectionModel.footerModel = footerModel;
         
@@ -189,4 +196,45 @@
 {
     return CGSizeMake(itemSize.width, itemSize.height+30);
 }
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView scrollViewDidScroll:(nonnull UIScrollView *)scrollView
+{
+//    NSLog(@"只有scrollview是跟滚动状态就会调用此方法");
+    if (!(scrollView.isTracking || scrollView.isDecelerating)) {
+        //不是用户滚动的，比如setContentOffset等方法，引起的滚动不需要处理。
+        return;
+    }
+    //获取categoryView下面一点的所有布局信息，用于知道，当前最上方是显示的哪个section
+    CGRect topRect = CGRectMake(0, scrollView.contentOffset.y, baseView.collectionView.bounds.size.width, 1);
+    UICollectionViewLayoutAttributes *topAttributes = [baseView.collectionView.collectionViewLayout layoutAttributesForElementsInRect:topRect].firstObject;
+    NSUInteger topSection = topAttributes.indexPath.section;
+    if (topAttributes != nil && topSection >= self.VerticalListPinSectionIndex) {
+        if (self.VerticalListPinSectionIndex != topSection) {
+            //不相同才切换
+            self.VerticalListPinSectionIndex = topSection;
+            NSLog(@"topSection---:%ld",topSection);
+        }
+    }
+}
+
+//开始拖拽时触发
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+//    NSLog(@"开始拖拽");
+}
+// 结束拖拽时触发
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView scrollViewDidEndDragging:(UIScrollView *)scrollView  willDecelerate:(BOOL)decelerate
+{
+//    NSLog(@"结束拖拽");
+}
+// 开始减速时触发
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+//    NSLog(@"开始减速");
+}
+// 结束减速时触发（停止）
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+//    NSLog(@"结束减速（停止）");
+}
+
 @end

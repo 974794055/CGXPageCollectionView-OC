@@ -77,6 +77,7 @@
 
 - (void)updateWithCGXPageCollectionCellModel:(CGXPageCollectionBaseRowModel *)cellModel AtIndex:(NSInteger)index
 {
+    [super updateWithCGXPageCollectionCellModel:cellModel AtIndex:index];
     self.titleLabel.text = [NSString stringWithFormat:@"%ld",index];
     self.top.constant = 0;
     self.right.constant = 0;
