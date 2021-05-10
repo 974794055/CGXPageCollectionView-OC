@@ -22,18 +22,7 @@ Pod::Spec.new do |s|
     end
     
     s.subspec 'Base' do |ss|
-#        ss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}','CGXPageCollectionViewOC/Delegate/**/*.{h,m}','CGXPageCollectionViewOC/RoundLayout/**/*.{h,m}'
-        ss.subspec 'Base' do |sss|
-            sss.source_files = 'CGXPageCollectionViewOC/Base/Base/**/*.{h,m}'
-        end
-        ss.subspec 'Delegate' do |sss|
-            sss.source_files = 'CGXPageCollectionViewOC/Base/Delegate/**/*.{h,m}'
-        end
-        ss.subspec 'RoundLayout' do |sss|
-            sss.source_files = 'CGXPageCollectionViewOC/Base/RoundLayout/**/*.{h,m}'
-        end
-        ss.dependency 'CGXPageCollectionViewOC/Common'
-        ss.public_header_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}'
+        ss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}','CGXPageCollectionViewOC/Delegate/**/*.{h,m}','CGXPageCollectionViewOC/RoundLayout/**/*.{h,m}'
     end
     
     s.subspec 'Water' do |ss|

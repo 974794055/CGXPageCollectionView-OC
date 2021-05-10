@@ -115,7 +115,6 @@ for (int i = 0; i<self.titleArr.count; i++) {
     
     CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[HeaderRoundReusableView class] IsXib:NO];
     CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[FooterRoundReusableView class] IsXib:NO];
-    
     headerModel.headerBgColor = [UIColor orangeColor];
     headerModel.headerHeight = 40+arc4random() % 30;
     headerModel.headerModel = self.titleArr[i];
