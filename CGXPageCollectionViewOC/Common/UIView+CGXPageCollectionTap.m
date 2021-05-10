@@ -8,30 +8,40 @@
 
 #import "UIView+CGXPageCollectionTap.h"
 #import <objc/runtime.h>
-static char kActionCGXPageCollectionBlockKey;
-static char kActionCGXPageCollectionGestureKey;
-
 @implementation UIView (CGXPageCollectionTap)
-- (void)gx_pageTapGestureRecognizerWithBlock:(CGXPageCollectionTapBlock)block
+
+- (void)gx_pageTapGestureRecognizerWithDelegate:(id)tapGestureDelegate Block:(void (^)(NSInteger))block
 {
-    UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &kActionCGXPageCollectionGestureKey);
-    if (!gesture)
-    {
-        gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleActionForTapGesture:)];
-        [self addGestureRecognizer:gesture];
-        objc_setAssociatedObject(self, &kActionCGXPageCollectionGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
+    self.block = block;
+    UITapGestureRecognizer *tag = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tagClick)];
+    [self addGestureRecognizer:tag];
+    if (tapGestureDelegate) {
+        tag.delegate = tapGestureDelegate;
     }
-    objc_setAssociatedObject(self, &kActionCGXPageCollectionBlockKey, block, OBJC_ASSOCIATION_COPY);
+    self.userInteractionEnabled = YES;
 }
-- (void)handleActionForTapGesture:(UITapGestureRecognizer*)gesture
+- (void)tagClick
 {
-    if (gesture.state == UIGestureRecognizerStateRecognized)
-    {
-        CGXPageCollectionTapBlock block = objc_getAssociatedObject(self, &kActionCGXPageCollectionBlockKey);
-        if (block)
-        {
-            block(gesture);
-        }
+    if (self.block) {
+        self.block(self.tag);
     }
 }
+- (void)setBlock:(void (^)(NSInteger tag))block
+{
+    objc_setAssociatedObject(self, @selector(block), block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+- (void(^)(NSInteger tag))block
+{
+    return objc_getAssociatedObject(self, @selector(block));
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if ([touch.view isKindOfClass:[UICollectionReusableView class]])
+    {
+        return YES;
+    }
+    return NO;
+}
+
 @end

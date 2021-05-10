@@ -120,11 +120,9 @@ for (int i = 0; i<self.titleArr.count; i++) {
     headerModel.headerHeight = 40+arc4random() % 30;
     headerModel.headerModel = self.titleArr[i];
     headerModel.isHaveTap = YES;
-    
     footerModel.footerBgColor = [UIColor yellowColor];;
     footerModel.footerHeight = 40+arc4random() % 20;;
     footerModel.isHaveTap = YES;
-
     sectionModel.headerModel = headerModel;
     sectionModel.footerModel = footerModel;
 

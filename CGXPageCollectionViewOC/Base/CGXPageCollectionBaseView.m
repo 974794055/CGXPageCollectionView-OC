@@ -240,7 +240,7 @@
         }
         if (sectionModel.headerModel.isHaveTap) {
             __weak typeof(self) headerviewSelf = self;
-            [headview gx_pageTapGestureRecognizerWithBlock:^(UIGestureRecognizer * _Nonnull gestureRecoginzer){
+            [headview gx_pageTapGestureRecognizerWithDelegate:self Block:^(NSInteger tag) {
                 if (headerviewSelf.viewDelegate && [headerviewSelf.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:TapHeaderViewAtIndex:)]) {
                     [headerviewSelf.viewDelegate gx_PageCollectionBaseView:headerviewSelf TapHeaderViewAtIndex:indexPath.section];
                 }
@@ -262,7 +262,7 @@
         }
         if (sectionModel.footerModel.isHaveTap) {
             __weak typeof(self) footerviewSelf = self;
-            [footview gx_pageTapGestureRecognizerWithBlock:^(UIGestureRecognizer * _Nonnull gestureRecoginzer) {
+            [footview gx_pageTapGestureRecognizerWithDelegate:self Block:^(NSInteger tag) {
                 if (footerviewSelf.viewDelegate && [footerviewSelf.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:TapFooterViewAtIndex:)]) {
                     [footerviewSelf.viewDelegate gx_PageCollectionBaseView:footerviewSelf TapFooterViewAtIndex:indexPath.section];
                 }
