@@ -1,38 +1,41 @@
 PODS:
-  - CGXPageCollectionViewOC (1.0.0):
-    - CGXPageCollectionViewOC/Base (= 1.0.0)
-    - CGXPageCollectionViewOC/Common (= 1.0.0)
-    - CGXPageCollectionViewOC/General (= 1.0.0)
-    - CGXPageCollectionViewOC/Horizontal (= 1.0.0)
-    - CGXPageCollectionViewOC/IrregularView (= 1.0.0)
-    - CGXPageCollectionViewOC/SpecialView (= 1.0.0)
-    - CGXPageCollectionViewOC/Tags (= 1.0.0)
-    - CGXPageCollectionViewOC/Water (= 1.0.0)
-  - CGXPageCollectionViewOC/Base (1.0.0):
+  - CGXPageCollectionViewOC (1.0.1):
+    - CGXPageCollectionViewOC/Base (= 1.0.1)
+    - CGXPageCollectionViewOC/Common (= 1.0.1)
+    - CGXPageCollectionViewOC/General (= 1.0.1)
+    - CGXPageCollectionViewOC/Horizontal (= 1.0.1)
+    - CGXPageCollectionViewOC/IrregularView (= 1.0.1)
+    - CGXPageCollectionViewOC/SpecialView (= 1.0.1)
+    - CGXPageCollectionViewOC/Tags (= 1.0.1)
+    - CGXPageCollectionViewOC/Water (= 1.0.1)
+  - CGXPageCollectionViewOC/Base (1.0.1):
     - CGXPageCollectionViewOC/Common
-  - CGXPageCollectionViewOC/Common (1.0.0)
-  - CGXPageCollectionViewOC/General (1.0.0):
+  - CGXPageCollectionViewOC/Common (1.0.1)
+  - CGXPageCollectionViewOC/General (1.0.1):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Horizontal (1.0.0):
+  - CGXPageCollectionViewOC/Horizontal (1.0.1):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/IrregularView (1.0.0):
+  - CGXPageCollectionViewOC/IrregularView (1.0.1):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/SpecialView (1.0.0):
+  - CGXPageCollectionViewOC/SpecialView (1.0.1):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Tags (1.0.0):
+  - CGXPageCollectionViewOC/Tags (1.0.1):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Water (1.0.0):
+  - CGXPageCollectionViewOC/Water (1.0.1):
     - CGXPageCollectionViewOC/Base
+  - MJRefresh (3.5.0)
   - SDWebImage (5.9.5):
     - SDWebImage/Core (= 5.9.5)
   - SDWebImage/Core (5.9.5)
 
 DEPENDENCIES:
   - CGXPageCollectionViewOC (from `../`)
+  - MJRefresh
   - SDWebImage
 
 SPEC REPOS:
   https://cdn.cocoapods.org/:
+    - MJRefresh
     - SDWebImage
 
 EXTERNAL SOURCES:
@@ -40,9 +43,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CGXPageCollectionViewOC: 8b9f7ab77dc6531243c6bcce27466929a5efd943
+  CGXPageCollectionViewOC: 17014b02a0838eac3470028ced44d333323b78c9
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 
-PODFILE CHECKSUM: dab22f477b9aa651c4d23a3176f7c8a72519810d
+PODFILE CHECKSUM: 7c13af321fbf96adb2d7211f87c512a638b83baa
 
 COCOAPODS: 1.10.1

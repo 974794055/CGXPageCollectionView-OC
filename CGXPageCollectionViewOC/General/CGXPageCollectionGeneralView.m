@@ -19,7 +19,6 @@
 - (void)initializeData
 {
     [super initializeData];
-    self.isRoundEnabled = YES;
     self.isShowDifferentColor = NO;;
 }
 
@@ -28,11 +27,6 @@
     [super initializeViews];
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = YES;
-}
-- (void)setIsRoundEnabled:(BOOL)isRoundEnabled
-{
-    _isRoundEnabled = isRoundEnabled;
-    [self.collectionView reloadData];
 }
 - (void)setIsShowDifferentColor:(BOOL)isShowDifferentColor
 {
@@ -44,7 +38,7 @@
     [super preferredFlowLayout];
     CGXPageCollectionGeneralFlowLayout *layout = [[CGXPageCollectionGeneralFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    layout.isRoundEnabled = self.isRoundEnabled;
+    layout.isRoundEnabled = YES;
     if (@available(iOS 9.0, *)) {
         layout.sectionFootersPinToVisibleBounds =NO;
         layout.sectionHeadersPinToVisibleBounds =NO;
@@ -79,10 +73,6 @@
     } else{
         headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
     }
-//    if (sectionModel.isRoundWithHeaderView) {
-//        UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
-//        headerView.frame = CGRectMake(borderEdgeInserts.left, borderEdgeInserts.top, headerView.frame.size.width-borderEdgeInserts.left-borderEdgeInserts.right, headerView.frame.size.height-borderEdgeInserts.top);
-//    }
 }
 - (void)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView
 {
@@ -97,10 +87,6 @@
     } else{
         footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
     }
-//    if (sectionModel.isRoundWithFooterView) {
-//        UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
-//        footerView.frame = CGRectMake(borderEdgeInserts.left, 0, footerView.frame.size.width-borderEdgeInserts.left-borderEdgeInserts.right, footerView.frame.size.height-borderEdgeInserts.bottom);
-//    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -160,12 +146,8 @@
 /// @param collectionViewLayout collectionViewLayout description
 /// @param section section description
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateHeaderViewIndex:(NSInteger)section{
-    if (self.isRoundEnabled) {
-        CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
-        return sectionModel.isRoundWithHeaderView;
-    }else{
-        return NO;
-    }
+    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
+    return sectionModel.isRoundWithHeaderView;
 }
 
 /// 根据section设置是否包含footerview（实现该方法后，isCalculateFooter将不会生效）
@@ -173,12 +155,8 @@
 /// @param collectionViewLayout collectionViewLayout description
 /// @param section section description
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateFooterViewIndex:(NSInteger)section{
-    if (self.isRoundEnabled) {
-        CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
-        return sectionModel.isRoundWithFooterView;
-    }else{
-        return NO;
-    }
+    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
+    return sectionModel.isRoundWithFooterView;
 }
 /// 背景图点击事件
 /// @param collectionView collectionView description

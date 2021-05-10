@@ -4,7 +4,7 @@ target "CGXPageCollectionView-OC" do
   pod 'CGXPageCollectionViewOC', :path => '../'
   
   pod 'SDWebImage'
-  
+  pod 'MJRefresh'
 end
 
 

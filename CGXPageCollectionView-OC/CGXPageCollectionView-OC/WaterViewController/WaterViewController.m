@@ -28,7 +28,6 @@
     self.generalView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-kTopHeight-kSafeHeight);
     self.generalView.viewDelegate = self;
     self.generalView.isShowDifferentColor = YES;
-    self.generalView.isRoundEnabled = self.isRoundEnabled;
     [self.generalView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
     [self.generalView registerCell:[CGXPageCollectionCategoryCell class] IsXib:NO];
     [self.generalView registerCell:[CGXPageCollectionImageCell class] IsXib:NO];
@@ -38,8 +37,6 @@
     [self.generalView registerHeader:[CGXPageCollectionSectionTextView class] IsXib:NO];
     [self.view addSubview:self.generalView];
     NSMutableArray *dataArray = [NSMutableArray array];
-    
-    
     dataArray = [NSMutableArray arrayWithArray:[self loadDealWithList]];
     [self.generalView updateDataArray:dataArray IsDownRefresh:YES Page:1];
 }
@@ -245,6 +242,11 @@
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView DidSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点击：%ld--%ld",indexPath.section,indexPath.row);
+}
+/*点击头分区*/
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView TapHeaderViewAtIndex:(NSInteger)section
+{
+    NSLog(@"点击2：%ld",section);
 }
 /*
  #pragma mark - Navigation

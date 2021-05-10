@@ -10,11 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (CGXPageCollectionTap)<UIGestureRecognizerDelegate>
+typedef void (^CGXPageCollectionTapBlock)(UIGestureRecognizer *gestureRecoginzer);
 
-@property (nonatomic,assign) void(^block)(NSInteger tag);
+@interface UIView (CGXPageCollectionTap)
 
-- (void)gx_pageTapGestureRecognizerWithDelegate:(id)tapGestureDelegate Block:(void(^)(NSInteger tag))block;
+- (void)gx_pageTapGestureRecognizerWithBlock:(CGXPageCollectionTapBlock)block;
+
 @end
 
 NS_ASSUME_NONNULL_END

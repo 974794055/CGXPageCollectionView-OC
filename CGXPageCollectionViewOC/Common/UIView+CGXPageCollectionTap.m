@@ -8,43 +8,30 @@
 
 #import "UIView+CGXPageCollectionTap.h"
 #import <objc/runtime.h>
+static char kActionCGXPageCollectionBlockKey;
+static char kActionCGXPageCollectionGestureKey;
+
 @implementation UIView (CGXPageCollectionTap)
-
-- (void)gx_pageTapGestureRecognizerWithDelegate:(id)tapGestureDelegate Block:(void (^)(NSInteger))block
+- (void)gx_pageTapGestureRecognizerWithBlock:(CGXPageCollectionTapBlock)block
 {
-    self.block = block;
-    UITapGestureRecognizer *tag = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tagClick)];
-    [self addGestureRecognizer:tag];
-    if (tapGestureDelegate) {
-        tag.delegate = tapGestureDelegate;
+    UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &kActionCGXPageCollectionGestureKey);
+    if (!gesture)
+    {
+        gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleActionForTapGesture:)];
+        [self addGestureRecognizer:gesture];
+        objc_setAssociatedObject(self, &kActionCGXPageCollectionGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
     }
-    self.userInteractionEnabled = YES;
+    objc_setAssociatedObject(self, &kActionCGXPageCollectionBlockKey, block, OBJC_ASSOCIATION_COPY);
 }
-- (void)tagClick
+- (void)handleActionForTapGesture:(UITapGestureRecognizer*)gesture
 {
-    if (self.block) {
-        self.block(self.tag);
+    if (gesture.state == UIGestureRecognizerStateRecognized)
+    {
+        CGXPageCollectionTapBlock block = objc_getAssociatedObject(self, &kActionCGXPageCollectionBlockKey);
+        if (block)
+        {
+            block(gesture);
+        }
     }
 }
-- (void)setBlock:(void (^)(NSInteger tag))block
-{
-    objc_setAssociatedObject(self, @selector(block), block, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-- (void(^)(NSInteger tag))block
-{
-    return objc_getAssociatedObject(self, @selector(block));
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
-//    if (![NSStringFromClass([touch.view class]) isEqual:@"_UITableViewHeaderFooterContentView"]) {
-//         return NO;
-//    }
-//    if ([touch.view isKindOfClass:[UITableViewHeaderFooterView class]])
-//    {
-//        return NO;
-//    }
-    return YES;
-}
-
 @end

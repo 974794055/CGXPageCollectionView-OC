@@ -223,13 +223,22 @@
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (_itemLayoutAttributes.count == 0) {
+        return nil;
+    }
     return _itemLayoutAttributes[indexPath.section][indexPath.item];;
 }
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
     if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {
+        if (_headerLayoutAttributes.count == 0) {
+            return nil;
+        }
         return _headerLayoutAttributes[indexPath.item];
     }
     if ([elementKind isEqualToString:UICollectionElementKindSectionFooter]) {
+        if (_footerLayoutAttributes.count == 0) {
+            return nil;
+        }
         return _footerLayoutAttributes[indexPath.item];
     }
     return nil;

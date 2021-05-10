@@ -48,7 +48,7 @@
     self.generalView.heightBlock = ^(CGXPageCollectionBaseView * _Nonnull BaseView, CGFloat height) {
         NSLog(@"不能滚动height:%f" , height);
     };
-    self.generalView.isRoundEnabled = YES;
+   
     self.titleArr = ({
         NSArray *arr = [NSArray arrayWithObjects:
                         @"有Header&Footer，包Header,包Footer",
@@ -61,71 +61,7 @@
         arr;
     });
     
-    NSMutableArray *dataArray = [NSMutableArray array];
-    for (int i = 0; i<self.titleArr.count; i++) {
-        CGXPageCollectionGeneralSectionModel *sectionModel = [GeneralViewTool sectionModel];
-        CGXPageCollectionRoundModel *roundModel = [GeneralViewTool roundModel];
-        if (i<4) {
-            sectionModel.row = 2;
-        } else if (i==4){
-            roundModel.borderColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
-            roundModel.borderWidth = 1.0;
-        } else if (i==5){
-            roundModel.shadowColor = [UIColor blackColor];
-            roundModel.shadowOffset = CGSizeMake(2,2);
-            roundModel.shadowOpacity = 2;
-            roundModel.shadowRadius = 4;
-            roundModel.borderColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
-            roundModel.borderWidth = 2.0;
-        }
-        sectionModel.roundModel = roundModel;
-        
-        if (i==0) {
-            roundModel.hotStr = @"bg";
-            sectionModel.isRoundWithFooterView = YES;
-            sectionModel.isRoundWithHeaderView = YES;
-        } else if (i==1){
-            roundModel.hotStr = @"bg2";
-            sectionModel.isRoundWithFooterView = NO;
-            sectionModel.isRoundWithHeaderView = YES;
-        } else if (i==2){
-            roundModel.hotStr = @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2216726832,2803715051&fm=26&gp=0.jpg";;
-            roundModel.page_ImageCallback = ^(UIImageView * _Nonnull hotImageView, NSURL * _Nonnull hotURL) {
-                [hotImageView sd_setImageWithURL:hotURL];
-            };
-            sectionModel.isRoundWithFooterView = YES;
-            sectionModel.isRoundWithHeaderView = NO;
-        } else if (i==3){
-            sectionModel.isRoundWithFooterView = NO;
-            sectionModel.isRoundWithHeaderView = NO;
-        } else{
-            sectionModel.isRoundWithFooterView = YES;
-            sectionModel.isRoundWithHeaderView = YES;
-        }
-        
-        CGXPageCollectionHeaderModel *headerModel = [GeneralViewTool headerModel];
-        headerModel.headerModel = self.titleArr[i];
-        headerModel.headerBgColor = [UIColor blueColor];
-        CGXPageCollectionFooterModel *footerModel = [GeneralViewTool footerModel];
-        footerModel.footerHeight = 0;
-        sectionModel.headerModel = headerModel;
-        sectionModel.footerModel = footerModel;
-        
-        
-        sectionModel.row = arc4random() % 5 + 1;
-        sectionModel.cellHeight = 80;
-        if (i==9) {
-            sectionModel.row = arc4random() % 5 + 2;
-        }
-        UIColor *cellColor = RandomColor;
-        for (int j = 0; j<sectionModel.row * 2;j++) {
-            CGXPageCollectionGeneralRowModel *rowModel = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
-            rowModel.cellColor = cellColor;
-            [sectionModel.rowArray addObject:rowModel];
-        }
-        [dataArray addObject:sectionModel];
-    }
-    [self.generalView updateDataArray:dataArray IsDownRefresh:YES Page:1];
+
     
     UIBarButtonItem *rightItem1= [[UIBarButtonItem alloc] initWithTitle:@"插分区" style:UIBarButtonItemStyleDone target:self action:@selector(insertData)];
     UIBarButtonItem *rightItem2= [[UIBarButtonItem alloc] initWithTitle:@"替换" style:UIBarButtonItemStyleDone target:self action:@selector(replaceData)];
@@ -135,6 +71,92 @@
     self.navigationItem.rightBarButtonItems = @[rightItem1,rightItem4,rightItem2,rightItem3];
     
     NSLog(@"height:%@" , self.generalView);
+    
+    
+    
+    __weak typeof(self) weakSelf = self;
+    self.generalView.refresBlock = ^(BOOL isDownRefresh, NSInteger page) {
+        NSMutableArray *dataArray = [NSMutableArray array];
+        for (int i = 0; i<self.titleArr.count; i++) {
+            CGXPageCollectionGeneralSectionModel *sectionModel = [GeneralViewTool sectionModel];
+            CGXPageCollectionRoundModel *roundModel = [GeneralViewTool roundModel];
+            if (i<4) {
+                sectionModel.row = 2;
+            } else if (i==4){
+                roundModel.borderColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
+                roundModel.borderWidth = 1.0;
+            } else if (i==5){
+                roundModel.shadowColor = [UIColor blackColor];
+                roundModel.shadowOffset = CGSizeMake(2,2);
+                roundModel.shadowOpacity = 2;
+                roundModel.shadowRadius = 4;
+                roundModel.borderColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
+                roundModel.borderWidth = 2.0;
+            }
+            sectionModel.roundModel = roundModel;
+            
+            if (i==0) {
+                roundModel.hotStr = @"bg";
+                sectionModel.isRoundWithFooterView = YES;
+                sectionModel.isRoundWithHeaderView = YES;
+            } else if (i==1){
+                roundModel.hotStr = @"bg2";
+                sectionModel.isRoundWithFooterView = NO;
+                sectionModel.isRoundWithHeaderView = YES;
+            } else if (i==2){
+                roundModel.hotStr = @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2216726832,2803715051&fm=26&gp=0.jpg";;
+                roundModel.page_ImageCallback = ^(UIImageView * _Nonnull hotImageView, NSURL * _Nonnull hotURL) {
+                    [hotImageView sd_setImageWithURL:hotURL];
+                };
+                sectionModel.isRoundWithFooterView = YES;
+                sectionModel.isRoundWithHeaderView = NO;
+            } else if (i==3){
+                sectionModel.isRoundWithFooterView = NO;
+                sectionModel.isRoundWithHeaderView = NO;
+            } else{
+                sectionModel.isRoundWithFooterView = YES;
+                sectionModel.isRoundWithHeaderView = YES;
+            }
+            
+            CGXPageCollectionHeaderModel *headerModel = [GeneralViewTool headerModel];
+            headerModel.headerModel = weakSelf.titleArr[i];
+            headerModel.headerBgColor = [UIColor blueColor];
+            CGXPageCollectionFooterModel *footerModel = [GeneralViewTool footerModel];
+            footerModel.footerHeight = 0;
+            sectionModel.headerModel = headerModel;
+            sectionModel.footerModel = footerModel;
+            
+            
+            sectionModel.row = arc4random() % 5 + 1;
+            sectionModel.cellHeight = 80;
+            if (i==9) {
+                sectionModel.row = arc4random() % 5 + 2;
+            }
+            UIColor *cellColor = RandomColor;
+            for (int j = 0; j<sectionModel.row * 2;j++) {
+                CGXPageCollectionGeneralRowModel *rowModel = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
+                rowModel.cellColor = cellColor;
+                [sectionModel.rowArray addObject:rowModel];
+            }
+            [dataArray addObject:sectionModel];
+        }
+        [weakSelf.generalView updateDataArray:dataArray IsDownRefresh:isDownRefresh Page:page];
+    };
+    self.generalView.refresEndBlock = ^(NSInteger pageInter, NSInteger pageMax) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.generalView.collectionView.mj_header endRefreshing];
+            [weakSelf.generalView.collectionView.mj_footer endRefreshing];
+        });
+    };
+    self.generalView.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.generalView loadData];
+    }];
+    [self.generalView.collectionView.mj_header beginRefreshing];
+    self.generalView.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self.generalView loadMoreData];
+    }];
+    
+    
 }
 - (void)insertData
 {
@@ -236,5 +258,9 @@
 {
 //    NSLog(@"结束减速（停止）");
 }
-
+/*点击头分区*/
+- (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView TapHeaderViewAtIndex:(NSInteger)section
+{
+    NSLog(@"点击2：%ld--%ld",section);
+}
 @end

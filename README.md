@@ -9,7 +9,7 @@
 
 - 下载链接：https://github.com/974794055/CGXPageCollectionView-OC.git
 -  pod名称 ：CGXPageCollectionViewOC
-- 最新版本号： 1.0.0
+- 最新版本号： 1.0.1
 
 - 功能：    
 - UICollectionView封装的库，分区圆角边框，瀑布流、标签流、不规则布局等主流APP分页列表滚动视图的库封装
@@ -150,6 +150,9 @@ for (int i = 0; i<self.titleArr.count; i++) {
 1. 优化头分区、脚分区注册逻辑
 2. 增加UICollectionView滚动时代理方法
 
+## V1.0.1版本
+1. 增加cell代理方法，便于处理多样化
+1. 优化下拉刷新加载问题
 
 如果刚开始使用`CGXPageCollectionViewOC`，当开发过程中需要支持某种特性时，请务必先搜索使用文档或者源代码。确认是否已经实现支持了想要的特性。请别不要文档和源代码都没有看，就直接提问，这对于大家都是一种时间浪费。如果没有支持想要的特性，欢迎提Issue讨论，或者自己实现提一个PullRequest。
 

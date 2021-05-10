@@ -19,19 +19,13 @@
 - (void)initializeData
 {
     [super initializeData];
-    self.isRoundEnabled = YES;
-      self.isShowDifferentColor = YES;
+    self.isShowDifferentColor = YES;
 }
 - (void)initializeViews
 {
     [super initializeViews];
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = YES;
-}
-- (void)setIsRoundEnabled:(BOOL)isRoundEnabled
-{
-    _isRoundEnabled = isRoundEnabled;
-    [self.collectionView reloadData];
 }
 - (void)setIsShowDifferentColor:(BOOL)isShowDifferentColor
 {
@@ -43,7 +37,7 @@
     [super preferredFlowLayout];
     CGXPageCollectionWaterLayout *layout = [[CGXPageCollectionWaterLayout alloc] init];
     layout.dataSource = self;
-    layout.isRoundEnabled = self.isRoundEnabled;
+    layout.isRoundEnabled = YES;
     layout.sectionFootersPinTVisibleBounds = NO;
     return layout;
 }
@@ -52,7 +46,7 @@
     [super refreshSectionModel:baseSectionModel];
     if (baseSectionModel) {
         NSAssert([baseSectionModel isKindOfClass:[CGXPageCollectionWaterSectionModel class]], @"数据源类型不对，必须是CGXPageCollectionWaterSectionModel");
-       
+        
         if (baseSectionModel.rowArray.count>0) {
             NSAssert([[baseSectionModel.rowArray firstObject] isKindOfClass:[CGXPageCollectionWaterRowModel class]], @"数据源类型不对，必须是CGXPageCollectionWaterRowModel");
         }
@@ -69,12 +63,12 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout *)layout itemWidth:(CGFloat)width heightForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat myHeight = width;
-    NSAssert(myHeight > 0, @"myHeight高度必须大于0");
-    
     CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[indexPath.section];;
     CGXPageCollectionWaterRowModel *item =  (CGXPageCollectionWaterRowModel *)sectionModel.rowArray[indexPath.row];;
+    if (item.widthWaterRowBlock) {
+        item.widthWaterRowBlock(item, width);
+    }
     myHeight = item.cellHeight;
-    
     if (self.dataDelegate && [self.dataDelegate respondsToSelector:@selector(gx_PageCollectionWaterView:sizeForItemHeightAtIndexPath:ItemSize:)]) {
         myHeight = [self.dataDelegate gx_PageCollectionWaterView:self sizeForItemHeightAtIndexPath:indexPath ItemSize:CGSizeMake(width, myHeight)];
     }
@@ -99,7 +93,7 @@
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-   CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
+    CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
     UIEdgeInsets insets = sectionModel.insets;
     UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
     return UIEdgeInsetsMake(insets.top+borderEdgeInserts.top, insets.left+borderEdgeInserts.left, insets.bottom+borderEdgeInserts.bottom, insets.right+borderEdgeInserts.right);

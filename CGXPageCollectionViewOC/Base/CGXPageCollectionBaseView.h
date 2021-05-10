@@ -19,12 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class CGXPageCollectionBaseView;
 /*
-  刷 新。
+  刷新数据
  */
 typedef void (^CGXPageCollectionBaseViewRefresBlock)(BOOL isDownRefresh,NSInteger page);
 /*
- 刷 新 更新界面 停止刷新
- pageInter :每页数量
+ 停止刷新
+ pageInter :当前加载页的数量
  pageMax:每页最大数量
  */
 typedef void (^CGXPageCollectionBaseViewRefresEndBlock)(NSInteger pageInter,NSInteger pageMax);

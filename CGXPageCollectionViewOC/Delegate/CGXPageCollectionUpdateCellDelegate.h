@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class CGXPageCollectionBaseSectionModel;
 @class CGXPageCollectionBaseRowModel;
 @protocol CGXPageCollectionUpdateCellDelegate <NSObject>
 
@@ -22,6 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
  index:分区所在的下标
  */
 - (void)updateWithCGXPageCollectionCellModel:(CGXPageCollectionBaseRowModel *)cellModel AtIndex:(NSInteger)index;
+
+/*
+ sectionModel:每个分区的数据源
+ cellModel:每个item的数据源
+ index:分区所在的下标
+ */
+- (void)updateWithCGXPageCollectionSectionModel:(CGXPageCollectionBaseSectionModel *)sectionModel CellModel:(CGXPageCollectionBaseRowModel *)cellModel AtIndexPath:(NSIndexPath *)indexPath;
 
 
 @end

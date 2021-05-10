@@ -10,14 +10,13 @@
 #import <objc/runtime.h>
 #import "UIView+CGXPageCollectionTap.h"
 #import "CGXPageCollectionBaseLayout.h"
-#import "CGXPageCollectionTools.h"
+
 @interface CGXPageCollectionBaseView()
 @property (nonatomic,strong,readwrite) NSMutableArray<CGXPageCollectionBaseSectionModel *> *dataArray;//数据源数组
 @property (nonatomic , strong,readwrite) CGXPageCollectionView *collectionView;
 @property (nonatomic , assign) BOOL isDownRefresh;
 @property (nonatomic , assign) NSInteger page;
 @property (nonatomic , assign) BOOL isHaveNo;//是否有空
-@property (nonatomic, assign, getter=isFirstLayoutSubviews) BOOL firstLayoutSubviews;
 
 @end
 
@@ -65,20 +64,14 @@
 {
     [super layoutSubviews];
     self.collectionView.backgroundColor = self.backgroundColor;
-    //部分使用者为了适配不同的手机屏幕尺寸，CGXPageCollectionBaseView的宽高比要求保持一样，所以它的高度就会因为不同宽度的屏幕而不一样。计算出来的高度，有时候会是位数很长的浮点数，如果把这个高度设置给UICollectionView就会触发内部的一个错误。所以，为了规避这个问题，在这里对高度统一向下取整。
-    //如果向下取整导致了你的页面异常，请自己重新设置CGXPageCollectionBaseView的高度，保证为整数即可。
-    self.collectionView.frame = CGRectMake(0, 0, self.bounds.size.width, floor(self.bounds.size.height));
+    self.collectionView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
     [self initLayoutFrame];
     self.collectionView.collectionViewLayout = [self preferredFlowLayout];
     [self.collectionView.collectionViewLayout invalidateLayout];
     [self.collectionView reloadData];
-    if (self.isFirstLayoutSubviews) {
-        self.firstLayoutSubviews = NO;
+
         [self reloadData];
-    }else {
-        [self reloadData];
-    }
-    
+
     if (self.isAdaptive) {
         UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
         [layout invalidateLayout];
@@ -153,7 +146,7 @@
 }
 - (void)initializeData
 {
-    self.firstLayoutSubviews = YES;
+    
 }
 
 - (void)initializeViews
@@ -247,7 +240,7 @@
         }
         if (sectionModel.headerModel.isHaveTap) {
             __weak typeof(self) headerviewSelf = self;
-            [headview gx_pageTapGestureRecognizerWithDelegate:self Block:^(NSInteger tag) {
+            [headview gx_pageTapGestureRecognizerWithBlock:^(UIGestureRecognizer * _Nonnull gestureRecoginzer){
                 if (headerviewSelf.viewDelegate && [headerviewSelf.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:TapHeaderViewAtIndex:)]) {
                     [headerviewSelf.viewDelegate gx_PageCollectionBaseView:headerviewSelf TapHeaderViewAtIndex:indexPath.section];
                 }
@@ -269,7 +262,7 @@
         }
         if (sectionModel.footerModel.isHaveTap) {
             __weak typeof(self) footerviewSelf = self;
-            [footview gx_pageTapGestureRecognizerWithDelegate:self Block:^(NSInteger tag) {
+            [footview gx_pageTapGestureRecognizerWithBlock:^(UIGestureRecognizer * _Nonnull gestureRecoginzer) {
                 if (footerviewSelf.viewDelegate && [footerviewSelf.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:TapFooterViewAtIndex:)]) {
                     [footerviewSelf.viewDelegate gx_PageCollectionBaseView:footerviewSelf TapFooterViewAtIndex:indexPath.section];
                 }
@@ -294,6 +287,13 @@
     if (isHave == YES && [cell conformsToProtocol:@protocol(CGXPageCollectionUpdateCellDelegate)]) {
         [(UICollectionViewCell<CGXPageCollectionUpdateCellDelegate> *)cell updateWithCGXPageCollectionCellModel:itemModel  AtIndex:indexPath.row];
     }
+    
+    BOOL isHaveee = [cell respondsToSelector:@selector(updateWithCGXPageCollectionSectionModel:CellModel:AtIndexPath:)];
+    if (isHaveee == YES && [cell conformsToProtocol:@protocol(CGXPageCollectionUpdateCellDelegate)]) {
+        [(UICollectionViewCell<CGXPageCollectionUpdateCellDelegate> *)cell updateWithCGXPageCollectionSectionModel:sectionModel CellModel:itemModel AtIndexPath:indexPath];
+    }
+    
+
     if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:Cell:cellForItemAtIndexPath:)]) {
         [self.viewDelegate gx_PageCollectionBaseView:self Cell:cell cellForItemAtIndexPath:indexPath];
     };
@@ -332,7 +332,6 @@
 }
 // 结束减速时触发（停止）
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-        NSLog(@"结束减速（停止）");
     if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:scrollViewDidEndDecelerating:)]) {
          [self.viewDelegate gx_PageCollectionBaseView:self scrollViewDidEndDecelerating:scrollView];
      };
@@ -443,11 +442,9 @@
         [self.dataArray addObject:sectionModel];
     }
     [self.collectionView reloadData];
-    if (self.refresBlock) {
-        self.refresBlock(array.count, maxPage);
+    if (self.refresEndBlock) {
+        self.refresEndBlock(array.count, maxPage);
     }
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
 }
 
 
@@ -488,16 +485,15 @@
     if (!sectionModel) {
         return;
     }
-
     __weak typeof(self) viewSelf = self;
-        [UIView animateWithDuration:0 animations:^{
-            [viewSelf.collectionView performBatchUpdates:^{
-                [self.dataArray replaceObjectAtIndex:section withObject:sectionModel];
-                [viewSelf.collectionView reloadSections:[NSIndexSet indexSetWithIndex:section]];
-            } completion:^(BOOL finished) {
-                [self.collectionView reloadData];
-            }];
-        }];
+    [self.dataArray replaceObjectAtIndex:section withObject:sectionModel];
+    [UIView performWithoutAnimation:^{
+        [viewSelf.collectionView reloadSections:[NSIndexSet indexSetWithIndex:section]];
+    }];
+    [UIView performWithoutAnimation:^{
+        [viewSelf.collectionView reloadData];
+    }];
+    
 }
 /*
  替换一个cell数据源
@@ -516,13 +512,12 @@
     }
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
     __weak typeof(self) viewSelf = self;
-    [UIView animateWithDuration:0 animations:^{
-        [viewSelf.collectionView performBatchUpdates:^{
-            [sectionModel.rowArray replaceObjectAtIndex:row withObject:rowModel];
-            [viewSelf.collectionView reloadItemsAtIndexPaths:@[indexPath]];
-        } completion:^(BOOL finished) {
-            [self.collectionView reloadData];
-        }];
+    [sectionModel.rowArray replaceObjectAtIndex:row withObject:rowModel];
+    [UIView performWithoutAnimation:^{
+        [viewSelf.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    }];
+    [UIView performWithoutAnimation:^{
+        [viewSelf.collectionView reloadData];
     }];
 }
 /*
@@ -578,7 +573,6 @@
     if (row>sectionModel.rowArray.count) {
         row = sectionModel.rowArray.count;
     }
-    
     NSIndexPath *indexPathNew = [NSIndexPath indexPathForRow:row inSection:section];
     __weak typeof(self) viewSelf = self;
     if (animation) {
@@ -586,14 +580,14 @@
         [sectionModel.rowArray insertObject:rowModel atIndex:row];
         [self.collectionView reloadData];
     } else{
-        [self.collectionView performBatchUpdates:^{
+        [UIView performWithoutAnimation:^{
             [viewSelf.collectionView insertItemsAtIndexPaths:[NSArray arrayWithObjects:indexPathNew, nil]];
             [sectionModel.rowArray insertObject:rowModel atIndex:row];
-        } completion:^(BOOL finished) {
-            [self.collectionView reloadData];
+        }];
+        [UIView performWithoutAnimation:^{
+            [viewSelf.collectionView reloadData];
         }];
     }
-    
 }
 ////删除一个分区
 - (void)deleteSections:(NSInteger)section
