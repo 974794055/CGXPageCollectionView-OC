@@ -31,7 +31,6 @@
                       @"特殊布局，用于嵌套",// 需要给定高度，然后去计算高度
                       nil];
     [self creatCollectionView];
-    
 }
 - (void)updateColor
 {

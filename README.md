@@ -85,7 +85,6 @@ self.generalView.backgroundColor = [UIColor whiteColor];
 [self.generalView registerFooter:[FooterReusableView class] IsXib:NO];
 [self.generalView registerHeader:[HeaderReusableView class] IsXib:NO];
 ```
-
 2.加载CGXPageCollectionGeneralView数据源
 ```Objective-C
 self.titleArr = ({

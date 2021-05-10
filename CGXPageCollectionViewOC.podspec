@@ -20,7 +20,6 @@ Pod::Spec.new do |s|
     s.subspec 'Common' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/Common/**/*.{h,m}'
     end
-    
     s.subspec 'Base' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}','CGXPageCollectionViewOC/Delegate/**/*.{h,m}','CGXPageCollectionViewOC/RoundLayout/**/*.{h,m}'
     end
