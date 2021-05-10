@@ -23,7 +23,6 @@ Pod::Spec.new do |s|
     s.subspec 'Base' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}','CGXPageCollectionViewOC/Delegate/**/*.{h,m}','CGXPageCollectionViewOC/RoundLayout/**/*.{h,m}'
     end
-    
     s.subspec 'Water' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/Water/**/*.{h,m}'
         ss.dependency 'CGXPageCollectionViewOC/Base'

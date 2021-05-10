@@ -42,13 +42,11 @@ QQ 号：974794055
 水平滚动列表
 */
 #import "CGXPageCollectionHorizontalView.h"
-
 /*
 特殊view
 */
 #import "CGXPageCollectionSpecialCell.h"
 #import "CGXPageCollectionSpecialModel.h"
 #import "CGXPageCollectionSpecialView.h"
-
 
 #endif /* CGXPageCollectionViewOC_h */
