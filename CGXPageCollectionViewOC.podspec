@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
     s.pod_target_xcconfig = {'OTHER_LDFLAGS' => ['-lObjC', '-all_load']}
     #需要托管的源代码路径
     s.source_files = 'CGXPageCollectionViewOC/CGXPageCollectionViewOC.h'
-    
     #开源库头文件
     s.public_header_files = 'CGXPageCollectionViewOC/CGXPageCollectionViewOC.h'
     
@@ -22,6 +21,7 @@ Pod::Spec.new do |s|
     end
     s.subspec 'Base' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}','CGXPageCollectionViewOC/Delegate/**/*.{h,m}','CGXPageCollectionViewOC/RoundLayout/**/*.{h,m}'
+        ss.dependency 'CGXPageCollectionViewOC/Common'
     end
     s.subspec 'Water' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/Water/**/*.{h,m}'
