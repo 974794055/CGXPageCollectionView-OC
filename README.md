@@ -133,7 +133,6 @@ for (int i = 0; i<self.titleArr.count; i++) {
 }
 [self.generalView updateDataArray:dataArray IsDownRefresh:YES Page:1];
 ```
-
 3.可选实现`CGXPageCollectionUpdateViewDelegate`代理
 ```Objective-C
 /* 展示cell 处理数据 */

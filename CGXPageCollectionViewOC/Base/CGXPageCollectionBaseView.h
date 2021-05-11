@@ -20,15 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 @class CGXPageCollectionBaseView;
 /*
   刷新数据
- */
-typedef void (^CGXPageCollectionBaseViewRefresBlock)(BOOL isDownRefresh,NSInteger page);
-/*
- 停止刷新
- pageInter :当前加载页的数量
+ page :当前加载页的数量
  pageMax:每页最大数量
  */
-typedef void (^CGXPageCollectionBaseViewRefresEndBlock)(NSInteger pageInter,NSInteger pageMax);
-
+typedef void (^CGXPageCollectionBaseViewRefresBlock)(BOOL isDownRefresh,NSInteger page);
 /*
  自适应返回的高度
  */
@@ -38,47 +33,28 @@ typedef void (^CGXPageCollectionBaseViewHeightBlock)(CGXPageCollectionBaseView *
 @interface CGXPageCollectionBaseView : UIView<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic , strong,readonly) CGXPageCollectionView *collectionView;
-/*
-是否自适应高度
-*/
+@property (nonatomic , assign,readonly) BOOL isDownRefresh;
+@property (nonatomic , assign,readonly) NSInteger page;
+@property (nonatomic , assign,readonly) NSInteger maxPage;
+/*是否自适应高度*/
 @property (nonatomic,assign) BOOL isAdaptive;
-/*
- 数据源数组 只给外界提供可读
- */
+/*数据源数组 只给外界提供可读 */
 @property (nonatomic,strong,readonly) NSMutableArray<CGXPageCollectionBaseSectionModel *> *dataArray;
-/*
-  刷新回调
- */
+/*刷新回调*/
 @property (nonatomic , copy) CGXPageCollectionBaseViewRefresBlock refresBlock;
-/*
- 刷新状态回调
-*/
-@property (nonatomic , copy) CGXPageCollectionBaseViewRefresEndBlock refresEndBlock;
-/*
- 界面设置代理
-*/
+/*界面设置代理*/
 @property (nonatomic , weak) id<CGXPageCollectionUpdateViewDelegate>viewDelegate;
-/*
- 自适应高度
-*/
+/*自适应高度*/
 @property (nonatomic , copy) CGXPageCollectionBaseViewHeightBlock heightBlock;
-
-/*
- 自定义cell 、header、footer 必须实现
- */
+/*自定义cell 、header、footer 必须实现*/
 - (void)registerCell:(Class)classCell IsXib:(BOOL)isXib;
 - (void)registerFooter:(Class)footer IsXib:(BOOL)isXib;
 - (void)registerHeader:(Class)header IsXib:(BOOL)isXib;
 
-
 #pragma mark - 数据处理
-/*
- 加载数据 下拉调用
- */
+/*加载数据 下拉调用*/
 - (void)loadData;
-/*
- 加载更多数据 上拉调用
- */
+/*加载更多数据 上拉调用*/
 - (void)loadMoreData;
 /*
  array：数据源

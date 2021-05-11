@@ -14,10 +14,9 @@
 @interface CGXPageCollectionBaseView()
 @property (nonatomic,strong,readwrite) NSMutableArray<CGXPageCollectionBaseSectionModel *> *dataArray;//数据源数组
 @property (nonatomic , strong,readwrite) CGXPageCollectionView *collectionView;
-@property (nonatomic , assign) BOOL isDownRefresh;
-@property (nonatomic , assign) NSInteger page;
-@property (nonatomic , assign) BOOL isHaveNo;//是否有空
-
+@property (nonatomic , assign,readwrite) BOOL isDownRefresh;
+@property (nonatomic , assign,readwrite) NSInteger page;
+@property (nonatomic , assign,readwrite) NSInteger maxPage;
 @end
 
 @implementation CGXPageCollectionBaseView
@@ -63,12 +62,11 @@
     [super layoutSubviews];
     self.collectionView.backgroundColor = self.backgroundColor;
     self.collectionView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-    [self initLayoutFrame];
+
     self.collectionView.collectionViewLayout = [self preferredFlowLayout];
     [self.collectionView.collectionViewLayout invalidateLayout];
     [self.collectionView reloadData];
 
-    [self reloadData];
     if (self.isAdaptive) {
         UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
         [layout invalidateLayout];
@@ -92,43 +90,7 @@
         }
     }
 }
-- (void)initLayoutFrame
-{
-    [self addConstraints:@[
-       [NSLayoutConstraint constraintWithItem:self.collectionView
-                                    attribute:NSLayoutAttributeTop
-                                    relatedBy:NSLayoutRelationEqual
-                                       toItem:self
-                                    attribute:NSLayoutAttributeTop
-                                   multiplier:1.0
-                                     constant:0],
 
-       [NSLayoutConstraint constraintWithItem:self.collectionView
-                                    attribute:NSLayoutAttributeLeft
-                                    relatedBy:NSLayoutRelationEqual
-                                       toItem:self
-                                    attribute:NSLayoutAttributeLeft
-                                   multiplier:1.0
-                                     constant:0],
-
-       [NSLayoutConstraint constraintWithItem:self.collectionView
-                                    attribute:NSLayoutAttributeBottom
-                                    relatedBy:NSLayoutRelationEqual
-                                       toItem:self
-                                    attribute:NSLayoutAttributeBottom
-                                   multiplier:1.0
-                                     constant:0],
-
-       [NSLayoutConstraint constraintWithItem:self.collectionView
-                                    attribute:NSLayoutAttributeRight
-                                    relatedBy:NSLayoutRelationEqual
-                                       toItem:self
-                                    attribute:NSLayoutAttributeRight
-                                   multiplier:1
-                                     constant:0],
-
-    ]];
-}
 - (NSMutableArray<CGXPageCollectionBaseSectionModel *> *)dataArray
 {
     if (!_dataArray) {
@@ -138,7 +100,6 @@
 }
 - (void)reloadData
 {
-    [self.collectionView.collectionViewLayout invalidateLayout];
     [self.collectionView reloadData];
 }
 - (void)initializeData
@@ -148,6 +109,9 @@
 
 - (void)initializeViews
 {
+    self.isDownRefresh =  YES;
+    self.page = 1;
+    self.maxPage = 10;
     self.collectionView = [[CGXPageCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)) collectionViewLayout:[self preferredFlowLayout]];
     self.collectionView.backgroundColor = self.backgroundColor;
     self.collectionView.showsHorizontalScrollIndicator = NO;
@@ -155,7 +119,6 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
-    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     //给collectionView注册头分区的Id
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([UICollectionReusableView class])];
     //给collection注册脚分区的id
@@ -420,7 +383,7 @@
  */
 - (void)updateDataArray:(NSMutableArray<CGXPageCollectionBaseSectionModel *> *)array IsDownRefresh:(BOOL)isDownRefresh Page:(NSInteger)page
 {
-    [self updateDataArray:array IsDownRefresh:isDownRefresh Page:page MaxPage:10];
+    [self updateDataArray:array IsDownRefresh:isDownRefresh Page:page MaxPage:self.maxPage];
 }
 /*
  array：数据源
@@ -431,6 +394,7 @@
 {
     self.page = page;
     self.isDownRefresh = isDownRefresh;
+    self.maxPage = maxPage;
     if (isDownRefresh) {
         [self.dataArray removeAllObjects];
     }
@@ -439,9 +403,6 @@
         [self.dataArray addObject:sectionModel];
     }
     [self.collectionView reloadData];
-    if (self.refresEndBlock) {
-        self.refresEndBlock(array.count, maxPage);
-    }
 }
 
 

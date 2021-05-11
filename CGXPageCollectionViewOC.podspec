@@ -27,22 +27,18 @@ Pod::Spec.new do |s|
         ss.source_files = 'CGXPageCollectionViewOC/Water/**/*.{h,m}'
         ss.dependency 'CGXPageCollectionViewOC/Base'
     end
-    
     s.subspec 'General' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/General/**/*.{h,m}'
         ss.dependency 'CGXPageCollectionViewOC/Base'
     end
-    
     s.subspec 'IrregularView' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/IrregularView/**/*.{h,m}'
         ss.dependency 'CGXPageCollectionViewOC/Base'
     end
-    
     s.subspec 'Tags' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/Tags/**/*.{h,m}'
         ss.dependency 'CGXPageCollectionViewOC/Base'
     end
-    
     s.subspec 'Horizontal' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/Horizontal/**/*.{h,m}'
         ss.dependency 'CGXPageCollectionViewOC/Base'

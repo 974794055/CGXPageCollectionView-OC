@@ -59,7 +59,6 @@
         mCollectionView;
     });
     [self.view addSubview:self.collectionView];
-    
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
