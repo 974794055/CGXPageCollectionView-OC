@@ -38,7 +38,6 @@
     }
     return self;
 }
-
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
@@ -48,7 +47,6 @@
     }
     return self;
 }
-
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
     UIResponder *next = newSuperview;
@@ -70,8 +68,7 @@
     [self.collectionView.collectionViewLayout invalidateLayout];
     [self.collectionView reloadData];
 
-        [self reloadData];
-
+    [self reloadData];
     if (self.isAdaptive) {
         UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
         [layout invalidateLayout];

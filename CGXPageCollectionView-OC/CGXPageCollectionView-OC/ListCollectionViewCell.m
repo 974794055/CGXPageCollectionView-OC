@@ -19,8 +19,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.contentView.backgroundColor = RandomColor;
-        
-
         self.titleLabel = [[UILabel alloc]init];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
