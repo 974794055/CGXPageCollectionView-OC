@@ -1,27 +1,36 @@
 PODS:
-  - CGXPageCollectionViewOC (1.0.1):
-    - CGXPageCollectionViewOC/Base (= 1.0.1)
-    - CGXPageCollectionViewOC/Common (= 1.0.1)
-    - CGXPageCollectionViewOC/General (= 1.0.1)
-    - CGXPageCollectionViewOC/Horizontal (= 1.0.1)
-    - CGXPageCollectionViewOC/IrregularView (= 1.0.1)
-    - CGXPageCollectionViewOC/SpecialView (= 1.0.1)
-    - CGXPageCollectionViewOC/Tags (= 1.0.1)
-    - CGXPageCollectionViewOC/Water (= 1.0.1)
-  - CGXPageCollectionViewOC/Base (1.0.1):
+  - CGXPageCollectionViewOC (1.0.2):
+    - CGXPageCollectionViewOC/Base (= 1.0.2)
+    - CGXPageCollectionViewOC/Common (= 1.0.2)
+    - CGXPageCollectionViewOC/General (= 1.0.2)
+    - CGXPageCollectionViewOC/Horizontal (= 1.0.2)
+    - CGXPageCollectionViewOC/IrregularView (= 1.0.2)
+    - CGXPageCollectionViewOC/SpecialView (= 1.0.2)
+    - CGXPageCollectionViewOC/Tags (= 1.0.2)
+    - CGXPageCollectionViewOC/Water (= 1.0.2)
+  - CGXPageCollectionViewOC/Base (1.0.2):
+    - CGXPageCollectionViewOC/Base/Base (= 1.0.2)
+    - CGXPageCollectionViewOC/Base/Delegate (= 1.0.2)
+    - CGXPageCollectionViewOC/Base/RoundLayout (= 1.0.2)
     - CGXPageCollectionViewOC/Common
-  - CGXPageCollectionViewOC/Common (1.0.1)
-  - CGXPageCollectionViewOC/General (1.0.1):
+  - CGXPageCollectionViewOC/Base/Base (1.0.2):
+    - CGXPageCollectionViewOC/Common
+  - CGXPageCollectionViewOC/Base/Delegate (1.0.2):
+    - CGXPageCollectionViewOC/Common
+  - CGXPageCollectionViewOC/Base/RoundLayout (1.0.2):
+    - CGXPageCollectionViewOC/Common
+  - CGXPageCollectionViewOC/Common (1.0.2)
+  - CGXPageCollectionViewOC/General (1.0.2):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Horizontal (1.0.1):
+  - CGXPageCollectionViewOC/Horizontal (1.0.2):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/IrregularView (1.0.1):
+  - CGXPageCollectionViewOC/IrregularView (1.0.2):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/SpecialView (1.0.1):
+  - CGXPageCollectionViewOC/SpecialView (1.0.2):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Tags (1.0.1):
+  - CGXPageCollectionViewOC/Tags (1.0.2):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Water (1.0.1):
+  - CGXPageCollectionViewOC/Water (1.0.2):
     - CGXPageCollectionViewOC/Base
   - MJRefresh (3.5.0)
   - SDWebImage (5.9.5):
@@ -43,7 +52,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CGXPageCollectionViewOC: 17014b02a0838eac3470028ced44d333323b78c9
+  CGXPageCollectionViewOC: d50d2988c9f21b67682cc41ab537fcb3cb8da4b3
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 

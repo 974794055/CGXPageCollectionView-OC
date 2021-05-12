@@ -140,10 +140,7 @@
             }
             [dataArray addObject:sectionModel];
         }
-        [weakSelf.generalView updateDataArray:dataArray IsDownRefresh:isDownRefresh Page:page];
-    };
-    self.generalView.refresEndBlock = ^(NSInteger pageInter, NSInteger pageMax) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf.generalView updateDataArray:dataArray IsDownRefresh:isDownRefresh Page:page];        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.generalView.collectionView.mj_header endRefreshing];
             [weakSelf.generalView.collectionView.mj_footer endRefreshing];
         });
