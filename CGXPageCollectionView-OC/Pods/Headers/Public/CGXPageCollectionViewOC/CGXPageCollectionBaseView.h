@@ -1,1 +1,1 @@
-../../../../../CGXPageCollectionViewOC/Base/CGXPageCollectionBaseView.h
+../../../../../CGXPageCollectionViewOC/Base/Base/CGXPageCollectionBaseView.h

@@ -52,7 +52,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CGXPageCollectionViewOC: d50d2988c9f21b67682cc41ab537fcb3cb8da4b3
+  CGXPageCollectionViewOC: 244c455d24a6719c297f7162bc5556108dab1d45
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 

@@ -1,1 +1,1 @@
-../../../../../CGXPageCollectionViewOC/Delegate/CGXPageCollectionUpdateFooterDelegate.h
+../../../../../CGXPageCollectionViewOC/Base/Delegate/CGXPageCollectionUpdateFooterDelegate.h

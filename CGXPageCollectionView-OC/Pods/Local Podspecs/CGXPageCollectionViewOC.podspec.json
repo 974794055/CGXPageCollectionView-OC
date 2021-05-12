@@ -38,6 +38,7 @@
     },
     {
       "name": "Base",
+      "public_header_files": "CGXPageCollectionViewOC/Base/**/*.h",
       "dependencies": {
         "CGXPageCollectionViewOC/Common": [
 
@@ -46,15 +47,15 @@
       "subspecs": [
         {
           "name": "Base",
-          "source_files": "CGXPageCollectionViewOC/Base/**/*.{h,m}"
+          "source_files": "CGXPageCollectionViewOC/Base/Base/**/*.{h,m}"
         },
         {
           "name": "Delegate",
-          "source_files": "CGXPageCollectionViewOC/Delegate/**/*.{h,m}"
+          "source_files": "CGXPageCollectionViewOC/Base/Delegate/**/*.{h,m}"
         },
         {
           "name": "RoundLayout",
-          "source_files": "CGXPageCollectionViewOC/RoundLayout/**/*.{h,m}"
+          "source_files": "CGXPageCollectionViewOC/Base/RoundLayout/**/*.{h,m}"
         }
       ]
     },

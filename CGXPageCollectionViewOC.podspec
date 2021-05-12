@@ -21,13 +21,13 @@ Pod::Spec.new do |s|
     end
     s.subspec 'Base' do |ss|
         ss.subspec 'Base' do |sss|
-            sss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}'
+            sss.source_files = 'CGXPageCollectionViewOC/Base/Base/**/*.{h,m}'
         end
         ss.subspec 'Delegate' do |sss|
-            sss.source_files = 'CGXPageCollectionViewOC/Delegate/**/*.{h,m}'
+            sss.source_files = 'CGXPageCollectionViewOC/Base/Delegate/**/*.{h,m}'
         end
         ss.subspec 'RoundLayout' do |sss|
-            sss.source_files = 'CGXPageCollectionViewOC/RoundLayout/**/*.{h,m}'
+            sss.source_files = 'CGXPageCollectionViewOC/Base/RoundLayout/**/*.{h,m}'
         end
         ss.public_header_files = "CGXPageCollectionViewOC/Base/**/*.h"
         ss.dependency 'CGXPageCollectionViewOC/Common'
