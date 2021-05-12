@@ -5,20 +5,13 @@ PODS:
     - CGXPageCollectionViewOC/General (= 1.0.2)
     - CGXPageCollectionViewOC/Horizontal (= 1.0.2)
     - CGXPageCollectionViewOC/IrregularView (= 1.0.2)
+    - CGXPageCollectionViewOC/RoundLayout (= 1.0.2)
     - CGXPageCollectionViewOC/SpecialView (= 1.0.2)
     - CGXPageCollectionViewOC/Tags (= 1.0.2)
     - CGXPageCollectionViewOC/Water (= 1.0.2)
   - CGXPageCollectionViewOC/Base (1.0.2):
-    - CGXPageCollectionViewOC/Base/Base (= 1.0.2)
-    - CGXPageCollectionViewOC/Base/Delegate (= 1.0.2)
-    - CGXPageCollectionViewOC/Base/RoundLayout (= 1.0.2)
     - CGXPageCollectionViewOC/Common
-  - CGXPageCollectionViewOC/Base/Base (1.0.2):
-    - CGXPageCollectionViewOC/Common
-  - CGXPageCollectionViewOC/Base/Delegate (1.0.2):
-    - CGXPageCollectionViewOC/Common
-  - CGXPageCollectionViewOC/Base/RoundLayout (1.0.2):
-    - CGXPageCollectionViewOC/Common
+    - CGXPageCollectionViewOC/RoundLayout
   - CGXPageCollectionViewOC/Common (1.0.2)
   - CGXPageCollectionViewOC/General (1.0.2):
     - CGXPageCollectionViewOC/Base
@@ -26,6 +19,7 @@ PODS:
     - CGXPageCollectionViewOC/Base
   - CGXPageCollectionViewOC/IrregularView (1.0.2):
     - CGXPageCollectionViewOC/Base
+  - CGXPageCollectionViewOC/RoundLayout (1.0.2)
   - CGXPageCollectionViewOC/SpecialView (1.0.2):
     - CGXPageCollectionViewOC/Base
   - CGXPageCollectionViewOC/Tags (1.0.2):
@@ -52,7 +46,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CGXPageCollectionViewOC: 244c455d24a6719c297f7162bc5556108dab1d45
+  CGXPageCollectionViewOC: b10a5eca29a1906b9adc1b20af97f25d75cc1d38
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 

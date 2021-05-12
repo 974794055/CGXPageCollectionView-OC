@@ -37,27 +37,20 @@
       "source_files": "CGXPageCollectionViewOC/Common/**/*.{h,m}"
     },
     {
+      "name": "RoundLayout",
+      "source_files": "CGXPageCollectionViewOC/RoundLayout/**/*.{h,m}"
+    },
+    {
       "name": "Base",
-      "public_header_files": "CGXPageCollectionViewOC/Base/**/*.h",
+      "source_files": "CGXPageCollectionViewOC/Base/**/*.{h,m}",
       "dependencies": {
         "CGXPageCollectionViewOC/Common": [
 
+        ],
+        "CGXPageCollectionViewOC/RoundLayout": [
+
         ]
-      },
-      "subspecs": [
-        {
-          "name": "Base",
-          "source_files": "CGXPageCollectionViewOC/Base/Base/**/*.{h,m}"
-        },
-        {
-          "name": "Delegate",
-          "source_files": "CGXPageCollectionViewOC/Base/Delegate/**/*.{h,m}"
-        },
-        {
-          "name": "RoundLayout",
-          "source_files": "CGXPageCollectionViewOC/Base/RoundLayout/**/*.{h,m}"
-        }
-      ]
+      }
     },
     {
       "name": "Water",

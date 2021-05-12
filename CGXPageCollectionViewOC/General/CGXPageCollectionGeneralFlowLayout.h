@@ -8,7 +8,7 @@
 
 #import "CGXPageCollectionBaseLayout.h"
 #import <UIKit/UIKit.h>
-#import "CGXPageCollectionUpdateRoundDelegate.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 

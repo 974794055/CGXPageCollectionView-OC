@@ -1,1 +1,1 @@
-../../../../../CGXPageCollectionViewOC/Base/Delegate/CGXPageCollectionUpdateHeaderDelegate.h
+../../../../../CGXPageCollectionViewOC/Base/CGXPageCollectionUpdateHeaderDelegate.h

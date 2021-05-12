@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CGXPageCollectionRoundModel.h"
 
-#import "CGXPageCollectionUpdateRoundDelegate.h"
-
 @protocol CGXPageCollectionWaterLayoutDataSource;
 
 @interface CGXPageCollectionWaterLayout : CGXPageCollectionBaseLayout

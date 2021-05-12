@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CGXPageCollectionRoundModel.h"
-#import "CGXPageCollectionFlowLayoutUtils.h"
 
+#import "CGXPageCollectionFlowLayoutUtils.h"
+#import "CGXPageCollectionRoundModel.h"
 #import "CGXPageCollectionRoundLayoutAttributes.h"
 #import "CGXPageCollectionRoundReusableView.h"
-
-#import "CGXPageCollectionUpdateRoundDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

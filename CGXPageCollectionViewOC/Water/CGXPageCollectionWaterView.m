@@ -8,7 +8,7 @@
 
 #import "CGXPageCollectionWaterView.h"
 #import "CGXPageCollectionWaterLayout.h"
-#import "CGXPageCollectionUpdateRoundDelegate.h"
+
 
 @interface CGXPageCollectionWaterView()<CGXPageCollectionWaterLayoutDataSource,CGXPageCollectionUpdateRoundDelegate>
 
