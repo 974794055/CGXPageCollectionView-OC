@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
     end
     s.subspec 'RoundLayout' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/RoundLayout/**/*.{h,m}'
+        ss.dependency 'CGXPageCollectionViewOC/Common'
     end
     s.subspec 'Base' do |ss|
         ss.source_files = 'CGXPageCollectionViewOC/Base/**/*.{h,m}'

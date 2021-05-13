@@ -142,7 +142,6 @@ for (int i = 0; i<self.titleArr.count; i++) {
 ### V1.0.0版本
 1. 优化头分区、脚分区注册逻辑
 2. 增加UICollectionView滚动时代理方法
-
 ### V1.0.2版本
 1. 增加cell代理方法，便于处理多样化
 1. 优化下拉刷新加载问题
