@@ -116,7 +116,6 @@
     return cell;
     
 }
-
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
@@ -135,7 +134,6 @@
     [cell.contentView.layer insertSublayer:borderLayer atIndex:0];
     [cell.contentView.layer setMask:maskLayer];
 }
-#pragma mark - cell的点击事件
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *titleStr = self.titleArr[indexPath.row];
@@ -179,7 +177,6 @@
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }
-    
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {

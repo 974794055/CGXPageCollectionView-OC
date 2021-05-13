@@ -51,6 +51,7 @@ Pod::Spec.new do |s|
         ss.source_files = 'CGXPageCollectionViewOC/SpecialView/**/*.{h,m}'
         ss.dependency 'CGXPageCollectionViewOC/Base'
     end
+    
 end
 
 

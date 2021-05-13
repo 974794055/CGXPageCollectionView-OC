@@ -18,33 +18,19 @@ QQ 号：974794055
 版本号： 1.0.2
 */
 
-/*
-基类
-*/
+/*基*/
 #import "CGXPageCollectionBaseView.h"
-/*
- 普通列表
- */
+/*普通列表*/
 #import "CGXPageCollectionGeneralView.h"
-/*
-瀑布流列表
-*/
+/*瀑布流列表*/
 #import "CGXPageCollectionWaterView.h"
-/*
-不规则列表
-*/
+/*不规则列表*/
 #import "CGXPageCollectionIrregularView.h"
-/*
-标签流列表
-*/
+/*标签流列表*/
 #import "CGXPageCollectionTagsView.h"
-/*
-水平滚动列表
-*/
+/*水平滚动列表*/
 #import "CGXPageCollectionHorizontalView.h"
-/*
-特殊view
-*/
+/*特殊view*/
 #import "CGXPageCollectionSpecialCell.h"
 #import "CGXPageCollectionSpecialModel.h"
 #import "CGXPageCollectionSpecialView.h"

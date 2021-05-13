@@ -47,12 +47,10 @@
 ### 目的：
 - 参考学习如何自定义
 - 直接修改自定义示例类以快速实现自己的需求
-
 ## 要求
 - iOS 8.0+
 - Xcode 9+
 - Objective-C
-
 ## 安装
 ### 手动
 Clone代码，把CGXPageCollectionViewOC文件夹拖入项目，#import "CGXPageCollectionViewOC.h"，就可以使用了；
@@ -63,7 +61,6 @@ target '<Your Target Name>' do
 end
 ```
 先执行`pod repo update`，再执行`pod install`
-
 ## 结构图
 <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main0..png" width="933" height="482">
 
@@ -146,7 +143,7 @@ for (int i = 0; i<self.titleArr.count; i++) {
 1. 优化头分区、脚分区注册逻辑
 2. 增加UICollectionView滚动时代理方法
 
-### V1.0.1版本
+### V1.0.2版本
 1. 增加cell代理方法，便于处理多样化
 1. 优化下拉刷新加载问题
 
