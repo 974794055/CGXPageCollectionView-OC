@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,9 +23,6 @@
 		9E4B002124BC90AA0016CB4D /* main0.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E4B002024BC90AA0016CB4D /* main0.png */; };
 		9E6F693624CBDCEB00EAE61B /* GeneralViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F693524CBDCEB00EAE61B /* GeneralViewTool.m */; };
 		9E7D943724B5FA35007FB4A9 /* HorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D943624B5FA34007FB4A9 /* HorizontalViewController.m */; };
-		9E819FCB24CB33B600AE4E76 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9E819FC824CB33B500AE4E76 /* README.md */; };
-		9E819FCC24CB33B600AE4E76 /* CGXPageCollectionViewOC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9E819FC924CB33B500AE4E76 /* CGXPageCollectionViewOC.podspec */; };
-		9E819FCD24CB33B600AE4E76 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9E819FCA24CB33B500AE4E76 /* LICENSE */; };
 		9E97F91424BA1372000B1C6A /* main1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E97F90E24BA1372000B1C6A /* main1.png */; };
 		9E97F91524BA1372000B1C6A /* main2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E97F90F24BA1372000B1C6A /* main2.gif */; };
 		9E97F91624BA1372000B1C6A /* main3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E97F91024BA1372000B1C6A /* main3.gif */; };
@@ -42,6 +39,9 @@
 		B54D27372593928D0020FBFC /* CGXPageCollectionTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54D27312593928D0020FBFC /* CGXPageCollectionTextCell.m */; };
 		B54D27382593928D0020FBFC /* CGXPageCollectionBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54D27322593928D0020FBFC /* CGXPageCollectionBaseCell.m */; };
 		B5633711259775F10032C6C0 /* ListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5633710259775F10032C6C0 /* ListCollectionViewCell.m */; };
+		E011CDC926E8FC0E00BCF6D4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E011CDC626E8FC0E00BCF6D4 /* README.md */; };
+		E011CDCA26E8FC0E00BCF6D4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E011CDC726E8FC0E00BCF6D4 /* LICENSE */; };
+		E011CDCB26E8FC0E00BCF6D4 /* CGXPageCollectionViewOC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E011CDC826E8FC0E00BCF6D4 /* CGXPageCollectionViewOC.podspec */; };
 		E4D3990FA781D228A7A8B3FF /* libPods-CGXPageCollectionView-OC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29713D7D93AD97DCE561E1A8 /* libPods-CGXPageCollectionView-OC.a */; };
 /* End PBXBuildFile section */
 
@@ -76,9 +76,6 @@
 		9E6F693524CBDCEB00EAE61B /* GeneralViewTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralViewTool.m; sourceTree = "<group>"; };
 		9E7D943524B5FA34007FB4A9 /* HorizontalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalViewController.h; sourceTree = "<group>"; };
 		9E7D943624B5FA34007FB4A9 /* HorizontalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalViewController.m; sourceTree = "<group>"; };
-		9E819FC824CB33B500AE4E76 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
-		9E819FC924CB33B500AE4E76 /* CGXPageCollectionViewOC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CGXPageCollectionViewOC.podspec; path = ../../../CGXPageCollectionViewOC.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E819FCA24CB33B500AE4E76 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../../LICENSE; sourceTree = "<group>"; };
 		9E97F90E24BA1372000B1C6A /* main1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main1.png; sourceTree = "<group>"; };
 		9E97F90F24BA1372000B1C6A /* main2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = main2.gif; sourceTree = "<group>"; };
 		9E97F91024BA1372000B1C6A /* main3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = main3.gif; sourceTree = "<group>"; };
@@ -106,6 +103,9 @@
 		B5633710259775F10032C6C0 /* ListCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListCollectionViewCell.m; sourceTree = "<group>"; };
 		C1175978587F0C0AECBD77C3 /* Pods-CGXPageCollectionView-OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CGXPageCollectionView-OC.release.xcconfig"; path = "Target Support Files/Pods-CGXPageCollectionView-OC/Pods-CGXPageCollectionView-OC.release.xcconfig"; sourceTree = "<group>"; };
 		CC8A1A425DA64FFE935FFECC /* Pods-CGXPageCollectionView-OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CGXPageCollectionView-OC.debug.xcconfig"; path = "Target Support Files/Pods-CGXPageCollectionView-OC/Pods-CGXPageCollectionView-OC.debug.xcconfig"; sourceTree = "<group>"; };
+		E011CDC626E8FC0E00BCF6D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
+		E011CDC726E8FC0E00BCF6D4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../../LICENSE; sourceTree = "<group>"; };
+		E011CDC826E8FC0E00BCF6D4 /* CGXPageCollectionViewOC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CGXPageCollectionViewOC.podspec; path = ../../../CGXPageCollectionViewOC.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +141,7 @@
 		04B42E2D24483492006FD2F4 /* CGXPageCollectionView-OC */ = {
 			isa = PBXGroup;
 			children = (
-				9E819FC724CB33AB00AE4E76 /* Podspec Metadata */,
+				E011CDC526E8FC0700BCF6D4 /* Podspec Metadata */,
 				9E97F90D24BA1372000B1C6A /* CGXPageCollectionViewImageGif */,
 				04B42E2E24483492006FD2F4 /* AppDelegate.h */,
 				04B42E2F24483492006FD2F4 /* AppDelegate.m */,
@@ -236,16 +236,6 @@
 			path = WaterViewController;
 			sourceTree = "<group>";
 		};
-		9E819FC724CB33AB00AE4E76 /* Podspec Metadata */ = {
-			isa = PBXGroup;
-			children = (
-				9E819FC924CB33B500AE4E76 /* CGXPageCollectionViewOC.podspec */,
-				9E819FCA24CB33B500AE4E76 /* LICENSE */,
-				9E819FC824CB33B500AE4E76 /* README.md */,
-			);
-			path = "Podspec Metadata";
-			sourceTree = "<group>";
-		};
 		9E97F90D24BA1372000B1C6A /* CGXPageCollectionViewImageGif */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +287,16 @@
 				B54D272F2593928D0020FBFC /* CGXPageCollectionCategoryCell.m */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		E011CDC526E8FC0700BCF6D4 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				E011CDC826E8FC0E00BCF6D4 /* CGXPageCollectionViewOC.podspec */,
+				E011CDC726E8FC0E00BCF6D4 /* LICENSE */,
+				E011CDC626E8FC0E00BCF6D4 /* README.md */,
+			);
+			path = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,14 +362,14 @@
 				9E97F91624BA1372000B1C6A /* main3.gif in Resources */,
 				9E97F91424BA1372000B1C6A /* main1.png in Resources */,
 				04B42E3E24483494006FD2F4 /* LaunchScreen.storyboard in Resources */,
+				E011CDC926E8FC0E00BCF6D4 /* README.md in Resources */,
 				B52763F925BC677000DBF307 /* authorGroup.png in Resources */,
 				9E97F91724BA1372000B1C6A /* main4.gif in Resources */,
-				9E819FCB24CB33B600AE4E76 /* README.md in Resources */,
 				9E97F91524BA1372000B1C6A /* main2.gif in Resources */,
 				B52763FC25BC67F900DBF307 /* main7.gif in Resources */,
 				04B42E3B24483494006FD2F4 /* Assets.xcassets in Resources */,
-				9E819FCC24CB33B600AE4E76 /* CGXPageCollectionViewOC.podspec in Resources */,
-				9E819FCD24CB33B600AE4E76 /* LICENSE in Resources */,
+				E011CDCA26E8FC0E00BCF6D4 /* LICENSE in Resources */,
+				E011CDCB26E8FC0E00BCF6D4 /* CGXPageCollectionViewOC.podspec in Resources */,
 				9E97F91824BA1372000B1C6A /* main5.gif in Resources */,
 				04B42E3924483492006FD2F4 /* Main.storyboard in Resources */,
 				9E4B002124BC90AA0016CB4D /* main0.png in Resources */,

@@ -361,7 +361,7 @@
 		1DFF5C7A0FC60705607B46F7E0B6AEDF /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/Core/UIButton+WebCache.h"; sourceTree = "<group>"; };
 		1FA341338BDD103175FB08102D4DAF12 /* CGXPageCollectionSpecialFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionSpecialFlowLayout.h; path = CGXPageCollectionViewOC/SpecialView/CGXPageCollectionSpecialFlowLayout.h; sourceTree = "<group>"; };
 		21B58A581B9720092F842D75C771E4D7 /* MJRefreshFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshFooter.h; path = MJRefresh/Base/MJRefreshFooter.h; sourceTree = "<group>"; };
-		21B6F40444F93A8B0729E865FC4A545A /* CGXPageCollectionViewOC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CGXPageCollectionViewOC.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		21B6F40444F93A8B0729E865FC4A545A /* CGXPageCollectionViewOC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = CGXPageCollectionViewOC.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		21E3329E30F30D206BC33CF0CC47B17B /* SDImageLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageLoader.h; path = SDWebImage/Core/SDImageLoader.h; sourceTree = "<group>"; };
 		21EC6805314D15DC6060F0AD70E30193 /* CGXPageCollectionGeneralRowModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionGeneralRowModel.m; path = CGXPageCollectionViewOC/General/CGXPageCollectionGeneralRowModel.m; sourceTree = "<group>"; };
 		2475AEED39AF4B29B94F36B8562DC917 /* CGXPageCollectionBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionBaseView.h; path = CGXPageCollectionViewOC/Base/CGXPageCollectionBaseView.h; sourceTree = "<group>"; };
@@ -465,7 +465,7 @@
 		8474939E46A43C4F1C90C696DD918427 /* SDImageAssetManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageAssetManager.m; path = SDWebImage/Private/SDImageAssetManager.m; sourceTree = "<group>"; };
 		8493CD87353AF4FE909C25DC777FF96F /* SDImageLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageLoader.m; path = SDWebImage/Core/SDImageLoader.m; sourceTree = "<group>"; };
 		85135A40A815B910C0D8A7E904F6C8DE /* CGXPageCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionView.h; path = CGXPageCollectionViewOC/Common/CGXPageCollectionView.h; sourceTree = "<group>"; };
-		863332AD9D61F37ECC715CC055675EA0 /* libCGXPageCollectionViewOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCGXPageCollectionViewOC.a; path = libCGXPageCollectionViewOC.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		863332AD9D61F37ECC715CC055675EA0 /* libCGXPageCollectionViewOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCGXPageCollectionViewOC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		872BEA77B86D23267FB00847A59701A7 /* SDGraphicsImageRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDGraphicsImageRenderer.h; path = SDWebImage/Core/SDGraphicsImageRenderer.h; sourceTree = "<group>"; };
 		886ADFBB613568C07B5B095238E5ADC3 /* CGXPageCollectionUpdateViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionUpdateViewDelegate.h; path = CGXPageCollectionViewOC/Base/CGXPageCollectionUpdateViewDelegate.h; sourceTree = "<group>"; };
 		89539A8FDC15DB576F664D0D35032013 /* SDAnimatedImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImageView.h; path = SDWebImage/Core/SDAnimatedImageView.h; sourceTree = "<group>"; };
@@ -499,7 +499,7 @@
 		9BF6B0E72D87C99596E7F23850510542 /* SDAnimatedImageRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImageRep.m; path = SDWebImage/Core/SDAnimatedImageRep.m; sourceTree = "<group>"; };
 		9C225C8D7EFF48D017E8DC8C70B1D574 /* NSBezierPath+SDRoundedCorners.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBezierPath+SDRoundedCorners.m"; path = "SDWebImage/Private/NSBezierPath+SDRoundedCorners.m"; sourceTree = "<group>"; };
 		9CAA08C52B1A52BF24596A4B53D6C47C /* CGXPageCollectionSpecialView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionSpecialView.h; path = CGXPageCollectionViewOC/SpecialView/CGXPageCollectionSpecialView.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DB32EF9BFFFB02129A15473CB200E90 /* UIView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCache.m"; path = "SDWebImage/Core/UIView+WebCache.m"; sourceTree = "<group>"; };
 		9E0927039E541D64B53D75E8AB45AC1D /* SDWebImageIndicator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageIndicator.h; path = SDWebImage/Core/SDWebImageIndicator.h; sourceTree = "<group>"; };
 		9E142CD4B83B49685E5C833FC3DBB45E /* CGXPageCollectionSpecialCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionSpecialCell.m; path = CGXPageCollectionViewOC/SpecialView/CGXPageCollectionSpecialCell.m; sourceTree = "<group>"; };
@@ -519,9 +519,9 @@
 		AF29AC438DE907D55117B72576D0D37F /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/Core/SDImageCache.m; sourceTree = "<group>"; };
 		AF3A8ECC312E2F9C26648A968D425165 /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalHeader.m; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.m; sourceTree = "<group>"; };
 		AF3C52DDE766E4BE741720F86525402D /* MJRefreshConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConfig.m; path = MJRefresh/MJRefreshConfig.m; sourceTree = "<group>"; };
-		AF9985CD65415C67C9C6DEECCCAB60F7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		AF9985CD65415C67C9C6DEECCCAB60F7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B03F0BC369396C5D2AD10C8279E606E5 /* SDImageIOCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageIOCoder.m; path = SDWebImage/Core/SDImageIOCoder.m; sourceTree = "<group>"; };
-		B0B214D775196BA7CA8E17E53048A493 /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSDWebImage.a; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0B214D775196BA7CA8E17E53048A493 /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16D3DE1D4EA9B43A28E8EBE971E9886 /* CGXPageCollectionBaseRowModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionBaseRowModel.h; path = CGXPageCollectionViewOC/Base/CGXPageCollectionBaseRowModel.h; sourceTree = "<group>"; };
 		B189614AEDEB33051D65A54DEAC31346 /* MJRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-prefix.pch"; sourceTree = "<group>"; };
 		B2EE49262CB75287AF5D88CDBEC9801A /* CGXPageCollectionBaseLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionBaseLayout.h; path = CGXPageCollectionViewOC/Base/CGXPageCollectionBaseLayout.h; sourceTree = "<group>"; };
@@ -540,8 +540,8 @@
 		BD5ADC4E6A5ABDEC4FA6C47B5F9C6D16 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJExtension.m"; path = "MJRefresh/UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
 		BF9B006A5472ACB5D7F3693364DD6578 /* CGXPageCollectionFlowLayoutUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionFlowLayoutUtils.m; path = CGXPageCollectionViewOC/RoundLayout/CGXPageCollectionFlowLayoutUtils.m; sourceTree = "<group>"; };
 		C13E43908379EB4606C03E997C969461 /* CGXPageCollectionTagsFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionTagsFlowLayout.m; path = CGXPageCollectionViewOC/Tags/CGXPageCollectionTagsFlowLayout.m; sourceTree = "<group>"; };
-		C1B00CEDFA7DBE5928E5AB61C60BC726 /* libPods-CGXPageCollectionView-OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CGXPageCollectionView-OC.a"; path = "libPods-CGXPageCollectionView-OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1FCEFC3C55BE8D03C38A51CEFCF1A7D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C1B00CEDFA7DBE5928E5AB61C60BC726 /* libPods-CGXPageCollectionView-OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CGXPageCollectionView-OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1FCEFC3C55BE8D03C38A51CEFCF1A7D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C2B03881FD9F2AA81EF01539A2804F13 /* UIImage+Metadata.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Metadata.m"; path = "SDWebImage/Core/UIImage+Metadata.m"; sourceTree = "<group>"; };
 		C3515271BC97CB1A60F3F37B728BAA6D /* CGXPageCollectionHorizontalLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionHorizontalLayout.h; path = CGXPageCollectionViewOC/Horizontal/CGXPageCollectionHorizontalLayout.h; sourceTree = "<group>"; };
 		C3CC062AD2290F6B3919574ECC438C5B /* CGXPageCollectionSpecialModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGXPageCollectionSpecialModel.h; path = CGXPageCollectionViewOC/SpecialView/CGXPageCollectionSpecialModel.h; sourceTree = "<group>"; };
@@ -573,7 +573,7 @@
 		DB74F0EA981FFDFF84381CE7FB28BDF0 /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/Core/SDWebImageOperation.h; sourceTree = "<group>"; };
 		DD57DBBF7FBB2BD6E86E47FA7E8696D8 /* SDDeviceHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDeviceHelper.h; path = SDWebImage/Private/SDDeviceHelper.h; sourceTree = "<group>"; };
 		E231CE569DAE026AA8CAB5D10C65DB19 /* UIView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
-		E49D6D248DD1CEE584E6776B9164A1B2 /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMJRefresh.a; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49D6D248DD1CEE584E6776B9164A1B2 /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50454FDBB56C8374953BF77F5F04641 /* CGXPageCollectionBaseLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGXPageCollectionBaseLayout.m; path = CGXPageCollectionViewOC/Base/CGXPageCollectionBaseLayout.m; sourceTree = "<group>"; };
 		E5E65411D7E58313BC16DA51B3EAEBBE /* UIColor+SDHexString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+SDHexString.h"; path = "SDWebImage/Private/UIColor+SDHexString.h"; sourceTree = "<group>"; };
 		E5FFF83D69BEA0D851D4F991249C8786 /* SDImageFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageFrame.m; path = SDWebImage/Core/SDImageFrame.m; sourceTree = "<group>"; };
@@ -842,7 +842,6 @@
 				D704312D466C8BF1072A3211B623CB9A /* Core */,
 				9C62D0AD7F98EF180CAB1CFC4F62F945 /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -957,7 +956,6 @@
 				9C755386458B388E9E9A3D36C50E4673 /* Resources */,
 				D3852588A8E88AC85451BA1E49158E3A /* Support Files */,
 			);
-			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};

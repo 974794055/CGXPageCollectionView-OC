@@ -12,9 +12,11 @@
 - (void)initializeData
 {
     [super initializeData];
-   self.row = 1;
-   self.section = 1;
+    self.row = 1;
+    self.section = 1;
     self.sectionWidth = 0;
-       self.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.isRoundWithFooterView = NO;;
+    self.isRoundWithHeaderView = NO;;
 }
 @end

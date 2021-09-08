@@ -8,40 +8,33 @@
 
 #import "UIView+CGXPageCollectionTap.h"
 #import <objc/runtime.h>
+
+static char kPageActionHandlerTapBlockKey;
+static char kPageActionHandlerTapGestureKey;
+
 @implementation UIView (CGXPageCollectionTap)
 
-- (void)gx_pageTapGestureRecognizerWithDelegate:(id)tapGestureDelegate Block:(void (^)(NSInteger))block
+- (void)gx_addPageTapActionWithBlock:(CGXPageGestureActionBlock)block
 {
-    self.block = block;
-    UITapGestureRecognizer *tag = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tagClick)];
-    [self addGestureRecognizer:tag];
-    if (tapGestureDelegate) {
-        tag.delegate = tapGestureDelegate;
-    }
-    self.userInteractionEnabled = YES;
-}
-- (void)tagClick
-{
-    if (self.block) {
-        self.block(self.tag);
-    }
-}
-- (void)setBlock:(void (^)(NSInteger tag))block
-{
-    objc_setAssociatedObject(self, @selector(block), block, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-- (void(^)(NSInteger tag))block
-{
-    return objc_getAssociatedObject(self, @selector(block));
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
-    if ([touch.view isKindOfClass:[UICollectionReusableView class]])
+    UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &kPageActionHandlerTapGestureKey);
+    if (!gesture)
     {
-        return YES;
+        gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pageHandleActionForTapGesture:)];
+        [self addGestureRecognizer:gesture];
+        objc_setAssociatedObject(self, &kPageActionHandlerTapGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
     }
-    return NO;
+    objc_setAssociatedObject(self, &kPageActionHandlerTapBlockKey, block, OBJC_ASSOCIATION_COPY);
+}
+- (void)pageHandleActionForTapGesture:(UITapGestureRecognizer*)gesture
+{
+    if (gesture.state == UIGestureRecognizerStateRecognized)
+    {
+        CGXPageGestureActionBlock block = objc_getAssociatedObject(self, &kPageActionHandlerTapBlockKey);
+        if (block)
+        {
+            block(gesture);
+        }
+    }
 }
 
 @end

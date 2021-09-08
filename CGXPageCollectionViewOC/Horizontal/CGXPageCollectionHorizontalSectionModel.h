@@ -34,6 +34,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) UIEdgeInsets borderEdgeInserts;//默认是UIEdgeInsetsMake(10, 10, 10, 10);
 
+/*
+ 是否包含头分区圆角
+ */
+@property (assign, nonatomic) BOOL isRoundWithHeaderView;
+/*
+ 是否包含脚分区圆角
+ */
+@property (assign, nonatomic) BOOL isRoundWithFooterView;
+
 @end
 
 NS_ASSUME_NONNULL_END

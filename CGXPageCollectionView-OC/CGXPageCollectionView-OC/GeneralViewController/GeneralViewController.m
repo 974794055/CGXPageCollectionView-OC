@@ -258,6 +258,6 @@
 /*点击头分区*/
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView TapHeaderViewAtIndex:(NSInteger)section
 {
-    NSLog(@"点击2：%ld--%ld",section);
+    NSLog(@"点击2：%ld",section);
 }
 @end

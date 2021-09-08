@@ -84,7 +84,7 @@
     UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;;
     CGFloat space = borderEdgeInserts.left + borderEdgeInserts.right ;
     if (!sectionModel.headerModel.isHaveHeader) {
-         return CGSizeMake(ceil(sectionModel.sectionWidth-space), 0);
+        return CGSizeMake(ceil(sectionModel.sectionWidth-space), 0);
     }
     return CGSizeMake(ceil(sectionModel.sectionWidth-space), sectionModel.headerModel.headerHeight);
 }
@@ -152,14 +152,14 @@
         if (@available(iOS 13.0, *)) {
             UIColor *dyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
                 if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
-                    return self.collectionView.backgroundColor;
+                    return self.backgroundColor;
                 }else {
-                    return self.collectionView.backgroundColor;;
+                    return self.backgroundColor;;
                 }
             }];
             roundModel.backgroundColor = dyColor;
         }else{
-            roundModel.backgroundColor = self.collectionView.backgroundColor;;
+            roundModel.backgroundColor = self.backgroundColor;;
         }
     }
     return roundModel;
@@ -169,7 +169,8 @@
 /// @param collectionViewLayout collectionViewLayout description
 /// @param section section description
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateHeaderViewIndex:(NSInteger)section{
-        return NO;
+    CGXPageCollectionHorizontalSectionModel *sectionModel = (CGXPageCollectionHorizontalSectionModel *)self.dataArray[section];
+    return sectionModel.isRoundWithHeaderView;
 }
 
 /// 根据section设置是否包含footerview（实现该方法后，isCalculateFooter将不会生效）
@@ -177,7 +178,8 @@
 /// @param collectionViewLayout collectionViewLayout description
 /// @param section section description
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateFooterViewIndex:(NSInteger)section{
-    return NO;
+    CGXPageCollectionHorizontalSectionModel *sectionModel = (CGXPageCollectionHorizontalSectionModel *)self.dataArray[section];
+    return sectionModel.isRoundWithFooterView;
 }
 
 
@@ -199,11 +201,11 @@
     return CGPointMake(targetX, offset.y);
 }
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

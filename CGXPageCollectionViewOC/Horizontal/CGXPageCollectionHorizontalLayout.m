@@ -54,12 +54,53 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
         if (!firstItem || !lastItem) {
             continue;
         }
+        
+        //headerView
+        UICollectionViewLayoutAttributes *headerAttr = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+        //footerView
+        UICollectionViewLayoutAttributes *footerAttr = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+    
+        BOOL isHeaderAttr = (headerAttr &&
+                                      (headerAttr.frame.size.width != 0  && headerAttr.frame.size.height != 0));
+        BOOL isFooterAttr = (footerAttr &&
+                                      (footerAttr.frame.size.width != 0  && footerAttr.frame.size.height != 0));
+        
+        //判断是否计算headerview
+        BOOL isCalculateHeaderView = [self isCalculateHeaderViewSection:section] && isHeaderAttr;
+        //判断是否计算footerView
+        BOOL isCalculateFooterView = [self isCalculateFooterViewSection:section] && isFooterAttr;
+        
         UIEdgeInsets sectionInset = [self gx_insetForSectionAtIndex:section];
+        
         CGRect sectionFrame = CGRectUnion(firstItem.frame, lastItem.frame);
-        sectionFrame.origin.x -= sectionInset.left;
-        sectionFrame.origin.y -= sectionInset.top;
-        sectionFrame.size.width += sectionInset.left + sectionInset.right;
-        sectionFrame.size.height = sectionFrame.size.height+sectionInset.top+sectionInset.bottom;
+        if (!isCalculateHeaderView && !isCalculateFooterView) {
+            sectionFrame.origin.x -= sectionInset.left;
+            sectionFrame.origin.y -= sectionInset.top;
+            sectionFrame.size.width += sectionInset.left + sectionInset.right;
+            sectionFrame.size.height = sectionFrame.size.height+sectionInset.top+sectionInset.bottom;
+        } else{
+            
+            if (isCalculateHeaderView && !isCalculateFooterView) {
+                sectionFrame.origin.x -= sectionInset.left;
+                sectionFrame.origin.y -= sectionInset.top+headerAttr.frame.size.height;
+                sectionFrame.size.width += sectionInset.left + sectionInset.right;
+                sectionFrame.size.height = sectionFrame.size.height+sectionInset.top+sectionInset.bottom+headerAttr.frame.size.height;
+            }else if (!isCalculateHeaderView && isCalculateFooterView) {
+                sectionFrame.origin.x -= sectionInset.left;
+                sectionFrame.origin.y -= sectionInset.top;
+                sectionFrame.size.width += sectionInset.left + sectionInset.right;
+                sectionFrame.size.height = sectionFrame.size.height+sectionInset.top+sectionInset.bottom+footerAttr.frame.size.height;
+            }else{
+                sectionFrame.origin.x -= sectionInset.left;
+                sectionFrame.origin.y -= sectionInset.top+headerAttr.frame.size.height;
+                sectionFrame.size.width += sectionInset.left + sectionInset.right;
+                sectionFrame.size.height = sectionFrame.size.height+sectionInset.top+sectionInset.bottom+headerAttr.frame.size.height+footerAttr.frame.size.height;
+            }
+            
+        }
+        
+        
+ 
         
         // 2、定义
         CGXPageCollectionRoundLayoutAttributes *attr = [CGXPageCollectionRoundLayoutAttributes layoutAttributesForDecorationViewOfKind:CGXPageCollectionHorizontalLayoutSectionBackground withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];

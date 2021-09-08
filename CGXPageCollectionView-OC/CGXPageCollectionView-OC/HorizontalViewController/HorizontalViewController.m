@@ -36,7 +36,7 @@
     
     CGFloat height = 200;
     CGFloat y = 0;
-    for (int i = 0; i<8; i++) {
+    for (int i = 0; i<7; i++) {
         CGXPageCollectionHorizontalView *generalView = [[CGXPageCollectionHorizontalView alloc]  init];
         generalView.viewDelegate = self;
         generalView.backgroundColor = [UIColor whiteColor];
@@ -61,36 +61,46 @@
             sectionModel.minimumInteritemSpacing = 10;
             sectionModel.borderEdgeInserts = UIEdgeInsetsMake(0, 10, 0, 10);
             
+  
             CGFloat sectionWidth = [[UIScreen mainScreen]bounds].size.width*0.9;
             sectionModel.sectionWidth = ceil(sectionWidth);
             sectionModel.roundModel = [self sectionRoundModel];;
             
             CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
-            headerModel.headerBgColor =  [UIColor orangeColor];;
+            headerModel.headerBgColor =  [[UIColor orangeColor] colorWithAlphaComponent:0];;
             headerModel.headerHeight = 30;
             headerModel.isHaveTap = YES;
             headerModel.headerModel = [NSString stringWithFormat:@"%d--%d",i,j];
             sectionModel.headerModel = headerModel;
             
             CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
-            footerModel.footerBgColor = [UIColor yellowColor];;
-            footerModel.footerHeight = 20;
+            footerModel.footerBgColor = [[UIColor yellowColor] colorWithAlphaComponent:0];;
+            footerModel.footerHeight = 30;
             footerModel.isHaveTap = YES;
             footerModel.footerModel = @"脚步";
             sectionModel.footerModel = footerModel;
             
             
-            
-            
+           
+            sectionModel.isRoundWithHeaderView = NO;
+            sectionModel.isRoundWithFooterView = NO;
             if (i == 0) {
                 sectionModel.section = 3;
                 sectionModel.row = 3;
+                
+                sectionModel.isRoundWithHeaderView = YES;
+                sectionModel.isRoundWithFooterView = YES;
+                
             } else if (i==1){
                 sectionModel.section = 3;
                 sectionModel.row = 2;
+                sectionModel.isRoundWithHeaderView = YES;
+                sectionModel.isRoundWithFooterView = NO;
             } else if (i==2){
                 sectionModel.section = 3;
                 sectionModel.row = 1;
+                sectionModel.isRoundWithHeaderView = NO;
+                sectionModel.isRoundWithFooterView = YES;
             } else if (i==3){
                 sectionModel.section = 1;
                 sectionModel.row = 1;
@@ -103,13 +113,8 @@
             } else {
                 sectionModel.section = 1;
                 sectionModel.row = 3;
-                sectionModel.insets = UIEdgeInsetsMake(0, 0, 0, 0);
                 sectionModel.borderEdgeInserts = UIEdgeInsetsMake(0, 0, 0, 0);
-                sectionModel.minimumLineSpacing = 10;
-                sectionModel.minimumInteritemSpacing = 10;
             }
-            
-  
             
             for (int k = 0; k< sectionModel.row*sectionModel.section;k++) {
                 CGXPageCollectionHorizontalRowModel *rowModel = [[CGXPageCollectionHorizontalRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
@@ -136,10 +141,10 @@
 {
     CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc] init];
     roundModel.backgroundColor = RandomColor;
-    roundModel.cornerRadius = 0;
-    roundModel.backgroundColor =[UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1.0];
-    roundModel.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    roundModel.cornerRadius = 10;
+//    roundModel.backgroundColor =[UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1.0];
     
+    roundModel.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
     roundModel.shadowOffset = CGSizeMake(0,0);
     roundModel.shadowOpacity = 0;
     roundModel.shadowRadius = 0;
