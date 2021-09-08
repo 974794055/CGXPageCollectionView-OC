@@ -65,7 +65,6 @@ end
 <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/main0..png" width="933" height="482">
 
 ## 使用
-
 ### CGXPageCollectionGeneralView普通布局使用示例
 
 1.初始化CGXPageCollectionGeneralView
