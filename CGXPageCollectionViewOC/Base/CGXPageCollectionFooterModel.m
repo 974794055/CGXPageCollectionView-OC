@@ -23,7 +23,7 @@
         self.footerXib = isXib;
         self.footerHeight = 0;
         self.footerTag = 0;
-        self.footerBgColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1];
+        self.footerBgColor =  [[UIColor whiteColor] colorWithAlphaComponent:0];
         self.isHaveFooter = YES;
          self.isHaveTap = NO;
     }

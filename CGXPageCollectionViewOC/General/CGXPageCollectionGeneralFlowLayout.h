@@ -12,26 +12,34 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@protocol CGXPageCollectionGeneralFlowLayoutDataDelegate<UICollectionViewDelegateFlowLayout>
+@protocol CGXPageCollectionGeneralFlowLayoutDataDelegate<CGXPageCollectionUpdateRoundDelegate>
 
 @required
 
 @optional
+
 /*
- 是否悬停
- */
-- (BOOL)generalCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout sectionHeadersPinAtSection:(NSInteger)section;
+ 是否头悬停
+ @param collectionView collectionView description
+ @param collectionView collectionView description
+ @param layout layout description 
+ @param section section description
+*/
+- (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayou headersPinAtSection:(NSInteger)section;
 /*
- 悬停上部距离
- */
-- (CGFloat)generalCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout sectionHeadersPinTopSpaceAtSection:(NSInteger)section;
+ 头悬停上部距离
+ @param collectionView collectionView description
+ @param collectionView collectionView description
+ @param layout layout description
+ @param section section description
+*/
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayou headersPinSpaceAtSection:(NSInteger)section;
 
 @end
 
 @interface CGXPageCollectionGeneralFlowLayout : CGXPageCollectionBaseLayout
 
 @property (nonatomic, weak) id<CGXPageCollectionGeneralFlowLayoutDataDelegate> dataSource;
-
 
 @end
 

@@ -41,7 +41,7 @@
 {
     CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
     headerModel.headerBgColor = [UIColor orangeColor];
-    headerModel.headerHeight = 40+arc4random() % 30;;
+    headerModel.headerHeight = 40+arc4random() % 20;
     headerModel.isHaveTap = YES;
     return headerModel;
 }
@@ -49,7 +49,7 @@
 {
     CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
     footerModel.footerBgColor = [UIColor yellowColor];;
-    footerModel.footerHeight = 40+arc4random() % 20;;
+    footerModel.footerHeight = 40+arc4random() % 20;
     footerModel.isHaveTap = YES;
     return footerModel;
 }

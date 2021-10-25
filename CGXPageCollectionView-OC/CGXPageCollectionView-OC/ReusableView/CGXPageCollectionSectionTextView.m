@@ -70,50 +70,40 @@
 - (void)updateWithCGXCollectionViewFooterViewModel:(CGXPageCollectionBaseSectionModel *)sectionModel InSection:(NSInteger)section
 {
     [super updateWithCGXCollectionViewFooterViewModel:sectionModel InSection:section];
-    
+//    self.titleLabel.backgroundColor = sectionModel.footerModel.footerBgColor;
     self.right.constant = 0;
     self.left.constant = 0;
     self.top.constant = 0;
     self.bottom.constant = 0;
     
     if ([sectionModel isKindOfClass:[CGXPageCollectionGeneralSectionModel class]]) {
-        CGXPageCollectionGeneralSectionModel *sectionM = (CGXPageCollectionGeneralSectionModel *)sectionModel;
-        if (sectionM.isRoundWithHeaderView) {
-            UIEdgeInsets borderEdgeInserts = sectionM.borderEdgeInserts;
-            self.bottom.constant = -borderEdgeInserts.bottom;
-            self.right.constant = -borderEdgeInserts.right;;
-            self.left.constant = borderEdgeInserts.left;;
+        CGXPageCollectionGeneralSectionModel *seee = (CGXPageCollectionGeneralSectionModel *)sectionModel;
+        if (seee.isRoundWithFooterView) {
+            self.bottom.constant = -seee.borderEdgeInserts.bottom;
         }
     }
-
-    
-    
+//
     if ([self.sectionModel.headerModel.headerModel isKindOfClass:[NSString class]]) {
-        self.titleLabel.text = [NSString stringWithFormat:@"头分区%ld：%@",section,self.sectionModel.headerModel.headerModel];
+        self.titleLabel.text = [NSString stringWithFormat:@"脚分区%ld：%@",section,self.sectionModel.headerModel.headerModel];
     } else{
-        self.titleLabel.text = [NSString stringWithFormat:@"头分区--：%ld",section];
+        self.titleLabel.text = [NSString stringWithFormat:@"脚分区--：%ld",section];
     }
 }
 
 - (void)updateWithCGXCollectionViewHeaderViewModel:(CGXPageCollectionBaseSectionModel *)sectionModel InSection:(NSInteger)section
 {
     [super updateWithCGXCollectionViewHeaderViewModel:sectionModel InSection:section];
-    
+//    self.titleLabel.backgroundColor = sectionModel.headerModel.headerBgColor;
     self.right.constant = 0;
     self.left.constant = 0;
     self.top.constant = 0;
     self.bottom.constant = 0;
-    
     if ([sectionModel isKindOfClass:[CGXPageCollectionGeneralSectionModel class]]) {
-        CGXPageCollectionGeneralSectionModel *sectionM = (CGXPageCollectionGeneralSectionModel *)sectionModel;
-        if (sectionM.isRoundWithHeaderView) {
-            UIEdgeInsets borderEdgeInserts = sectionM.borderEdgeInserts;
-            self.top.constant = borderEdgeInserts.top;
-            self.right.constant = -borderEdgeInserts.right;;
-            self.left.constant = borderEdgeInserts.left;;
+        CGXPageCollectionGeneralSectionModel *seee = (CGXPageCollectionGeneralSectionModel *)sectionModel;
+        if (seee.isRoundWithHeaderView) {
+        self.top.constant = seee.borderEdgeInserts.top;
         }
     }
-    
     if ([self.sectionModel.headerModel.headerModel isKindOfClass:[NSString class]]) {
         self.titleLabel.text = [NSString stringWithFormat:@"头分区%ld：%@",section,self.sectionModel.headerModel.headerModel];
     } else{

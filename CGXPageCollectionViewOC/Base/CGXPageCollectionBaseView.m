@@ -188,7 +188,6 @@
     CGXPageCollectionBaseSectionModel *sectionModel = self.dataArray[indexPath.section];
     if (kind == UICollectionElementKindSectionHeader) {
         UICollectionReusableView *headview = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:sectionModel.headerModel.headerIdentifier forIndexPath:indexPath];
-        headview.backgroundColor = sectionModel.headerModel.headerBgColor;
         headview.tag = sectionModel.headerModel.headerTag;
         [self refreshHeaderSection:indexPath.section Header:headview];
         BOOL isHave = [headview respondsToSelector:@selector(updateWithCGXCollectionViewHeaderViewModel:InSection:)];
@@ -209,7 +208,6 @@
         return headview;
     } else {
         UICollectionReusableView *footview = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:sectionModel.footerModel.footerIdentifier forIndexPath:indexPath];
-        footview.backgroundColor = sectionModel.footerModel.footerBgColor;
         footview.tag = sectionModel.footerModel.footerTag;
         [self refreshFooterSection:indexPath.section Footer:footview];
 
@@ -247,12 +245,10 @@
     if (isHave == YES && [cell conformsToProtocol:@protocol(CGXPageCollectionUpdateCellDelegate)]) {
         [(UICollectionViewCell<CGXPageCollectionUpdateCellDelegate> *)cell updateWithCGXPageCollectionCellModel:itemModel  AtIndex:indexPath.row];
     }
-    
     BOOL isHaveee = [cell respondsToSelector:@selector(updateWithCGXPageCollectionSectionModel:CellModel:AtIndexPath:)];
     if (isHaveee == YES && [cell conformsToProtocol:@protocol(CGXPageCollectionUpdateCellDelegate)]) {
         [(UICollectionViewCell<CGXPageCollectionUpdateCellDelegate> *)cell updateWithCGXPageCollectionSectionModel:sectionModel CellModel:itemModel AtIndexPath:indexPath];
     }
-    
 
     if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(gx_PageCollectionBaseView:Cell:cellForItemAtIndexPath:)]) {
         [self.viewDelegate gx_PageCollectionBaseView:self Cell:cell cellForItemAtIndexPath:indexPath];

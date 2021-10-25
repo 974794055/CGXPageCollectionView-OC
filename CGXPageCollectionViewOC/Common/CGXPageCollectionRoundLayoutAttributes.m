@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         self.borderEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-        self.myConfigModel = [[CGXPageCollectionRoundModel alloc] init];
+        self.roundModel = [[CGXPageCollectionRoundModel alloc] init];
     }
     return self;
 }

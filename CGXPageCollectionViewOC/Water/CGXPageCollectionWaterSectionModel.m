@@ -20,5 +20,7 @@
     self.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
     self.sectionHeadersHovering = NO;
     self.sectionHeadersHoveringTopEdging = 0;
+    self.isRoundWithFooterView = NO;
+    self.isRoundWithHeaderView = NO;
 }
 @end

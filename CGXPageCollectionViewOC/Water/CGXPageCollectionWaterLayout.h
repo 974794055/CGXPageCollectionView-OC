@@ -22,10 +22,9 @@
 
 @end
 
-@protocol CGXPageCollectionWaterLayoutDataSource<NSObject>
+@protocol CGXPageCollectionWaterLayoutDataSource<CGXPageCollectionUpdateRoundDelegate>
 
 @required
-
 
 /// Return per section's column number(must be greater than 0).
 - (NSInteger)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout*)layout numberOfColumnInSection:(NSInteger)section;
@@ -34,21 +33,13 @@
 
 @optional
 
-/// Column spacing between columns
-//   此方法排列方式  偶数下标在左边。奇数下标在右边。   两列情况下使用
+/*此方法排列方式  偶数下标在左边。奇数下标在右边。   两列情况下使用*/
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout*)layout IsParityAItemAtIndexPath:(NSIndexPath *)indexPath;
-/*
- 某个分区是否是奇偶瀑布流排布
- */
+/*某个分区是否是奇偶瀑布流排布*/
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout*)layout IsParityFlowAtInSection:(NSInteger)section;
-
-/*
- 是否头悬停
- */
+/*是否头悬停*/
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout *)collectionViewLayout sectionHeadersPinAtSection:(NSInteger)section;
-/*
- 头悬停上部距离
- */
+/*头悬停上部距离*/
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionWaterLayout *)collectionViewLayout sectionHeadersPinTopSpaceAtSection:(NSInteger)section;
 
 @end

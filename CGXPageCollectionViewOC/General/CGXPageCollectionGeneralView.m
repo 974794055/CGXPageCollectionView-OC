@@ -38,7 +38,6 @@
     [super preferredFlowLayout];
     CGXPageCollectionGeneralFlowLayout *layout = [[CGXPageCollectionGeneralFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    layout.isRoundEnabled = YES;
     if (@available(iOS 9.0, *)) {
         layout.sectionFootersPinToVisibleBounds =NO;
         layout.sectionHeadersPinToVisibleBounds =NO;
@@ -167,11 +166,42 @@
         [self.viewDelegate gx_PageCollectionBaseView:self didSelectDecorationViewAtIndexPath:indexPath];
     }
 }
+
+/*
+ 是否头悬停
+ @param collectionView collectionView description
+ @param collectionView collectionView description
+ @param layout layout description
+ @param section section description
+*/
+- (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)layout headersPinAtSection:(NSInteger)section
+{
+    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
+    return sectionModel.sectionHeadersHovering;
+}
+/*
+ 头悬停上部距离
+ @param collectionView collectionView description
+ @param collectionView collectionView description
+ @param layout layout description
+ @param section section description
+*/
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)layout headersPinSpaceAtSection:(NSInteger)section
+{
+    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
+    return sectionModel.sectionHeadersHoveringTopEdging;
+}
+/*
+ 是否悬停
+ */
 - (BOOL)generalCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout sectionHeadersPinAtSection:(NSInteger)section
 {
     CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
     return sectionModel.sectionHeadersHovering;
 }
+/*
+ 悬停上部距离
+ */
 - (CGFloat)generalCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout sectionHeadersPinTopSpaceAtSection:(NSInteger)section
 {
     CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];

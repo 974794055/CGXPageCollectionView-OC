@@ -22,7 +22,7 @@
         self.headerXib = isXib;
         self.headerHeight = 0;
         self.headerTag = 0;
-        self.headerBgColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1];;
+        self.headerBgColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
         self.isHaveHeader = YES;
         self.isHaveTap = NO;
     }

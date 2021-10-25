@@ -31,19 +31,17 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     self.isRoundEnabled = NO;
     [self registerClass:[CGXPageCollectionRoundReusableView class] forDecorationViewOfKind:CGXPageCollectionHorizontalLayoutSectionBackground];
 }
-//1
-- (void)prepareLayout  //invalidateLayout
+
+- (void)prepareLayout
 {
     [super prepareLayout];
     
     [self.decorationViewArr removeAllObjects];
-    
     NSInteger numberOfSections = [self.collectionView numberOfSections];
     id delegate = self.collectionView.delegate;
     if (![delegate respondsToSelector:@selector(collectionView:layout:configModelForSectionAtIndex:)]) {
         return;
     }
-    
     for (NSInteger section = 0; section < numberOfSections; section++) {
         NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:section];
         if (numberOfItems <= 0) {
@@ -98,17 +96,13 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
             }
             
         }
-        
-        
- 
-        
-        // 2、定义
+    
         CGXPageCollectionRoundLayoutAttributes *attr = [CGXPageCollectionRoundLayoutAttributes layoutAttributesForDecorationViewOfKind:CGXPageCollectionHorizontalLayoutSectionBackground withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         attr.frame = sectionFrame;
         attr.zIndex = -1;
         id <CGXPageCollectionUpdateRoundDelegate> delegate  = (id <CGXPageCollectionUpdateRoundDelegate>)self.collectionView.delegate;
         if ([delegate respondsToSelector:@selector(collectionView:layout:configModelForSectionAtIndex:)]) {
-            attr.myConfigModel = [delegate collectionView:self.collectionView layout:self configModelForSectionAtIndex:section];
+            attr.roundModel = [delegate collectionView:self.collectionView layout:self configModelForSectionAtIndex:section];
         }
         [self.decorationViewArr addObject:attr];
     }
@@ -122,8 +116,6 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     }
     return [super layoutAttributesForDecorationViewOfKind:elementKind atIndexPath:indexPath];
 }
-
-//2
 - (CGSize)collectionViewContentSize
 {
     if (!self.collectionView.superview) {
@@ -144,24 +136,19 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
     size.width= ceil(width);
     return size;
 }
-//3  返回目标区域对应的Attributes 数组
 - (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
-//    NSLog(@"___________%@",NSStringFromCGRect(rect));
-    //获取对应rect中的展示indexpath ，生成attribu，笔者这里的需求不会存在大量数据，就偷懒了。
     NSMutableArray *attributeArray = [NSMutableArray new];
     
     for (int section=0; section<[self.collectionView numberOfSections]; section++) {
         UICollectionViewLayoutAttributes* attHeader = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         [attributeArray addObject:attHeader];
     }
-    
     for (int section=0; section<self.collectionView.numberOfSections; section++) {
         for (NSInteger item=0; item<[self.collectionView numberOfItemsInSection:section]; item++) {
             UICollectionViewLayoutAttributes *att= [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:item inSection:section]];
             [attributeArray addObject:att];
         }
     }
-    
     for (int section=0; section<[self.collectionView numberOfSections]; section++) {
         UICollectionViewLayoutAttributes* attHeader = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         [attributeArray addObject:attHeader];
@@ -288,6 +275,27 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {
     return YES;
+}
+
+//判断是否计算headerview
+- (BOOL)isCalculateHeaderViewSection:(NSInteger)section
+{
+    BOOL isCalculateHeaderView = NO;
+    id <CGXPageCollectionUpdateRoundDelegate> delegate  = (id <CGXPageCollectionUpdateRoundDelegate>)self.collectionView.delegate;
+    if ([delegate respondsToSelector:@selector(collectionView:layout:isCalculateHeaderViewIndex:)]) {
+        isCalculateHeaderView = [delegate collectionView:self.collectionView layout:self isCalculateHeaderViewIndex:section];
+    }
+    return isCalculateHeaderView;
+}
+//判断是否计算footerView
+- (BOOL)isCalculateFooterViewSection:(NSInteger)section
+{
+    BOOL isCalculateFooterView = NO;
+    id <CGXPageCollectionUpdateRoundDelegate> delegate  = (id <CGXPageCollectionUpdateRoundDelegate>)self.collectionView.delegate;
+    if ([delegate respondsToSelector:@selector(collectionView:layout:isCalculateFooterViewIndex:)]) {
+        isCalculateFooterView = [delegate collectionView:self.collectionView layout:self isCalculateFooterViewIndex:section];
+    }
+    return isCalculateFooterView;
 }
 
 @end

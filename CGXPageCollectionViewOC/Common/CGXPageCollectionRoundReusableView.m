@@ -66,8 +66,8 @@
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
     __weak typeof(self) weakSelf = self;
-    if (attr.myConfigModel) {
-        CGXPageCollectionRoundModel *model = attr.myConfigModel;
+    if (attr.roundModel) {
+        CGXPageCollectionRoundModel *model = attr.roundModel;
         UIImage *bgImage = [self gx_pageImageWithColor:model.backgroundColor];
         self.bgImageView.image = bgImage;
         if ([model.hotStr hasPrefix:@"http:"] || [model.hotStr hasPrefix:@"https:"]) {

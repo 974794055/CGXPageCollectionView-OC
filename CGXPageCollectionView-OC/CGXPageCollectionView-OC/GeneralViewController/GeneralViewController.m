@@ -79,6 +79,8 @@
         NSMutableArray *dataArray = [NSMutableArray array];
         for (int i = 0; i<self.titleArr.count; i++) {
             CGXPageCollectionGeneralSectionModel *sectionModel = [GeneralViewTool sectionModel];
+//            sectionModel.sectionHeadersHovering = i == 0 ?YES:NO;
+//            sectionModel.sectionHeadersHoveringTopEdging = 0;
             CGXPageCollectionRoundModel *roundModel = [GeneralViewTool roundModel];
             if (i<4) {
                 sectionModel.row = 2;
@@ -104,7 +106,7 @@
                 sectionModel.isRoundWithFooterView = NO;
                 sectionModel.isRoundWithHeaderView = YES;
             } else if (i==2){
-                roundModel.hotStr = @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2216726832,2803715051&fm=26&gp=0.jpg";;
+                roundModel.hotStr = @"bg";;
                 roundModel.page_ImageCallback = ^(UIImageView * _Nonnull hotImageView, NSURL * _Nonnull hotURL) {
                     [hotImageView sd_setImageWithURL:hotURL];
                 };
@@ -120,18 +122,14 @@
             
             CGXPageCollectionHeaderModel *headerModel = [GeneralViewTool headerModel];
             headerModel.headerModel = weakSelf.titleArr[i];
-            headerModel.headerBgColor = [UIColor blueColor];
+            headerModel.headerBgColor = [[UIColor yellowColor] colorWithAlphaComponent:0.8];
             CGXPageCollectionFooterModel *footerModel = [GeneralViewTool footerModel];
-            footerModel.footerHeight = 0;
+            footerModel.footerBgColor = [[UIColor orangeColor] colorWithAlphaComponent:0.7];
             sectionModel.headerModel = headerModel;
             sectionModel.footerModel = footerModel;
             
-            
-            sectionModel.row = arc4random() % 5 + 1;
+            sectionModel.row = arc4random() % 4 + 2;
             sectionModel.cellHeight = 80;
-            if (i==9) {
-                sectionModel.row = arc4random() % 5 + 2;
-            }
             UIColor *cellColor = RandomColor;
             for (int j = 0; j<sectionModel.row * 2;j++) {
                 CGXPageCollectionGeneralRowModel *rowModel = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
@@ -169,7 +167,7 @@
 }
 - (void)replaceData
 {
-    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)[self.generalView pullSection:0];
+    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.generalView.dataArray[0];
     
     CGFloat height = arc4random() % 20+80;
     CGFloat row = arc4random() % 2+2;
@@ -213,7 +211,7 @@
 
 - (CGSize)gx_PageCollectionGeneralView:(CGXPageCollectionGeneralView *)tagsView sizeForItemHeightAtIndexPath:(NSIndexPath *)indexPath ItemSize:(CGSize)itemSize
 {
-    return CGSizeMake(itemSize.width, itemSize.height+30);
+    return CGSizeMake(itemSize.width, itemSize.height);
 }
 - (void)gx_PageCollectionBaseView:(CGXPageCollectionBaseView *)baseView scrollViewDidScroll:(nonnull UIScrollView *)scrollView
 {

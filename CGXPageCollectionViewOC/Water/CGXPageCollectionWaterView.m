@@ -37,9 +37,36 @@
     [super preferredFlowLayout];
     CGXPageCollectionWaterLayout *layout = [[CGXPageCollectionWaterLayout alloc] init];
     layout.dataSource = self;
-    layout.isRoundEnabled = YES;
     layout.sectionFootersPinTVisibleBounds = NO;
     return layout;
+}
+- (void)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView
+{
+    [super refreshHeaderSection:section Header:headerView];
+    CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
+    if (self.isShowDifferentColor) {
+        if (sectionModel.isRoundWithHeaderView) {
+            headerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
+        }else{
+            headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
+        }
+    } else{
+        headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
+    }
+}
+- (void)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView
+{
+    [super refreshFooterSection:section Footer:footerView];
+    CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
+    if (self.isShowDifferentColor) {
+        if (sectionModel.isRoundWithFooterView) {
+            footerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
+        }else{
+            footerView.backgroundColor = sectionModel.footerModel.footerBgColor;
+        }
+    } else{
+        footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
+    }
 }
 - (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
 {
@@ -94,11 +121,8 @@
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
-    UIEdgeInsets insets = sectionModel.insets;
-    UIEdgeInsets borderEdgeInserts = sectionModel.borderEdgeInserts;
-    return UIEdgeInsetsMake(insets.top+borderEdgeInserts.top, insets.left+borderEdgeInserts.left, insets.bottom+borderEdgeInserts.bottom, insets.right+borderEdgeInserts.right);
+    return sectionModel.insets;
 }
-#pragma mark - CGXPageCollectionGeneralFlowLayoutRoundDelegate
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout borderEdgeInsertsForSectionAtIndex:(NSInteger)section
 {
     CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
@@ -132,7 +156,8 @@
 /// @param collectionViewLayout collectionViewLayout description
 /// @param section section description
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateHeaderViewIndex:(NSInteger)section{
-    return NO;
+    CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
+    return sectionModel.isRoundWithHeaderView;
 }
 
 /// 根据section设置是否包含footerview（实现该方法后，isCalculateFooter将不会生效）
@@ -140,7 +165,8 @@
 /// @param collectionViewLayout collectionViewLayout description
 /// @param section section description
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout isCalculateFooterViewIndex:(NSInteger)section{
-    return NO;
+    CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
+    return sectionModel.isRoundWithFooterView;
 }
 /// 背景图点击事件
 /// @param collectionView collectionView description

@@ -8,7 +8,7 @@
 
 #import "WaterViewController.h"
 
-@interface WaterViewController ()<CGXPageCollectionUpdateViewDelegate>
+@interface WaterViewController ()<CGXPageCollectionUpdateViewDelegate,CGXPageCollectionUpdateRoundDelegate>
 @property (nonatomic , strong) CGXPageCollectionWaterView *generalView;
 @end
 
@@ -47,17 +47,12 @@
     int x = 9;
     for (int i = 0; i<x; i++) {
         CGXPageCollectionWaterSectionModel *sectionModel = [[CGXPageCollectionWaterSectionModel alloc] init];
-        sectionModel.sectionHeadersHovering = i == 1 ?YES:NO;
-        sectionModel.sectionHeadersHoveringTopEdging = 0;
-        if (i % 2 == 0) {
-            sectionModel.insets = UIEdgeInsetsMake(10, 10, 10, 10);
-        } else{
-            sectionModel.insets = UIEdgeInsetsMake(20, 20, 20, 20);
-        }
-       
+        sectionModel.sectionHeadersHovering = i == 0 ?YES:NO;
+        sectionModel.sectionHeadersHoveringTopEdging = self.isRoundEnabled ? 10:0;
+        sectionModel.insets = UIEdgeInsetsMake(10, 10, 10, 10);
         sectionModel.minimumLineSpacing = 10;
         sectionModel.minimumInteritemSpacing = 10;
-        
+
         CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
         headerModel.headerBgColor =  [UIColor orangeColor];;
         headerModel.headerHeight = 40;
@@ -76,14 +71,9 @@
         
         sectionModel.borderEdgeInserts = UIEdgeInsetsMake(0, 0, 0, 0);
         if (self.isRoundEnabled) {
-            
-            
-            if (i % 2 == 0) {
-                sectionModel.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
-            } else{
-                sectionModel.borderEdgeInserts = UIEdgeInsetsMake(20, 20, 20, 20);
-            }
-            
+            sectionModel.isRoundWithFooterView = YES;
+            sectionModel.isRoundWithHeaderView = YES;
+            sectionModel.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
             CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc] init];
             roundModel.backgroundColor = RandomColor;
             if (i<4) {

@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol CGXPageCollectionUpdateRoundDelegate <NSObject,UICollectionViewDelegateFlowLayout>
+@protocol CGXPageCollectionUpdateRoundDelegate <UICollectionViewDelegateFlowLayout>
 
 @required
 
@@ -40,7 +40,20 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param collectionViewLayout collectionViewLayout description
 /// @param section section description
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout isCalculateFooterViewIndex:(NSInteger)section;
-
+/*
+ 头分区上下距离 无头分区有效
+ @param collectionView collectionView description
+ @param layout layout description
+ @param section section description
+*/
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout*)collectionViewLayou spaceHeaderViewIndex:(NSInteger)section;
+/*
+ 脚分区上下距离 无脚分区有效
+ @param collectionView collectionView description
+ @param layout layout description
+ @param section section description
+*/
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout*)collectionViewLayou spaceFooterViewIndex:(NSInteger)section;
 /// 背景图点击事件
 /// @param collectionView collectionView description
 /// @param indexPath 点击背景图的indexPath
@@ -49,7 +62,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface CGXPageCollectionRoundReusableView : UICollectionReusableView
+
 @property (weak, nonatomic) CGXPageCollectionRoundLayoutAttributes *myCacheAttr;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -18,7 +18,7 @@
 - (void)initializeData
 {
     [super initializeData];
-
+    
 }
 
 - (void)initializeViews
@@ -30,10 +30,23 @@
 - (UICollectionViewLayout *)preferredFlowLayout
 {
     [super preferredFlowLayout];
-     CGXPageCollectionIrregularLayout *layout = [[CGXPageCollectionIrregularLayout alloc]init];
-           layout.delegate = self;
+    CGXPageCollectionIrregularLayout *layout = [[CGXPageCollectionIrregularLayout alloc]init];
+    layout.delegate = self;
     return layout;
 }
+- (void)refreshHeaderSection:(NSInteger)section Header:(UICollectionReusableView *)headerView
+{
+    [super refreshHeaderSection:section Header:headerView];
+    CGXPageCollectionIrreguarSectionModel *sectionModel = (CGXPageCollectionIrreguarSectionModel *)self.dataArray[section];
+    headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
+}
+- (void)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView
+{
+    [super refreshFooterSection:section Footer:footerView];
+    CGXPageCollectionIrreguarSectionModel *sectionModel = (CGXPageCollectionIrreguarSectionModel *)self.dataArray[section];
+    footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
+}
+
 - (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
 {
     [super refreshSectionModel:baseSectionModel];
@@ -48,7 +61,7 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionIrregularLayout *)layout itemWidth:(CGFloat)width heightForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGXPageCollectionIrreguarSectionModel *sectionModel = (CGXPageCollectionIrreguarSectionModel *)self.dataArray[indexPath.section];
-        CGXPageCollectionIrreguarRowModel *item =  (CGXPageCollectionIrreguarRowModel *)sectionModel.rowArray[indexPath.row];
+    CGXPageCollectionIrreguarRowModel *item =  (CGXPageCollectionIrreguarRowModel *)sectionModel.rowArray[indexPath.row];
     return item.cellHeight;
 }
 /// Return per item's height
@@ -84,11 +97,11 @@
     return sectionModel.topRow;
 }
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

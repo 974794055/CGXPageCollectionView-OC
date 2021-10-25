@@ -19,13 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIColor *backgroundColor;
 /// 投影相关参数
 @property (strong, nonatomic) UIColor *shadowColor;
-@property (assign, nonatomic) CGSize shadowOffset;
+@property (assign, nonatomic) CGSize  shadowOffset;
 @property (assign, nonatomic) CGFloat shadowOpacity;
 @property (assign, nonatomic) CGFloat shadowRadius;
 /// 圆角
 @property (assign, nonatomic) CGFloat cornerRadius;
-
-//@property (nonatomic , strong) UIImage *bgImage; //默认无
 
 /* UIImage名称、网络连接  */
 @property (strong, nonatomic) NSString *hotStr;// 背景图片名称

@@ -8,27 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CGXPageCollectionFlowLayoutUtils.h"
 #import "CGXPageCollectionRoundModel.h"
 #import "CGXPageCollectionRoundLayoutAttributes.h"
 #import "CGXPageCollectionRoundReusableView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 @interface CGXPageCollectionBaseLayout : UICollectionViewFlowLayout
 
-#pragma mark - Subclass Override
-
 - (void)initializeData NS_REQUIRES_SUPER;
-
-/// 是否开始Round计算，（默认YES），当该位置为NO时，计算模块都不开启，包括设置的代理
-@property (assign, nonatomic) BOOL isRoundEnabled;
-/// 是否使用不规则Cell大小的计算方式(若Cell的大小是相同固定大小，则无需开启该方法)，默认NO
-@property (assign, nonatomic) BOOL isCalculateOpenIrregularCell;
-@property (nonatomic, strong ,readonly) NSMutableArray<UICollectionViewLayoutAttributes *> *decorationViewAttrs;
-
-- (void)initializeRoundView;
 
 @end
 
@@ -91,15 +79,6 @@ NS_ASSUME_NONNULL_BEGIN
                                 NumberOfItems:(NSInteger)numberOfItems
                                         IsOpen:(BOOL)isOpen;
 
-//判断是否计算headerview
-- (BOOL)isCalculateHeaderViewSection:(NSInteger)section;
-//判断是否计算footerView
-- (BOOL)isCalculateFooterViewSection:(NSInteger)section;
-
-//圆角配置
-- (CGXPageCollectionRoundLayoutAttributes *)addRoundAttributes:(NSInteger)section
-                                                  SectionFrame:(CGRect)sectionFrame
-                                                  UIEdgeInsets:(UIEdgeInsets)userCustomSectionInset;
 @end
 
 

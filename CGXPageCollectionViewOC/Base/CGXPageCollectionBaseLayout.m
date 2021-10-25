@@ -9,7 +9,7 @@
 #import "CGXPageCollectionBaseLayout.h"
 @interface CGXPageCollectionBaseLayout ()
 
-@property (nonatomic, strong , readwrite) NSMutableArray<UICollectionViewLayoutAttributes *> *decorationViewAttrs;
+//@property (nonatomic, strong , readwrite) NSMutableArray<UICollectionViewLayoutAttributes *> *decorationViewAttrs;
 
 @end
 @implementation CGXPageCollectionBaseLayout
@@ -23,152 +23,93 @@
 }
 - (void)initializeData
 {
-    self.isRoundEnabled = YES;
-    self.isCalculateOpenIrregularCell = YES;
+
 }
 - (void)initializeRoundView
 {
-    if (self.isRoundEnabled) {
-        NSInteger sections = [self.collectionView numberOfSections];
-        id <CGXPageCollectionUpdateRoundDelegate> delegate  = (id <CGXPageCollectionUpdateRoundDelegate>)self.collectionView.delegate;
-        //检测是否实现了背景样式模块代理
-        if ([delegate respondsToSelector:@selector(collectionView:layout:configModelForSectionAtIndex:)]) {
-            //1.初始化
-            [self registerClass:[CGXPageCollectionRoundReusableView class] forDecorationViewOfKind:NSStringFromClass([CGXPageCollectionRoundReusableView class])];
-            [self.decorationViewAttrs removeAllObjects];
-            
-            for (NSInteger section = 0; section < sections; section++) {
-                NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:section];
-                if (numberOfItems > 0) {
-                    // 第一个item
-                    UICollectionViewLayoutAttributes *firstAttr = [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-                    CGRect firstFrame = firstAttr.frame;
-                    // 最后一个item
-                    UICollectionViewLayoutAttributes *lastAttr = [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:(numberOfItems - 1) inSection:section]];
-                    CGRect lastFrame = lastAttr.frame;
-                    //headerView
-                    UICollectionViewLayoutAttributes *headerAttr = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-                    //footerView
-                    UICollectionViewLayoutAttributes *footerAttr = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-                
-                    BOOL isHeaderAttr = (headerAttr &&
-                                                  (headerAttr.frame.size.width != 0  && headerAttr.frame.size.height != 0));
-                    BOOL isFooterAttr = (footerAttr &&
-                                                  (footerAttr.frame.size.width != 0  && footerAttr.frame.size.height != 0));
-                    
-                    //判断是否计算headerview
-                    BOOL isCalculateHeaderView = [self isCalculateHeaderViewSection:section] && isHeaderAttr;
-                    //判断是否计算footerView
-                    BOOL isCalculateFooterView = [self isCalculateFooterViewSection:section] && isFooterAttr;
-                    
-                    firstFrame = [self calculateDefaultFrameWithFirstHeader:isCalculateHeaderView Section:section NumberOfItems:numberOfItems IsOpen:self.isCalculateOpenIrregularCell];
-                    lastFrame = [self calculateDefaultFrameWithFirstFooter:isCalculateFooterView Section:section NumberOfItems:numberOfItems IsOpen:self.isCalculateOpenIrregularCell];
-                    
-                    //获取sectionInset
-                    UIEdgeInsets sectionInset = [CGXPageCollectionFlowLayoutUtils evaluatedSectionInsetForItemWithCollectionLayout:self atIndex:section];
-                    CGRect sectionFrame = CGRectUnion(firstFrame, lastFrame);
-                    
-                    if (!isCalculateHeaderView && !isCalculateFooterView) {
-                        //都没有headerView&footerView
-                        sectionFrame = [self calculateDefaultFrameWithSectionFrame:sectionFrame sectionInset:sectionInset];
-                    }else{
-                        if (isCalculateHeaderView && !isCalculateFooterView) {
-                            //判断是否有headerview
-                            if (isHeaderAttr) {
-                                if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
-                                    //判断包含headerview, left位置已经计算在内，不需要补偏移
-                                    sectionFrame.size.width += sectionInset.right;
-                                    
-                                    //减去系统adjustInset的top
-                                    if (@available(iOS 11.0, *)) {
-                                        sectionFrame.size.height = self.collectionView.frame.size.height - self.collectionView.adjustedContentInset.top;
-                                    } else {
-                                        sectionFrame.size.height = self.collectionView.frame.size.height - fabs(self.collectionView.contentOffset.y)/*适配iOS11以下*/;
-                                    }
-                                }else{
-                                    //判断包含headerview, top位置已经计算在内，不需要补偏移
-                                    sectionFrame.size.height += sectionInset.bottom;
-                                }
-                            }else{
-                                sectionFrame = [self calculateDefaultFrameWithSectionFrame:sectionFrame sectionInset:sectionInset];
-                            }
-                        }else if (!isCalculateHeaderView && isCalculateFooterView) {
-                            if (isFooterAttr) {
-                                if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
-                                    //判断包含footerView, right位置已经计算在内，不需要补偏移
-                                    //(需要补充x偏移)
-                                    sectionFrame.origin.x -= sectionInset.left;
-                                    sectionFrame.size.width += sectionInset.left;
-                                    
-                                    //减去系统adjustInset的top
-                                    if (@available(iOS 11.0, *)) {
-                                        sectionFrame.size.height = self.collectionView.frame.size.height - self.collectionView.adjustedContentInset.top;
-                                    } else {
-                                        sectionFrame.size.height = self.collectionView.frame.size.height - fabs(self.collectionView.contentOffset.y)/*适配iOS11以下*/;
-                                    }
-                                }else{
-                                    //判断包含footerView, bottom位置已经计算在内，不需要补偏移
-                                    //(需要补充y偏移)
-                                    sectionFrame.origin.y -= sectionInset.top;
-                                    sectionFrame.size.width = self.collectionView.frame.size.width;
-                                    sectionFrame.size.height += sectionInset.top;
-                                }
-                            }else{
-                                sectionFrame = [self calculateDefaultFrameWithSectionFrame:sectionFrame sectionInset:sectionInset];
-                            }
-                        }else{
-                            if (isHeaderAttr && isFooterAttr) {
-                                //都有headerview和footerview就不用计算了
-                            }else{
-                                sectionFrame = [self calculateDefaultFrameWithSectionFrame:sectionFrame sectionInset:sectionInset];
-                            }
-                        }
-                    }
-                    
-                    
-                    UIEdgeInsets userCustomSectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-                    if ([delegate respondsToSelector:@selector(collectionView:layout:borderEdgeInsertsForSectionAtIndex:)]) {
-                        //检测是否实现了该方法，进行赋值
-                        userCustomSectionInset = [delegate collectionView:self.collectionView layout:self borderEdgeInsertsForSectionAtIndex:section];
-                    }
-                    sectionFrame.origin.x += userCustomSectionInset.left;
-                    sectionFrame.origin.y += userCustomSectionInset.top;
-                    if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
-                        sectionFrame.size.width -= (userCustomSectionInset.left + userCustomSectionInset.right);
-                        sectionFrame.size.height -= (userCustomSectionInset.top + userCustomSectionInset.bottom);
-                    }else{
-                        sectionFrame.size.width -= (userCustomSectionInset.left + userCustomSectionInset.right);
-                        sectionFrame.size.height -= (userCustomSectionInset.top + userCustomSectionInset.bottom);
-                    }
-                    
-                    //2. 定义
-                    CGXPageCollectionRoundLayoutAttributes *attr = [self addRoundAttributes:section SectionFrame:sectionFrame UIEdgeInsets:userCustomSectionInset];
-                    [self.decorationViewAttrs addObject:attr];
-                }else{
-                    continue ;
-                }
-            }
-        }
-    }
+
 }
-#pragma mark - other
-- (NSMutableArray<UICollectionViewLayoutAttributes *> *)decorationViewAttrs{
-    if (!_decorationViewAttrs) {
-        _decorationViewAttrs = [NSMutableArray array];
-    }
-    return _decorationViewAttrs;
-}
-- (BOOL) shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{
 
     return YES;
 
 }
+
+#pragma mark - 不规则Cell计算方案
+
+/// 不规则cell找出top最高位置
+/// @param section section description
+/// @param numberOfItems numberOfItems description
+/// @param defaultFrame defaultFrame description
+- (CGRect)calculateIrregularitiesCellByMinTopFrameWithLayout:(UICollectionViewFlowLayout *)layout section:(NSInteger)section numberOfItems:(NSInteger)numberOfItems defaultFrame:(CGRect)defaultFrame{
+    CGRect firstFrame = defaultFrame;
+    if (layout.scrollDirection == UICollectionViewScrollDirectionVertical) {
+        //竖向
+        CGFloat minY = CGRectGetMinY(firstFrame);
+        for (NSInteger i = 0; i <= numberOfItems - 1; i ++ ) {
+            UICollectionViewLayoutAttributes *attr = [layout layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:section]];
+            minY = MIN(minY, CGRectGetMinY(attr.frame));
+        }
+        CGRect rect = firstFrame;
+        firstFrame = CGRectMake(rect.origin.x, minY, rect.size.width, rect.size.height);
+    }else{
+        //横向
+        CGFloat minX = CGRectGetMinX(firstFrame);
+        for (NSInteger i = 0; i <= numberOfItems - 1; i ++ ) {
+            UICollectionViewLayoutAttributes *attr = [layout layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:section]];
+            minX = MIN(minX, CGRectGetMinX(attr.frame));
+        }
+        CGRect rect = firstFrame;
+        firstFrame = CGRectMake(minX ,rect.origin.y, rect.size.width, rect.size.height);
+    }
+    return firstFrame;
+}
+
+/// 不规则cell找出bootom最低位置
+/// @param layout layout description
+/// @param section section description
+/// @param numberOfItems numberOfItems description
+/// @param defaultFrame defaultFrame description
+- (CGRect)calculateIrregularitiesCellByMaxBottomFrameWithLayout:(UICollectionViewFlowLayout *)layout section:(NSInteger)section numberOfItems:(NSInteger)numberOfItems defaultFrame:(CGRect)defaultFrame{
+    CGRect lastFrame = defaultFrame;
+    if (layout.scrollDirection == UICollectionViewScrollDirectionVertical) {
+        //竖向
+        CGFloat maxY = CGRectGetMinY(lastFrame);
+        NSInteger index = numberOfItems-1;
+        for (NSInteger i = 0; i <= numberOfItems - 1; i ++ ) {
+            UICollectionViewLayoutAttributes *attr = [layout layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:section]];
+            if (maxY < MAX(maxY, CGRectGetMaxY(attr.frame))) {
+                maxY = MAX(maxY, CGRectGetMaxY(attr.frame));
+                index = i;
+            }
+        }
+        lastFrame = [layout layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:section]].frame;
+    }else{
+        //横向
+        CGFloat maxX = CGRectGetMaxX(lastFrame);
+        NSInteger index = numberOfItems-1;
+        for (NSInteger i = 0; i <= numberOfItems - 1; i ++ ) {
+            UICollectionViewLayoutAttributes *attr = [layout layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:section]];
+            if (maxX < MAX(maxX, CGRectGetMaxX(attr.frame))) {
+                maxX = MAX(maxX, CGRectGetMaxX(attr.frame));
+                index = i;
+            }
+        }
+        lastFrame = [layout layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:section]].frame;
+    }
+    return lastFrame;
+}
+
 @end
 
 @implementation CGXPageCollectionBaseLayout (BaseLayoutAttributes)
 
 - (CGFloat)gx_minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
+    NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:section];
+    if (numberOfItems == 0) {
+        return 0;
+    }
     if (self.collectionView.delegate && [self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:minimumInteritemSpacingForSectionAtIndex:)]) {
         id<UICollectionViewDelegateFlowLayout> delegate = (id<UICollectionViewDelegateFlowLayout>) self.collectionView.delegate;
         return [delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:section];
@@ -178,6 +119,10 @@
 }
 - (CGFloat)gx_minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
+    NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:section];
+    if (numberOfItems == 0) {
+        return 0;
+    }
     if (self.collectionView.delegate && [self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:minimumLineSpacingForSectionAtIndex:)]) {
         id<UICollectionViewDelegateFlowLayout> delegate = (id<UICollectionViewDelegateFlowLayout>) self.collectionView.delegate;
         return [delegate collectionView:self.collectionView layout:self minimumLineSpacingForSectionAtIndex:section];
@@ -324,7 +269,7 @@
         }else{
             CGRect rect = firstFrame;
             if (isCalculateOpenIrregularCell) {
-                rect = [CGXPageCollectionFlowLayoutUtils calculateIrregularitiesCellByMinTopFrameWithLayout:self section:section numberOfItems:numberOfItems defaultFrame:rect];
+                rect = [self calculateIrregularitiesCellByMinTopFrameWithLayout:self section:section numberOfItems:numberOfItems defaultFrame:rect];
             }
             firstFrame = self.scrollDirection == UICollectionViewScrollDirectionVertical ?
             CGRectMake(rect.origin.x, rect.origin.y, self.collectionView.bounds.size.width, rect.size.height):
@@ -333,7 +278,7 @@
     }else{
         //不计算headerview的情况
         if (isCalculateOpenIrregularCell) {
-            firstFrame = [CGXPageCollectionFlowLayoutUtils calculateIrregularitiesCellByMinTopFrameWithLayout:self section:section numberOfItems:numberOfItems defaultFrame:firstFrame];
+            firstFrame = [self calculateIrregularitiesCellByMinTopFrameWithLayout:self section:section numberOfItems:numberOfItems defaultFrame:firstFrame];
         }
     }
     
@@ -363,7 +308,7 @@
         }else{
             CGRect rect = lastFrame;
             if (isCalculateOpenIrregularCell) {
-                rect = [CGXPageCollectionFlowLayoutUtils calculateIrregularitiesCellByMaxBottomFrameWithLayout:self section:section numberOfItems:numberOfItems defaultFrame:rect];
+                rect = [self calculateIrregularitiesCellByMaxBottomFrameWithLayout:self section:section numberOfItems:numberOfItems defaultFrame:rect];
             }
             lastFrame = self.scrollDirection == UICollectionViewScrollDirectionVertical ?
             CGRectMake(rect.origin.x, rect.origin.y, self.collectionView.bounds.size.width, rect.size.height):
@@ -372,46 +317,13 @@
     }else{
         //不计算footerView的情况
         if (isCalculateOpenIrregularCell) {
-            lastFrame = [CGXPageCollectionFlowLayoutUtils calculateIrregularitiesCellByMaxBottomFrameWithLayout:self section:section numberOfItems:numberOfItems defaultFrame:lastFrame];
+            lastFrame = [self calculateIrregularitiesCellByMaxBottomFrameWithLayout:self section:section numberOfItems:numberOfItems defaultFrame:lastFrame];
         }
     }
     return lastFrame;
 }
 
-- (CGXPageCollectionRoundLayoutAttributes *)addRoundAttributes:(NSInteger)section SectionFrame:(CGRect)sectionFrame UIEdgeInsets:(UIEdgeInsets)userCustomSectionInset
-{
-    //2. 定义
-    CGXPageCollectionRoundLayoutAttributes *attr = [CGXPageCollectionRoundLayoutAttributes layoutAttributesForDecorationViewOfKind:NSStringFromClass([CGXPageCollectionRoundReusableView class]) withIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-    attr.frame = sectionFrame;
-    attr.zIndex = -1;
-    attr.borderEdgeInsets = userCustomSectionInset;
-    id <CGXPageCollectionUpdateRoundDelegate> delegate  = (id <CGXPageCollectionUpdateRoundDelegate>)self.collectionView.delegate;
-    if ([delegate respondsToSelector:@selector(collectionView:layout:configModelForSectionAtIndex:)]) {
-        attr.myConfigModel = [delegate collectionView:self.collectionView layout:self configModelForSectionAtIndex:section];
-    }
-    return attr;
-}
 
-//判断是否计算headerview
-- (BOOL)isCalculateHeaderViewSection:(NSInteger)section
-{
-    BOOL isCalculateHeaderView = NO;
-    id <CGXPageCollectionUpdateRoundDelegate> delegate  = (id <CGXPageCollectionUpdateRoundDelegate>)self.collectionView.delegate;
-    if ([delegate respondsToSelector:@selector(collectionView:layout:isCalculateHeaderViewIndex:)]) {
-        isCalculateHeaderView = [delegate collectionView:self.collectionView layout:self isCalculateHeaderViewIndex:section];
-    }
-    return isCalculateHeaderView;
-}
-//判断是否计算footerView
-- (BOOL)isCalculateFooterViewSection:(NSInteger)section
-{
-    BOOL isCalculateFooterView = NO;
-    id <CGXPageCollectionUpdateRoundDelegate> delegate  = (id <CGXPageCollectionUpdateRoundDelegate>)self.collectionView.delegate;
-    if ([delegate respondsToSelector:@selector(collectionView:layout:isCalculateFooterViewIndex:)]) {
-        isCalculateFooterView = [delegate collectionView:self.collectionView layout:self isCalculateFooterViewIndex:section];
-    }
-    return isCalculateFooterView;
-}
 @end
 
 @implementation CGXPageCollectionBaseLayout (BaseLayoutAlignment)
@@ -465,16 +377,16 @@
         if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
             //竖向
             if (pAttr) {
-                frame.origin.x = pAttr.frame.origin.x + pAttr.frame.size.width + [CGXPageCollectionFlowLayoutUtils evaluatedMinimumInteritemSpacingForSectionWithCollectionLayout:layout atIndex:attr.indexPath.section];
+                frame.origin.x = pAttr.frame.origin.x + pAttr.frame.size.width + [self gx_minimumInteritemSpacingForSectionAtIndex:attr.indexPath.section];
             }else{
-                frame.origin.x = [CGXPageCollectionFlowLayoutUtils evaluatedSectionInsetForItemWithCollectionLayout:layout atIndex:attr.indexPath.section].left;
+                frame.origin.x = [self gx_insetForSectionAtIndex:attr.indexPath.section].left;
             }
         }else{
             //横向
             if (pAttr) {
-                frame.origin.y = pAttr.frame.origin.y + pAttr.frame.size.height + [CGXPageCollectionFlowLayoutUtils evaluatedMinimumInteritemSpacingForSectionWithCollectionLayout:layout atIndex:attr.indexPath.section];
+                frame.origin.y = pAttr.frame.origin.y + pAttr.frame.size.height + [self gx_minimumInteritemSpacingForSectionAtIndex:attr.indexPath.section];
             }else{
-                frame.origin.y = [CGXPageCollectionFlowLayoutUtils evaluatedSectionInsetForItemWithCollectionLayout:layout atIndex:attr.indexPath.section].top;
+                frame.origin.y = [self gx_insetForSectionAtIndex:attr.indexPath.section].top;
             }
         }
         attr.frame = frame;
@@ -495,7 +407,7 @@
             for (UICollectionViewLayoutAttributes *attr in layoutAttributesAttrs) {
                 useWidth += attr.bounds.size.width;
             }
-    CGFloat firstLeft = (self.collectionView.bounds.size.width - useWidth - ([CGXPageCollectionFlowLayoutUtils evaluatedMinimumInteritemSpacingForSectionWithCollectionLayout:layout atIndex:theSection]*layoutAttributesAttrs.count))/2.0;
+    CGFloat firstLeft = (self.collectionView.bounds.size.width - useWidth - ([self gx_minimumInteritemSpacingForSectionAtIndex:theSection] *layoutAttributesAttrs.count))/2.0;
     
     for (UICollectionViewLayoutAttributes *attr in layoutAttributesAttrs) {
         if (attr.representedElementKind != nil) {
@@ -507,7 +419,7 @@
         if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
             //竖向
             if (pAttr) {
-                frame.origin.x = pAttr.frame.origin.x + pAttr.frame.size.width + [CGXPageCollectionFlowLayoutUtils evaluatedMinimumInteritemSpacingForSectionWithCollectionLayout:layout atIndex:attr.indexPath.section];
+                frame.origin.x = pAttr.frame.origin.x + pAttr.frame.size.width + [self gx_minimumInteritemSpacingForSectionAtIndex:attr.indexPath.section];
             }else{
                 frame.origin.x = firstLeft;
             }
@@ -516,9 +428,9 @@
         }else{
             //横向
             if (pAttr) {
-                frame.origin.y = pAttr.frame.origin.y + pAttr.frame.size.height + [CGXPageCollectionFlowLayoutUtils evaluatedMinimumInteritemSpacingForSectionWithCollectionLayout:layout atIndex:attr.indexPath.section];
+                frame.origin.y = pAttr.frame.origin.y + pAttr.frame.size.height + [self gx_minimumInteritemSpacingForSectionAtIndex:attr.indexPath.section];
             }else{
-                frame.origin.y = [CGXPageCollectionFlowLayoutUtils evaluatedSectionInsetForItemWithCollectionLayout:layout atIndex:attr.indexPath.section].top;
+                frame.origin.y = [self gx_insetForSectionAtIndex:attr.indexPath.section].top;
             }
         }
         attr.frame = frame;
@@ -543,9 +455,9 @@
         if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
             //竖向
             if (pAttr) {
-                frame.origin.x = pAttr.frame.origin.x - [CGXPageCollectionFlowLayoutUtils evaluatedMinimumInteritemSpacingForSectionWithCollectionLayout:layout atIndex:attr.indexPath.section] - frame.size.width;
+                frame.origin.x = pAttr.frame.origin.x - [self gx_minimumInteritemSpacingForSectionAtIndex:attr.indexPath.section] - frame.size.width;
             }else{
-                frame.origin.x = layout.collectionView.bounds.size.width - [CGXPageCollectionFlowLayoutUtils evaluatedSectionInsetForItemWithCollectionLayout:layout atIndex:attr.indexPath.section].right - frame.size.width;
+                frame.origin.x = layout.collectionView.bounds.size.width - [self gx_insetForSectionAtIndex:attr.indexPath.section].right - frame.size.width;
             }
         }else{
             

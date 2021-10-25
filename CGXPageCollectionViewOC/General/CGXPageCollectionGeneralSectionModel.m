@@ -16,7 +16,7 @@
     self.cellHeight = 100;
     self.row = 1;
     self.isRoundWithFooterView = NO;;
-    self.isRoundWithHeaderView = NO;;
+    self.isRoundWithHeaderView = NO;
      self.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
     self.sectionHeadersHovering = NO;
     self.sectionHeadersHoveringTopEdging = 0;
