@@ -61,21 +61,17 @@
     sectionModel.row = 2;
     
     CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
-    
-    
     headerModel.headerHeight = 40;
-    
     headerModel.headerModel = [NSString stringWithFormat:@"头部-%d",0];
     headerModel.headerTag = 10000;
     headerModel.headerBgColor = [UIColor orangeColor];
     sectionModel.headerModel = headerModel;
     CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
-    
     footerModel.footerModel = [NSString stringWithFormat:@"脚部-%d",0];
     footerModel.footerTag = 20000;
-    footerModel.footerHeight  = 40;
+    footerModel.footerHeight  = arc4random() % 30+20;
     footerModel.footerBgColor = [UIColor yellowColor];
-    footerModel.footerModel = footerModel;
+    sectionModel.footerModel = footerModel;
     
     CGFloat height = 80;
     CGFloat row = arc4random() % 2+2;

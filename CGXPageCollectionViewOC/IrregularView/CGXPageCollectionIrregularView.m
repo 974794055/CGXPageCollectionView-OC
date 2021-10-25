@@ -58,25 +58,25 @@
     }
 }
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionIrregularLayout *)layout itemWidth:(CGFloat)width heightForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout*)collectionViewLayout itemWidth:(CGFloat)width heightForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGXPageCollectionIrreguarSectionModel *sectionModel = (CGXPageCollectionIrreguarSectionModel *)self.dataArray[indexPath.section];
     CGXPageCollectionIrreguarRowModel *item =  (CGXPageCollectionIrreguarRowModel *)sectionModel.rowArray[indexPath.row];
     return item.cellHeight;
 }
 /// Return per item's height
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionIrregularLayout*)layout itemWidth:(CGFloat)width TopHeightForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout*)collectionViewLayout itemWidth:(CGFloat)width TopHeightForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGXPageCollectionIrreguarSectionModel *sectionModel = (CGXPageCollectionIrreguarSectionModel *)self.dataArray[indexPath.section];
     return sectionModel.topHeight;
 }
 /// Return per item's height
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionIrregularLayout*)layout itemWidth:(CGFloat)width BottomHeightForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout*)collectionViewLayout itemWidth:(CGFloat)width BottomHeightForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGXPageCollectionIrreguarSectionModel *sectionModel = (CGXPageCollectionIrreguarSectionModel *)self.dataArray[indexPath.section];
     return sectionModel.bottomHeight;
 }
-- (CGXPageCollectionIrregularLayoutShowType)collectionView:(UICollectionView *)collectionView layout:(CGXPageCollectionIrregularLayout *)layout layoutAttributesTypeArrayForInSection:(NSInteger)section
+- (CGXPageCollectionIrregularLayoutShowType)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout*)collectionViewLayout layoutAttributesTypeArrayForInSection:(NSInteger)section
 {
     CGXPageCollectionIrreguarSectionModel *sectionModel = (CGXPageCollectionIrreguarSectionModel *)self.dataArray[section];
     return sectionModel.showType;

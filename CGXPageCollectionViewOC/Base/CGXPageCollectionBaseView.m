@@ -501,9 +501,10 @@
     } else{
         [self.collectionView performBatchUpdates:^{
             [viewSelf.collectionView insertSections:[NSIndexSet indexSetWithIndex:section]];
-            [self.dataArray insertObject:sectionModel atIndex:section];
+            [viewSelf.dataArray insertObject:sectionModel atIndex:section];
+            [viewSelf.collectionView reloadData];
         } completion:^(BOOL finished) {
-            [self.collectionView reloadData];
+            [viewSelf.collectionView reloadData];
         }];
     }
 }

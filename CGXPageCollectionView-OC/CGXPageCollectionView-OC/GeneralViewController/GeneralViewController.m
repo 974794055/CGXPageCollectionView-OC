@@ -79,8 +79,8 @@
         NSMutableArray *dataArray = [NSMutableArray array];
         for (int i = 0; i<self.titleArr.count; i++) {
             CGXPageCollectionGeneralSectionModel *sectionModel = [GeneralViewTool sectionModel];
-//            sectionModel.sectionHeadersHovering = i == 0 ?YES:NO;
-//            sectionModel.sectionHeadersHoveringTopEdging = 0;
+            sectionModel.sectionHeadersHovering = i == 2 ?YES:NO;
+            sectionModel.sectionHeadersHoveringTopEdging = 0;
             CGXPageCollectionRoundModel *roundModel = [GeneralViewTool roundModel];
             if (i<4) {
                 sectionModel.row = 2;

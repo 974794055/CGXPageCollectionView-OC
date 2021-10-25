@@ -22,5 +22,6 @@
     self.sectionHeadersHoveringTopEdging = 0;
     self.isRoundWithFooterView = NO;
     self.isRoundWithHeaderView = NO;
+    self.roundModel = [[CGXPageCollectionRoundModel alloc] init];
 }
 @end

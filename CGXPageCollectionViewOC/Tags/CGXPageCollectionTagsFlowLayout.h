@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, CGXPageCollectionTagsHorizontalAlignment) {
-    CGXPageCollectionTagsHorizontalAlignmentFlow,   /**< 水平流式(水平方向效果与 UICollectionViewDelegateFlowLayout 一致) */
+    CGXPageCollectionTagsHorizontalAlignmentFlow,   /**< 默认效果 */
     CGXPageCollectionTagsHorizontalAlignmentLeft,   /**< 水平居左 */
     CGXPageCollectionTagsHorizontalAlignmentCenter, /**< 水平居中 */
     CGXPageCollectionTagsHorizontalAlignmentRight   /**< 水平居右 */
@@ -28,7 +28,6 @@ typedef NS_ENUM(NSInteger, CGXPageCollectionTagsDirection) {
 
 @class CGXPageCollectionTagsFlowLayout;
 
-/// 扩展 UICollectionViewDelegateFlowLayout 协议，添加设置水平竖直对齐方式及 items 排布方向协议方法
 @protocol CGXPageCollectionTagsFlowLayoutDelegate <UICollectionViewDelegateFlowLayout>
 
 @optional

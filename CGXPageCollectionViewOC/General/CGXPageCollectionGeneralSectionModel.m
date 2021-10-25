@@ -20,6 +20,7 @@
      self.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
     self.sectionHeadersHovering = NO;
     self.sectionHeadersHoveringTopEdging = 0;
+    self.roundModel = [[CGXPageCollectionRoundModel alloc] init];
 }
 
 @end

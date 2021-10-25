@@ -30,9 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<CGXPageCollectionWaterViewDataDelegate> dataDelegate;
 
-/*
-// 是否不同背景色
-// */
+/* 是否不同背景色 */
 @property (assign, nonatomic) BOOL isShowDifferentColor;
 
 

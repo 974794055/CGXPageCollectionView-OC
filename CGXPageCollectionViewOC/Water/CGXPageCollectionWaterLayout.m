@@ -249,7 +249,10 @@
     
     // Header view hover.
     for (UICollectionViewLayoutAttributes *attriture in attrsArr) {
+//        if (![attriture.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) continue;
+       
         if (![attriture.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) continue;
+        if (attriture.frame.size.height == 0) continue;
         NSInteger section = attriture.indexPath.section;
         BOOL sectionHeadersPinTVisibleBounds = NO;
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(collectionView:layout:sectionHeadersPinAtSection:)]) {
@@ -275,6 +278,7 @@
     if (self.sectionFootersPinTVisibleBounds) {
         for (UICollectionViewLayoutAttributes *attriture in attrsArr) {
             if (![attriture.representedElementKind isEqualToString:UICollectionElementKindSectionFooter]) continue;
+            if (attriture.frame.size.height == 0) continue;
             NSInteger section = attriture.indexPath.section;
             UIEdgeInsets contentInsetOfSection = [self gx_insetForSectionAtIndex:section];
             NSIndexPath *firstIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
