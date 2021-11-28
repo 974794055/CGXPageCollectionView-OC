@@ -19,7 +19,6 @@
 - (void)initializeData
 {
     [super initializeData];
-    self.isShowDifferentColor = NO;
     self.isScrollPage = NO;
 }
 
@@ -37,17 +36,10 @@
      */
     self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
 }
-- (void)setIsShowDifferentColor:(BOOL)isShowDifferentColor
-{
-    _isShowDifferentColor = isShowDifferentColor;
-    [self.collectionView reloadData];
-}
 - (UICollectionViewLayout *)preferredFlowLayout
 {
     [super preferredFlowLayout];
     CGXPageCollectionHorizontalLayout *layout = [[CGXPageCollectionHorizontalLayout alloc] init];
-    layout.scrollDirection=UICollectionViewScrollDirectionHorizontal;
-    layout.isRoundEnabled = YES;
     layout.delegate = self;
     if (@available(iOS 9.0, *)) {
         layout.sectionFootersPinToVisibleBounds =NO;
@@ -144,25 +136,7 @@
 - (CGXPageCollectionRoundModel *)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout configModelForSectionAtIndex:(NSInteger)section
 {
     CGXPageCollectionHorizontalSectionModel *sectionModel = (CGXPageCollectionHorizontalSectionModel *)self.dataArray[section];
-    CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc]init];
-    roundModel = sectionModel.roundModel;
-    if (self.isShowDifferentColor) {
-        roundModel = sectionModel.roundModel;
-    } else{
-        if (@available(iOS 13.0, *)) {
-            UIColor *dyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
-                if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
-                    return self.backgroundColor;
-                }else {
-                    return self.backgroundColor;;
-                }
-            }];
-            roundModel.backgroundColor = dyColor;
-        }else{
-            roundModel.backgroundColor = self.backgroundColor;;
-        }
-    }
-    return roundModel;
+    return sectionModel.roundModel;
 }
 /// 根据section设置是否包含headerview（实现该方法后，isCalculateHeader将不会生效）
 /// @param collectionView collectionView description

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CGXPageCollectionRoundLayoutAttributes.h"
-
+#import "CGXPageCollectionRoundModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol CGXPageCollectionUpdateRoundDelegate <UICollectionViewDelegateFlowLayout>

@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CGXPageCollectionRoundLayoutAttributes : UICollectionViewLayoutAttributes
 
-//间距
-@property (nonatomic, assign) UIEdgeInsets borderEdgeInsets;
 @property (nonatomic, strong) CGXPageCollectionRoundModel *roundModel;
 
 @end

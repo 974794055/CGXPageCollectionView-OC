@@ -9,7 +9,7 @@
 #import "CGXPageCollectionTagsFlowLayout.h"
 
 @interface CGXPageCollectionTagsFlowLayout ()
-
+@property (assign, nonatomic) CGSize newBoundsSize;
 @property (nonatomic, strong) NSMutableDictionary *cachedOrigin;
 @end
 
@@ -153,7 +153,13 @@
     [super prepareLayout];
     self.cachedOrigin = @{}.mutableCopy;
 }
-
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    if (CGSizeEqualToSize(self.newBoundsSize, newBounds.size)) {
+        return NO;
+    }
+    self.newBoundsSize = newBounds.size;
+    return YES;
+}
 - (NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
 {
     NSMutableArray * updatedAttributes = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
@@ -198,6 +204,47 @@
         currentAttributes.frame = currentFrame;
     }
     return currentAttributes;
+}
+
+- (BOOL)gx_isLineStartAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.item == 0) {
+        return YES;
+    }
+    NSIndexPath *currentIndexPath = indexPath;
+    NSIndexPath *previousIndexPath = indexPath.item == 0 ? nil : [NSIndexPath indexPathForItem:indexPath.item - 1 inSection:indexPath.section];
+
+    UICollectionViewLayoutAttributes *currentAttributes = [super layoutAttributesForItemAtIndexPath:currentIndexPath];
+    UICollectionViewLayoutAttributes *previousAttributes = previousIndexPath ? [super layoutAttributesForItemAtIndexPath:previousIndexPath] : nil;
+    CGRect currentFrame = currentAttributes.frame;
+    CGRect previousFrame = previousAttributes ? previousAttributes.frame : CGRectZero;
+
+    UIEdgeInsets insets = [self gx_insetForSectionAtIndex:currentIndexPath.section];
+    CGRect currentLineFrame = CGRectMake(insets.left, currentFrame.origin.y, CGRectGetWidth(self.collectionView.frame), currentFrame.size.height);
+    CGRect previousLineFrame = CGRectMake(insets.left, previousFrame.origin.y, CGRectGetWidth(self.collectionView.frame), previousFrame.size.height);
+
+    return !CGRectIntersectsRect(currentLineFrame, previousLineFrame);
+}
+
+- (NSArray *)gx_lineAttributesArrayWithStartAttributes:(UICollectionViewLayoutAttributes *)startAttributes {
+    NSMutableArray *lineAttributesArray = [[NSMutableArray alloc] init];
+    [lineAttributesArray addObject:startAttributes];
+    NSInteger itemCount = [self.collectionView numberOfItemsInSection:startAttributes.indexPath.section];
+    UIEdgeInsets insets = [self gx_insetForSectionAtIndex:startAttributes.indexPath.section];
+    NSInteger index = startAttributes.indexPath.item;
+    BOOL isLineEnd = index == itemCount - 1;
+    while (!isLineEnd) {
+        index++;
+        if (index == itemCount)
+            break;
+        NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:index inSection:startAttributes.indexPath.section];
+        UICollectionViewLayoutAttributes *nextAttributes = [super layoutAttributesForItemAtIndexPath:nextIndexPath];
+        CGRect nextLineFrame = CGRectMake(insets.left, nextAttributes.frame.origin.y, CGRectGetWidth(self.collectionView.frame), nextAttributes.frame.size.height);
+        isLineEnd = !CGRectIntersectsRect(startAttributes.frame, nextLineFrame);
+        if (isLineEnd)
+            break;
+        [lineAttributesArray addObject:nextAttributes];
+    }
+    return lineAttributesArray;
 }
 
 @end

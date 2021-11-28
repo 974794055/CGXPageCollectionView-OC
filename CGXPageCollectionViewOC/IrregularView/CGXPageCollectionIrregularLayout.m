@@ -11,7 +11,7 @@
 
 @property (nonatomic, assign) CGFloat totalHeight;
 @property (nonatomic, strong) NSMutableArray *attrsArr;
-
+@property (assign, nonatomic) CGSize newBoundsSize;
 @end
 @implementation CGXPageCollectionIrregularLayout
 
@@ -34,6 +34,13 @@
         [attributesArr addObject:attr1];
     }
     self.attrsArr = [NSMutableArray arrayWithArray:attributesArr];
+}
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    if (CGSizeEqualToSize(self.newBoundsSize, newBounds.size)) {
+        return NO;
+    }
+    self.newBoundsSize = newBounds.size;
+    return YES;
 }
 /// contentSize
 -(CGSize)collectionViewContentSize {
@@ -92,9 +99,7 @@
     CGFloat y = self.totalHeight + insets.top;
     CGFloat spaceH = [self gx_minimumInteritemSpacingForSectionAtIndex:indexPath.section];
     CGFloat spaceW = [self gx_minimumLineSpacingForSectionAtIndex:indexPath.section];
-    
     NSInteger rowInter = [self numberOfItemsInSection:indexPath.section];
-    
     long row = indexPath.item % rowInter;
     CGFloat width = (self.collectionView.frame.size.width-spaceW*(rowInter+1)) / rowInter;
     CGFloat itemHeight = [self.delegate collectionView:self.collectionView layout:self itemWidth:width heightForItemAtIndexPath:indexPath];
@@ -109,8 +114,12 @@
         self.totalHeight += itemHeight+spaceH;
     }
     if (indexPath.item == [self.collectionView numberOfItemsInSection:indexPath.section] - 1) {
-        self.totalHeight += insets.top;
+        if (row < (rowInter-1)) {
+            self.totalHeight += itemHeight+spaceH;
+        }
+        self.totalHeight += insets.bottom;
     }
+    
 }
 //左1 右二排列
 - (void)CGXPageCollectionIrregularLayoutLeftRight1T2Layout:(UICollectionViewLayoutAttributes *)layoutAttributes indexPath:(NSIndexPath *)indexPath

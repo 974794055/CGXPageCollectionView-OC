@@ -19,7 +19,7 @@
 @property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *footerAttributes;
 
 @property (nonatomic, assign) CGFloat contentHeight;
-
+@property (assign, nonatomic) CGSize newBoundsSize;
 /// Per section heights.
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *heightOfSections;
 
@@ -210,7 +210,6 @@
             CGXPageCollectionRoundLayoutAttributes *attr = [CGXPageCollectionRoundLayoutAttributes layoutAttributesForDecorationViewOfKind:NSStringFromClass([CGXPageCollectionRoundReusableView class]) withIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
             attr.frame = sectionFrame;
             attr.zIndex = -1;
-            attr.borderEdgeInsets = userCustomSectionInset;
             if ([delegate respondsToSelector:@selector(collectionView:layout:configModelForSectionAtIndex:)]) {
                 attr.roundModel = [delegate collectionView:self.collectionView layout:self configModelForSectionAtIndex:section];
             }
@@ -222,7 +221,7 @@
 - (CGSize)collectionViewContentSize {
     UIEdgeInsets contentInset = self.collectionView.contentInset;
     CGFloat width = CGRectGetWidth(self.collectionView.bounds) - contentInset.left - contentInset.right;
-    CGFloat height = MAX(CGRectGetHeight(self.collectionView.bounds), _contentHeight+contentInset.top+contentInset.bottom);
+    CGFloat height = MAX(CGRectGetHeight(self.collectionView.bounds), _contentHeight);
     return CGSizeMake(width, height);
 }
 
@@ -301,6 +300,10 @@
     return attrsArr;
 }
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    if (CGSizeEqualToSize(self.newBoundsSize, newBounds.size)) {
+        return NO;
+    }
+    self.newBoundsSize = newBounds.size;
     return YES;
 }
 - (NSMutableArray<UICollectionViewLayoutAttributes *> *)decorationViewAttrs{

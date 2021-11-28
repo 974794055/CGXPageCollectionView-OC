@@ -21,7 +21,6 @@
 		9E25AF46249F65A100343226 /* CGXPageCollectionSectionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3C249F65A100343226 /* CGXPageCollectionSectionTextView.m */; };
 		9E25AF47249F65A100343226 /* CGXPageCollectionSectionBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E25AF3E249F65A100343226 /* CGXPageCollectionSectionBaseView.m */; };
 		9E4B002124BC90AA0016CB4D /* main0.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E4B002024BC90AA0016CB4D /* main0.png */; };
-		9E6F693624CBDCEB00EAE61B /* GeneralViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F693524CBDCEB00EAE61B /* GeneralViewTool.m */; };
 		9E7D943724B5FA35007FB4A9 /* HorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D943624B5FA34007FB4A9 /* HorizontalViewController.m */; };
 		9E97F91424BA1372000B1C6A /* main1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E97F90E24BA1372000B1C6A /* main1.png */; };
 		9E97F91524BA1372000B1C6A /* main2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E97F90F24BA1372000B1C6A /* main2.gif */; };
@@ -72,8 +71,6 @@
 		9E25AF3E249F65A100343226 /* CGXPageCollectionSectionBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPageCollectionSectionBaseView.m; sourceTree = "<group>"; };
 		9E25AF3F249F65A100343226 /* CGXPageCollectionSectionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPageCollectionSectionTextView.h; sourceTree = "<group>"; };
 		9E4B002024BC90AA0016CB4D /* main0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main0.png; sourceTree = "<group>"; };
-		9E6F693424CBDCEB00EAE61B /* GeneralViewTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralViewTool.h; sourceTree = "<group>"; };
-		9E6F693524CBDCEB00EAE61B /* GeneralViewTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralViewTool.m; sourceTree = "<group>"; };
 		9E7D943524B5FA34007FB4A9 /* HorizontalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalViewController.h; sourceTree = "<group>"; };
 		9E7D943624B5FA34007FB4A9 /* HorizontalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalViewController.m; sourceTree = "<group>"; };
 		9E97F90E24BA1372000B1C6A /* main1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main1.png; sourceTree = "<group>"; };
@@ -203,8 +200,6 @@
 			children = (
 				9E25AF1B249F5C8C00343226 /* GeneralViewController.h */,
 				9E25AF1E249F5C8C00343226 /* GeneralViewController.m */,
-				9E6F693424CBDCEB00EAE61B /* GeneralViewTool.h */,
-				9E6F693524CBDCEB00EAE61B /* GeneralViewTool.m */,
 			);
 			path = GeneralViewController;
 			sourceTree = "<group>";
@@ -433,7 +428,6 @@
 				9E25AF45249F65A100343226 /* CGXPageCollectionSectionImageView.m in Sources */,
 				B54D27362593928D0020FBFC /* CGXPageCollectionCategoryCell.m in Sources */,
 				9E25AF46249F65A100343226 /* CGXPageCollectionSectionTextView.m in Sources */,
-				9E6F693624CBDCEB00EAE61B /* GeneralViewTool.m in Sources */,
 				B52763E825BC57BA00DBF307 /* SpecialViewController.m in Sources */,
 				B54D27372593928D0020FBFC /* CGXPageCollectionTextCell.m in Sources */,
 				B5633711259775F10032C6C0 /* ListCollectionViewCell.m in Sources */,

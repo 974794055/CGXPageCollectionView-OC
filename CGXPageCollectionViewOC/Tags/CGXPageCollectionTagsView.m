@@ -18,7 +18,6 @@
 - (void)initializeData
 {
     [super initializeData];
-    self.isRoundEnabled = YES;
 
 }
 - (void)initializeViews

@@ -77,7 +77,7 @@
         
         NSInteger rowInter = 30;
         if (type == CGXPageCollectionIrregularLayoutDefault) {
-            rowInter = 8;
+            rowInter = 13;
         }
         if (type == CGXPageCollectionIrregularLayoutLeftRight1T2) {
             rowInter = 11;
@@ -95,7 +95,7 @@
             rowInter = 17;
         }
         
-        
+        rowInter = 30;
         for (int j = 0; j<rowInter;j++) {
             CGXPageCollectionIrreguarRowModel *rowModel = [[CGXPageCollectionIrreguarRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
             rowModel.cellHeight = 50;

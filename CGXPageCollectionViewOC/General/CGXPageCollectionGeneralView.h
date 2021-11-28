@@ -33,9 +33,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<CGXPageCollectionGeneralViewDataDelegate> dataDelegate;
 
-/* 是否不同背景色 */
-@property (assign, nonatomic) BOOL isShowDifferentColor;
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,11 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CGXPageCollectionHorizontalView : CGXPageCollectionBaseView
 
 /*
- 是否不同背景色 NO：白色
- */
-@property (assign, nonatomic) BOOL isShowDifferentColor;
-
-/*
  是否分页停留 默认NO
  */
 @property (assign, nonatomic) BOOL isScrollPage;

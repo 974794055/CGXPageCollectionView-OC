@@ -7,7 +7,6 @@
 //
 
 #import "CGXPageCollectionRoundReusableView.h"
-#import "UIImage+CGXPageCollection.h"
 
 @interface CGXPageCollectionRoundReusableView()
 
@@ -27,11 +26,9 @@
         self.bgImageView = [[UIImageView alloc]init];
         self.bgImageView.contentMode = UIViewContentModeScaleAspectFill;
         self.bgImageView.clipsToBounds = YES;
-        self.bgImageView.layer.masksToBounds = YES; // 裁剪
-        self.bgImageView.layer.shouldRasterize = YES; // 缓存
+        self.bgImageView.layer.masksToBounds = YES;
         [self addSubview:self.bgImageView];
         self.bgImageView.translatesAutoresizingMaskIntoConstraints = NO;
-        
         self.hotImageTop = [NSLayoutConstraint constraintWithItem:self.bgImageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
         self.hotImageLeft = [NSLayoutConstraint constraintWithItem:self.bgImageView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
         self.hotImageRight = [NSLayoutConstraint constraintWithItem:self.bgImageView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
@@ -45,12 +42,6 @@
 }
 - (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
     [super applyLayoutAttributes:layoutAttributes];
-    
-    self.bgImageView.frame = self.bounds;
-    self.hotImageTop.constant = 0;
-    self.hotImageLeft.constant = 0;
-    self.hotImageRight.constant = 0;
-    self.hotImageBottom.constant = 0;
     CGXPageCollectionRoundLayoutAttributes *attr = (CGXPageCollectionRoundLayoutAttributes *)layoutAttributes;
     _myCacheAttr = attr;
     [self toChangeCollectionReusableViewRoundInfoWithLayoutAttributes:attr];
@@ -66,25 +57,20 @@
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
     __weak typeof(self) weakSelf = self;
+    self.hotImageTop.constant = 0;
+    self.hotImageLeft.constant = 0;
+    self.hotImageRight.constant = 0;
+    self.hotImageBottom.constant = 0;
     if (attr.roundModel) {
         CGXPageCollectionRoundModel *model = attr.roundModel;
         UIImage *bgImage = [self gx_pageImageWithColor:model.backgroundColor];
-        self.bgImageView.image = bgImage;
-        if ([model.hotStr hasPrefix:@"http:"] || [model.hotStr hasPrefix:@"https:"]) {
-            if (model.page_ImageCallback) {
-                model.page_ImageCallback(weakSelf.bgImageView,[NSURL URLWithString:model.hotStr]);
+        if (model.hotStr && model.hotStr.length>0) {
+            bgImage = [UIImage imageNamed:model.hotStr];
+            if (!bgImage) {
+                bgImage = [UIImage imageWithContentsOfFile:model.hotStr];
             }
-        } else{
-            UIImage *bgImage = [self gx_pageImageWithColor:model.backgroundColor];
-            if (model.hotStr && model.hotStr.length>0) {
-                bgImage = [UIImage imageNamed:model.hotStr];
-                if (!bgImage) {
-                    bgImage = [UIImage imageWithContentsOfFile:model.hotStr];
-                }
-            }
-            self.bgImageView.image = bgImage;
         }
-
+        self.bgImageView.image = bgImage;
         if (@available(iOS 13.0, *)) {
             self.bgImageView.layer.borderColor = [model.borderColor resolvedColorWithTraitCollection:self.traitCollection].CGColor;
         } else {
@@ -95,6 +81,10 @@
         self.bgImageView.layer.shadowRadius = model.shadowRadius;
         self.bgImageView.layer.borderWidth = model.borderWidth;
         self.bgImageView.layer.cornerRadius = model.cornerRadius;
+        
+        if (model.page_ImageCallback) {
+            model.page_ImageCallback(weakSelf.bgImageView,[NSURL URLWithString:model.hotStr]);
+        }
     } else{
         self.bgImageView.backgroundColor = self.backgroundColor;
     }
@@ -128,6 +118,9 @@
  */
 - (UIImage *)gx_pageImageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    if (self.bounds.size.height != 0 && self.bounds.size.width != 0) {
+        rect = CGRectMake(0.0f, 0.0f, self.bounds.size.width, self.bounds.size.height);
+    }
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     

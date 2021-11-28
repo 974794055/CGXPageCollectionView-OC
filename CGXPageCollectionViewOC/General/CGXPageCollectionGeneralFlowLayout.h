@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<CGXPageCollectionGeneralFlowLayoutDataDelegate> dataSource;
 
+- (void)setScrollDirection:(UICollectionViewScrollDirection)scrollDirection NS_UNAVAILABLE;
 
 @end
 

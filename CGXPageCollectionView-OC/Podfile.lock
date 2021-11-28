@@ -1,27 +1,27 @@
 PODS:
-  - CGXPageCollectionViewOC (1.0.3):
-    - CGXPageCollectionViewOC/Base (= 1.0.3)
-    - CGXPageCollectionViewOC/Common (= 1.0.3)
-    - CGXPageCollectionViewOC/General (= 1.0.3)
-    - CGXPageCollectionViewOC/Horizontal (= 1.0.3)
-    - CGXPageCollectionViewOC/IrregularView (= 1.0.3)
-    - CGXPageCollectionViewOC/SpecialView (= 1.0.3)
-    - CGXPageCollectionViewOC/Tags (= 1.0.3)
-    - CGXPageCollectionViewOC/Water (= 1.0.3)
-  - CGXPageCollectionViewOC/Base (1.0.3):
+  - CGXPageCollectionViewOC (1.0.4):
+    - CGXPageCollectionViewOC/Base (= 1.0.4)
+    - CGXPageCollectionViewOC/Common (= 1.0.4)
+    - CGXPageCollectionViewOC/General (= 1.0.4)
+    - CGXPageCollectionViewOC/Horizontal (= 1.0.4)
+    - CGXPageCollectionViewOC/IrregularView (= 1.0.4)
+    - CGXPageCollectionViewOC/SpecialView (= 1.0.4)
+    - CGXPageCollectionViewOC/Tags (= 1.0.4)
+    - CGXPageCollectionViewOC/Water (= 1.0.4)
+  - CGXPageCollectionViewOC/Base (1.0.4):
     - CGXPageCollectionViewOC/Common
-  - CGXPageCollectionViewOC/Common (1.0.3)
-  - CGXPageCollectionViewOC/General (1.0.3):
+  - CGXPageCollectionViewOC/Common (1.0.4)
+  - CGXPageCollectionViewOC/General (1.0.4):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Horizontal (1.0.3):
+  - CGXPageCollectionViewOC/Horizontal (1.0.4):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/IrregularView (1.0.3):
+  - CGXPageCollectionViewOC/IrregularView (1.0.4):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/SpecialView (1.0.3):
+  - CGXPageCollectionViewOC/SpecialView (1.0.4):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Tags (1.0.3):
+  - CGXPageCollectionViewOC/Tags (1.0.4):
     - CGXPageCollectionViewOC/Base
-  - CGXPageCollectionViewOC/Water (1.0.3):
+  - CGXPageCollectionViewOC/Water (1.0.4):
     - CGXPageCollectionViewOC/Base
   - MJRefresh (3.5.0)
   - SDWebImage (5.9.5):
@@ -43,7 +43,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CGXPageCollectionViewOC: 5de501214ba780800e565a1c3779488c6252cfe0
+  CGXPageCollectionViewOC: c4ca3e234bc304f215f88aaa99111509ec1592d1
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 

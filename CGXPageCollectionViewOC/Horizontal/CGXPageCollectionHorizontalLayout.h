@@ -10,14 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class CGXPageCollectionIrregularLayout;
-
 @protocol CGXPageCollectionHorizontalLayouttDelegate <NSObject>
 
 @required
 
-
-@optional;
+@optional
 
 - (NSInteger)collectionHorizontalView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout numberOfSection:(NSInteger)section;
 
@@ -27,10 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic , weak) id<CGXPageCollectionHorizontalLayouttDelegate>delegate;
 
-/// 是否开始Round计算，（默认YES），当该位置为NO时，计算模块都不开启，包括设置的代理
-@property (assign, nonatomic) BOOL isRoundEnabled;
-/// 是否使用不规则Cell大小的计算方式(若Cell的大小是相同固定大小，则无需开启该方法)，默认NO
-@property (assign, nonatomic) BOOL isCalculateOpenIrregularCell;
+- (void)setScrollDirection:(UICollectionViewScrollDirection)scrollDirection NS_UNAVAILABLE;
 
 @end
 

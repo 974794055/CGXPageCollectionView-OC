@@ -27,7 +27,6 @@
     self.generalView = [[CGXPageCollectionWaterView alloc]  init];
     self.generalView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-kTopHeight-kSafeHeight);
     self.generalView.viewDelegate = self;
-    self.generalView.isShowDifferentColor = YES;
     [self.generalView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
     [self.generalView registerCell:[CGXPageCollectionCategoryCell class] IsXib:NO];
     [self.generalView registerCell:[CGXPageCollectionImageCell class] IsXib:NO];
@@ -76,6 +75,7 @@
             sectionModel.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
             CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc] init];
             roundModel.backgroundColor = RandomColor;
+            roundModel.cornerRadius = self.isRoundEnabled ? 10:0;
             if (i<4) {
                 sectionModel.row = 2;
                 roundModel.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
@@ -101,8 +101,23 @@
                     roundModel.shadowOpacity = 0;
                     roundModel.shadowRadius = 0;
                 }
-            } else{
             }
+            sectionModel.roundModel = roundModel;
+        } else{
+            sectionModel.isRoundWithFooterView = NO;
+            sectionModel.isRoundWithHeaderView = NO;
+            sectionModel.borderEdgeInserts = UIEdgeInsetsMake(0, 0, 0, 0);
+            CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc] init];
+            roundModel.backgroundColor = RandomColor;
+            roundModel.cornerRadius = 0;
+                sectionModel.row = 2;
+                roundModel.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+                roundModel.shadowOffset = CGSizeMake(0,0);
+                roundModel.shadowOpacity = 0;
+                roundModel.shadowRadius = 0;
+                roundModel.borderColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
+                roundModel.borderWidth = 0;
+        
             sectionModel.roundModel = roundModel;
         }
         

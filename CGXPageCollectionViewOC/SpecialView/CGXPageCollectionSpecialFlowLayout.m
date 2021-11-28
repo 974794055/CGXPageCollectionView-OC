@@ -10,8 +10,10 @@
 @interface CGXPageCollectionSpecialFlowLayout ()
 
 @property (nonatomic, strong,readwrite) NSMutableArray *attrsArr;
+@property (assign, nonatomic) CGSize newBoundsSize;
 
 @end
+
 @implementation CGXPageCollectionSpecialFlowLayout
 - (instancetype)init
 {
@@ -310,6 +312,10 @@
 }
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    if (CGSizeEqualToSize(self.newBoundsSize, newBounds.size)) {
+        return NO;
+    }
+    self.newBoundsSize = newBounds.size;
     return YES;
 }
 

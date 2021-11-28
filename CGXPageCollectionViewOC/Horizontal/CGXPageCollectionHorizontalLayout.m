@@ -13,7 +13,7 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
 @interface CGXPageCollectionHorizontalLayout ()
 
 @property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *decorationViewArr;
-
+@property (assign, nonatomic) CGSize newBoundsSize;
 @end
 @implementation CGXPageCollectionHorizontalLayout
 
@@ -28,7 +28,7 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
 - (void)initializeData
 {
     [super initializeData];
-    self.isRoundEnabled = NO;
+    self.scrollDirection=UICollectionViewScrollDirectionHorizontal;
     [self registerClass:[CGXPageCollectionRoundReusableView class] forDecorationViewOfKind:CGXPageCollectionHorizontalLayoutSectionBackground];
 }
 
@@ -272,8 +272,11 @@ NSString *const CGXPageCollectionHorizontalLayoutSectionBackground = @"CGXPageCo
  * 1.prepareLayout
  * 2.layoutAttributesForElementsInRect:方法
  */
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
-{
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    if (CGSizeEqualToSize(self.newBoundsSize, newBounds.size)) {
+        return NO;
+    }
+    self.newBoundsSize = newBounds.size;
     return YES;
 }
 

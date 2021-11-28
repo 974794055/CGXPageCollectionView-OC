@@ -7,28 +7,21 @@
 
 #import "CGXPageCollectionView.h"
 @interface CGXPageCollectionView ()<UIGestureRecognizerDelegate>
+
 @end
+
 @implementation CGXPageCollectionView
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-}
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if (self.gestureDelegate && [self.gestureDelegate respondsToSelector:@selector(gx_PageCollectionView:gestureRecognizerShouldBegin:)]) {
         return [self.gestureDelegate gx_PageCollectionView:self gestureRecognizerShouldBegin:gestureRecognizer];
     }
     return YES;
 }
-
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     if (self.gestureDelegate && [self.gestureDelegate respondsToSelector:@selector(gx_PageCollectionView:gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:)]) {
         return [self.gestureDelegate gx_PageCollectionView:self gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
     }
-//    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-//        return [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]];;
-//    }
-//    return [gestureRecognizer.view isKindOfClass:[UIScrollView class]] && [otherGestureRecognizer.view isKindOfClass:[UIScrollView class]];
     return NO;
 }
 @end

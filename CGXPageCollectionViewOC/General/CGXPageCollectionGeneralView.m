@@ -19,7 +19,6 @@
 - (void)initializeData
 {
     [super initializeData];
-    self.isShowDifferentColor = NO;;
 }
 
 - (void)initializeViews
@@ -28,16 +27,10 @@
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = YES;
 }
-- (void)setIsShowDifferentColor:(BOOL)isShowDifferentColor
-{
-    _isShowDifferentColor = isShowDifferentColor;
-    [self.collectionView reloadData];
-}
 - (UICollectionViewLayout *)preferredFlowLayout
 {
     [super preferredFlowLayout];
     CGXPageCollectionGeneralFlowLayout *layout = [[CGXPageCollectionGeneralFlowLayout alloc] init];
-    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     if (@available(iOS 9.0, *)) {
         layout.sectionFootersPinToVisibleBounds =NO;
         layout.sectionHeadersPinToVisibleBounds =NO;
@@ -63,13 +56,9 @@
 {
     [super refreshHeaderSection:section Header:headerView];
     CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
-    if (self.isShowDifferentColor) {
-        if (sectionModel.isRoundWithHeaderView) {
-            headerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
-        }else{
-            headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
-        }
-    } else{
+    if (sectionModel.isRoundWithHeaderView) {
+        headerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
+    }else{
         headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
     }
 }
@@ -77,14 +66,10 @@
 {
     [super refreshFooterSection:section Footer:footerView];
     CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
-    if (self.isShowDifferentColor) {
-        if (sectionModel.isRoundWithFooterView) {
-            footerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
-        }else{
-            footerView.backgroundColor = sectionModel.footerModel.footerBgColor;
-        }
-    } else{
-        footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
+    if (sectionModel.isRoundWithFooterView) {
+        footerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
+    }else{
+        footerView.backgroundColor = sectionModel.footerModel.footerBgColor;
     }
 }
 
@@ -100,6 +85,7 @@
     CGSize sizeFor = CGSizeMake(floor(cellWidth), sectionModel.cellHeight);
     if (self.dataDelegate && [self.dataDelegate respondsToSelector:@selector(gx_PageCollectionGeneralView:sizeForItemHeightAtIndexPath:ItemSize:)]) {
         sizeFor = [self.dataDelegate gx_PageCollectionGeneralView:self sizeForItemHeightAtIndexPath:indexPath ItemSize:sizeFor];
+        sectionModel.cellHeight = sizeFor.height;
     }
     return sizeFor;
 }
@@ -119,25 +105,7 @@
 - (CGXPageCollectionRoundModel *)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout configModelForSectionAtIndex:(NSInteger)section
 {
     CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
-    CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc]init];
-    roundModel = sectionModel.roundModel;
-    if (self.isShowDifferentColor) {
-        roundModel = sectionModel.roundModel;
-    } else{
-        if (@available(iOS 13.0, *)) {
-            UIColor *dyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
-                if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
-                    return self.backgroundColor;
-                }else {
-                    return self.backgroundColor;
-                }
-            }];
-            roundModel.backgroundColor = dyColor;
-        }else{
-            roundModel.backgroundColor = self.backgroundColor;
-        }
-    }
-    return roundModel;
+    return sectionModel.roundModel;;
 }
 
 /// 根据section设置是否包含headerview（实现该方法后，isCalculateHeader将不会生效）
@@ -173,7 +141,7 @@
  @param collectionView collectionView description
  @param layout layout description
  @param section section description
-*/
+ */
 - (BOOL)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)layout headersPinAtSection:(NSInteger)section
 {
     CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];
@@ -185,7 +153,7 @@
  @param collectionView collectionView description
  @param layout layout description
  @param section section description
-*/
+ */
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)layout headersPinSpaceAtSection:(NSInteger)section
 {
     CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.dataArray[section];

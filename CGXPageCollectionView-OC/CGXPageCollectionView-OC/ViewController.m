@@ -90,7 +90,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(collectionView.frame.size.width-20,80);
+    return CGSizeMake(collectionView.frame.size.width-20,50);
     
 }
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -116,24 +116,25 @@
     return cell;
     
 }
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
-    
-    CAShapeLayer *borderLayer = [CAShapeLayer layer];
-    borderLayer.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
-    borderLayer.lineWidth = 1.f;
-    borderLayer.strokeColor = [UIColor lightGrayColor].CGColor;
-    borderLayer.fillColor = [UIColor clearColor].CGColor;
-    
-    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame)) cornerRadius:8];
-    maskLayer.path = bezierPath.CGPath;
-    borderLayer.path = bezierPath.CGPath;
-    
-    [cell.contentView.layer insertSublayer:borderLayer atIndex:0];
-    [cell.contentView.layer setMask:maskLayer];
-}
+//- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+////    [cell.contentView.layer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
+//    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+//    maskLayer.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
+//
+//    CAShapeLayer *borderLayer = [CAShapeLayer layer];
+//    borderLayer.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
+//    borderLayer.lineWidth = 1.f;
+//    borderLayer.strokeColor = [UIColor lightGrayColor].CGColor;
+//    borderLayer.fillColor = [UIColor clearColor].CGColor;
+//
+//    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame)) cornerRadius:8];
+//    maskLayer.path = bezierPath.CGPath;
+//    borderLayer.path = bezierPath.CGPath;
+//
+//    [cell.contentView.layer insertSublayer:borderLayer atIndex:0];
+//    [cell.contentView.layer setMask:maskLayer];
+//}
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *titleStr = self.titleArr[indexPath.row];

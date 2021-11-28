@@ -10,17 +10,12 @@
 
 #import "CGXPageCollectionIrreguarSectionModel.h"
 
-@class CGXPageCollectionIrregularLayout;
-
 @protocol CGXPageCollectionIrregularLayoutDelegate <NSObject>
 
 @required
 
-
 /// Return per item's height  普通 几行几列使用
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout*)collectionViewLayout itemWidth:(CGFloat)width heightForItemAtIndexPath:(NSIndexPath *)indexPath;
-
-
 /// Return  top per item's height  上半部分高度
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout*)collectionViewLayout itemWidth:(CGFloat)width TopHeightForItemAtIndexPath:(NSIndexPath *)indexPath;
 /// Return bottom per item's height 下半部分高度

@@ -7,7 +7,6 @@
 //
 
 #import "GeneralViewController.h"
-#import "GeneralViewTool.h"
 
 @interface GeneralViewController ()<CGXPageCollectionUpdateViewDelegate,CGXPageCollectionGeneralViewDataDelegate>
 
@@ -31,7 +30,6 @@
     self.generalView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-kTopHeight-kSafeHeight);
     self.generalView.viewDelegate = self;
     self.generalView.dataDelegate = self;
-    self.generalView.isShowDifferentColor = YES;
     self.generalView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.generalView];
     [self.generalView registerCell:[CGXPageCollectionTextCell class] IsXib:NO];
@@ -78,10 +76,28 @@
     self.generalView.refresBlock = ^(BOOL isDownRefresh, NSInteger page) {
         NSMutableArray *dataArray = [NSMutableArray array];
         for (int i = 0; i<self.titleArr.count; i++) {
-            CGXPageCollectionGeneralSectionModel *sectionModel = [GeneralViewTool sectionModel];
+            CGXPageCollectionGeneralSectionModel *sectionModel = [[CGXPageCollectionGeneralSectionModel alloc] init];
+            sectionModel.insets = UIEdgeInsetsMake(10, 10, 10, 10);
+            sectionModel.minimumLineSpacing = 10;
+            sectionModel.minimumInteritemSpacing = 10;
+            sectionModel.row = 1;
+            sectionModel.borderEdgeInserts = UIEdgeInsetsMake(10, 10, 10, 10);
+            sectionModel.sectionHeadersHovering = NO;
+            sectionModel.sectionHeadersHoveringTopEdging = 0;
+            
             sectionModel.sectionHeadersHovering = i == 2 ?YES:NO;
             sectionModel.sectionHeadersHoveringTopEdging = 0;
-            CGXPageCollectionRoundModel *roundModel = [GeneralViewTool roundModel];
+            CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc] init];
+            roundModel.cornerRadius = 10;
+            roundModel.backgroundColor =[UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1.0];
+            
+            roundModel.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0];
+            roundModel.shadowOffset = CGSizeMake(0,0);
+            roundModel.shadowOpacity = 0;
+            roundModel.shadowRadius = 10;
+            
+            roundModel.borderColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
+            roundModel.borderWidth = 0;
             if (i<4) {
                 sectionModel.row = 2;
             } else if (i==4){
@@ -120,12 +136,17 @@
                 sectionModel.isRoundWithHeaderView = YES;
             }
             
-            CGXPageCollectionHeaderModel *headerModel = [GeneralViewTool headerModel];
+            CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
+            headerModel.headerBgColor = [UIColor orangeColor];
+            headerModel.headerHeight = 40+arc4random() % 20;
+            headerModel.isHaveTap = YES;
             headerModel.headerModel = weakSelf.titleArr[i];
-            headerModel.headerBgColor = [[UIColor yellowColor] colorWithAlphaComponent:0.8];
-            CGXPageCollectionFooterModel *footerModel = [GeneralViewTool footerModel];
-            footerModel.footerBgColor = [[UIColor orangeColor] colorWithAlphaComponent:0.7];
             sectionModel.headerModel = headerModel;
+            
+            CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
+            footerModel.footerBgColor = [UIColor yellowColor];;
+            footerModel.footerHeight = 40+arc4random() % 20;
+            footerModel.isHaveTap = YES;
             sectionModel.footerModel = footerModel;
             
             sectionModel.row = arc4random() % 4 + 2;
@@ -155,8 +176,36 @@
 }
 - (void)insertData
 {
-    CGXPageCollectionGeneralSectionModel *sectiomModel = (CGXPageCollectionGeneralSectionModel *)[GeneralViewTool insertSectionModel];
-    [self.generalView insertSections:0 withObject:sectiomModel];
+    CGXPageCollectionGeneralSectionModel *sectionModel = [[CGXPageCollectionGeneralSectionModel alloc] init];
+    sectionModel.row = 2;
+    
+    CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
+    headerModel.headerHeight = 40;
+    headerModel.headerModel = [NSString stringWithFormat:@"头部-%d",0];
+    headerModel.headerTag = 10000;
+    headerModel.headerBgColor = [UIColor orangeColor];
+    sectionModel.headerModel = headerModel;
+    CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
+    footerModel.footerModel = [NSString stringWithFormat:@"脚部-%d",0];
+    footerModel.footerTag = 20000;
+    footerModel.footerHeight  = arc4random() % 30+20;
+    footerModel.footerBgColor = [UIColor yellowColor];
+    sectionModel.footerModel = footerModel;
+    
+    CGFloat height = 80;
+    CGFloat row = arc4random() % 2+2;
+    NSMutableArray *itemArr = [NSMutableArray array];
+    sectionModel.cellHeight = height;
+    for (int i= 0 ; i<row*2; i++) {
+        CGXPageCollectionGeneralRowModel *item = [[CGXPageCollectionGeneralRowModel alloc] initWithCelllass:[CGXPageCollectionTextCell class] IsXib:NO];
+        sectionModel.row = row;
+        item.dataModel= @"";
+        
+        item.cellColor = RandomColor;
+        [itemArr addObject:item];
+    }
+    sectionModel.rowArray = [NSMutableArray arrayWithArray:itemArr];
+    [self.generalView insertSections:0 withObject:sectionModel];
 }
 - (void)insertData1
 {
@@ -167,7 +216,21 @@
 }
 - (void)replaceData
 {
-    CGXPageCollectionGeneralSectionModel *sectionModel = (CGXPageCollectionGeneralSectionModel *)self.generalView.dataArray[0];
+    CGXPageCollectionGeneralSectionModel *sectionModel = [[CGXPageCollectionGeneralSectionModel alloc] init];
+    sectionModel.row = 2;
+    
+    CGXPageCollectionHeaderModel *headerModel = [[CGXPageCollectionHeaderModel alloc] initWithHeaderClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
+    headerModel.headerHeight = 40;
+    headerModel.headerModel = [NSString stringWithFormat:@"头部-%d",0];
+    headerModel.headerTag = 10000;
+    headerModel.headerBgColor = [UIColor orangeColor];
+    sectionModel.headerModel = headerModel;
+    CGXPageCollectionFooterModel *footerModel = [[CGXPageCollectionFooterModel alloc] initWithFooterClass:[CGXPageCollectionSectionTextView class] IsXib:NO];
+    footerModel.footerModel = [NSString stringWithFormat:@"脚部-%d",0];
+    footerModel.footerTag = 20000;
+    footerModel.footerHeight  = arc4random() % 30+20;
+    footerModel.footerBgColor = [UIColor yellowColor];
+    sectionModel.footerModel = footerModel;
     
     CGFloat height = arc4random() % 20+80;
     CGFloat row = arc4random() % 2+2;

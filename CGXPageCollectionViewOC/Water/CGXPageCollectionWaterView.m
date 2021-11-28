@@ -19,18 +19,12 @@
 - (void)initializeData
 {
     [super initializeData];
-    self.isShowDifferentColor = YES;
 }
 - (void)initializeViews
 {
     [super initializeViews];
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = YES;
-}
-- (void)setIsShowDifferentColor:(BOOL)isShowDifferentColor
-{
-    _isShowDifferentColor = isShowDifferentColor;
-    [self.collectionView reloadData];
 }
 - (UICollectionViewLayout *)preferredFlowLayout
 {
@@ -44,29 +38,21 @@
 {
     [super refreshHeaderSection:section Header:headerView];
     CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
-    if (self.isShowDifferentColor) {
         if (sectionModel.isRoundWithHeaderView) {
             headerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
         }else{
             headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
         }
-    } else{
-        headerView.backgroundColor = sectionModel.headerModel.headerBgColor;
-    }
 }
 - (void)refreshFooterSection:(NSInteger)section Footer:(UICollectionReusableView *)footerView
 {
     [super refreshFooterSection:section Footer:footerView];
     CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
-    if (self.isShowDifferentColor) {
         if (sectionModel.isRoundWithFooterView) {
             footerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
         }else{
             footerView.backgroundColor = sectionModel.footerModel.footerBgColor;
         }
-    } else{
-        footerView.backgroundColor = sectionModel.footerModel.footerBgColor;;
-    }
 }
 - (void)refreshSectionModel:(CGXPageCollectionBaseSectionModel *)baseSectionModel
 {
@@ -131,25 +117,7 @@
 - (CGXPageCollectionRoundModel *)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout configModelForSectionAtIndex:(NSInteger)section
 {
     CGXPageCollectionWaterSectionModel *sectionModel = (CGXPageCollectionWaterSectionModel *)self.dataArray[section];
-    CGXPageCollectionRoundModel *roundModel = [[CGXPageCollectionRoundModel alloc]init];
-    roundModel = sectionModel.roundModel;
-    if (self.isShowDifferentColor) {
-        roundModel = sectionModel.roundModel;
-    } else{
-        if (@available(iOS 13.0, *)) {
-            UIColor *dyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
-                if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
-                    return self.backgroundColor;
-                }else {
-                    return self.backgroundColor;
-                }
-            }];
-            roundModel.backgroundColor = dyColor;
-        }else{
-            roundModel.backgroundColor = self.backgroundColor;
-        }
-    }
-    return roundModel;
+    return sectionModel.roundModel;
 }
 /// 根据section设置是否包含headerview（实现该方法后，isCalculateHeader将不会生效）
 /// @param collectionView collectionView description
