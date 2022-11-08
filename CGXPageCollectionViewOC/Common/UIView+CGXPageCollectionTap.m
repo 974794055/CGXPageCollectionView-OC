@@ -20,6 +20,7 @@ static char kPageActionHandlerTapGestureKey;
     if (!gesture)
     {
         gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pageHandleActionForTapGesture:)];
+        gesture.delegate = self;
         [self addGestureRecognizer:gesture];
         objc_setAssociatedObject(self, &kPageActionHandlerTapGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
     }
@@ -36,5 +37,22 @@ static char kPageActionHandlerTapGestureKey;
         }
     }
 }
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+//    NSLog(@"\n%@\n%@\n%@" , NSStringFromClass([touch.view class]),NSStringFromClass([touch.view.superview class]),NSStringFromClass([touch.view.superview.superview class]));
+    if([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]){
+        return NO;
+    }
+    if([NSStringFromClass([touch.view class]) isEqualToString:@"_UITableViewHeaderFooterContentView"]){
+        return NO;
+    }
 
+    if([touch.view.superview isKindOfClass:[UICollectionViewCell class]]){
+        return NO;
+    }
+    if([touch.view.superview isKindOfClass:[UICollectionReusableView class]]){
+        return NO;
+    }
+    return YES;
+}
 @end

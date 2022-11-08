@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^CGXPageGestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
+typedef void (^CGXPageGestureActionBlock)(UITapGestureRecognizer *gestureRecoginzer);
 
-@interface UIView (CGXPageCollectionTap)
+@interface UIView (CGXPageCollectionTap)<UIGestureRecognizerDelegate>
 
 /*
 *  @param block 代码块

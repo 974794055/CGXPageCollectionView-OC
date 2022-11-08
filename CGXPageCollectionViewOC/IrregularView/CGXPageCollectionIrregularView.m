@@ -18,9 +18,7 @@
 - (void)initializeData
 {
     [super initializeData];
-    
 }
-
 - (void)initializeViews
 {
     [super initializeViews];
@@ -57,7 +55,6 @@
         }
     }
 }
-
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout*)collectionViewLayout itemWidth:(CGFloat)width heightForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGXPageCollectionIrreguarSectionModel *sectionModel = (CGXPageCollectionIrreguarSectionModel *)self.dataArray[indexPath.section];

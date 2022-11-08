@@ -151,7 +151,6 @@ for (int i = 0; i<self.titleArr.count; i++) {
 邮    箱：974794055@qq.com </br>
 群名称：潮流App-iOS交流</br>
 QQ  群：227219165</br>
-QQ  号：974794055</br>
 
 <img src="https://github.com/974794055/CGXPageCollectionView-OC/blob/master/CGXPageCollectionViewImageGif/authorGroup.png" width="300" height="411">
 

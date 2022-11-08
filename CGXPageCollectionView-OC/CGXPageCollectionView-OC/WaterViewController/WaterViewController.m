@@ -37,6 +37,10 @@
     [self.view addSubview:self.generalView];
     NSMutableArray *dataArray = [NSMutableArray array];
     dataArray = [NSMutableArray arrayWithArray:[self loadDealWithList]];
+    self.generalView.isAdaptive= YES;
+    self.generalView.heightBlock = ^(CGXPageCollectionBaseView * _Nonnull BaseView, CGFloat height) {
+        NSLog(@"%f",height);
+    };
     [self.generalView updateDataArray:dataArray IsDownRefresh:YES Page:1];
 }
 //处理数据源

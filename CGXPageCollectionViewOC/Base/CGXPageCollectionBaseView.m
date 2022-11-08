@@ -60,16 +60,10 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.collectionView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-    
-    self.collectionView.collectionViewLayout = [self preferredFlowLayout];
-    [self.collectionView.collectionViewLayout invalidateLayout];
-    [self.collectionView reloadData];
-    
+    self.collectionView.frame = self.bounds;;
     if (self.isAdaptive) {
         UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
         [layout invalidateLayout];
-        self.collectionView.frame = self.bounds;
         if (!CGSizeEqualToSize(self.bounds.size, [self intrinsicContentSize])) {
             [self invalidateIntrinsicContentSize];
         }
@@ -89,7 +83,10 @@
         }
     }
 }
-
+- (CGSize)intrinsicContentSize
+{
+    return _collectionView.collectionViewLayout.collectionViewContentSize;
+}
 - (NSMutableArray<CGXPageCollectionBaseSectionModel *> *)dataArray
 {
     if (!_dataArray) {
@@ -108,7 +105,7 @@
     self.isDownRefresh =  YES;
     self.page = 1;
     self.maxPage = 10;
-    self.collectionView = [[CGXPageCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)) collectionViewLayout:[self preferredFlowLayout]];
+    self.collectionView = [[CGXPageCollectionView alloc] initWithFrame:self.bounds collectionViewLayout:[self preferredFlowLayout]];
     self.collectionView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = YES;
